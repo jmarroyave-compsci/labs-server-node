@@ -5,12 +5,17 @@ const path = require('path');
 const fs = require('fs');
 const http = require('http');
 const graphql = require('graphql');
+const cors = require('cors');
 
 const config = JSON.parse(fs.readFileSync('./.config.json'))
 
 
 const { graphqlHTTP } = require('express-graphql')
 const OtG = require('openapi-to-graphql')
+
+
+console.log("starting server")
+console.log("connecting to mongo", config.mongo)
 
 // Connect to MongoDB database
 mongoose
@@ -22,7 +27,6 @@ mongoose
 
 
 async function start(){
-  console.log("starting")
 
   var express = require("express");
   var app = express();
@@ -31,12 +35,10 @@ async function start(){
   var jsyaml = require('js-yaml');
   var spec = fs.readFileSync(path.join(__dirname, '/api/oas-doc.yaml'), 'utf8');
   var oasDoc = jsyaml.safeLoad(spec);
-
-
-  
+ 
   const {schema} = await OtG.createGraphQLSchema(oasDoc)
 
-  console.log(schema)
+  app.use(cors())
 
   app.use(bodyParser.json({
     strict: false
@@ -66,7 +68,7 @@ async function start(){
   };
 
 
-  console.log("configuring")
+  console.log("configuring the server")
   oasTools.configure(options_object);
 
   oasTools.initialize(oasDoc, app, function() {

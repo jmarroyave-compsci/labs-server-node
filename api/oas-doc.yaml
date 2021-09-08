@@ -9,8 +9,34 @@ info:
 servers:
   - url: 'http://localhost:8080/api'
 paths:
+  /dashboard:
+    get:
+      responses:
+        '200':
+          description: Successful request 
+          content:
+            "application/json":
+              schema:
+                type: object
+                $ref: '#/components/schemas/Dashboard'
+      operationId: dashboardGet
+      description: Returns the movies dashboard
+      x-swagger-router-controlloer: dashboardRoute
   /movies:
     get:
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer        
+            description: number of records to display
+            default: 10
+        - in: query
+          name: page
+          schema:
+            type: integer        
+            description: page number to display
+            default: 1 
       responses:
         '200':
           description: Successful request 
@@ -22,7 +48,7 @@ paths:
                   $ref: '#/components/schemas/Movie'
       operationId: moviesGet
       description: Returns a list of movies
-      x-swagger-router-controlloer: movieRoute
+      x-swagger-router-controlloer: moviesRoute
 components:
   schemas:
     Person:
@@ -32,9 +58,21 @@ components:
           description: Name of the person
           type: string
           example: James Franco
-      required:
-        - name
       description: Person model
+    Dashboard:
+      type: object
+      properties:
+        last_update:
+          description: Last time updated
+          type: string
+        actors:
+          description: Number of actors
+          type: number
+        countries:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
     Movie:
       type: object
       properties:
@@ -42,16 +80,44 @@ components:
           description: Title of the movie
           type: string
           example: The lord of the rings
+        type:
+          description: Type
+          type: string
+          enum: [TV Show, Movie]
+        genre:
+          description: Genre
+          type: array
+          items:
+            type: string
+        country:
+          description: Country
+          type: array
+          items:
+            type: string
+        duration:
+          description: Duration
+          type: string
+        rating:
+          description: Rating
+          type: string
         description:
           description: Description of the movie
           type: string
           example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
+        added_date:
+          description: Year added to catalog
+          type: string
         released_date:
           description: Year of production
           type: string
-          example: 2000
         director:
           description: Directors of the movie
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/Person'
+        cast:
+          description: Cast of the movie
           type: array
           items:
             type: object
