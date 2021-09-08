@@ -7,7 +7,7 @@ info:
     name: jmarroyave
   description: API for accessing entertainment options available in TV
 servers:
-  - url: '/api'
+  - url: 'http://localhost:8080/api'
 paths:
   /movies:
     get:

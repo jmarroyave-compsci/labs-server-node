@@ -32,14 +32,10 @@ async function start(){
   var oasDoc = jsyaml.safeLoad(spec);
 
 
-  
+
   const {schema} = await OtG.createGraphQLSchema(oasDoc)
 
   console.log(schema)
-
-  app.use(bodyParser.json({
-    strict: false
-  }));
 
 
   app.use(
