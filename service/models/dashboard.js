@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 
 const Dashboard = mongoose.Schema({
 	last_update: Date,
+	people: Number,
 	actors: Number,
 	directors: Number,
 	movies: Number,

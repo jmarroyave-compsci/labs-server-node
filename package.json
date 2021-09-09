@@ -22,12 +22,14 @@
     "graphql": "^15.5.3",
     "js-yaml": "^3.3.0",
     "mongoose": "^6.0.5",
+    "morgan": "^1.10.0",
     "oas-tools": "^2.1.4",
     "openapi-to-graphql": "^2.5.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
     "chai-openapi-response-validator": "^0.13.0",
-    "mocha": "^9.1.1"
+    "mocha": "^9.1.1",
+    "snippet-enricher-cli": "^0.0.8"
   }
 }
