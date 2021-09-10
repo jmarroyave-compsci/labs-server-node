@@ -5,10 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "prestart": "npm install",
-    "clean": "rd /s /q dist",
-    "clean-unix": "rm -rf dist",
-    "build:copy": "cpx \"src/**/*.yaml\" dist/",
     "start": "node dist/index.js",
+    "build": "npm run build:live",
+    "clean": "rm -rf dist",
+    "build:copy": "cpx \"src/**/*.yaml\" dist/",
     "build:live": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run build:copy",
     "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/* --exit",
     "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
