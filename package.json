@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "prestart": "npm install",
-    "clean": "rm -rf dist",
+    "clean": "rd /s /q dist",
+    "clean-unix": "rm -rf dist",
     "build:copy": "cpx \"src/**/*.yaml\" dist/",
     "start": "node dist/index.js",
     "build:live": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run build:copy",
@@ -25,6 +26,7 @@
     "body-parser": "^1.18.3",
     "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
+    "cpx": "^1.5.0",
     "debug": "^4.3.2",
     "express": "^4.16.3",
     "express-graphql": "^0.12.0",
