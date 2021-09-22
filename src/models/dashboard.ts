@@ -1,31 +1,53 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
-const Dashboard = new mongoose.Schema({
-	last_update: Date,
-	people: Number,
-	actors: Number,
-	directors: Number,
-	movies: Number,
-	countries: {
+const DashboardPeople = mongoose.Schema({
+	total: Number,
+	alive: Number,
+	profession: {
 		type : Map,
 		of: Number
 	},
-	genres: {
+	yearBirth: {
 		type : Map,
 		of: Number
 	},
-	types: {
+})
+
+const DashboardMovies = mongoose.Schema({
+	total: Number,
+	country: {
 		type : Map,
 		of: Number
 	},
-	years_released: {
+	genre: {
 		type : Map,
 		of: Number
 	},
-	years_added: {
+	type: {
 		type : Map,
 		of: Number
-	}
-}, { collection: 'dashboard' })
+	},
+	yearReleased: {
+		type : Map,
+		of: Number
+	},
+	streamBy: {
+		type : Map,
+		of: Number,
+	},
+
+	created: { type: Number, default: Date.now()},
+})
+
+
+const Dashboard = mongoose.Schema({
+	lastUpdate: Date,
+	people: DashboardPeople,
+	movies: DashboardMovies,
+	created: { type: Number, default: Date.now()},
+}, {
+	collection: 'dashboard',
+	timestamps: false,
+})
 
 export default mongoose.model("dashboard", Dashboard);

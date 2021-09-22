@@ -1,17 +1,29 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
-const Movie = new mongoose.Schema({
+const Movie = mongoose.Schema({
+	id: String,
 	title: String,
+	originalTitle: String,
 	description: String,
 	country: [ String ],
-	type: { type: String, enum: [ 'Movie', 'TV Show' ] },
+	type: String,
 	genre: [ String ],
 	duration: String,
 	rating: String,
-	released_date: Date,
-	added_date: Date,
-	director: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+	releasedDate: Date,
+	endedDate: Date,
+	streamBy: [ [String, Date] ],
+
+	directors: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
 	cast: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-}, { collection: 'movie' })
+	writers: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+
+	created: { type: Number, default: Date.now()},
+}, {
+	collection: 'movie',
+	timestamps: false,
+})
+
+Movie.index({ id: 1, title: 1 }, { unique: true })
 
 export default mongoose.model("movie", Movie);
