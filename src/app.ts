@@ -47,6 +47,4 @@ const loadRoutesFromDir = (routePath) => {
 
 loadRoutesFromDir(routeRoot);
 
-
 export default app;
-

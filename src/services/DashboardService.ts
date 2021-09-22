@@ -14,7 +14,7 @@ export const dashboardGet = async function( params ) {
   resp.countries = result.movies.country;
   resp.genres = result.movies.genre;
   resp.types = result.movies.type;
-  resp.yearsReleased = result.movies.yearsReleased;
+  resp.yearsReleased = result.movies.yearReleased;
   resp.lastUpdate = result.lastUpdate;
 
   return resp
