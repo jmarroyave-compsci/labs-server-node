@@ -64,17 +64,17 @@ const DashboardMovies = mongoose.Schema({
 		type : Map,
 		of: Number,
 	},
-	created: { type: Number, default: Date.now()},	
+	created: { type: Number, default: Date.now()},
 })
 
 
 const Dashboard = mongoose.Schema({
 	lastUpdate: Date,
-	people: DashboardPeople, 	
-	movies: DashboardMovies, 	
-	podcasts: DashboardPodcast, 	
-	created: { type: Number, default: Date.now()},	
-}, { 
+	people: DashboardPeople,
+	movies: DashboardMovies,
+	podcasts: DashboardPodcast,
+	created: { type: Number, default: Date.now()},
+}, {
 	collection: 'dashboard',
 	timestamps: false,
 })

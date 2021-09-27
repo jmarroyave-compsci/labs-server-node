@@ -12,37 +12,37 @@ const Movie = mongoose.Schema({
 	classification: String,
 	releasedDate: Date,
 	endedDate: Date,
-	rating: [ { 
+	rating: [ {
 		name: String,
 		averageRating: Number,
-		votes: Number,		
-	} ], 
-	streamBy: [ { 
+		votes: Number,
+	} ],
+	streamBy: [ {
 		name: String,
-		yearAdded: Number,		
-	} ], 
-	awards: [ { 
+		yearAdded: Number,
+	} ],
+	awards: [ {
 		name: { type : String, index: true},
 		year: Number,
 		category: String,
 		won: Boolean,
-	} ], 
+	} ],
 
-	directors: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ], 
+	directors: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
 	cast: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
 	writers: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
 
 	created: { type: Number, default: Date.now()},
 
 	references : {
-		imdb: { type: String, default: function(){
+		imdb: { type: Strit: function(){
 				return `https://www.imdb.com/title/${this.id}/`
 			}
 		},
 	},
 
 
-}, { 
+}, {
 	collection: 'movie',
 	timestamps: false,
 })
