@@ -1,5 +1,22 @@
 const mongoose = require("mongoose")
 
+const DashboardPodcast = mongoose.Schema({
+	total: Number,
+	language: {
+		type : Map,
+		of: Number
+	},
+	category: {
+		type : Map,
+		of: Number
+	},
+	yearCreated: {
+		type : Map,
+		of: Number
+	},
+})
+
+
 const DashboardPeople = mongoose.Schema({
 	total: Number,
 	alive: Number,
@@ -35,17 +52,29 @@ const DashboardMovies = mongoose.Schema({
 		type : Map,
 		of: Number,
 	},
-
-	created: { type: Number, default: Date.now()},
+	rating: {
+		type : Map,
+		of: Number,
+	},
+	classification: {
+		type : Map,
+		of: Number,
+	},
+	awards: {
+		type : Map,
+		of: Number,
+	},
+	created: { type: Number, default: Date.now()},	
 })
 
 
 const Dashboard = mongoose.Schema({
 	lastUpdate: Date,
-	people: DashboardPeople,
-	movies: DashboardMovies,
-	created: { type: Number, default: Date.now()},
-}, {
+	people: DashboardPeople, 	
+	movies: DashboardMovies, 	
+	podcasts: DashboardPodcast, 	
+	created: { type: Number, default: Date.now()},	
+}, { 
 	collection: 'dashboard',
 	timestamps: false,
 })

@@ -1,5 +1,5 @@
 import express from "express";
-import { getHello } from "../controllers/Hello";
+import { getHello } from "../controllers/Info";
 import { asyncHandler } from "../lib/asyncHandler";
 
 const router = express.Router();

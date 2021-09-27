@@ -1,8 +1,8 @@
 import express from "express";
-import * as controller from "../../controllers/Movies";
+import * as controller from "../../controllers/2.0/Movie";
 import { asyncHandler } from "../../lib/asyncHandler";
 
 const router = express.Router();
-router.use("/2.0/api/movies", asyncHandler(controller.moviesGet, "moviesGet"));
+router.use("/2.0/api/movie/:id", asyncHandler(controller.movieGet, "movieGet"));
 
 export default router;

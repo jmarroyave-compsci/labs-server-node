@@ -1,118 +1,446 @@
 openapi: 3.0.3
 info:
   title: Entertainment
-  version: '1.0'
+  version: '2.0'
   contact:
     email: jmarroyave.compsci@gmail.com
     name: jmarroyave
-  description: API for accessing entertainment options available in TV
+  description: API for accessing a catalog of entertainment options available
 servers:
-  - url: 'http://localhost:8080/1.0/api'
+  - url: 'http://localhost:8080/2.0/api'
 paths:
-  /dashboard:
+  /dashboard/home:
     get:
+      tags: []
       responses:
         '200':
-          description: Successful request 
+          description: OK
           content:
-            "application/json":
+            application/json:
               schema:
-                type: object
-                $ref: '#/components/schemas/Dashboard'
-      operationId: dashboardGet
-      description: Returns the movies dashboard
-      x-swagger-router-controlloer: dashboardRoute
-  /movies:
+                $ref: '#/components/schemas/DashboardHome'
+      operationId: get-home-dashboard
+      description: Returns the dashboard for the home page
+    parameters: []
+  /dashboard/movies:
     get:
-      parameters:
-        - in: query
-          name: limit
-          schema:
-            type: integer        
-            description: number of records to display
-            default: 10
-        - in: query
-          name: page
-          schema:
-            type: integer        
-            description: page number to display
-            default: 1 
+      tags: []
       responses:
         '200':
-          description: Successful request 
+          description: OK
           content:
-            "application/json":
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardMovies'
+      operationId: get-movie-dashboard
+      description: Returns the dashboard for the movies page
+    parameters: []
+  /dashboard/podcasts:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardPodcasts'
+      operationId: get-podcast-dashboard
+      description: Returns the dashboard for the podcasts page
+    parameters: []
+  /dashboard/people:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardPeople'
+      operationId: get-people-dashboard
+      description: Returns the dashboard for the people page
+    parameters: []
+  '/movie/{id}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+      operationId: get-movie
+      description: 'return the movie with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  '/podcast/{id}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Podcast'
+      operationId: get-podcast
+      description: 'returns the podcast with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  '/person/{id}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+      operationId: get-person
+      description: 'return the person with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: id
+  '/stories/awards/{year}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Movie'
-      operationId: moviesGet
-      description: Returns a list of movies
-      x-swagger-router-controlloer: moviesRoute
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    category:
+                      type: string
+                    entityId:
+                      type: string
+                    entity:
+                      type: string
+                    type:
+                      type: string
+      operationId: get-stories-awards
+      description: 'returns the awards story for {year}'
+    parameters:
+      - schema:
+          type: number
+        name: year
+        in: path
+        required: true
+        description: year
+  '/stories/awards/{year}/oscar':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    category:
+                      description: Name of the person/movie
+                      type: string
+                    entity:
+                      description: Year won
+                      type: string
+                    entityId:
+                      type: string
+                    type:
+                      type: string
+      description: 'returns the Oscar award story for {year}'
+      summary: ''
+      operationId: get-stories-award-oscar
+    parameters:
+      - schema:
+          type: string
+        name: year
+        in: path
+        required: true
+  /stories/podcast/music:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryPodcastsMusic'
+      operationId: get-stories-podcasts-musci
+      description: returns the music category podcasts
+    parameters: []
+  /search/results:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    entity:
+                      type: string
+                    entityId:
+                      type: string
+      operationId: get-search
+      description: return search results for query
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: qry
+          description: query to search
+    parameters: []
+  /search/suggestions:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                description: suggestion results
+                properties:
+                  suggestions:
+                    type: array
+                    items:
+                      type: string
+      operationId: get-search-suggestions
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: qry
+          description: query to search
+      description: return search suggestions for query
 components:
   schemas:
-    Person:
+    DashboardHome:
       type: object
+      title: Home Dashboard
+      description: ''
       properties:
-        name:
-          description: Name of the person
-          type: string
-          example: James Franco
-      description: Person model
-    Dashboard:
-      type: object
-      properties:
-        last_update:
+        lastUpdate:
           description: Last time updated
           type: string
         people:
-          description: Number of people
-          type: number
-        actors:
-          description: Number of actors
-          type: number
-        directors:
-          description: Number of directors
-          type: number
+          $ref: '#/components/schemas/DashboardPeople'
         movies:
+          $ref: '#/components/schemas/DashboardMovies'
+        podcasts:
+          $ref: '#/components/schemas/DashboardPodcasts'
+    DashboardMovies:
+      type: object
+      title: Movies Dashboard
+      description: ''
+      properties:
+        total:
           description: Number of movies
           type: number
-        countries:
+        country:
           description: Distribution by country
           type: object
           additionalProperties:
             type: number
-        genres:
+        genre:
           description: Distribution by genre
           type: object
           additionalProperties:
             type: number
-        types:
+        type:
           description: Distribution by type
           type: object
           additionalProperties:
             type: number
-        years_released:
+        yearReleased:
           description: Distribution by year released
           type: object
           additionalProperties:
             type: number
-        years_added:
-          description: Distribution by year added
+        streamBy:
+          description: Distribution by streamer
           type: object
           additionalProperties:
             type: number
+        rating:
+          description: Distribution by rating
+          type: object
+          additionalProperties:
+            type: number
+        classification:
+          description: Distribution by classification
+          type: object
+          additionalProperties:
+            type: number
+        awards:
+          description: Distribution by awards
+          type: object
+          additionalProperties:
+            type: number
+    DashboardPeople:
+      type: object
+      title: People Dashboard
+      description: ''
+      properties:
+        total:
+          description: Number of people
+          type: number
+        alive:
+          description: Number of people alive
+          type: number
+        profession:
+          description: Distribution by profession
+          type: object
+          additionalProperties:
+            type: number
+        yearBirth:
+          description: Distribution by birth year
+          type: object
+          additionalProperties:
+            type: number
+    DashboardPodcasts:
+      type: object
+      title: Podcasts Dashboard
+      description: ''
+      properties:
+        total:
+          type: number
+        language:
+          type: object
+        category:
+          type: object
+        yearCreated:
+          type: object
+    Person:
+      type: object
+      description: Person model
+      properties:
+        id:
+          type: string
+        name:
+          description: Name of the person
+          type: string
+          example: James Franco
+        birthDate:
+          type: string
+        deathDate:
+          type: string
+        profession:
+          type: array
+          items:
+            type: string
+        awards:
+          description: awards
+          type: object
+          properties:
+            name:
+              type: string
+            year:
+              type: number
+            category:
+              type: string
+            won:
+              type: boolean
+        created:
+          type: string
+        references:
+          type: object
+          properties:
+            imdb:
+              type: string
+      required:
+        - id
+        - name
+    Podcast:
+      type: object
+      description: Person model
+      properties:
+        id:
+          description: Name of the person
+          type: string
+          example: James Franco
+        title:
+          type: string
+        subtitle:
+          type: string
+        feedUrl:
+          type: string
+        description:
+          type: string
+        summary:
+          type: string
+        author:
+          type: string
+        link:
+          type: string
+        language:
+          type: string
+        image:
+          type: string
+        category:
+          type: string
+        subcategory:
+          type: string
+        createdDate:
+          type: string
+        created:
+          type: string
+      required:
+        - id
+        - title
     Movie:
       type: object
+      description: Movie model
       properties:
+        id:
+          description: Id of the movie
+          type: string
+          example: The lord of the rings
         title:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+        originalTitle:
           description: Title of the movie
           type: string
           example: The lord of the rings
         type:
           description: Type
           type: string
-          enum: [TV Show, Movie]
         genre:
           description: Genre
           type: array
@@ -126,16 +454,43 @@ components:
         duration:
           description: Duration
           type: string
+        classification:
+          description: 'Classification [PG,PG13...]'
+          type: string
         rating:
           description: Rating
-          type: string
+          type: object
+          properties:
+            name:
+              type: string
+            averageRating:
+              type: number
+            votes:
+              type: number
+        streamBy:
+          description: Rating
+          type: object
+          properties:
+            name:
+              type: string
+            yearAdded:
+              type: number
+        awards:
+          description: awards
+          type: object
+          properties:
+            name:
+              type: string
+            year:
+              type: number
+            category:
+              type: string
+            won:
+              type: boolean
         description:
           description: Description of the movie
           type: string
           example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
-        added_date:
-          description: Year added to catalog
-          type: string
         released_date:
           description: Year of production
           type: string
@@ -143,17 +498,35 @@ components:
           description: Directors of the movie
           type: array
           items:
-            type: object
             $ref: '#/components/schemas/Person'
         cast:
           description: Cast of the movie
           type: array
           items:
-            type: object
             $ref: '#/components/schemas/Person'
+        created:
+          type: string
+        references:
+          type: object
+          properties:
+            imdb:
+              type: string
       required:
+        - id
         - title
-      description: Movie model
+    StoryPodcastsMusic:
+      type: object
+      description: music podcasts
+      title: StoryPodcastsMusic
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        image:
+          type: string
+        link:
+          type: string
   securitySchemes: {}
   headers: {}
   responses: {}

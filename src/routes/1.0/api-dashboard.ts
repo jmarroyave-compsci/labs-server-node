@@ -1,5 +1,5 @@
 import express from "express";
-import * as controller from "../../controllers/Dashboard";
+import * as controller from "../../controllers/1.0/Dashboard";
 import { asyncHandler } from "../../lib/asyncHandler";
 
 const router = express.Router();

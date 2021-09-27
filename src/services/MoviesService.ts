@@ -1,5 +1,11 @@
 import DBMovie from '../models/movie';
 
+export const movieGet = async function( params ) {
+  let results = [];
+  results = await DBMovie.find( { id: params.id } ).select(` -_id`);
+  return (results.length > 0) ? results[0] : null
+};
+
 export const moviesGet = async function( params ) {
   let results = [];
 
