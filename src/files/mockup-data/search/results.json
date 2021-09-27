@@ -1,0 +1,71 @@
+[
+  {
+    "type": "person",
+    "entity": "Julia Roberts",
+    "entityId": "nm0000210",
+    "score": 1.5
+  },
+  {
+    "_id": "614e68d826855d0e6413274e",
+    "type": "podcast",
+    "entity": "Dispatches from CBC Radio",
+    "entityId": "0002da5f-49a2-31ba-b44c-cdeabdf113cb",
+    "score": 1.5
+  },
+  {
+    "_id": "614e6a3e26855d0e646d2aa7",
+    "type": "movie",
+    "entity": "Rocky",
+    "entityId": "tt0541007",
+    "score": 1.5
+  },
+  {
+    "_id": "614e690726855d0e641fa974",
+    "type": "person",
+    "entity": "John Johns",
+    "entityId": "614a920e2fefdc11ebc592a9",
+    "score": 1.5
+  },
+  {
+    "_id": "614e689226855d0e6405aab5",
+    "type": "person",
+    "entity": "John John",
+    "entityId": "614a8ff02fefdc11ebab933f",
+    "score": 1.5
+  },
+  {
+    "_id": "614e6a5e26855d0e64748229",
+    "type": "person",
+    "entity": "John-John",
+    "entityId": "614a98b52fefdc11eb1a6d8b",
+    "score": 1.5
+  },
+  {
+    "_id": "614e689f26855d0e640844fa",
+    "type": "person",
+    "entity": "John-John",
+    "entityId": "614a90222fefdc11ebae2d95",
+    "score": 1.5
+  },
+  {
+    "_id": "614e67b426855d0e64d38f17",
+    "type": "person",
+    "entity": "John Johns",
+    "entityId": "614a8ba42fefdc11eb797659",
+    "score": 1.5
+  },
+  {
+    "_id": "614e685326855d0e64f68e78",
+    "type": "person",
+    "entity": "John John",
+    "entityId": "614a8ecb2fefdc11eb9c769f",
+    "score": 1.5
+  },
+  {
+    "_id": "614e690d26855d0e642034a1",
+    "type": "person",
+    "entity": "John Johns",
+    "entityId": "614a92192fefdc11ebc61dd9",
+    "score": 1.5
+  }
+]
