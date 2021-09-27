@@ -35,7 +35,7 @@ const Movie = mongoose.Schema({
 	created: { type: Number, default: Date.now()},
 
 	references : {
-		imdb: { type: String, default: function(){
+		imdb: { type: String, default(){
 				return `https://www.imdb.com/title/${this.id}/`
 			},
 		},
