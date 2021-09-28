@@ -1,5 +1,4 @@
 import DBMovie from '../models/movie';
-import DBPerson from '../models/person';
 import DBPodcast from '../models/podcast';
 
 

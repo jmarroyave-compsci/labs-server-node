@@ -1,6 +1,5 @@
 import * as winston from "winston";
 import Debug from "debug";
-import * as env from "./env";
 import { getRequestId } from "./lib/cls";
 import { IncomingHttpHeaders, OutgoingHttpHeaders } from "http";
 import * as express from "express";
