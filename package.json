@@ -9,11 +9,12 @@
     "build": "npm run build:live",
     "clean": "rm -rf dist",
     "build:copy": "cpx \"src/**/*.{yaml,json,html}\" dist/",
-    "build:live": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run build:copy",
+    "build:live": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run build:copy && npm run docs",
     "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/* --exit",
     "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
     "dev": "npm run build:dev",
-    "lint": "tslint --project ./ --fix > log/lint.errors.txt"
+    "lint": "tslint --project ./ --fix > log/lint.errors.txt",
+    "docs": "./scripts/generate_docs.ps1"
   },
   "keywords": [
     "OAI"
@@ -30,6 +31,8 @@
     "debug": "^4.3.2",
     "express": "^4.16.3",
     "express-graphql": "^0.12.0",
+    "express-requests-logger": "^3.0.3",
+    "express-winston": "^4.2.0",
     "g": "^2.0.1",
     "graphql": "^15.5.3",
     "js-yaml": "^3.3.0",
@@ -39,6 +42,7 @@
     "oas-tools": "^2.1.4",
     "openapi-to-graphql": "^2.5.1",
     "perfy": "^1.1.5",
+    "response-time": "^2.3.2",
     "tslint": "^6.1.3"
   },
   "devDependencies": {

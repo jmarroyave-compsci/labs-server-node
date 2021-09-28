@@ -8,7 +8,7 @@ const configDB = JSON.parse(fs.readFileSync(`${__dirname}/config/db.json`).toStr
 
 const PORT = process.env.PORT || configServer.port;
 
-log.info("connecting to mongo:", configDB.mongo)
+log.info(`connecting to mongo: ${configDB.mongo}`)
 mongoose
   .connect(configDB.mongo, {  })
   .then( async () => {

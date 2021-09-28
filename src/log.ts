@@ -154,14 +154,19 @@ export async function inOutLogger(req: express.Request, res: express.Response, n
   next();
 }
 
+const myFormat = winston.format.printf(({ level, message, label, timestamp }) => {
+  return `${timestamp.substr(0,19)} [${level.toUpperCase()}] ${message}`;
+});
 
 const logger = winston.createLogger({
-  transports: [
-    new (winston.transports.Console)({
-      /*timestamp: true,*/
-      "level": env.get("LOG_LEVEL")
-    })
-  ]
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.prettyPrint(),
+    winston.format.splat(),
+    winston.format.simple(),
+    myFormat,
+  ),
+  transports: [new winston.transports.Console()]
 });
 
 export default logger;

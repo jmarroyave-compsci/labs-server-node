@@ -1,3 +1,4 @@
+import DBMovie from '../models/movie';
 import DBPerson from '../models/person';
 import DBPodcast from '../models/podcast';
 
@@ -13,28 +14,13 @@ export const getMusicPodcasts = async function( params ) {
   return data;
 };
 
+export const getMovieAwards = async function( params ) {
+  const qry = { 'awards.won': true };
+  const project = "title  id awards -_id";
+  const size = 10;
 
+  const data =  await DBMovie.find( qry, project ).limit(size);
+  if(!data) return [];
 
-export const oscarsGet = async function( params ) {
-  const resp = [];
-  const f2 = { profession : "actress"  }
-
-  console.log("empieza")
-
-  const data =  await DBPerson.findOne( f2 ).limit(1).sort({ created: -1 });
-
-  console.log("done")
-  console.log(data);
-
-  if(!data) return resp;
-
-  data.map( d => {
-    resp.push( {
-      name: d.name,
-      year: 2005,
-    })
-  })
-
-  return resp;
+  return data;
 };
-

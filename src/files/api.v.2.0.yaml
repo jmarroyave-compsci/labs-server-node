@@ -116,70 +116,6 @@ paths:
         in: path
         required: true
         description: id
-  '/stories/awards/{year}':
-    get:
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                    category:
-                      type: string
-                    entityId:
-                      type: string
-                    entity:
-                      type: string
-                    type:
-                      type: string
-      operationId: get-stories-awards
-      description: 'returns the awards story for {year}'
-    parameters:
-      - schema:
-          type: number
-        name: year
-        in: path
-        required: true
-        description: year
-  '/stories/awards/{year}/oscar':
-    get:
-      tags: []
-      responses:
-        '200':
-          description: Successful request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    category:
-                      description: Name of the person/movie
-                      type: string
-                    entity:
-                      description: Year won
-                      type: string
-                    entityId:
-                      type: string
-                    type:
-                      type: string
-      description: 'returns the Oscar award story for {year}'
-      summary: ''
-      operationId: get-stories-award-oscar
-    parameters:
-      - schema:
-          type: string
-        name: year
-        in: path
-        required: true
   /stories/podcast/music:
     get:
       tags: []
@@ -191,9 +127,24 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/StoryPodcastsMusic'
+                  $ref: '#/components/schemas/StoryPodcast'
       operationId: get-stories-podcasts-musci
       description: returns the music category podcasts
+    parameters: []
+  /stories/movie/awards:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryAwardMovie'
+      operationId: get-stories-movie-awards
+      description: returns the movies with an awards
     parameters: []
   /search/results:
     get:
@@ -365,16 +316,9 @@ components:
             type: string
         awards:
           description: awards
-          type: object
-          properties:
-            name:
-              type: string
-            year:
-              type: number
-            category:
-              type: string
-            won:
-              type: boolean
+          type: array
+          items:
+            $ref: '#/components/schemas/Award'
         created:
           type: string
         references:
@@ -477,16 +421,9 @@ components:
               type: number
         awards:
           description: awards
-          type: object
-          properties:
-            name:
-              type: string
-            year:
-              type: number
-            category:
-              type: string
-            won:
-              type: boolean
+          type: array
+          items:
+            $ref: '#/components/schemas/Award'
         description:
           description: Description of the movie
           type: string
@@ -514,10 +451,22 @@ components:
       required:
         - id
         - title
-    StoryPodcastsMusic:
+    Award:
+      type: object
+      description: Award model
+      properties:
+        name:
+          type: string
+        year:
+          type: number
+        category:
+          type: string
+        won:
+          type: boolean
+    StoryPodcast:
       type: object
       description: music podcasts
-      title: StoryPodcastsMusic
+      title: StoryPodcast
       properties:
         id:
           type: string
@@ -527,6 +476,36 @@ components:
           type: string
         link:
           type: string
+    StoryMovie:
+      type: object
+      description: music podcasts
+      title: StoryMovie
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        image:
+          type: string
+        link:
+          type: string
+    StoryAwardMovie:
+      type: object
+      description: music podcasts
+      title: StoryMovie
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        image:
+          type: string
+        link:
+          type: string
+        awards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Award'
   securitySchemes: {}
   headers: {}
   responses: {}
