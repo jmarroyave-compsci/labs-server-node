@@ -9,12 +9,12 @@
     "build": "npm run build:live",
     "clean": "rm -rf dist",
     "build:copy": "cpx \"src/**/*.{yaml,json,html}\" dist/",
-    "build:live": "npm run clean && tsc -p tsconfig.json && npm run build:copy && npm run docs",
+    "build:live": "npm run clean && tsc -p tsconfig.json && npm run build:copy",
     "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/* --exit",
     "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
     "dev": "npm run build:dev",
     "lint": "tslint --project ./ --fix > log/lint.errors.txt",
-    "docs": "./scripts/generate_docs.ps1"
+    "docs": "@powershell -Command scripts/generate_docs.ps1"
   },
   "keywords": [
     "OAI"
