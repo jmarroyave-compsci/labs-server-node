@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { default as P }  from "bluebird";
 import * as Service from '../../services/DocsService';
-import * as utils from '../../lib/misc';
 
 export async function getDocs(req: Request, res: Response): P<any> {
   const data = await Service.getDocs( { version: "2.0"} );
@@ -10,5 +9,5 @@ export async function getDocs(req: Request, res: Response): P<any> {
 
 export async function getSpecs(req: Request, res: Response): P<any> {
   const data = await Service.getSpecs( { version: "2.0"} );
-  res.send(data);  
+  res.send(data);
 };

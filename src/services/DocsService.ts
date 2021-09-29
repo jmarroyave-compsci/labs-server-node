@@ -13,8 +13,8 @@ export const getDocs = async function( params ) {
 };
 
 function replace(file){
-  const WEB_SERVER_CURRENT = config.WEB_SERVER  
+  const WEB_SERVER_CURRENT = config.WEB_SERVER
   const WEB_SERVER = process.env.WEB_SERVER || WEB_SERVER_CURRENT
-  var re = new RegExp(WEB_SERVER_CURRENT, "g");
+  const re = new RegExp(WEB_SERVER_CURRENT, "g");
   return fs.readFileSync(file).toString().replace(re, WEB_SERVER);
 }

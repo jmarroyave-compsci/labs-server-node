@@ -1,14 +1,14 @@
 const mongoose = require("mongoose")
 
-const Search = mongoose.Schema({
+const SearchIndex = mongoose.Schema({
+	entityId: String,
 	entity: String,
-	text: String,
-	ref: String,
+	type: String,
 }, {
 	collection: 'search_index',
 	timestamps: false,
 })
 
-Search.index({ text : "text"})
+SearchIndex.index({ entity: 1 }, { collation: { locale: 'en', strength: 2 } } )
 
-export default mongoose.model("search", Search);
+export default mongoose.model("SearchIndex", SearchIndex);

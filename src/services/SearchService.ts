@@ -1,26 +1,19 @@
 import DBSearch from '../models/search';
-import fs from 'fs';
-
 
 export const searchResults = async function( params ) {
-const mdResults = JSON.parse(fs.readFileSync(__dirname + '/../files/mockup-data/search/results.json').toString());
-  return mdResults;
-  /*
-  var data =  await DBSearch.find( { $text: { $search : params.qry } }, { score : { $meta: "textScore" } } )
-                            .sort({ score : { $meta : 'textScore' } })
+  const data =  await DBSearch.find( { entity : new RegExp(`^${params.qry}`) } )
                             .limit(10);
   return data;
-  */
-
 };
 
 export const searchSuggestions = async function( params ) {
-const mdSuggestions = JSON.parse(fs.readFileSync(__dirname + '/../files/mockup-data/search/suggestions.json').toString());
-  return { suggestions: mdSuggestions};
+  const data =  await DBSearch.aggregate(
+      [
+          { $match : { entity : new RegExp(`^${params.qry}`) } },
+          { "$group": { "_id": "$entity", count : { $sum : 1 } } },
+          { "$limit": 5 }
+      ]
+  );
 
-  const data =  await DBSearch.find( { $text: { $search : params.qry } }, { score : { $meta: "textScore" } } )
-                            .sort({ score : { $meta : 'textScore' } })
-                            .limit(10);
-  console.log(data);
-  return data.map( d => d.text );
+  return {suggestions : data.map( d => d._id )};
 };

@@ -5,4 +5,4 @@ const config = {
   WEB_SERVER: "http://localhost:8080",
 }
 
-export default config; 
+export default config;
