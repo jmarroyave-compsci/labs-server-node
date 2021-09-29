@@ -1,0 +1,13 @@
+{
+  "env": {
+    "WEB_SERVER": {
+      "value": "http://localhost:8080"
+    },
+    "DB_SERVER": {
+      "value": "mongodb://localhost:27017/entertainment"
+    },
+    "DEFAULT_PORT": {
+      "value": "8080"
+    }
+  }
+}

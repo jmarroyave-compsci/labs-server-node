@@ -36,7 +36,7 @@ log.info(`loading routes:`);
 const routeRoot = `${__dirname}/routes`;
 
 const loadRoutesFromDir = (routePath) => {
-    valetirs = [];
+    const dirs = [];
     fs.readdirSync(routePath).sort().forEach(async (filename) => {
 
         if(fs.lstatSync(`${routePath}/${filename}`).isDirectory()){
@@ -44,7 +44,7 @@ const loadRoutesFromDir = (routePath) => {
             return;
         }
 
-        log.info(` - /${filename.replace(".ts", "").replace("-", "/")}`);
+        log.info(` - ${routePath.replace(routeRoot, "")}/${filename.replace(".ts", "").replace("-", "/")}`);
         const route = `${routePath}/${filename}`;
         try {
             const item = await import(route);
@@ -58,21 +58,12 @@ const loadRoutesFromDir = (routePath) => {
 
 }
 
+loadRoutesFromDir(routeRoot);
 log.info("route /")
 app.all('/', function (req, res) {
   res.sendFile(`${__dirname}/files/docs/index.html`)
 })
-// app.use()
-loadRoutesFromDir(routeRoot);
 log.info("route 404")
-/*
-app.all(function (req, res) {
-  res.sendFile(`${__dirname}/files/errors/404.html`)
-})
-app.get('*', function(req, res){
-  res.send('what???');
-});
-*/
 
 
 app.use(function(req, res, next) {
