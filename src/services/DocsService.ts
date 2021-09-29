@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import config from '../config'
 
 export const getSpecs = async function( params ) {
-  console.log(params, "spec")
   const spec = `${__dirname}/../files/api.v.${params.version}.yaml`;
   return replace(spec);
 };
