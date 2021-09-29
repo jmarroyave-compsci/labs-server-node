@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import config from '../config'
 
 export const getSpecs = async function( params ) {
   console.log(params, "spec")
@@ -12,8 +13,8 @@ export const getDocs = async function( params ) {
 };
 
 function replace(file){
-  const WEB_SERVER_CURRENT = "http://localhost:8080"  
-  const WEB_SERVER =  JSON.parse(fs.readFileSync(`${__dirname}/../../app.json`).toString()).env.WEB_SERVER.value
+  const WEB_SERVER_CURRENT = config.WEB_SERVER  
+  const WEB_SERVER = process.env.WEB_SERVER || WEB_SERVER_CURRENT
   var re = new RegExp(WEB_SERVER_CURRENT, "g");
   return fs.readFileSync(file).toString().replace(re, WEB_SERVER);
 }
