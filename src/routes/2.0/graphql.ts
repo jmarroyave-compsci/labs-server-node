@@ -2,7 +2,6 @@ import { graphqlHTTP }  from 'express-graphql'
 import { createGraphQLSchema } from 'openapi-to-graphql'
 import { getSpecs } from '../../services/DocsService'
 import jsyaml from 'js-yaml';
-import * as fs from 'fs';
 
 import express from "express";
 const router = express.Router();

@@ -1,19 +1,16 @@
-import * as fs from 'fs';
 import config from '../config'
+import * as misc from '../lib/misc';
+
+const WEB_SERVER_CURRENT = config.WEB_SERVER
+const WEB_SERVER = process.env.WEB_SERVER || WEB_SERVER_CURRENT
 
 export const getSpecs = async function( params ) {
   const spec = `${__dirname}/../files/api.v.${params.version}.yaml`;
-  return replace(spec);
+  return misc.fileSearchReplace(spec, WEB_SERVER_CURRENT, WEB_SERVER);
 };
 
 export const getDocs = async function( params ) {
   const spec = `${__dirname}/../files/docs/index.v.${params.version}.html`;
-  return replace(spec);
+  return misc.fileSearchReplace(spec, WEB_SERVER_CURRENT, WEB_SERVER);
 };
 
-function replace(file){
-  const WEB_SERVER_CURRENT = config.WEB_SERVER
-  const WEB_SERVER = process.env.WEB_SERVER || WEB_SERVER_CURRENT
-  const re = new RegExp(WEB_SERVER_CURRENT, "g");
-  return fs.readFileSync(file).toString().replace(re, WEB_SERVER);
-}

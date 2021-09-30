@@ -1,9 +1,17 @@
 import { Response } from "express";
+import * as fs from 'fs';
 
 const ResponsePayload = function(code, payload) {
   this.code = code;
   this.payload = payload;
 }
+
+export const fileSearchReplace = function(file, search, replace) {
+  const re = new RegExp(search, "g");
+  return fs.readFileSync(file).toString().replace(re, replace);
+
+}
+
 
 export const respondWithCode = function(code, payload) {
   return new ResponsePayload(code, payload);

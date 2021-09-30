@@ -8,6 +8,8 @@ import bodyParser from 'body-parser';
 import log from "./log";
 import * as fs from 'fs';
 import responseTime from 'response-time';
+import config from './config'
+import * as misc from './lib/misc';
 
 const app = express();
 
@@ -61,7 +63,9 @@ const loadRoutesFromDir = (routePath) => {
 loadRoutesFromDir(routeRoot);
 log.info(" - /")
 app.all('/', function (req, res) {
-  res.sendFile(`${__dirname}/files/docs/index.html`)
+    const file = `${__dirname}/files/docs/index.html`;
+    const index = misc.fileSearchReplace(file, "__VERSION__", config.VERSION);
+    res.send(index);
 })
 
 
