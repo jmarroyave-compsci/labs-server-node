@@ -4,7 +4,7 @@ import * as utils from '../../lib/misc';
 import { default as P } from "bluebird";
 
 export async function searchResultsGet(req: Request, res: Response): P<any> {
-  const data = await Service.searchResults( { qry: req.query.qry } );
+  const data = await Service.searchResults( { qry: req.query.qry, page: req.query.page } );
   utils.writeJSON(res, data);
 };
 

@@ -173,6 +173,11 @@ paths:
           in: query
           name: qry
           description: query to search
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
     parameters: []
   /search/suggestions:
     get:
