@@ -13,7 +13,7 @@
     "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/* --exit",
     "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
     "dev": "npm run build:dev",
-    "lint": "tslint --project ./ --fix > log/lint.errors.txt",
+    "lint": "tslint --project ./ > log/lint.errors.txt",
     "docs": "@powershell -Command scripts/generate_docs.ps1"
   },
   "keywords": [

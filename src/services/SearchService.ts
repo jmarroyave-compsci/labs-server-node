@@ -2,7 +2,6 @@ import DBSearch from '../models/search';
 
 export const searchResults = async function( params ) {
   const page = ( params.page ) ? parseInt(params.page) : 1;
-  console.log(params)
   const pageSize = 10;
   const data =  await DBSearch.find( { entity : new RegExp(`^${params.qry}`) } )
                             .sort({ type: -1, entity : 1, entityId: -1 })

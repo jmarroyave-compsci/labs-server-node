@@ -1,0 +1,3 @@
+c:/dev/projects/portfolio/entertainment/server/node/src/services/searchservice.ts:4:34
+ERROR: 4:34  radix  Missing radix parameter
+

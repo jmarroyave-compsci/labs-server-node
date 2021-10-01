@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import * as service from '../services/InfoService';
 import * as utils from '../lib/misc';
 
 export async function getInfo(req: Request, res: Response) {
-    const data = {"msg": "info "};
+    const data = {"server": await service.getServerVersion( ), "db": await service.getDBVersion()};
     utils.writeJSON(res, data)
 }
 
