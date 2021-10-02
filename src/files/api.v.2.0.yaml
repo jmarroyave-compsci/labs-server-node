@@ -130,6 +130,12 @@ paths:
                   $ref: '#/components/schemas/StoryPodcast'
       operationId: get-stories-podcasts-musci
       description: returns the music category podcasts
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
     parameters: []
   /stories/awards:
     get:
@@ -289,6 +295,19 @@ components:
           type: object
           additionalProperties:
             type: number
+    DashboardPodcasts:
+      type: object
+      title: Podcasts Dashboard
+      description: ''
+      properties:
+        total:
+          type: number
+        language:
+          type: object
+        category:
+          type: object
+        yearCreated:
+          type: object
     DashboardPeople:
       type: object
       title: People Dashboard
@@ -310,19 +329,6 @@ components:
           type: object
           additionalProperties:
             type: number
-    DashboardPodcasts:
-      type: object
-      title: Podcasts Dashboard
-      description: ''
-      properties:
-        total:
-          type: number
-        language:
-          type: object
-        category:
-          type: object
-        yearCreated:
-          type: object
     Person:
       type: object
       description: Person model

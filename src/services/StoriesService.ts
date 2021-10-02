@@ -5,11 +5,14 @@ import DBPodcast from '../models/podcast';
 
 
 export const getMusicPodcasts = async function( params ) {
+  const page = (params.page) ? params.page : 1;
   const qry = { category: "music" };
   const project = "title  id  image  link -_id";
   const size = 10;
 
-  const data =  await DBPodcast.find( qry, project ).limit(size);
+  const data =  await DBPodcast.find( qry, project )
+                                .skip(size * ( page - 1))
+                                .limit(size);
   if(!data) return [];
 
   return data;

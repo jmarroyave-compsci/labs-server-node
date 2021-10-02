@@ -4,7 +4,7 @@ import * as utils from '../../lib/misc';
 import { default as P } from "bluebird";
 
 export async function podcastMusic(req: Request, res: Response): P<any> {
-  const data = await Service.getMusicPodcasts( {} );
+  const data = await Service.getMusicPodcasts( req.query );
   utils.writeJSON(res, data);
 };
 

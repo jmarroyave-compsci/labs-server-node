@@ -10,10 +10,11 @@
     "clean": "rm -rf dist",
     "build:copy": "cpx \"src/**/*.{yaml,json,html}\" dist/",
     "build:live": "npm run clean && tsc -p tsconfig.json && npm run build:copy",
-    "test": "./node_modules/.bin/mocha --compilers ts:ts-node/register ./test/* --exit",
     "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
     "dev": "npm run build:dev",
     "lint": "tslint --project ./ > log/lint.errors.txt",
+    "test": "./node_modules/.bin/mocha --require ts-node/register test/* --exit",
+    "test:win": ".\\node_modules\\.bin\\mocha --require ts-node/register .\\test\\** --exit",
     "docs": "@powershell -Command scripts/generate_docs.ps1"
   },
   "keywords": [

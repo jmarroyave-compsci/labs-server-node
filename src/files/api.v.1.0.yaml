@@ -17,7 +17,6 @@ paths:
           content:
             application/json:
               schema:
-                type: object
                 $ref: '#/components/schemas/Dashboard'
       operationId: dashboardGet
       description: Returns the movies dashboard
@@ -44,28 +43,18 @@ components:
         countries:
           description: Distribution by country
           type: object
-          additionalProperties:
-            type: number
         genres:
           description: Distribution by genre
           type: object
-          additionalProperties:
-            type: number
         types:
           description: Distribution by type
           type: object
-          additionalProperties:
-            type: number
         years_released:
           description: Distribution by year released
           type: object
-          additionalProperties:
-            type: number
         years_added:
           description: Distribution by year added
           type: object
-          additionalProperties:
-            type: number
   securitySchemes: {}
   headers: {}
   responses: {}
