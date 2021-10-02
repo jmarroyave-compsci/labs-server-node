@@ -131,7 +131,7 @@ paths:
       operationId: get-stories-podcasts-musci
       description: returns the music category podcasts
     parameters: []
-  /stories/movie/awards:
+  /stories/awards:
     get:
       tags: []
       responses:
@@ -143,8 +143,30 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/StoryAwardMovie'
-      operationId: get-stories-movie-awards
-      description: returns the movies with an awards
+      operationId: get-stories-awards
+      description: returns the entities with an award
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: year
+          description: year
+        - schema:
+            type: string
+          in: query
+          name: entity
+          description: 'movie, tv, people'
+        - schema:
+            type: string
+          in: query
+          name: type
+          description: 'oscar, goldenGlobe, emmy'
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
+      summary: ''
     parameters: []
   /search/results:
     get:

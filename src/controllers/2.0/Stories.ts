@@ -8,8 +8,8 @@ export async function podcastMusic(req: Request, res: Response): P<any> {
   utils.writeJSON(res, data);
 };
 
-export async function movieAwards(req: Request, res: Response): P<any> {
-  const data = await Service.getMovieAwards( {} );
+export async function awards(req: Request, res: Response): P<any> {
+  const data = await Service.getAwards( req.query );
   utils.writeJSON(res, data);
 };
 
