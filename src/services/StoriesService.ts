@@ -19,6 +19,7 @@ export const getAwards = async function( params ) {
   const year = (params.year) ? params.year : new Date().getFullYear();
   const entity = (params.entity) ? params.entity : "movies";
   const type = (params.type) ? params.type : "oscar";
+  const page = (params.page) ? params.page : 1;
   const qry = { 'awards.won': true, "awards.name" : type, "awards.year" : year };
   const project = "title  id awards -_id";
   const size = 10;
