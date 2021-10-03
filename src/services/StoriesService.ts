@@ -39,6 +39,21 @@ export const getAwards = async function( params ) {
       break;
   }
 
+
+  data = data.sort( (a, b) => {
+    if( a.year !== b.year )
+      return (a.year > b.year) ? -1 : 1 
+
+    if( a.name !== b.name )
+      return (a.name > b.name) ? 1 : -1 
+
+    if( a.won !== b.won )
+      return (a.won) ? 1 : -1 
+
+    return (a.category > b.category) ? 1 : -1 
+  });
+
+
   if(!data) return [];
 
   return data;

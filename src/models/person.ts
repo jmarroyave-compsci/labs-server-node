@@ -19,7 +19,7 @@ const Person = mongoose.Schema({
 	created: { type: Number, default: Date.now()},
 
 	references : {
-		imdb: { type: String, default(){
+		imdb: { type: String, default: function(){
 				return `https://www.imdb.com/name/${this.id}/`
 			}
 		},

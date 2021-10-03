@@ -308,6 +308,8 @@ components:
           type: object
         yearCreated:
           type: object
+        country:
+          type: object
     DashboardPeople:
       type: object
       title: People Dashboard
@@ -395,6 +397,8 @@ components:
         createdDate:
           type: string
         created:
+          type: string
+        country:
           type: string
       required:
         - id

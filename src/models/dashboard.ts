@@ -6,6 +6,10 @@ const DashboardPodcast = mongoose.Schema({
 		type : Map,
 		of: Number
 	},
+	country: {
+		type : Map,
+		of: Number
+	},	
 	category: {
 		type : Map,
 		of: Number

@@ -10,6 +10,7 @@ const Podcast = mongoose.Schema({
 	author: String,
 	link: String,
 	language: String,
+	country: String,
 	image: String,
 
 	category: String,
