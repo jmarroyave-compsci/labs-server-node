@@ -9,6 +9,20 @@ info:
 servers:
   - url: 'http://localhost:8080/2.0/api'
 paths:
+  /info/about:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoAbout'
+      operationId: get-info-about
+      description: Returns the about info
+      summary: InfoAbout
+    parameters: []
   /dashboard/home:
     get:
       tags: []
@@ -21,6 +35,7 @@ paths:
                 $ref: '#/components/schemas/DashboardHome'
       operationId: get-home-dashboard
       description: Returns the dashboard for the home page
+      summary: DashboardHome
     parameters: []
   /dashboard/movies:
     get:
@@ -34,6 +49,7 @@ paths:
                 $ref: '#/components/schemas/DashboardMovies'
       operationId: get-movie-dashboard
       description: Returns the dashboard for the movies page
+      summary: DashboardMovies
     parameters: []
   /dashboard/podcasts:
     get:
@@ -47,6 +63,7 @@ paths:
                 $ref: '#/components/schemas/DashboardPodcasts'
       operationId: get-podcast-dashboard
       description: Returns the dashboard for the podcasts page
+      summary: DashboardPodcasts
     parameters: []
   /dashboard/people:
     get:
@@ -543,6 +560,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Award'
+    InfoAbout:
+      type: object
+      description: info about
+      title: InfoAbout
+      properties:
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/InfoAboutSource'
+    InfoAboutSource:
+      type: object
+      description: info about source
+      title: InfoAboutSource
+      properties:
+        added:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
   securitySchemes: {}
   headers: {}
   responses: {}

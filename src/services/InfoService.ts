@@ -1,4 +1,5 @@
 import DBInfo from '../models/_';
+import DBInfoAboutSource from '../models/info_about_source';
 import config from '../config'
 
 export const getDBVersion = async function() {
@@ -8,4 +9,10 @@ export const getDBVersion = async function() {
 
 export const getServerVersion = async function() {
   return config.VERSION;
+};
+
+export const getAbout = async function() {
+  const data =  await DBInfoAboutSource.find().sort({added: -1}); 
+
+  return { sources : data};
 };
