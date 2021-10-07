@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose';
 
-const Info = mongoose.Schema({
+const Info = new mongoose.Schema({
 	db: {
 		version : String
 	},

@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose';
 
-const DashboardPodcast = mongoose.Schema({
+const DashboardPodcast = new mongoose.Schema({
 	total: Number,
 	language: {
 		type : Map,
@@ -9,7 +9,7 @@ const DashboardPodcast = mongoose.Schema({
 	country: {
 		type : Map,
 		of: Number
-	},	
+	},
 	category: {
 		type : Map,
 		of: Number
@@ -21,7 +21,7 @@ const DashboardPodcast = mongoose.Schema({
 })
 
 
-const DashboardPeople = mongoose.Schema({
+const DashboardPeople = new mongoose.Schema({
 	total: Number,
 	alive: Number,
 	profession: {
@@ -34,7 +34,7 @@ const DashboardPeople = mongoose.Schema({
 	},
 })
 
-const DashboardMovies = mongoose.Schema({
+const DashboardMovies = new mongoose.Schema({
 	total: Number,
 	country: {
 		type : Map,
@@ -68,17 +68,17 @@ const DashboardMovies = mongoose.Schema({
 		type : Map,
 		of: Number,
 	},
-	created: { type: Number, default: Date.now()},
+	created: { type: Number, default: Date.now()},	
 })
 
 
-const Dashboard = mongoose.Schema({
+export const Dashboard = new mongoose.Schema({
 	lastUpdate: Date,
-	people: DashboardPeople,
-	movies: DashboardMovies,
-	podcasts: DashboardPodcast,
-	created: { type: Number, default: Date.now()},
-}, {
+	people: DashboardPeople, 	
+	movies: DashboardMovies, 	
+	podcasts: DashboardPodcast, 	
+	created: { type: Number, default: Date.now()},	
+}, { 
 	collection: 'dashboard',
 	timestamps: false,
 })

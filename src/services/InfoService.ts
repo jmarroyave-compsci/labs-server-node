@@ -1,10 +1,11 @@
-import DBInfo from '../models/_';
+import DBInfo from '../models/info';
 import DBInfoAboutSource from '../models/info_about_source';
 import config from '../config'
 
 export const getDBVersion = async function() {
+  console.log("voy")
   const data =  await DBInfo.findOne().sort({created: -1});
-  return data.db.version;
+  return data['db']['version'];
 };
 
 export const getServerVersion = async function() {

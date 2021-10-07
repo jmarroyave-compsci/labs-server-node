@@ -165,7 +165,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/StoryAwardMovie'
+                  $ref: '#/components/schemas/StoryAward'
       operationId: get-stories-awards
       description: returns the entities with an award
       parameters:
@@ -502,6 +502,21 @@ components:
           properties:
             imdb:
               type: string
+        image:
+          type: object
+          properties:
+            poster:
+              type: string
+        boxOffice:
+          type: string
+        production:
+          type: string
+        website:
+          type: string
+        language:
+          type: string
+        plot:
+          type: string
       required:
         - id
         - title
@@ -532,7 +547,7 @@ components:
           type: string
     StoryMovie:
       type: object
-      description: music podcasts
+      description: ''
       title: StoryMovie
       properties:
         id:
@@ -540,20 +555,26 @@ components:
         title:
           type: string
         image:
-          type: string
+          type: object
+          properties:
+            poster:
+              type: string
         link:
           type: string
-    StoryAwardMovie:
+    StoryAward:
       type: object
-      description: music podcasts
-      title: StoryMovie
+      description: ''
+      title: StoryAward
       properties:
         id:
           type: string
         title:
           type: string
         image:
-          type: string
+          type: object
+          properties:
+            poster:
+              type: string
         link:
           type: string
         awards:

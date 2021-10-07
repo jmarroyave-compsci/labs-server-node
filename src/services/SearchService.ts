@@ -1,4 +1,4 @@
-import DBSearch from '../models/search';
+import DBSearch from '../models/search-index';
 
 export const searchResults = async function( params ) {
   const page = ( params.page ) ? parseInt(params.page) : 1;

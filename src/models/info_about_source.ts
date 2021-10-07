@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose';
 
-const InfoAboutSource = mongoose.Schema({
+const InfoAboutSource = new mongoose.Schema({
 	added: String,
 	url: String,
 	name: String,

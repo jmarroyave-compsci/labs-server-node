@@ -1,8 +1,8 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose';
 
-const Podcast = mongoose.Schema({
+const Podcast = new mongoose.Schema({
 	id: String,
-	title: String,
+	title: { type: String, required: true},
 	subtitle: String,
 	feedUrl: String,
 	description: String,
@@ -12,13 +12,13 @@ const Podcast = mongoose.Schema({
 	language: String,
 	country: String,
 	image: String,
-
+	
 	category: String,
 	subcategory:String,
 	createdDate: Date,
 
 	created: { type: Number, default: Date.now()},
-}, {
+}, { 
 	collection: 'podcast',
 	timestamps: false,
 })

@@ -1,5 +1,4 @@
-import DBDashboard from '../models/dashboard';
-
+import DBDashboard, { Dashboard } from '../models/dashboard';
 
 export const dashboardGet = async function( params ) {
   return await DBDashboard.findOne().sort({ created: -1 }).select(`people movies podcasts last_update -_id __v`);
@@ -11,17 +10,17 @@ export const dashboardHomeGet = async function( params ) {
 
 export const dashboardMoviesGet = async function( params ) {
   const data = await dashboardGet( params )
-  return data.movies;
+  return data['movies'];
 };
 
 export const dashboardPodcastsGet = async function( params ) {
   const data = await dashboardGet( params )
-  return data.podcasts;
+  return data['podcasts'];
 };
 
 export const dashboardPeopleGet = async function( params ) {
   const data = await dashboardGet( params )
-  return data.people;
+  return data['people'];
 };
 
 export const getDashboardToVersion = async function( params ) {

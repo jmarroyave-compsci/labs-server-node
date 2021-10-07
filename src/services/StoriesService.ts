@@ -24,7 +24,7 @@ export const getAwards = async function( params ) {
   const type = (params.type) ? params.type : "oscar";
   const page = (params.page) ? params.page : 1;
   const qry = { 'awards.won': true, "awards.name" : type, "awards.year" : year };
-  const project = "title  id awards -_id";
+  const project = "title id image awards -_id";
   const size = 10;
 
   var data;
@@ -38,7 +38,6 @@ export const getAwards = async function( params ) {
         data =  await DBPeople.find( qry, project ).skip(size * ( page - 1)).limit(size);
       break;
   }
-
 
   data = data.sort( (a, b) => {
     if( a.year !== b.year )

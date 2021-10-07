@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose';
 
-const SearchIndex = mongoose.Schema({
+const SearchIndex = new mongoose.Schema({
 	entityId: String,
 	entity: String,
 	type: String,
