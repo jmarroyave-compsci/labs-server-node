@@ -6,7 +6,7 @@ const Info = new mongoose.Schema({
 	},
 	created: { type: Number, default: Date.now()},
 }, {
-	collection: '_',
+	collection: 'about',
 	timestamps: false,
 })
 
