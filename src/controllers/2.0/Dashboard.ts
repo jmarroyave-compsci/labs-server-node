@@ -22,3 +22,13 @@ export async function dashboardPeopleGet(req: Request, res: Response): P<any> {
   const data = await Service.dashboardPeopleGet( {} );
   utils.writeJSON(res, data);
 };
+
+export async function dashboardGamesGet(req: Request, res: Response): P<any> {
+  const data = await Service.dashboardGamesGet( {} );
+  utils.writeJSON(res, data);
+};
+
+export async function dashboardTVGet(req: Request, res: Response): P<any> {
+  const data = await Service.dashboardTVGet( {} );
+  utils.writeJSON(res, data);
+};

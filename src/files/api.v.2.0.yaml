@@ -78,6 +78,32 @@ paths:
       operationId: get-people-dashboard
       description: Returns the dashboard for the people page
     parameters: []
+  /dashboard/tv:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardTV'
+      operationId: get-tv-dashboard
+      description: Returns the dashboard for the tv page
+    parameters: []
+  /dashboard/games:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardGame'
+      operationId: get-game-dashboard
+      description: Returns the dashboard for the games page
+    parameters: []
   '/movie/{id}':
     get:
       tags: []
@@ -96,6 +122,24 @@ paths:
         name: id
         in: path
         required: true
+  '/tv/{id}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TV'
+      operationId: get-tv
+      description: 'return the tv-show with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
   '/podcast/{id}':
     get:
       tags: []
@@ -108,6 +152,24 @@ paths:
                 $ref: '#/components/schemas/Podcast'
       operationId: get-podcast
       description: 'returns the podcast with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  '/game/{id}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Game'
+      operationId: get-game
+      description: 'returns the game with {id}'
     parameters:
       - schema:
           type: string
@@ -144,9 +206,32 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/StoryPodcast'
-      operationId: get-stories-podcasts-musci
+                  $ref: '#/components/schemas/Podcast'
+      operationId: get-stories-podcasts-music
       description: returns the music category podcasts
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
+    parameters: []
+  /stories/remakes:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  anyOf:
+                    - $ref: '#/components/schemas/Movie'
+                    - $ref: '#/components/schemas/TV'
+      operationId: get-stories-movies-remakes
+      description: returns the remakes of movies
       parameters:
         - schema:
             type: integer
@@ -165,7 +250,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/StoryAward'
+                  anyOf:
+                    - $ref: '#/components/schemas/Movie'
+                    - $ref: '#/components/schemas/TV'
+                    - $ref: '#/components/schemas/Person'
       operationId: get-stories-awards
       description: returns the entities with an award
       parameters:
@@ -209,6 +297,8 @@ paths:
                     entity:
                       type: string
                     entityId:
+                      type: string
+                    description:
                       type: string
       operationId: get-search
       description: return search results for query
@@ -309,6 +399,92 @@ components:
             type: number
         awards:
           description: Distribution by awards
+          type: object
+          additionalProperties:
+            type: number
+    DashboardTV:
+      type: object
+      title: TV Show Dashboard
+      description: ''
+      properties:
+        total:
+          description: Number of movies
+          type: number
+        country:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
+        genre:
+          description: Distribution by genre
+          type: object
+          additionalProperties:
+            type: number
+        type:
+          description: Distribution by type
+          type: object
+          additionalProperties:
+            type: number
+        yearReleased:
+          description: Distribution by year released
+          type: object
+          additionalProperties:
+            type: number
+        streamBy:
+          description: Distribution by streamer
+          type: object
+          additionalProperties:
+            type: number
+        rating:
+          description: Distribution by rating
+          type: object
+          additionalProperties:
+            type: number
+        classification:
+          description: Distribution by classification
+          type: object
+          additionalProperties:
+            type: number
+        awards:
+          description: Distribution by awards
+          type: object
+          additionalProperties:
+            type: number
+    DashboardGame:
+      type: object
+      title: Games Dashboard
+      description: ''
+      properties:
+        total:
+          description: Number of movies
+          type: number
+        country:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
+        genre:
+          description: Distribution by genre
+          type: object
+          additionalProperties:
+            type: number
+        type:
+          description: Distribution by type
+          type: object
+          additionalProperties:
+            type: number
+        yearReleased:
+          description: Distribution by year released
+          type: object
+          additionalProperties:
+            type: number
+        rating:
+          description: Distribution by rating
+          type: object
+          additionalProperties:
+            type: number
+        classification:
+          description: Distribution by classification
           type: object
           additionalProperties:
             type: number
@@ -520,6 +696,191 @@ components:
       required:
         - id
         - title
+    TV:
+      type: object
+      description: TV model
+      properties:
+        id:
+          description: Id of the movie
+          type: string
+          example: The lord of the rings
+        title:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+        originalTitle:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+        type:
+          description: Type
+          type: string
+        genre:
+          description: Genre
+          type: array
+          items:
+            type: string
+        country:
+          description: Country
+          type: array
+          items:
+            type: string
+        duration:
+          description: Duration
+          type: string
+        classification:
+          description: 'Classification [PG,PG13...]'
+          type: string
+        rating:
+          description: Rating
+          type: object
+          properties:
+            name:
+              type: string
+            averageRating:
+              type: number
+            votes:
+              type: number
+        streamBy:
+          description: Rating
+          type: object
+          properties:
+            name:
+              type: string
+            yearAdded:
+              type: number
+        awards:
+          description: awards
+          type: array
+          items:
+            $ref: '#/components/schemas/Award'
+        description:
+          description: Description of the movie
+          type: string
+          example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
+        released_date:
+          description: Year of production
+          type: string
+        director:
+          description: Directors of the movie
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        cast:
+          description: Cast of the movie
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        created:
+          type: string
+        references:
+          type: object
+          properties:
+            imdb:
+              type: string
+        image:
+          type: object
+          properties:
+            poster:
+              type: string
+        boxOffice:
+          type: string
+        production:
+          type: string
+        website:
+          type: string
+        language:
+          type: string
+        plot:
+          type: string
+      required:
+        - id
+        - title
+    Game:
+      type: object
+      description: Game model
+      properties:
+        id:
+          description: Id of the movie
+          type: string
+          example: The lord of the rings
+        title:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+        originalTitle:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+        type:
+          description: Type
+          type: string
+        genre:
+          description: Genre
+          type: array
+          items:
+            type: string
+        country:
+          description: Country
+          type: array
+          items:
+            type: string
+        duration:
+          description: Duration
+          type: string
+        classification:
+          description: 'Classification [PG,PG13...]'
+          type: string
+        rating:
+          description: Rating
+          type: object
+          properties:
+            name:
+              type: string
+            averageRating:
+              type: number
+            votes:
+              type: number
+        description:
+          description: Description of the movie
+          type: string
+          example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
+        released_date:
+          description: Year of production
+          type: string
+        director:
+          description: Directors of the movie
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        cast:
+          description: Cast of the movie
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        created:
+          type: string
+        references:
+          type: object
+          properties:
+            imdb:
+              type: string
+        image:
+          type: object
+          properties:
+            poster:
+              type: string
+        boxOffice:
+          type: string
+        production:
+          type: string
+        website:
+          type: string
+        language:
+          type: string
+      required:
+        - id
+        - title
     Award:
       type: object
       description: Award model
@@ -532,55 +893,6 @@ components:
           type: string
         won:
           type: boolean
-    StoryPodcast:
-      type: object
-      description: music podcasts
-      title: StoryPodcast
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        image:
-          type: string
-        link:
-          type: string
-    StoryMovie:
-      type: object
-      description: ''
-      title: StoryMovie
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        image:
-          type: object
-          properties:
-            poster:
-              type: string
-        link:
-          type: string
-    StoryAward:
-      type: object
-      description: ''
-      title: StoryAward
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        image:
-          type: object
-          properties:
-            poster:
-              type: string
-        link:
-          type: string
-        awards:
-          type: array
-          items:
-            $ref: '#/components/schemas/Award'
     InfoAbout:
       type: object
       description: info about
@@ -589,18 +901,25 @@ components:
         sources:
           type: array
           items:
-            $ref: '#/components/schemas/InfoAboutSource'
-    InfoAboutSource:
-      type: object
-      description: info about source
-      title: InfoAboutSource
-      properties:
-        added:
-          type: string
-        name:
-          type: string
-        url:
-          type: string
+            type: object
+            properties:
+              added:
+                type: string
+              name:
+                type: string
+              url:
+                type: string
+        fetched:
+          type: array
+          items:
+            type: object
+            properties:
+              added:
+                type: string
+              name:
+                type: string
+              count:
+                type: number
   securitySchemes: {}
   headers: {}
   responses: {}

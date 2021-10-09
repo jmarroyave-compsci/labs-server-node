@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const Movie = new mongoose.Schema({
+const TV = new mongoose.Schema({
 	id: String,
 	title: { type: String, required: true},
 	originalTitle: String,
@@ -45,18 +45,18 @@ const Movie = new mongoose.Schema({
 
 	created: { type: Number, default: Date.now()},
 }, { 
-	collection: 'movie',
+	collection: 'tv',
 	timestamps: false,
 })
 
-Movie.virtual('references').get(function() {
+TV.virtual('references').get(function() {
   return {
   	imdb: `https://www.imdb.com/title/${this.id}/`
   }
 });
 
-Movie.index({ id: 1, title: 1 }, { unique: true })
-Movie.index({ title: 1 }, { unique: false })
-Movie.index({'awards.0': 1}, {partialFilterExpression: {'awards.0': {$exists: true}}});
+TV.index({ id: 1, title: 1 }, { unique: true })
+TV.index({ title: 1 }, { unique: false })
+TV.index({'awards.0': 1}, {partialFilterExpression: {'awards.0': {$exists: true}}});
 
-export default mongoose.model("movie", Movie);
+export default mongoose.model("tv", TV);

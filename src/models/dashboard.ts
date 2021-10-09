@@ -32,6 +32,10 @@ const DashboardPeople = new mongoose.Schema({
 		type : Map,
 		of: Number
 	},
+	decadeBirth: {
+		type : Map,
+		of: Number
+	},
 })
 
 const DashboardMovies = new mongoose.Schema({
@@ -71,12 +75,76 @@ const DashboardMovies = new mongoose.Schema({
 	created: { type: Number, default: Date.now()},	
 })
 
+const DashboardTV = new mongoose.Schema({
+	total: Number,
+	country: {
+		type : Map,
+		of: Number
+	},
+	genre: {
+		type : Map,
+		of: Number
+	},
+	type: {
+		type : Map,
+		of: Number
+	},
+	yearReleased: {
+		type : Map,
+		of: Number
+	},
+	streamBy: {
+		type : Map,
+		of: Number,
+	},
+	rating: {
+		type : Map,
+		of: Number,
+	},
+	classification: {
+		type : Map,
+		of: Number,
+	},
+	awards: {
+		type : Map,
+		of: Number,
+	},
+	created: { type: Number, default: Date.now()},	
+})
 
-export const Dashboard = new mongoose.Schema({
+const DashboardGames = new mongoose.Schema({
+	total: Number,
+	country: {
+		type : Map,
+		of: Number
+	},
+	genre: {
+		type : Map,
+		of: Number
+	},
+	type: {
+		type : Map,
+		of: Number
+	},
+	yearReleased: {
+		type : Map,
+		of: Number
+	},
+	rating: {
+		type : Map,
+		of: Number,
+	},
+	created: { type: Number, default: Date.now()},	
+})
+
+
+const Dashboard = new mongoose.Schema({
 	lastUpdate: Date,
 	people: DashboardPeople, 	
 	movies: DashboardMovies, 	
 	podcasts: DashboardPodcast, 	
+	tv: DashboardTV, 	
+	games: DashboardGames, 	
 	created: { type: Number, default: Date.now()},	
 }, { 
 	collection: 'dashboard',

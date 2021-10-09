@@ -15,5 +15,5 @@ export const getServerVersion = async function() {
 export const getAbout = async function() {
   const data =  await DBInfoAboutSource.find().sort({added: -1}); 
 
-  return { sources : data};
+  return { sources : data, fetched: [{name: "test", added: "2021-09-09", count: 1000}]};
 };

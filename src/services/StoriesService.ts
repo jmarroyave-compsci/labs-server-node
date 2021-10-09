@@ -1,8 +1,6 @@
 import DBMovie from '../models/movie';
 import DBPeople from '../models/person';
-
 import DBPodcast from '../models/podcast';
-
 
 export const getMusicPodcasts = async function( params ) {
   const page = (params.page) ? params.page : 1;
@@ -53,6 +51,20 @@ export const getAwards = async function( params ) {
   });
 
 
+  if(!data) return [];
+
+  return data;
+};
+
+
+export const getRemakes = async function( params ) {
+  const page = (params.page) ? params.page : 1;
+  const qry = {  };
+  const size = 10;
+
+  const data =  await DBMovie.find( qry )
+                             .skip(size * ( page - 1))
+                             .limit(size);
   if(!data) return [];
 
   return data;
