@@ -91,6 +91,19 @@ paths:
       operationId: get-tv-dashboard
       description: Returns the dashboard for the tv page
     parameters: []
+  /dashboard/tv-episodes:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardTV'
+      operationId: get-tv-episodes-dashboard
+      description: Returns the dashboard for the tv page
+    parameters: []
   /dashboard/games:
     get:
       tags: []
@@ -138,6 +151,29 @@ paths:
       - schema:
           type: string
         name: id
+        in: path
+        required: true
+  '/tv/{id}/episode/{id_episode}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TV'
+      operationId: get-tv-episode
+      description: 'return the tv-show with {id}'
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: id_episode
         in: path
         required: true
   '/podcast/{id}':
@@ -231,6 +267,46 @@ paths:
                     - $ref: '#/components/schemas/Movie'
                     - $ref: '#/components/schemas/TV'
       operationId: get-stories-movies-remakes
+      description: returns the remakes of movies
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
+    parameters: []
+  /stories/movies/film-festivals:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FilmFestival'
+      operationId: get-stories-movies-film-festivals
+      description: returns the remakes of movies
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page number
+    parameters: []
+  /stories/movies/history:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MovieHistory'
+      operationId: get-stories-movies-history
       description: returns the remakes of movies
       parameters:
         - schema:
@@ -554,6 +630,22 @@ components:
           properties:
             imdb:
               type: string
+        directed:
+          type: array
+          items:
+            $ref: '#/components/schemas/Movie'
+        acted:
+          type: array
+          items:
+            $ref: '#/components/schemas/Movie'
+        wrote:
+          type: array
+          items:
+            $ref: '#/components/schemas/Movie'
+        '':
+          type: array
+          items:
+            $ref: '#/components/schemas/Movie'
       required:
         - id
         - name
@@ -693,6 +785,14 @@ components:
           type: string
         plot:
           type: string
+        writer:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        crew:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
       required:
         - id
         - title
@@ -795,6 +895,31 @@ components:
           type: string
       required:
         - id
+        - title
+    FilmFestival:
+      type: object
+      description: TV model
+      properties:
+        id:
+          description: Id of the movie
+          type: string
+          example: The lord of the rings
+        title:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+      required:
+        - id
+        - title
+    MovieHistory:
+      type: object
+      description: TV model
+      properties:
+        title:
+          description: Title of the movie
+          type: string
+          example: The lord of the rings
+      required:
         - title
     Game:
       type: object
