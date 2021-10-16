@@ -7,6 +7,8 @@ export const searchResults = async function( params ) {
                             .sort({ type: -1, entity : 1, entityId: -1 })
                             .skip( pageSize * (page - 1) )
                             .limit(pageSize);
+
+  console.log(data)
   return data;
 };
 

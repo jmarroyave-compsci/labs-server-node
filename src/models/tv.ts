@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 const TV = new mongoose.Schema({
 	id: String,
 	title: { type: String, required: true},
-	originalTitle: String,
 	plot: String,
 	description: String,
 	country: [ String ],
@@ -45,7 +44,7 @@ const TV = new mongoose.Schema({
 
 	created: { type: Number, default: Date.now()},
 }, { 
-	collection: 'tv',
+	collection: 'tv_show',
 	timestamps: false,
 })
 

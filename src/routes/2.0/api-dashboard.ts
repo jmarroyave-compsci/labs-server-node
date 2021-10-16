@@ -7,7 +7,7 @@ router.use("/2.0/api/dashboard/home", asyncHandler(controller.dashboardHomeGet, 
 router.use("/2.0/api/dashboard/movies", asyncHandler(controller.dashboardMoviesGet, "dashboardMoviesGet"));
 router.use("/2.0/api/dashboard/podcasts", asyncHandler(controller.dashboardPodcastsGet, "dashboardPodcastsGet"));
 router.use("/2.0/api/dashboard/people", asyncHandler(controller.dashboardPeopleGet, "dashboardPeopleGet"));
-router.use("/2.0/api/dashboard/games", asyncHandler(controller.dashboardGamesGet, "dashboardGamesGet"));
-router.use("/2.0/api/dashboard/tv", asyncHandler(controller.dashboardTVGet, "dashboardTVGet"));
+router.use("/2.0/api/dashboard/video-games", asyncHandler(controller.dashboardGamesGet, "dashboardGamesGet"));
+router.use("/2.0/api/dashboard/tv-shows", asyncHandler(controller.dashboardTVGet, "dashboardTVGet"));
 
 export default router;

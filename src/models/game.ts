@@ -25,7 +25,7 @@ const Game = new mongoose.Schema({
 
 	created: { type: Number, default: Date.now()},
 }, { 
-	collection: 'game',
+	collection: 'video_game',
 	timestamps: false,
 })
 
