@@ -1,4 +1,4 @@
-# Nodejs FES Template
+# NodeJS Server
 
 # Environment vars
 This project uses the following environment variables:
