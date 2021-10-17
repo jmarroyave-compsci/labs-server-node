@@ -3,6 +3,7 @@ import DBPerson from '../models/person';
 export const personGet = async function( params ) {
   let results = [];
   results = await peopleFind( { id: params.id } )
+  console.log(results)
   return (results) ? results[0] : null
 };
 
