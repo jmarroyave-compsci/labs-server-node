@@ -1,10 +1,12 @@
 import cors from "cors";
 import express from "express";
+import { Express, Request, Response, NextFunction, Send } from 'express';
 import * as env from "./env";
 import { inOutLogger } from "./log";
 import * as cls from "./lib/cls";
 import { getCorsOptions } from "./cors_options";
 import bodyParser from 'body-parser';
+import RequestID from 'express-request-id';
 import log from "./log";
 import * as fs from 'fs';
 import responseTime from 'response-time';
@@ -12,6 +14,8 @@ import config from './config'
 import * as misc from './lib/misc';
 
 const app = express();
+
+const LOCAL = (config.DB_SERVER.includes("127.0.0.1"))
 
 log.info(" - loading environment vars")
 env.checkEnv();
@@ -32,6 +36,7 @@ app.use(responseTime())
 app.use(bodyParser.json({
 strict: false
 }));
+app.use(RequestID())
 
 log.info(" - routes")
 log.info(`loading routes:`);
@@ -88,9 +93,42 @@ app.use(function (err, req, res, next) {
 
 
 app.use(function(req, res, next) {
-    log.info(`REQUEST - ${req.url} `);
+    const graphQL = req.originalUrl.includes("graphql");
+    log.info(`REQ - ${req.url} [${req['id']}]`);
+
+    const getKey = ( req, graphQL=false ) => {
+        if(!graphQL) return req.originalUrl;
+        var crypto = require('crypto');
+        var name = JSON.stringify(req.body);
+        var hash = crypto.createHash('md5').update(name).digest('hex');
+        return hash;
+    }
+
+    const getFilePath = ( req, graphQL=false) => {
+        var key = getKey(req, graphQL);
+        key = key.replace(/\//g, "_").split("?")[0]
+        var cacheFile = `${__dirname}/../cache/${(graphQL) ? "graphQL/" : ""}${key}.json`;
+        return cacheFile;
+    }
+
+    var cacheFile = getFilePath( req, graphQL );
+    if( fs.existsSync( cacheFile )){
+        if( graphQL ){
+            log.info(`serving from cache [${req['id']}]`)
+            res.send(fs.readFileSync(cacheFile).toString())
+            return;
+        }
+    }
+
+    var oldSend = res.send;
+    res.send = function() : Response {
+        if(LOCAL) fs.writeFileSync(cacheFile, arguments[0]);                   
+        return oldSend.apply(this, arguments);
+    }
+
     next();
 });
+
 
 
 app.use(function (err, req, res, next) {
