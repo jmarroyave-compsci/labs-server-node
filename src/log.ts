@@ -153,9 +153,9 @@ export async function inOutLogger(req: express.Request, res: express.Response, n
   next();
 }
 
-const myFormat = winston.format.printf(({ level, message, label, timestamp }) => {
-  return `${timestamp.substr(0,19)} [${level.toUpperCase()}] ${message}`;
-});
+const myFormat = winston.format.printf(({ level, message, label, timestamp, req }) => {
+    return `${timestamp.substr(0,19)} ${(req && "id" in req) ? req['id'] : ""}[${level.toUpperCase()}] ${message}`;
+  });
 
 const logger = winston.createLogger({
   format: winston.format.combine(

@@ -531,6 +531,11 @@ paths:
           in: query
           name: page
           description: page number
+        - schema:
+            type: string
+          in: query
+          name: entities
+          description: entities to include
       summary: SearchResults
     parameters: []
   /search/suggestions:

@@ -106,15 +106,15 @@ app.use(function(req, res, next) {
 
     const getFilePath = ( req, graphQL=false) => {
         var key = getKey(req, graphQL);
-        key = key.replace(/\//g, "_").split("?")[0]
+        key = key.replace(/\//g, "_").replace("?", "+")
         var cacheFile = `${__dirname}/../cache/${(graphQL) ? "graphQL/" : ""}${key}.json`;
-        return cacheFile;
+        return [cacheFile, key];
     }
 
-    var cacheFile = getFilePath( req, graphQL );
-    if( fs.existsSync( cacheFile )){
+    var [ cacheFile, key ]  = getFilePath( req, graphQL );
+    if( LOCAL && fs.existsSync( cacheFile )){
         if( graphQL ){
-            log.info(`serving from cache [${req['id']}]`)
+            log.info(`serving from cache [${req['id']}] [${key.substring(0,6)}] `)
             res.send(fs.readFileSync(cacheFile).toString())
             return;
         }
