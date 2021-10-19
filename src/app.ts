@@ -15,7 +15,7 @@ import * as misc from './lib/misc';
 
 const app = express();
 
-const LOCAL = (config.DB_SERVER.includes("127.0.0.1"))
+const LOCAL = (process.env.DB_SERVER && process.env.DB_SERVER.includes("127.0.0.1"))
 
 log.info(" - loading environment vars")
 env.checkEnv();
