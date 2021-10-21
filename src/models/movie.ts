@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
+
 const Movie = new mongoose.Schema({
 	id: String,
 	title: { type: String, required: true},
-	originalTitle: String,
 	plot: String,
 	description: String,
 	country: [ String ],
@@ -24,26 +24,26 @@ const Movie = new mongoose.Schema({
 		yearAdded: Number,		
 	} ], 
 	awards: [ { 
-		name: { type : String, index: true},
+		festival: 	[ { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' } ], 
 		year: Number,
 		category: String,
 		won: Boolean,
+		film: String,
 	} ], 
 
 	image: {
-		poster: String,
+		poster: 	String,
 	},
-	boxOffice: String,
+	boxOffice: 	String,
 	production: String,
-	website: String,
+	website: 		String,
 
+	directors: 	[ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ], 
+	cast: 			[ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+	writers: 		[ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+	crew: 			[ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
 
-	directors: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ], 
-	cast: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-	writers: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-	crew: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-
-	created: { type: Number, default: Date.now()},
+	created: 		{ type: Number, default: Date.now()},
 }, { 
 	collection: 'movie',
 	timestamps: false,

@@ -7,10 +7,11 @@ const Person = new mongoose.Schema({
 	deathDate: Date,
 	profession: [ String ],
 	awards: [ {  
-		name: { type : String, index: true},
+		festival: 	[ { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' } ], 
 		year: Number,
 		category: String,
-		won: Boolean,		
+		won: Boolean,
+		film: String,
 	} ], 
 
 	directed: [ { type: mongoose.Schema.Types.ObjectId, ref: 'movie' } ], 

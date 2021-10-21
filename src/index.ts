@@ -3,9 +3,9 @@ import log from "./log";
 import mongoose from "mongoose"
 import config from './config'
 
-const PORT = process.env.PORT || config.PORT;
-const DB_SERVER = process.env.DB_SERVER || config.DB_SERVER
-const CACHE_SERVER = (DB_SERVER.includes("127.0.0.1") && config.CACHE_SERVER === true)
+const PORT = config.PORT;
+const DB_SERVER = config.DB_SERVER
+const CACHE_SERVER = config.CACHE_SERVER
 
 log.info("")
 log.info("")
@@ -26,7 +26,7 @@ const initServer = () => {
     });  
 }
 
-if (CACHE_SERVER === false){
+if (CACHE_SERVER == false){
   mongoose
     .connect(DB_SERVER, {  })
     .then( async () => {

@@ -12,10 +12,10 @@ import * as fs from 'fs';
 import responseTime from 'response-time';
 import config from './config'
 import * as misc from './lib/misc';
+import * as GuestBook from './services/GuestsService';
+import serveIndex from 'serve-index';
 
 const app = express();
-
-const LOCAL = (process.env.DB_SERVER && process.env.DB_SERVER.includes("127.0.0.1"))
 
 log.info(" - loading environment vars")
 env.checkEnv();
@@ -65,7 +65,11 @@ const loadRoutesFromDir = (routePath) => {
 
 }
 
+log.info(" - /repos")
+app.use('/repos', express.static(__dirname + '/files/repos'), serveIndex(__dirname + '/files/repos'));
+
 loadRoutesFromDir(routeRoot);
+
 log.info(" - /")
 app.all('/', function (req, res) {
     const file = `${__dirname}/files/docs/index.html`;
@@ -112,7 +116,7 @@ app.use(function(req, res, next) {
     }
 
     var [ cacheFile, key ]  = getFilePath( req, graphQL );
-    if( LOCAL && fs.existsSync( cacheFile )){
+    if( config.LOCAL && config.CACHE_SERVER && fs.existsSync( cacheFile )){
         if( graphQL ){
             log.info(`serving from cache [${req['id']}] [${key.substring(0,6)}] `)
             res.send(fs.readFileSync(cacheFile).toString())
@@ -122,13 +126,17 @@ app.use(function(req, res, next) {
 
     var oldSend = res.send;
     res.send = function() : Response {
-        if(LOCAL) fs.writeFileSync(cacheFile, arguments[0]);                   
+        if(config.LOCAL) fs.writeFileSync(cacheFile, arguments[0]);                   
         return oldSend.apply(this, arguments);
     }
 
     next();
 });
 
+app.use(function(req, res, next) {
+    GuestBook.saveGuest(req)
+    next();
+});
 
 
 app.use(function (err, req, res, next) {

@@ -358,8 +358,7 @@ paths:
               schema:
                 type: array
                 items:
-                  anyOf:
-                    - $ref: '#/components/schemas/Movie'
+                  $ref: '#/components/schemas/StoryMovieAward'
       operationId: get-stories-awards
       description: returns the entities with an award
       parameters:
@@ -795,9 +794,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Movie'
-      required:
-        - id
-        - name
     Podcast:
       type: object
       description: Person model
@@ -834,9 +830,6 @@ components:
           type: string
         country:
           type: string
-      required:
-        - id
-        - title
     Movie:
       type: object
       description: Movie model
@@ -944,9 +937,6 @@ components:
           type: string
         plot:
           type: string
-      required:
-        - id
-        - title
     MovieFestival:
       type: object
       description: TV model
@@ -967,9 +957,6 @@ components:
           type: string
         established:
           type: string
-      required:
-        - id
-        - name
     TVShow:
       type: object
       description: TV model
@@ -1067,9 +1054,6 @@ components:
           type: string
         plot:
           type: string
-      required:
-        - id
-        - title
     TVShowEpisode:
       type: object
       description: TV show episode model
@@ -1167,9 +1151,6 @@ components:
           type: string
         plot:
           type: string
-      required:
-        - id
-        - title
     VideoGame:
       type: object
       description: Game model
@@ -1252,21 +1233,20 @@ components:
           type: string
         language:
           type: string
-      required:
-        - id
-        - title
     Award:
       type: object
       description: Award model
       properties:
-        name:
-          type: string
+        festival:
+          $ref: '#/components/schemas/MovieFestival'
         year:
           type: number
-        category:
-          type: string
         won:
           type: boolean
+        film:
+          type: string
+        category:
+          type: string
     InfoAbout:
       type: object
       description: info about
@@ -1294,6 +1274,27 @@ components:
                 type: string
               count:
                 type: number
+    StoryMovieAward:
+      type: object
+      description: Award model
+      properties:
+        festival:
+          $ref: '#/components/schemas/MovieFestival'
+        year:
+          type: number
+        awarded:
+          type: array
+          items:
+            type: object
+            properties:
+              entity:
+                type: string
+              category:
+                type: string
+              won:
+                type: boolean
+              id:
+                type: string
     StoryMovieHistory:
       type: object
       description: TV model
@@ -1308,16 +1309,15 @@ components:
       type: object
       description: TV model
       properties:
-        title:
-          description: Title of the movie
+        name:
           type: string
-          example: The lord of the rings
-        movies:
+          description: Title of the movie
+        recs:
           type: array
           items:
             $ref: '#/components/schemas/Movie'
-      required:
-        - title
+        count:
+          type: number
   securitySchemes: {}
   headers: {}
   responses: {}
