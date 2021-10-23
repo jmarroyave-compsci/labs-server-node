@@ -51,8 +51,6 @@ export const getMovieRemakes = async function( params ) {
                    .skip(size * ( page - 1))
                    .limit(size);
 
-  console.log(data)
-
   if(!data) return [];
   return data;
 };
