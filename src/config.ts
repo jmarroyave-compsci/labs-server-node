@@ -4,9 +4,7 @@ import dotenv from 'dotenv'
 var CONF = dotenv.config().parsed
 var _package_ = JSON.parse(fs.readFileSync(`${__dirname}/../package.json`).toString());
 
-console.log(CONF)
-
-const LOCAL = (!process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER.includes("127.0.0.1"))
+const LOCAL = (!process.env.DB_SERVER && process.env.DEFAULT_DB_SERVER.includes("127.0.0.1"))
 
 const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
@@ -23,6 +21,8 @@ const config = {
   LOCAL: LOCAL
 }
 
+
+console.log(config)
 
 
 export default config;
