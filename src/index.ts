@@ -5,7 +5,6 @@ import config from './config'
 
 const PORT = config.PORT;
 const DB_SERVER = config.DB_SERVER
-const CACHE_SERVER = config.CACHE_SERVER
 
 log.info("")
 log.info("")
@@ -26,7 +25,7 @@ const initServer = () => {
     });  
 }
 
-if (CACHE_SERVER == false){
+if (config.CACHE_SERVER == false){
   mongoose
     .connect(DB_SERVER, {  })
     .then( async () => {
