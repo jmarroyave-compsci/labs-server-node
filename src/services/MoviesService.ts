@@ -9,6 +9,8 @@ export const movieGet = async function( params ) {
     .populate("writers")
     .populate("cast")
     .populate("crew")
+    .populate("awards.festival")
+    
 
   return (results && results.length > 0) ? results[0] : null
 };

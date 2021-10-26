@@ -20,6 +20,7 @@ export const peopleFind = async function( where, paging=null ) {
       .populate("wrote")
       .populate("acted")
       .populate("directed")
+      .populate("awards.festival")
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit);
 

@@ -370,13 +370,8 @@ paths:
         - schema:
             type: string
           in: query
-          name: entity
-          description: 'movie, tv, people'
-        - schema:
-            type: string
-          in: query
-          name: type
-          description: 'oscar, goldenGlobe, emmy'
+          name: festival
+          description: festival id
         - schema:
             type: integer
           in: query
@@ -567,7 +562,6 @@ components:
     DashboardHome:
       type: object
       title: Home Dashboard
-      description: ''
       properties:
         lastUpdate:
           description: Last time updated
@@ -581,7 +575,6 @@ components:
     DashboardMovies:
       type: object
       title: Movies Dashboard
-      description: ''
       properties:
         total:
           description: Number of movies
@@ -1277,6 +1270,7 @@ components:
     StoryMovieAward:
       type: object
       description: Award model
+      x-examples: {}
       properties:
         festival:
           $ref: '#/components/schemas/MovieFestival'
@@ -1293,6 +1287,16 @@ components:
                 type: string
               won:
                 type: boolean
+              entity_type:
+                type: string
+              entity_id:
+                type: string
+              film:
+                type: string
+              film_id:
+                type: string
+              film_type:
+                type: string
               id:
                 type: string
     StoryMovieHistory:

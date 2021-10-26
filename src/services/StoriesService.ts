@@ -6,26 +6,21 @@ import DBAwards from '../models/award';
 
 export const getAwards = async function( params ) {
   const year = (params.year) ? params.year : new Date().getFullYear();
-  const entity = (params.entity) ? params.entity : "movies";
-  const type = (params.type) ? params.type : "oscar";
+  const festival = (params.festival) ? params.festival : null;
+  
   const page = (params.page) ? params.page : 1;
-  const qry = { "year" : year };
+  const qry = { year : year };
   const size = 10;
 
-  var data =  await DBAwards.find( qry )
+  if(festival != null){
+    qry['festival'] = festival
+  }
+
+  var data =  await DBAwards.find( qry, { "awarded._id" : 0} )
                 .populate('festival')
                 .skip(size * ( page - 1))
                 .limit(size);
 
-  /*
-  data = data.sort( (a, b) => {
-    if( a.year !== b.year )
-      return (a.year > b.year) ? -1 : 1 
-
-    if( a.festival.name !== b.festival.name )
-      return (a.name > b.name) ? 1 : -1 
-  });
-  */
 
   if(!data) return [];
   return data;
