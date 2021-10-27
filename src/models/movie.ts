@@ -24,7 +24,7 @@ const Movie = new mongoose.Schema({
 		yearAdded: Number,		
 	} ], 
 	awards: [ { 
-		festival: 	[ { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' } ], 
+		festival:  { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,

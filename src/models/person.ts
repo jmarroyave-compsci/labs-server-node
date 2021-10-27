@@ -7,7 +7,7 @@ const Person = new mongoose.Schema({
 	deathDate: Date,
 	profession: [ String ],
 	awards: [ {  
-		festival: 	[ { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' } ], 
+		festival: { type: mongoose.Schema.Types.ObjectId, ref: 'Festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
