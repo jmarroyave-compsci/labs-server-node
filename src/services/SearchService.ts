@@ -9,10 +9,14 @@ export const searchResults = async function( params ) {
   if( qry == "") return []
   if( entities == "") return []
 
+  console.log(params)
+
   const data =  await DBSearch.find( { entity : new RegExp(`^${params.qry}`), type : { $in : entities} } )
                             .sort({ ranking: -1, entity : 1  })
                             .skip( pageSize * (page - 1) )
                             .limit(pageSize);
+
+  console.log(data)
   return data;
 };
 

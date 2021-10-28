@@ -3,26 +3,38 @@ import { peopleFind } from './PeopleService';
 import DBPodcast from '../models/podcast';
 import DBStoryRemakes from '../models/story_remake';
 import DBAwards from '../models/award';
+import DBFestival from '../models/festival';
 
 export const getAwards = async function( params ) {
   const year = (params.year) ? params.year : new Date().getFullYear();
-  const festival = (params.festival) ? params.festival : null;
+  var festival = (params.festival) ? params.festival : null;
   
   const page = (params.page) ? params.page : 1;
   const qry = { year : year };
   const size = 10;
 
+  var data;
+
   if(festival != null){
-    qry['festival'] = festival
+    festival = await DBFestival.findOne({id: festival}) 
+    qry['festival'] = festival._id
+  } 
+
+  data = await DBAwards.find( qry, { "awarded._id" : 0} )
+        .populate('festival')
+        .skip(size * ( page - 1))
+        .limit(size);
+
+  for( var idx = 0; idx < data.length; idx++){
+    data[idx].awarded = data[idx].awarded.sort( (a,b) => {
+      if(a.category != b.category) return (a.category > b.category) ? 1 : -1
+      return (a.entity < b.entity) ? -1 : 1
+    } )    
   }
 
-  var data =  await DBAwards.find( qry, { "awarded._id" : 0} )
-                .populate('festival')
-                .skip(size * ( page - 1))
-                .limit(size);
+  console.log(data[0].awarded)
 
-
-  if(!data) return [];
+  data =  (data) ? data : [];
   return data;
 };
 
