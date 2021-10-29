@@ -512,6 +512,8 @@ paths:
                       type: string
                     desc:
                       type: string
+                    year:
+                      type: integer
       operationId: get-search
       description: return search results for query
       parameters:
@@ -530,6 +532,16 @@ paths:
           in: query
           name: entities
           description: entities to include
+        - schema:
+            type: integer
+          in: query
+          name: year
+          description: year
+        - schema:
+            type: integer
+          in: query
+          name: timeframe
+          description: time frame
       summary: SearchResults
     parameters: []
   /search/suggestions:
