@@ -40,15 +40,21 @@ export const getAwards = async function( params ) {
 
 export const getMovieRemakes = async function( params ) {
   const page = (params.page) ? params.page : 1;
+  const name = (params.name) ? params.name : null;
   const qry = {  };
+  const maxMovies = (params.maxMovies) ? params.maxMovies : 5;
   const size = 10;
+
+  if( name ){
+    qry['name'] = name
+  }
 
   const data =  await DBStoryRemakes.find( qry )
                   .populate(
                     {
                         path:'recs',
                         options: {
-                            limit: 5,
+                            limit: maxMovies,
                             skip: 0
                         },
                         populate : {

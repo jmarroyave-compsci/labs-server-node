@@ -19,6 +19,7 @@ const Movie = new mongoose.Schema({
 		averageRating: String,
 		votes: Number,		
 	} ], 
+	remakes: [],
 	streamBy: [ { 
 		name: String,
 		yearAdded: Number,		
