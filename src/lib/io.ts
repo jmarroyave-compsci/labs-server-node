@@ -59,6 +59,7 @@ class Connection {
 
   disconnect() {
     users.delete(this.socket);
+    this.sendMessage(JSON.stringify({ users: users.size }))    
   }
 }
 
