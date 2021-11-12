@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const Podcast = new mongoose.Schema({
-	id: String,
+	_id: String,
 	title: { type: String, required: true},
 	subtitle: String,
 	feedUrl: String,
@@ -22,8 +22,5 @@ const Podcast = new mongoose.Schema({
 	collection: 'podcast',
 	timestamps: false,
 })
-
-Podcast.index({ id: 1, title: 1 }, { unique: true })
-Podcast.index({ title: 1 }, { unique: false })
 
 export default mongoose.model("Podcast", Podcast);

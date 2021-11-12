@@ -26,14 +26,18 @@ export const dashboardPeopleGet = async function( params ) {
 
 export const dashboardTVGet = async function( params ) {
   const data = await dashboardGet( params )
-  return data['tv'];
+  return data['tvShows'];
 };
 
 export const dashboardGamesGet = async function( params ) {
   const data = await dashboardGet( params )
-  return data['games'];
+  return data['videoGames'];
 };
 
+export const dashboardFestivalsGet = async function( params ) {
+  const data = await dashboardGet( params )
+  return data['festivals'];
+};
 
 export const getDashboardToVersion = async function( params ) {
   const { version } = params;

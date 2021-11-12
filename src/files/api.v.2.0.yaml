@@ -107,6 +107,20 @@ paths:
       description: Returns the dashboard for the tv page
       summary: DashboardTVShowsEpisodes
     parameters: []
+  /dashboard/movies-festivals:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardMoviesFestivals'
+      operationId: get-movies-festivals-dashboard
+      description: Returns the dashboard for the movies festivals
+      summary: DashboardMoviesFestivals
+    parameters: []
   /dashboard/video-games:
     get:
       tags: []
@@ -445,6 +459,28 @@ paths:
           name: page
           description: page
     parameters: []
+  /stories/people/producers:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+      operationId: get-story-movie-producers
+      description: return movie producers
+      summary: StoryPeopleProducers
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page
+    parameters: []
   /stories/people/actors:
     get:
       tags: []
@@ -591,23 +627,23 @@ components:
         total:
           description: Number of movies
           type: number
-        country:
-          description: Distribution by country
-          type: object
-          additionalProperties:
-            type: number
-        genre:
-          description: Distribution by genre
-          type: object
-          additionalProperties:
-            type: number
         type:
           description: Distribution by type
           type: object
           additionalProperties:
             type: number
-        yearReleased:
+        releaseYear:
           description: Distribution by year released
+          type: object
+          additionalProperties:
+            type: number
+        countries:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
+        genres:
+          description: Distribution by genre
           type: object
           additionalProperties:
             type: number
@@ -616,21 +652,30 @@ components:
           type: object
           additionalProperties:
             type: number
-        rating:
+        ratings:
           description: Distribution by rating
           type: object
           additionalProperties:
             type: number
-        classification:
-          description: Distribution by classification
+        duration:
           type: object
-          additionalProperties:
-            type: number
         awards:
           description: Distribution by awards
           type: object
           additionalProperties:
             type: number
+        production:
+          type: object
+        boxOffice:
+          type: object
+        cast:
+          type: object
+        directors:
+          type: object
+        producers:
+          type: object
+        writers:
+          type: object
     DashboardTV:
       type: object
       title: TV Show Dashboard
@@ -639,23 +684,23 @@ components:
         total:
           description: Number of movies
           type: number
-        country:
-          description: Distribution by country
-          type: object
-          additionalProperties:
-            type: number
-        genre:
-          description: Distribution by genre
-          type: object
-          additionalProperties:
-            type: number
         type:
           description: Distribution by type
           type: object
           additionalProperties:
             type: number
-        yearReleased:
+        releaseYear:
           description: Distribution by year released
+          type: object
+          additionalProperties:
+            type: number
+        countries:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
+        genres:
+          description: Distribution by genre
           type: object
           additionalProperties:
             type: number
@@ -664,21 +709,30 @@ components:
           type: object
           additionalProperties:
             type: number
-        rating:
+        ratings:
           description: Distribution by rating
           type: object
           additionalProperties:
             type: number
-        classification:
-          description: Distribution by classification
+        duration:
           type: object
-          additionalProperties:
-            type: number
         awards:
           description: Distribution by awards
           type: object
           additionalProperties:
             type: number
+        production:
+          type: object
+        boxOffice:
+          type: object
+        cast:
+          type: object
+        directors:
+          type: object
+        producers:
+          type: object
+        writers:
+          type: object
     DashboardGame:
       type: object
       title: Games Dashboard
@@ -687,36 +741,55 @@ components:
         total:
           description: Number of movies
           type: number
-        country:
-          description: Distribution by country
-          type: object
-          additionalProperties:
-            type: number
-        genre:
-          description: Distribution by genre
-          type: object
-          additionalProperties:
-            type: number
         type:
           description: Distribution by type
           type: object
           additionalProperties:
             type: number
-        yearReleased:
+        releaseYear:
           description: Distribution by year released
           type: object
           additionalProperties:
             type: number
-        rating:
+        countries:
+          description: Distribution by country
+          type: object
+          additionalProperties:
+            type: number
+        genres:
+          description: Distribution by genre
+          type: object
+          additionalProperties:
+            type: number
+        streamBy:
+          description: Distribution by streamer
+          type: object
+          additionalProperties:
+            type: number
+        ratings:
           description: Distribution by rating
           type: object
           additionalProperties:
             type: number
-        classification:
-          description: Distribution by classification
+        duration:
+          type: object
+        awards:
+          description: Distribution by awards
           type: object
           additionalProperties:
             type: number
+        production:
+          type: object
+        boxOffice:
+          type: object
+        cast:
+          type: object
+        directors:
+          type: object
+        producers:
+          type: object
+        writers:
+          type: object
     DashboardPodcasts:
       type: object
       title: Podcasts Dashboard
@@ -724,13 +797,15 @@ components:
       properties:
         total:
           type: number
-        language:
+        languages:
           type: object
         category:
           type: object
-        yearCreated:
+        author:
           type: object
-        country:
+        countries:
+          type: object
+        subcategory:
           type: object
     DashboardPeople:
       type: object
@@ -740,24 +815,59 @@ components:
         total:
           description: Number of people
           type: number
-        alive:
-          description: Number of people alive
-          type: number
-        profession:
+        professions:
           description: Distribution by profession
           type: object
           additionalProperties:
             type: number
-        yearBirth:
+        birthYear:
           description: Distribution by birth year
           type: object
           additionalProperties:
             type: number
+        birthDecade:
+          type: object
+        professionsPerPerson:
+          type: object
+        professionsByDecade:
+          type: object
+        awards:
+          type: object
+        directors:
+          type: object
+        producers:
+          type: object
+        actors:
+          type: object
+        writers:
+          type: object
+    DashboardMoviesFestivals:
+      type: object
+      title: Movies Festivals Dashboard
+      description: ''
+      properties:
+        total:
+          description: Number of people
+          type: number
+        startYear:
+          type: object
+        startDecade:
+          type: object
+        countries:
+          type: object
+        continent:
+          type: object
+        withAwards:
+          type: number
+        awardYear:
+          type: object
+        awardedByYear:
+          type: object
     Person:
       type: object
       description: Person model
       properties:
-        id:
+        _id:
           type: string
         name:
           description: Name of the person
@@ -795,15 +905,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Movie'
-        '':
-          type: array
-          items:
-            $ref: '#/components/schemas/Movie'
     Podcast:
       type: object
       description: Person model
       properties:
-        id:
+        _id:
           description: Name of the person
           type: string
           example: James Franco
@@ -839,15 +945,11 @@ components:
       type: object
       description: Movie model
       properties:
-        id:
+        _id:
           description: Id of the movie
           type: string
           example: The lord of the rings
         title:
-          description: Title of the movie
-          type: string
-          example: The lord of the rings
-        originalTitle:
           description: Title of the movie
           type: string
           example: The lord of the rings
@@ -950,7 +1052,7 @@ components:
       type: object
       description: TV model
       properties:
-        id:
+        _id:
           description: Id of the movie
           type: string
           example: The lord of the rings
@@ -970,7 +1072,7 @@ components:
       type: object
       description: TV model
       properties:
-        id:
+        _id:
           description: Id of the movie
           type: string
           example: The lord of the rings
@@ -1168,7 +1270,7 @@ components:
       type: object
       description: Game model
       properties:
-        id:
+        _id:
           description: Id of the movie
           type: string
           example: The lord of the rings

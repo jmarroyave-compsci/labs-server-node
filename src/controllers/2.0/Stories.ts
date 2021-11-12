@@ -23,6 +23,11 @@ export async function peopleDirectors(req: Request, res: Response): P<any> {
   utils.writeJSON(res, data);
 };
 
+export async function peopleProducers(req: Request, res: Response): P<any> {
+  const data = await Service.getPeopleProducers( req.query );
+  utils.writeJSON(res, data);
+};
+
 export async function peopleWriters(req: Request, res: Response): P<any> {
   const data = await Service.getPeopleWriters( req.query );
   utils.writeJSON(res, data);

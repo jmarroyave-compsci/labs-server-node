@@ -12,15 +12,13 @@ export const getAwards = async function( params ) {
   const page = (params.page) ? params.page : 1;
   const qry = { year : year };
   const size = 10;
-
   var data;
 
   if(festival != null){
-    festival = await DBFestival.findOne({id: festival}) 
-    qry['festival'] = festival._id
+    qry['idFestival'] = festival
   } 
 
-  data = await DBAwards.find( qry, { "awarded._id" : 0} )
+  data = await DBAwards.find( qry, { "awarded.id" : 0} )
         .populate('festival')
         .skip(size * ( page - 1))
         .limit(size);
@@ -31,8 +29,6 @@ export const getAwards = async function( params ) {
       return (a.entity < b.entity) ? -1 : 1
     } )    
   }
-
-  console.log(data[0].awarded)
 
   data =  (data) ? data : [];
   return data;
@@ -78,6 +74,13 @@ export const getMovieHistory = async function( params ) {
                              .limit(size);
   if(!data) return [];
   return data;
+};
+
+export const getPeopleProducers = async function( params ) {
+  params.limit = (params.limit) ? Number(params.limit) : 10;
+  params.page = (params.page) ? Number(params.page) : 1;
+  const qry = {'produced.0' : { $exists : true }}
+  return  await peopleFind( qry, { page : params.page, limit: params.limit} );
 };
 
 export const getPeopleDirectors = async function( params ) {

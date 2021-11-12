@@ -5,7 +5,7 @@ import * as StoriesService from './StoriesService';
 export const movieGet = async function( params ) {
   let results = null;
   results = await DBMovie
-    .find( { id: params.id } )
+    .find( { _id: params.id } )
     .populate("directors")
     .populate("writers")
     .populate("cast")
@@ -38,7 +38,7 @@ export const moviesGet = async function( params ) {
 
 export const getMovieFestival = async function( params ) {
   let results = null;
-  results = await DBFestival.findOne( { id: params.id } );
+  results = await DBFestival.findOne( { _id: params.id } );
   return (results) ? results : null
 };
 

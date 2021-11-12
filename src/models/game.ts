@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const Game = new mongoose.Schema({
-	id: String,
+	_id: String,
 	title: { type: String, required: true},
 	description: String,
 	country: [ String ],
@@ -28,8 +28,5 @@ const Game = new mongoose.Schema({
 	collection: 'video_game',
 	timestamps: false,
 })
-
-Game.index({ id: 1, title: 1 }, { unique: true })
-Game.index({ title: 1 }, { unique: false })
 
 export default mongoose.model("game", Game);

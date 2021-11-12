@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const TV = new mongoose.Schema({
-	id: String,
+	_id: String,
 	title: { type: String, required: true},
 	plot: String,
 	description: String,
@@ -23,10 +23,11 @@ const TV = new mongoose.Schema({
 		yearAdded: Number,		
 	} ], 
 	awards: [ { 
-		name: { type : String, index: true},
+		festival:  { type: mongoose.Schema.Types.ObjectId, ref: 'festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
+		film: String,
 	} ], 
 
 	image: {
@@ -48,14 +49,5 @@ const TV = new mongoose.Schema({
 	timestamps: false,
 })
 
-TV.virtual('references').get(function() {
-  return {
-  	imdb: `https://www.imdb.com/title/${this.id}/`
-  }
-});
-
-TV.index({ id: 1, title: 1 }, { unique: true })
-TV.index({ title: 1 }, { unique: false })
-TV.index({'awards.0': 1}, {partialFilterExpression: {'awards.0': {$exists: true}}});
 
 export default mongoose.model("tv", TV);

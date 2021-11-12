@@ -3,7 +3,7 @@ exports.get = get;
 exports.set = set;
 const def = {
   "LOG_LEVEL": "silly",
-  "CORS" : "*"
+  "CORS" : "http://localhost:3000,https://jmarroyave-compsci.github.io"
 };
 
 const dynamic = {

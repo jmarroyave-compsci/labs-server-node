@@ -2,7 +2,7 @@ import DBPerson from '../models/person';
 
 export const personGet = async function( params ) {
   let results = [];
-  results = await peopleFind( { id: params.id } )
+  results = await peopleFind( { _id: params.id } )
   return (results) ? results[0] : null
 };
 
@@ -23,6 +23,8 @@ export const peopleFind = async function( where, paging=null ) {
       .populate("awards.festival")
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit);
+
+  console.log(results[0])
 
   return ( results ) ? results : null
 };

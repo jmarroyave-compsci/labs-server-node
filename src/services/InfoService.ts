@@ -3,7 +3,6 @@ import DBInfoAboutSource from '../models/info_about_source';
 import config from '../config'
 
 export const getDBVersion = async function() {
-  console.log("voy")
   const data =  await DBInfo.findOne().sort({created: -1});
   return data['db']['version'];
 };

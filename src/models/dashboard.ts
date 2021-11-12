@@ -143,8 +143,8 @@ const Dashboard = new mongoose.Schema({
 	people: DashboardPeople, 	
 	movies: DashboardMovies, 	
 	podcasts: DashboardPodcast, 	
-	tv: DashboardTV, 	
-	games: DashboardGames, 	
+	tvShows: DashboardTV, 	
+	videoGames: DashboardGames, 	
 	created: { type: Number, default: Date.now()},	
 }, { 
 	collection: 'dashboard',

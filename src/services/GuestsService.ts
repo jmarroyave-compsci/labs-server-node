@@ -3,8 +3,6 @@ import googleAnalytics from '@analytics/google-analytics'
 import config from '../config'
 
 export const saveGuest = async function( req ) {
-  //if( config.LOCAL ) return;
-
   const analytics = Analytics({
     app: 'labs',
     version: config.VERSION,
@@ -21,23 +19,7 @@ export const saveGuest = async function( req ) {
     path: req.path
   }
 
-  //console.log(page)
-
   analytics.page( page )
-
-  /*
-  analytics.track('userPurchase', {
-    price: 20,
-    item: 'pink socks',
-  })
-
-  analytics.identify('user-id-xyz', {
-    firstName: 'bill',
-    lastName: 'murray',
-    email: 'da-coolest@aol.com'
-  })
-  */
-
 };
 
 

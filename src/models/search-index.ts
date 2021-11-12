@@ -11,7 +11,4 @@ const SearchIndex = new mongoose.Schema({
 	timestamps: false,
 })
 
-SearchIndex.index({ entity: 1 }, { collation: { locale: 'en', strength: 2 } } )
-
-
-export default mongoose.model("SearchIndex", SearchIndex);
+export default mongoose.model("search_index", SearchIndex);
