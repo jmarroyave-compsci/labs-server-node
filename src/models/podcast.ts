@@ -11,8 +11,9 @@ const Podcast = new mongoose.Schema({
 	link: String,
 	language: String,
 	country: String,
-	image: String,
-	
+	image: {
+		poster: String,
+	},
 	category: String,
 	subcategory:String,
 	createdDate: Date,

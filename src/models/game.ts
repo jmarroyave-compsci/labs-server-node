@@ -8,7 +8,8 @@ const Game = new mongoose.Schema({
 	type: String,
 	genre: [ String ],
 	language: String,
-	releasedDate: Date,
+	releaseYear: Number,
+	endedYear: Number,
 	rating: [ { 
 		name: String,
 		averageRating: String,

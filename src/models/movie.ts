@@ -12,8 +12,8 @@ const Movie = new mongoose.Schema({
 	duration: String,
 	classification: String,
 	language: String,
-	releasedDate: Date,
-	endedDate: Date,
+	releaseYear: Number,
+	endedYear: Number,
 	rating: [ { 
 		name: String,
 		averageRating: String,
