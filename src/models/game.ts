@@ -22,7 +22,26 @@ const Game = new mongoose.Schema({
 	production: String,
 	website: String,
 
-	crew: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+	directed: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	produced: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	written: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	cast: [{
+		id: { type: String, ref: 'person' },
+		as: String, 
+	}], 
+	crew: 	[{
+		id: { type: String, ref: 'person' },
+		cat: String,
+		job: String,
+		as: String, 
+	}], 
+
 
 	created: { type: Number, default: Date.now()},
 }, { 

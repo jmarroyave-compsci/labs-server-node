@@ -54,7 +54,7 @@ export const getMovieRemakes = async function( params ) {
                             skip: 0
                         },
                         populate : {
-                          path:'directors',                          
+                          path:'directed.id',                          
                         }
                     })  
                    .skip(size * ( page - 1))

@@ -2,6 +2,13 @@ import DBGame from '../models/game';
 
 export const getGame = async function( params ) {
   let results = null;
-  results = await DBGame.findOne( { _id: params.id } ).select(` -_id`);
+  results = await DBGame
+    .find( { _id: params.id } )
+    .populate("produced.id")
+    .populate("directed.id")
+    .populate("written.id")
+    .populate("cast.id")
+    .populate("crew.id")
+    .populate("awards.festival")
   return (results) ? results : null
 };

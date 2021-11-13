@@ -6,11 +6,12 @@ export const movieGet = async function( params ) {
   let results = null;
   results = await DBMovie
     .find( { _id: params.id } )
-    .populate("directors")
-    .populate("writers")
-    .populate("cast")
-    .populate("crew")
-    .populate("awards.festival")
+      .populate("produced.id")
+      .populate("directed.id")
+      .populate("written.id")
+      .populate("cast.id")
+      .populate("crew.id")
+      .populate("awards.festival")
     
   var result = (results && results.length > 0) ? results[0] : null
 
@@ -20,7 +21,7 @@ export const movieGet = async function( params ) {
   }
 
   //console.log(result)
-  console.log("remakes", result.remakes.length)
+  console.log("remakes", result?.remakes?.length)
 
   return result;
 };

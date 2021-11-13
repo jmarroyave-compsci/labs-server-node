@@ -23,7 +23,7 @@ const TV = new mongoose.Schema({
 		yearAdded: Number,		
 	} ], 
 	awards: [ { 
-		festival:  { type: mongoose.Schema.Types.ObjectId, ref: 'festival' }, 
+		festival:  { type: String, ref: 'festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
@@ -38,10 +38,25 @@ const TV = new mongoose.Schema({
 	website: String,
 
 
-	directors: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ], 
-	cast: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-	writers: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
-	crew: [ { type: mongoose.Schema.Types.ObjectId, ref: 'person' } ],
+	directed: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	produced: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	written: 	[{
+		id: { type: String, ref: 'person' }, 
+	}], 
+	cast: 	[{
+		id: { type: String, ref: 'person' },
+		as: String, 
+	}], 
+	crew: 	[{
+		id: { type: String, ref: 'person' },
+		cat: String,
+		job: String,
+		as: String, 
+	}], 
 
 	created: { type: Number, default: Date.now()},
 }, { 

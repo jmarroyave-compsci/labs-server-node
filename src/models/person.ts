@@ -7,17 +7,32 @@ const Person = new mongoose.Schema({
 	deathDate: Date,
 	profession: [ String ],
 	awards: [ {  
-		festival: { type: mongoose.Schema.Types.ObjectId, ref: 'festival' }, 
+		festival: { type: String, ref: 'festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
 		film: String,
 	} ], 
 
-	directed: [ { type: mongoose.Schema.Types.ObjectId, ref: 'movie' } ], 
-	acted: [ { type: mongoose.Schema.Types.ObjectId, ref: 'movie' } ], 
-	wrote: [ { type: mongoose.Schema.Types.ObjectId, ref: 'movie' } ], 
-	crew: [ { type: mongoose.Schema.Types.ObjectId, ref: 'movie' } ], 
+	directed: 	[{
+		id: { type: String, ref: 'movie' }, 
+	}], 
+	produced: 	[{
+		id: { type: String, ref: 'movie' }, 
+	}], 
+	wrote: 	[{
+		id: { type: String, ref: 'movie' }, 
+	}], 
+	acted: 	[{
+		id: { type: String, ref: 'movie' },
+		as: String, 
+	}], 
+	crew: 	[{
+		id: { type: String, ref: 'movie' },
+		cat: String,
+		job: String,
+		as: String, 
+	}], 
 	
 	created: { type: Number, default: Date.now()},
 }, { 

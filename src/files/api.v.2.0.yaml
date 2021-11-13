@@ -893,18 +893,52 @@ components:
           properties:
             imdb:
               type: string
+        produced:
+          description: Producers of the movie
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Movie'
         directed:
+          description: Directors of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Movie'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Movie'
         acted:
+          description: Cast of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Movie'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Movie'
+              as:
+                type: string
+        crew:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Movie'
+              as:
+                type: string
+              cat:
+                type: string
+              job:
+                type: string
         wrote:
           type: array
           items:
-            $ref: '#/components/schemas/Movie'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Movie'
     Podcast:
       type: object
       description: Person model
@@ -1007,24 +1041,52 @@ components:
         releaseYear:
           description: Year of production
           type: number
-        directors:
+        produced:
+          description: Producers of the movie
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+        directed:
           description: Directors of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         cast:
           description: Cast of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
         crew:
           type: array
           items:
-            $ref: '#/components/schemas/Person'
-        writers:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
+              cat:
+                type: string
+              job:
+                type: string
+        written:
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         created:
           type: string
         references:
@@ -1065,11 +1127,11 @@ components:
           example: The lord of the rings
         country:
           type: string
-        wiki_topic:
+        wiki:
           type: string
         continent:
           type: string
-        established:
+        startYear:
           type: string
         image:
           type: object
@@ -1141,16 +1203,52 @@ components:
         releaseYear:
           description: Year of production
           type: number
-        director:
+        produced:
+          description: Producers of the movie
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+        directed:
           description: Directors of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         cast:
           description: Cast of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
+        crew:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
+              cat:
+                type: string
+              job:
+                type: string
+        written:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         created:
           type: string
         references:
@@ -1323,21 +1421,55 @@ components:
           description: Description of the movie
           type: string
           example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
-        releasedYear:
+        releaseYear:
           description: Year of production
           type: number
-        director:
+        produced:
+          description: Producers of the movie
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+        directed:
           description: Directors of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         cast:
           description: Cast of the movie
           type: array
           items:
-            $ref: '#/components/schemas/Person'
-        created:
-          type: string
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
+        crew:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
+                type: string
+              cat:
+                type: string
+              job:
+                type: string
+        written:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
         references:
           type: object
           properties:
