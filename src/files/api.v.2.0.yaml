@@ -873,9 +873,9 @@ components:
           description: Name of the person
           type: string
           example: James Franco
-        birthDate:
+        birthYear:
           type: string
-        deathDate:
+        deathYear:
           type: string
         profession:
           type: array

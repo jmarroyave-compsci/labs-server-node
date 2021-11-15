@@ -38,7 +38,7 @@ export const getMovieRemakes = async function( params ) {
   const page = (params.page) ? params.page : 1;
   const name = (params.name) ? params.name : null;
   const qry = {  };
-  const maxMovies = (params.maxMovies) ? params.maxMovies : 5;
+  const MAX_MOVIES = (params.maxMovies) ? params.maxMovies : 10;
   const size = 10;
 
   if( name ){
@@ -50,7 +50,7 @@ export const getMovieRemakes = async function( params ) {
                     {
                         path:'recs',
                         options: {
-                            limit: maxMovies,
+                            limit: MAX_MOVIES,
                             skip: 0
                         },
                         populate : {
