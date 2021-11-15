@@ -1140,17 +1140,13 @@ components:
               type: string
     TVShow:
       type: object
-      description: TV model
+      description: Movie model
       properties:
         _id:
           description: Id of the movie
           type: string
           example: The lord of the rings
         title:
-          description: Title of the movie
-          type: string
-          example: The lord of the rings
-        originalTitle:
           description: Title of the movie
           type: string
           example: The lord of the rings
@@ -1175,22 +1171,24 @@ components:
           type: string
         rating:
           description: Rating
-          type: object
-          properties:
-            name:
-              type: string
-            averageRating:
-              type: number
-            votes:
-              type: number
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              averageRating:
+                type: string
         streamBy:
           description: Rating
-          type: object
-          properties:
-            name:
-              type: string
-            yearAdded:
-              type: number
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              yearAdded:
+                type: string
         awards:
           description: awards
           type: array
@@ -1274,7 +1272,7 @@ components:
         remakes:
           type: array
           items:
-            $ref: '#/components/schemas/TVShow'
+            $ref: '#/components/schemas/Movie'
     TVShowEpisode:
       type: object
       description: TV show episode model
@@ -1374,17 +1372,13 @@ components:
           type: string
     VideoGame:
       type: object
-      description: Game model
+      description: Video game model
       properties:
         _id:
           description: Id of the movie
           type: string
           example: The lord of the rings
         title:
-          description: Title of the movie
-          type: string
-          example: The lord of the rings
-        originalTitle:
           description: Title of the movie
           type: string
           example: The lord of the rings
@@ -1409,14 +1403,29 @@ components:
           type: string
         rating:
           description: Rating
-          type: object
-          properties:
-            name:
-              type: string
-            averageRating:
-              type: number
-            votes:
-              type: number
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              averageRating:
+                type: string
+        streamBy:
+          description: Rating
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              yearAdded:
+                type: string
+        awards:
+          description: awards
+          type: array
+          items:
+            $ref: '#/components/schemas/Award'
         description:
           description: Description of the movie
           type: string
@@ -1470,6 +1479,8 @@ components:
             properties:
               id:
                 $ref: '#/components/schemas/Person'
+        created:
+          type: string
         references:
           type: object
           properties:
@@ -1488,6 +1499,12 @@ components:
           type: string
         language:
           type: string
+        plot:
+          type: string
+        remakes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Movie'
     Award:
       type: object
       description: Award model

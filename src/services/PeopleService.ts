@@ -10,8 +10,6 @@ export const personGet = async function( params ) {
       .populate("crew.id")
       .populate("awards.festival")
 
-
-  console.log(results[0]['acted'][0]);
   return (results) ? results[0] : null
 };
 
@@ -34,8 +32,6 @@ export const peopleFind = async function( where, paging=null ) {
       .populate("awards.festival")
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit);
-
-  console.log(results[0])
 
   return ( results ) ? results : null
 };

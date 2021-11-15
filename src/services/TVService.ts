@@ -10,6 +10,7 @@ export const getTV = async function( params ) {
       .populate("cast.id")
       .populate("crew.id")
       .populate("awards.festival")
-  return (results) ? results : null
+
+  return (results && results.length > 0) ? results[0] : null
 };
 

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-const TV = new mongoose.Schema({
+
+const TVShow = new mongoose.Schema({
 	_id: String,
 	title: { type: String, required: true},
 	plot: String,
@@ -18,6 +19,7 @@ const TV = new mongoose.Schema({
 		averageRating: String,
 		votes: Number,		
 	} ], 
+	remakes: [],
 	streamBy: [ { 
 		name: String,
 		yearAdded: Number,		
@@ -31,12 +33,11 @@ const TV = new mongoose.Schema({
 	} ], 
 
 	image: {
-		poster: String,
+		poster: 	String,
 	},
-	boxOffice: String,
+	boxOffice: 	String,
 	production: String,
-	website: String,
-
+	website: 		String,
 
 	directed: 	[{
 		id: { type: String, ref: 'person' }, 
@@ -58,11 +59,10 @@ const TV = new mongoose.Schema({
 		as: String, 
 	}], 
 
-	created: { type: Number, default: Date.now()},
+	created: 		{ type: Number, default: Date.now()},
 }, { 
 	collection: 'tv_show',
 	timestamps: false,
 })
 
-
-export default mongoose.model("tv", TV);
+export default mongoose.model("tv", TVShow);

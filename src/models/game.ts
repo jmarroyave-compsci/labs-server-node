@@ -1,12 +1,16 @@
 import mongoose from 'mongoose';
 
+
 const Game = new mongoose.Schema({
 	_id: String,
 	title: { type: String, required: true},
+	plot: String,
 	description: String,
 	country: [ String ],
 	type: String,
 	genre: [ String ],
+	duration: String,
+	classification: String,
 	language: String,
 	releaseYear: Number,
 	endedYear: Number,
@@ -15,12 +19,25 @@ const Game = new mongoose.Schema({
 		averageRating: String,
 		votes: Number,		
 	} ], 
+	remakes: [],
+	streamBy: [ { 
+		name: String,
+		yearAdded: Number,		
+	} ], 
+	awards: [ { 
+		festival:  { type: String, ref: 'festival' }, 
+		year: Number,
+		category: String,
+		won: Boolean,
+		film: String,
+	} ], 
+
 	image: {
-		poster: String,
+		poster: 	String,
 	},
-	boxOffice: String,
+	boxOffice: 	String,
 	production: String,
-	website: String,
+	website: 		String,
 
 	directed: 	[{
 		id: { type: String, ref: 'person' }, 
@@ -31,7 +48,7 @@ const Game = new mongoose.Schema({
 	written: 	[{
 		id: { type: String, ref: 'person' }, 
 	}], 
-	cast: [{
+	cast: 	[{
 		id: { type: String, ref: 'person' },
 		as: String, 
 	}], 
@@ -42,8 +59,7 @@ const Game = new mongoose.Schema({
 		as: String, 
 	}], 
 
-
-	created: { type: Number, default: Date.now()},
+	created: 		{ type: Number, default: Date.now()},
 }, { 
 	collection: 'video_game',
 	timestamps: false,
