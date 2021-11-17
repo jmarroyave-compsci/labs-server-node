@@ -135,6 +135,43 @@ paths:
       description: Returns the dashboard for the games page
       summary: DashboardVideoGames
     parameters: []
+  /movies:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+      operationId: get-movies
+      description: return the movies
+      summary: Movies
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page
+        - schema:
+            type: string
+          in: query
+          name: field
+          description: field
+        - schema:
+            type: string
+          in: query
+          name: value
+          description: value
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: limit
+    parameters: []
   '/movies/{id}':
     get:
       tags: []
@@ -217,6 +254,21 @@ paths:
           in: query
           name: page
           description: page
+        - schema:
+            type: string
+          in: query
+          name: field
+          description: field
+        - schema:
+            type: string
+          in: query
+          name: value
+          description: value
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: limit
     parameters: []
   '/tv-shows/{id}':
     get:
@@ -271,7 +323,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/VideoGame'
       operationId: get-video-games
-      description: 'return the movie festivals '
+      description: return the video games
       summary: VideoGames
       parameters:
         - schema:
@@ -279,6 +331,21 @@ paths:
           in: query
           name: page
           description: page
+        - schema:
+            type: string
+          in: query
+          name: field
+          description: field
+        - schema:
+            type: string
+          in: query
+          name: value
+          description: value
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: limit
     parameters: []
   '/video-games/{id}':
     get:
@@ -300,6 +367,43 @@ paths:
         name: id
         in: path
         required: true
+  /podcasts:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Podcast'
+      operationId: get-podcasts
+      description: 'returns the podcast with {id}'
+      summary: Podcasts
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page
+        - schema:
+            type: string
+          in: query
+          name: field
+          description: field
+        - schema:
+            type: string
+          in: query
+          name: value
+          description: value
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: limit
+    parameters: []
   '/podcasts/{id}':
     get:
       tags: []
@@ -361,6 +465,43 @@ paths:
         in: path
         required: true
         description: id
+  /people:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+      operationId: get-people
+      description: return the people
+      summary: People
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page
+        - schema:
+            type: string
+          in: query
+          name: field
+          description: field
+        - schema:
+            type: string
+          in: query
+          name: value
+          description: value
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: limit
+    parameters: []
   /stories/movies/awards:
     get:
       tags: []
@@ -993,7 +1134,7 @@ components:
         type:
           description: Type
           type: string
-        genre:
+        genres:
           description: Genre
           type: array
           items:
@@ -1009,7 +1150,7 @@ components:
         classification:
           description: 'Classification [PG,PG13...]'
           type: string
-        rating:
+        ratings:
           description: Rating
           type: array
           items:
@@ -1153,7 +1294,7 @@ components:
         type:
           description: Type
           type: string
-        genre:
+        genres:
           description: Genre
           type: array
           items:
@@ -1169,7 +1310,7 @@ components:
         classification:
           description: 'Classification [PG,PG13...]'
           type: string
-        rating:
+        ratings:
           description: Rating
           type: array
           items:
@@ -1292,7 +1433,7 @@ components:
         type:
           description: Type
           type: string
-        genre:
+        genres:
           description: Genre
           type: array
           items:
@@ -1308,7 +1449,7 @@ components:
         classification:
           description: 'Classification [PG,PG13...]'
           type: string
-        rating:
+        ratings:
           description: Rating
           type: object
           properties:
@@ -1385,7 +1526,7 @@ components:
         type:
           description: Type
           type: string
-        genre:
+        genres:
           description: Genre
           type: array
           items:
@@ -1401,7 +1542,7 @@ components:
         classification:
           description: 'Classification [PG,PG13...]'
           type: string
-        rating:
+        ratings:
           description: Rating
           type: array
           items:

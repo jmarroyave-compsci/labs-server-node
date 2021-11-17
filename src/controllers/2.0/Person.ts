@@ -7,3 +7,8 @@ export async function personGet(req: Request, res: Response): P<any> {
   const data = await Service.personGet( { id: req.params.id  } );
   utils.writeJSON(res, data);
 };
+
+export async function peopleGet(req: Request, res: Response): P<any> {
+  const data = await Service.peopleGet( req.query );
+  utils.writeJSON(res, data);
+};

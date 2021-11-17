@@ -8,6 +8,11 @@ export async function podcastGet(req: Request, res: Response): P<any> {
   utils.writeJSON(res, data);
 };
 
+export async function podcastsGet(req: Request, res: Response): P<any> {
+  const data = await Service.podcastsGet( req );
+  utils.writeJSON(res, data);
+};
+
 export async function podcastMusicGet(req: Request, res: Response): P<any> {
   const data = await Service.getPodcastsByCategory( { ...req.query, category: "music" } );
   utils.writeJSON(res, data);

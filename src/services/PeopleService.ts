@@ -1,4 +1,5 @@
 import DBPerson from '../models/person';
+import { getWhereFromQuery } from '../lib/queries';
 
 export const personGet = async function( params ) {
   let results = [];
@@ -13,15 +14,26 @@ export const personGet = async function( params ) {
   return (results) ? results[0] : null
 };
 
+export const peopleGet = async function( params, paging=null ) {
+  paging = (paging) ? paging : {}
+  paging.page = (params.page) ? params.page : 1;
+  paging.limit = (params.limit) ? params.limit : 4;
 
-export const peopleFind = async function( where, paging=null ) {
+  const where = getWhereFromQuery(params.field);
+ 
+  return await peopleFind( where, paging )
+} 
+
+export const peopleFind = async function( where=null, paging=null ) {
   paging = (paging) ? paging : {}
   paging.page = (paging.page) ? paging.page : 1;
   paging.limit = (paging.limit) ? paging.limit : 10;
 
-  where = (where) ? where : {};
+  where = (where != null) ? where : {};
 
   let results = [];
+
+  console.log(where);
 
   results = await DBPerson.find( where )
       .populate("produced.id")

@@ -2,7 +2,12 @@ import DBPodcast from '../models/podcast';
 
 export const podcastGet = async function( params ) {
   let results = [];
-  results = await DBPodcast.find( { _id: params.id } );
+  return await DBPodcast.findOne( { _id: params.id } );
+};
+
+export const podcastsGet = async function( params ) {
+  let results = [];
+  results = await DBPodcast.find(  );
   return (results.length > 0) ? results[0] : null
 };
 

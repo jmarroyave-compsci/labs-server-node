@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const Person = new mongoose.Schema({
 	_id: String,
 	name: { type: String, required: true},
-	birthDate: Date,
-	deathDate: Date,
+	birthYear: Number,
+	deathYear: Number,
 	profession: [ String ],
 	awards: [ {  
 		festival: { type: String, ref: 'festival' }, 
