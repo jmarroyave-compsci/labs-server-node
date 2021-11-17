@@ -1,5 +1,5 @@
 import express from "express";
-import * as controller from "../../controllers/2.0/Movie";
+import * as controller from "../../controllers/2.0/MovieFestival";
 import { asyncHandler } from "../../lib/asyncHandler";
 
 const router = express.Router();

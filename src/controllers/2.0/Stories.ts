@@ -13,10 +13,12 @@ export async function remakes(req: Request, res: Response): P<any> {
   utils.writeJSON(res, data);
 };
 
+/*
 export async function history(req: Request, res: Response): P<any> {
   const data = await Service.getMovieHistory( req.query );
   utils.writeJSON(res, data);
 };
+*/
 
 export async function peopleDirectors(req: Request, res: Response): P<any> {
   const data = await Service.getPeopleDirectors( req.query );

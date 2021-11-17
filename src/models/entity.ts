@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
-
-const Movie = new mongoose.Schema({
+const Entity = new mongoose.Schema({
 	_id: String,
 	title: { type: String, required: true},
 	plot: String,
@@ -61,8 +60,8 @@ const Movie = new mongoose.Schema({
 
 	created: 		{ type: Number, default: Date.now()},
 }, { 
-	collection: 'movie',
+	collection: 'entity',
 	timestamps: false,
 })
 
-export default mongoose.model("movie", Movie);
+export default mongoose.model("entity", Entity);

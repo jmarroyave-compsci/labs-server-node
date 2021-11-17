@@ -1,4 +1,3 @@
-import DBMovie from '../models/movie';
 import { peopleFind } from './PeopleService';
 import DBPodcast from '../models/podcast';
 import DBStoryRemakes from '../models/story_remake';
@@ -60,18 +59,6 @@ export const getMovieRemakes = async function( params ) {
                    .skip(size * ( page - 1))
                    .limit(size);
 
-  if(!data) return [];
-  return data;
-};
-
-export const getMovieHistory = async function( params ) {
-  const page = (params.page) ? params.page : 1;
-  const qry = {  };
-  const size = 10;
-
-  const data =  await DBMovie.find( qry )
-                             .skip(size * ( page - 1))
-                             .limit(size);
   if(!data) return [];
   return data;
 };

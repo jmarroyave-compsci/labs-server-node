@@ -15,20 +15,20 @@ const Person = new mongoose.Schema({
 	} ], 
 
 	directed: 	[{
-		id: { type: String, ref: 'movie' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	produced: 	[{
-		id: { type: String, ref: 'movie' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	wrote: 	[{
-		id: { type: String, ref: 'movie' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	acted: 	[{
-		id: { type: String, ref: 'movie' },
+		id: { type: String, ref: 'entity' },
 		as: String, 
 	}], 
 	crew: 	[{
-		id: { type: String, ref: 'movie' },
+		id: { type: String, ref: 'entity' },
 		cat: String,
 		job: String,
 		as: String, 

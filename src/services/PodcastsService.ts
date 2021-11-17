@@ -22,5 +22,7 @@ export const getPodcastsByCategory = async function( params ) {
 
   if(!data) return [];
 
+  //console.log(data)
+
   return data;
 };

@@ -11,6 +11,7 @@ const config = {
   DB_SERVER: process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER,
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
+  DB_VERSION: _package_.version,
   CACHE_SERVER: (LOCAL && process.env.CACHE_SERVER == "true") ? true : false,
   PLUGINS: {
     GOOGLE_ANALYTICS: {
