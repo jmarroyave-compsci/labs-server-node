@@ -1,0 +1,1660 @@
+{
+  "data": {
+    "data": {
+      "person": {
+        "id": "nm0010291",
+        "name": "Birt Acres",
+        "birthYear": "1854",
+        "deathYear": null,
+        "profession": [
+          "cinematographer",
+          "director",
+          "producer"
+        ],
+        "awards": [],
+        "references": null,
+        "produced": [
+          {
+            "id": {
+              "id": "tt2028463",
+              "title": "Briton v. Boer",
+              "releaseYear": 1900,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt2191649",
+              "title": "Clovelly Cottage, Barnet",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "__typename": "Produced2ListItem"
+          }
+        ],
+        "directed": [
+          {
+            "id": {
+              "id": "tt0000020",
+              "title": "The Derby 1895",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000024",
+              "title": "Opening of the Kiel Canal",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000025",
+              "title": "The Oxford and Cambridge University Boat Race",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000030",
+              "title": "Rough Sea at Dover",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000048",
+              "title": "The Boxing Kangaroo",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000049",
+              "title": "Boxing Match; or, Glove Contest",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000061",
+              "title": "Dancing Girls",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0000154",
+              "title": "Henley Regatta",
+              "releaseYear": 1897,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0187702",
+              "title": "The Arrest of a Pickpocket",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0187864",
+              "title": "Golfing Extraordinary, Five Gentlemen",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0188240",
+              "title": "Tom Merry, Lightning Cartoonist",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0193281",
+              "title": "Landing at Low Tide",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0201843",
+              "title": "Pierrot and Pierrette",
+              "releaseYear": 1897,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0201956",
+              "title": "A Surrey Garden",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0203563",
+              "title": "The Henley Regatta",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0214244",
+              "title": "An Unfriendly Call",
+              "releaseYear": 1897,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0229410",
+              "title": "Kaiser Wilhelm Reviewing His Troops",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0229648",
+              "title": "Persimmons Winning the Derby",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0229663",
+              "title": "Prince of Wales' Famous Horse",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0281711",
+              "title": "Charge of the Uhlans",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0282161",
+              "title": "Shoeblack at Work in a London Street",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0282172",
+              "title": "Smith and Machinery at Work",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0435464",
+              "title": "Tom Merry, Lightning Cartoonist II",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1125838",
+              "title": "Tom Merry, Lightning Cartoonist III",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1125839",
+              "title": "Tom Merry, Lightning Cartoonist IV",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1162138",
+              "title": "Untitled Kinetoscope Comedy",
+              "releaseYear": 1895,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1199621",
+              "title": "Haycart Crossing Hadley Green, Middlesex",
+              "releaseYear": 1894,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1199680",
+              "title": "Opening of the Cardiff Exhibition by H.R.H. the Prince of Wales",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt1199694",
+              "title": "The Royal Wedding",
+              "releaseYear": 1896,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          },
+          {
+            "id": {
+              "id": "tt2152697",
+              "title": "Crows on Saffron Hill",
+              "releaseYear": 1894,
+              "directed": [
+                {
+                  "id": {
+                    "id": null,
+                    "name": null,
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            "__typename": "DirectedListItem"
+          }
+        ],
+        "acted": [],
+        "wrote": [],
+        "crew": [
+          {
+            "id": {
+              "id": "tt2150489",
+              "title": "Street Scene in Winter in Montreal, Canada",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2151575",
+              "title": "Cricketer Jumping Over Garden Gate",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2151635",
+              "title": "German Emperor at Hamburg",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2151901",
+              "title": "Venice: The Rialto Bridge",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2153867",
+              "title": "Laying the First Stone on Kaiser Wilhelm's Memorial",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2153961",
+              "title": "Steamer on Long Island Sound",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2158657",
+              "title": "Niagara Falls in Winter: The Waterfall",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2158659",
+              "title": "Niagara Falls: Close to the Waterfall",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2158661",
+              "title": "Niagara Falls: The Great Whirlpool",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2159510",
+              "title": "Rifle Brigade at the Double",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2159940",
+              "title": "Launching of H.M.S. Albion",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2160245",
+              "title": "Kaiser-Parade auf dem Tempelhofer Felde",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2160327",
+              "title": "Parade der Veteranen des deutsch-franz Krieges",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2161686",
+              "title": "Coaching in North Devon",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2174043",
+              "title": "Krieger-Parade",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2174155",
+              "title": "Suvier Entering the Baltic Canal, Hamburg",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2177581",
+              "title": "Highgate Tunnel: Goods Train",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2179021",
+              "title": "Departure of the Bride from Marlborough House",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2181879",
+              "title": "Cycling in Hyde Park",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2182025",
+              "title": "Mounted Mule Battery",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2182173",
+              "title": "The Garden Party on the Lawn",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2184283",
+              "title": "Steamer 'New York' in Dock",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2184284",
+              "title": "Sheffield United v. Corinthians",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2184285",
+              "title": "Street Scene",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2184323",
+              "title": "Trip from Barnstaple to Ilfracombe",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2185375",
+              "title": "Elevated Railway in the Streets of New York",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2185385",
+              "title": "Finsbury Park Station",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2185513",
+              "title": "The Carpenter Shop",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2188699",
+              "title": "Children Playing",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2188719",
+              "title": "Der Kaiser auf der Kommandobrücke der Hohenzollern",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2188895",
+              "title": "Steam Yacht at the Canal Entrance",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2191603",
+              "title": "A Prize Fight by Jem Mace and Burke",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2194525",
+              "title": "Broadway, New York",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2194527",
+              "title": "Capstone Parade, Ilfracombe",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2194705",
+              "title": "Tower Bridge Working",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2198254",
+              "title": "Arrival of Lord Mayor at Law Courts",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2198266",
+              "title": "Football Match, Crystal Palace",
+              "releaseYear": 1898,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2199616",
+              "title": "S.S. New York Leaving Southampton",
+              "releaseYear": 1899,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2205449",
+              "title": "Cleaving the Turk's Head",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2205601",
+              "title": "Schlusssteinlegung des Kaiser Wilhelm Kanals",
+              "releaseYear": 1895,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2205659",
+              "title": "The Lord Mayor's Show",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2207607",
+              "title": "South Western Railway at Dover",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2207637",
+              "title": "The Derby",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2210437",
+              "title": "Arrival After the Wedding",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2210635",
+              "title": "Going Away",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2217905",
+              "title": "Prince and Princess of Wales Arriving in State at the Cardiff Exposition",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2221725",
+              "title": "Land at Low Tide",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2224011",
+              "title": "A Corner of Barnet Fair",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2228334",
+              "title": "Boxing Match",
+              "releaseYear": 1899,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2228336",
+              "title": "Charge of the 12th Lancers",
+              "releaseYear": 1899,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2229790",
+              "title": "Cockade Fight by 15th Hussars",
+              "releaseYear": 1899,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2229792",
+              "title": "Football Match",
+              "releaseYear": 1899,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2238727",
+              "title": "A Visit to the Zoo",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2238749",
+              "title": "Brighton Beach",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2238823",
+              "title": "Lancers on Horseback",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2238997",
+              "title": "Yarmouth Sands",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2253983",
+              "title": "H.R.H. the Prince of Wales",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2254057",
+              "title": "Maypole Dance",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2255969",
+              "title": "Sword v. Bayonet",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2261861",
+              "title": "Mounted Quadrille",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2262049",
+              "title": "Scrambling Urchins",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2262179",
+              "title": "Sword v. Sword",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2262261",
+              "title": "The Lord Mayor's Show",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2262465",
+              "title": "Yarmouth: Fishing Boats Leaving Harbour",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2268461",
+              "title": "Great Northern Railroad",
+              "releaseYear": 1896,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2285653",
+              "title": "Practising for the Oxford and Cambridge Boat Race",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2308471",
+              "title": "Approach of a Racing Train at Gatwick",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2308701",
+              "title": "Great Northern Mail Train Catching Post Bags",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2323541",
+              "title": "Gatwick: Paddock",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2332571",
+              "title": "Clouds",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2332759",
+              "title": "Queen Victoria's Jubilee Procession",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2334573",
+              "title": "Band Marching Down Street",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2334773",
+              "title": "Promenade Scene",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2359433",
+              "title": "Visit to the Northern Photographic Works",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2360638",
+              "title": "Guns of the Naval Brigade Entrained for Royal Tournament",
+              "releaseYear": 1900,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2368691",
+              "title": "Church Parade of Troops",
+              "releaseYear": 1897,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2417964",
+              "title": "Japanese Battleship Asahi Ashore Off Southsea Beach",
+              "releaseYear": 1900,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2479902",
+              "title": "Military Medical Train Arriving at Netley Hospital",
+              "releaseYear": 1900,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "tt2479906",
+              "title": "Naval Brigade Marching Through Windsor",
+              "releaseYear": 1900,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          }
+        ],
+        "__typename": "Person"
+      }
+    }
+  },
+  "body": {
+    "operationName": "getPerson",
+    "variables": {
+      "id": "nm0010291"
+    },
+    "query": "fragment PersonInfoTiny on Person {\n  id\n  name\n  __typename\n}\n\nfragment MovieInfoTiny on Movie {\n  id\n  title\n  releaseYear\n  directed {\n    id {\n      ...PersonInfoTiny\n      __typename\n    }\n    __typename\n  }\n  __typename\n}\n\nquery getPerson($id: String!) {\n  person(id: $id) {\n    id\n    name\n    birthYear\n    deathYear\n    profession\n    awards {\n      category\n      festival {\n        id\n        name\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    references {\n      imdb\n      __typename\n    }\n    produced {\n      id {\n        ...MovieInfoTiny\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...MovieInfoTiny\n        __typename\n      }\n      __typename\n    }\n    acted {\n      id {\n        ...MovieInfoTiny\n        __typename\n      }\n      as\n      __typename\n    }\n    wrote {\n      id {\n        ...MovieInfoTiny\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...MovieInfoTiny\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

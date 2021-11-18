@@ -105,28 +105,28 @@ app.use(function(req, res, next) {
         var crypto = require('crypto');
         var name = JSON.stringify(req.body);
         var hash = crypto.createHash('md5').update(name).digest('hex');
-        return hash;
+        return [ hash, req.body ];
     }
 
     const getFilePath = ( req, graphQL=false) => {
-        var key = getKey(req, graphQL);
+        var [ key, body ] = getKey(req, graphQL);
         key = key.replace(/\//g, "_").replace("?", "+")
         var cacheFile = `${__dirname}/../cache/${(graphQL) ? "graphQL/" : ""}${key}.json`;
-        return [cacheFile, key];
+        return [cacheFile, key, body ];
     }
 
-    var [ cacheFile, key ]  = getFilePath( req, graphQL );
+    var [ cacheFile, key, body ]  = getFilePath( req, graphQL );
     if( config.LOCAL && config.CACHE_SERVER && fs.existsSync( cacheFile )){
         if( graphQL ){
             log.info(`serving from cache [${req['id']}] [${key.substring(0,6)}] `)
-            res.send(fs.readFileSync(cacheFile).toString())
+            res.send(JSON.stringify(JSON.parse(fs.readFileSync(cacheFile).toString()).data))
             return;
         }
     }
 
     var oldSend = res.send;
     res.send = function() : Response {
-        if(config.LOCAL) fs.writeFileSync(cacheFile, arguments[0]);                   
+        if(config.LOCAL) fs.writeFileSync(cacheFile, JSON.stringify({ data : JSON.parse(arguments[0]), body: body}, null, 2));
         return oldSend.apply(this, arguments);
     }
 

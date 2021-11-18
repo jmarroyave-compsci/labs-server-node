@@ -1,0 +1,1088 @@
+{
+  "data": {
+    "data": {
+      "storiesMoviesRemakes": [
+        {
+          "name": "Run",
+          "count": 156,
+          "recs": [
+            {
+              "id": "tt0102818",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0123236",
+                    "name": "Geoff Burrowes",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0111762",
+              "releaseYear": 1994,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0151682",
+                    "name": "Derek Chang",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm10091280",
+                    "name": "Chung-Hon Siu",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0331621",
+              "releaseYear": 2002,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0398297",
+              "releaseYear": 2003,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "The End",
+          "count": 155,
+          "recs": [
+            {
+              "id": "tt0077504",
+              "releaseYear": 1978,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0045728",
+              "releaseYear": 1953,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0533686",
+                    "name": "Christopher Maclaine",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0112958",
+              "releaseYear": 1995,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0484996",
+                    "name": "Chris Landreth",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0258550",
+              "releaseYear": 2000,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0306773",
+              "releaseYear": 1996,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0364327",
+              "releaseYear": 1998,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Mother",
+          "count": 152,
+          "recs": [
+            {
+              "id": "tt0016491",
+              "releaseYear": 1925,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0275494",
+                    "name": "Jacques Feyder",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0017128",
+              "releaseYear": 1926,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0699877",
+                    "name": "Vsevolod Pudovkin",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0018174",
+              "releaseYear": 1927,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0576043",
+                    "name": "James Leo Meehan",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0032745",
+              "releaseYear": 1941,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0109264",
+                    "name": "Guido Brignone",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0044986",
+              "releaseYear": 1952,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0621540",
+                    "name": "Mikio Naruse",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0048359",
+              "releaseYear": 1956,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0233091",
+                    "name": "Mark Donskoy",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0056050",
+              "releaseYear": 1963,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0793881",
+                    "name": "Kaneto Shindô",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0097848",
+              "releaseYear": 1990,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0659368",
+                    "name": "Gleb Panfilov",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0102369",
+              "releaseYear": 1990,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0368688",
+                    "name": "Ali Hatami",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0102421",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0894577",
+                    "name": "Henri Verneuil",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Breathe",
+          "count": 151,
+          "recs": [
+            {
+              "id": "tt0135820",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0263336",
+                    "name": "Charles Evanston",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0379717",
+              "releaseYear": 2003,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0266365",
+              "releaseYear": 2000,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Blind Date",
+          "count": 149,
+          "recs": [
+            {
+              "id": "tt0024897",
+              "releaseYear": 1934,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0624756",
+                    "name": "Roy William Neill",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0086978",
+              "releaseYear": 1984,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0557789",
+                    "name": "Nico Mastorakis",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0092666",
+              "releaseYear": 1987,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0001175",
+                    "name": "Blake Edwards",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0115702",
+              "releaseYear": 1996,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0324660",
+                    "name": "Theo van Gogh",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0135619",
+              "releaseYear": 1968,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0313745",
+                    "name": "Vasilis Georgiadis",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0169623",
+              "releaseYear": 1998,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0100447",
+                    "name": "Robert Bouvier",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0321112",
+                    "name": "Marcel Gisler",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0363881",
+              "releaseYear": 2003,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0100509",
+                    "name": "Haim Bouzaglo",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0147897",
+              "releaseYear": 1953,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0232705",
+                    "name": "Eddie Donnelly",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0211271",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0303777",
+              "releaseYear": 2001,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Love",
+          "count": 149,
+          "recs": [
+            {
+              "id": "tt0004259",
+              "releaseYear": 1914,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0698839",
+                    "name": "Yakov Protazanov",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0018107",
+              "releaseYear": 1927,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0332539",
+                    "name": "Edmund Goulding",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0049438",
+              "releaseYear": 1956,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0405436",
+                    "name": "Horst Hächler",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0067814",
+              "releaseYear": 1971,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0538652",
+                    "name": "Károly Makk",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0069708",
+              "releaseYear": 1974,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0152149",
+                    "name": "Henry Chapier",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0081022",
+              "releaseYear": 1980,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0436004",
+                    "name": "Theodor Kallifatides",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0084271",
+              "releaseYear": 1982,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0169215",
+                    "name": "Annette Cohen",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0235683",
+                    "name": "Nancy Dowd",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0880521",
+                    "name": "Liv Ullmann",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0955195",
+                    "name": "Mai Zetterling",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0102361",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0865422",
+                    "name": "Valeriy Todorovskiy",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0138573",
+              "releaseYear": 1927,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0194492",
+                    "name": "Paul Czinner",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0151685",
+              "releaseYear": 2001,
+              "directed": [],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Blackout",
+          "count": 148,
+          "recs": [
+            {
+              "id": "tt0032356",
+              "releaseYear": 1940,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0003836",
+                    "name": "Michael Powell",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0042258",
+              "releaseYear": 1950,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0048875",
+                    "name": "Robert S. Baker",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0046792",
+              "releaseYear": 1954,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0279807",
+                    "name": "Terence Fisher",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0077241",
+              "releaseYear": 1978,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0558062",
+                    "name": "Eddy Matalon",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0088816",
+              "releaseYear": 1985,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0382779",
+                    "name": "Douglas Hickox",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0090736",
+              "releaseYear": 1986,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0003989",
+                    "name": "Erik Gustavson",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0094756",
+              "releaseYear": 1988,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0010929",
+                    "name": "Doug Adams",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0109286",
+              "releaseYear": 1994,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0781304",
+                    "name": "Paulita Sedgwick",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "The Audition",
+          "count": 147,
+          "recs": [
+            {
+              "id": "tt0096849",
+              "releaseYear": 1989,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0133044",
+                    "name": "Anna Campion",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0212781",
+              "releaseYear": 1933,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0533073",
+                    "name": "Roy Mack",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0280446",
+              "releaseYear": 2000,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0344869",
+              "releaseYear": 2002,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "Limbo",
+          "count": 144,
+          "recs": [
+            {
+              "id": "tt0068860",
+              "releaseYear": 1972,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0733476",
+                    "name": "Mark Robson",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0164085",
+              "releaseYear": 1999,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0000626",
+                    "name": "John Sayles",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0126394",
+              "releaseYear": 1990,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0758228",
+                    "name": "Pedro Salgueiro",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0361839",
+              "releaseYear": 1993,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        },
+        {
+          "name": "The Bridge",
+          "count": 136,
+          "recs": [
+            {
+              "id": "tt0052654",
+              "releaseYear": 1959,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0926919",
+                    "name": "Bernhard Wicki",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0103881",
+              "releaseYear": 1992,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0531296",
+                    "name": "Syd Macartney",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0174518",
+              "releaseYear": 1998,
+              "directed": [],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0191610",
+              "releaseYear": 1999,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0233386",
+              "releaseYear": 1949,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0688327",
+                    "name": "Arthur Pohl",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0340300",
+              "releaseYear": 1949,
+              "directed": [
+                {
+                  "id": null,
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0018728",
+              "releaseYear": 1928,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0412235",
+                    "name": "Joris Ivens",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0019723",
+              "releaseYear": 1929,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0896533",
+                    "name": "Charles Vidor",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0206607",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0000425",
+                    "name": "Peter Greenaway",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            },
+            {
+              "id": "tt0297813",
+              "releaseYear": 1995,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0485341",
+                    "name": "Garry Lane",
+                    "__typename": "Person"
+                  },
+                  "__typename": "Directed2ListItem"
+                }
+              ],
+              "__typename": "Movie"
+            }
+          ],
+          "__typename": "StoryMovieRemakes"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "GetData",
+    "variables": {
+      "page": 2
+    },
+    "query": "fragment PersonInfoTiny on Person {\n  id\n  name\n  __typename\n}\n\nquery GetData($page: Int) {\n  storiesMoviesRemakes(page: $page) {\n    name\n    count\n    recs {\n      id\n      releaseYear\n      directed {\n        id {\n          ...PersonInfoTiny\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

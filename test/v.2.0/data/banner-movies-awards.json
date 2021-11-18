@@ -1,0 +1,1188 @@
+{
+  "data": {
+    "data": {
+      "storiesMoviesAwards": [
+        {
+          "festival": {
+            "id": "mf00001",
+            "name": "Academy Awards",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "ACTOR IN A LEADING ROLE",
+              "entity": "Ed Harris",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A LEADING ROLE",
+              "entity": "Geoffrey Rush",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A LEADING ROLE",
+              "entity": "Javier Bardem",
+              "won": false,
+              "entityId": "nm0000849",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A LEADING ROLE",
+              "entity": "Russell Crowe",
+              "won": true,
+              "entityId": "nm0000128",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A LEADING ROLE",
+              "entity": "Tom Hanks",
+              "won": false,
+              "entityId": "nm0000158",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A SUPPORTING ROLE",
+              "entity": "Albert Finney",
+              "won": false,
+              "entityId": "nm0001215",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A SUPPORTING ROLE",
+              "entity": "Benicio Del Toro",
+              "won": true,
+              "entityId": "nm0001125",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A SUPPORTING ROLE",
+              "entity": "Jeff Bridges",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A SUPPORTING ROLE",
+              "entity": "Joaquin Phoenix",
+              "won": false,
+              "entityId": "nm0001618",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTOR IN A SUPPORTING ROLE",
+              "entity": "Willem Dafoe",
+              "won": false,
+              "entityId": "nm0000353",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A LEADING ROLE",
+              "entity": "Ellen Burstyn",
+              "won": false,
+              "entityId": "nm0000995",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A LEADING ROLE",
+              "entity": "Joan Allen",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A LEADING ROLE",
+              "entity": "Julia Roberts",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A LEADING ROLE",
+              "entity": "Juliette Binoche",
+              "won": false,
+              "entityId": "nm0000300",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A LEADING ROLE",
+              "entity": "Laura Linney",
+              "won": false,
+              "entityId": "nm0001473",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A SUPPORTING ROLE",
+              "entity": "Frances McDormand",
+              "won": false,
+              "entityId": "nm0000531",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A SUPPORTING ROLE",
+              "entity": "Judi Dench",
+              "won": false,
+              "entityId": "nm0001132",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A SUPPORTING ROLE",
+              "entity": "Julie Walters",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A SUPPORTING ROLE",
+              "entity": "Kate Hudson",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ACTRESS IN A SUPPORTING ROLE",
+              "entity": "Marcia Gay Harden",
+              "won": true,
+              "entityId": "nm0001315",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ART DIRECTION",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": true,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ART DIRECTION",
+              "entity": "Dr. Seuss' How the Grinch Stole Christmas",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ART DIRECTION",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ART DIRECTION",
+              "entity": "Quills",
+              "won": false,
+              "entityId": "tt0180073",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "ART DIRECTION",
+              "entity": "Vatel",
+              "won": false,
+              "entityId": "tt0190861",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "AWARD OF COMMENDATION",
+              "entity": "To Ioan Allen for the concept, Robin Bransbury for the design and Mark Harrah for the implementation of the Trailer Audio Standards Association (TASA) Loudness Standard.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "BEST PICTURE",
+              "entity": "Chocolat",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "BEST PICTURE",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "BEST PICTURE",
+              "entity": "Erin Brockovich",
+              "won": false,
+              "entityId": "tt0195685",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "BEST PICTURE",
+              "entity": "Gladiator",
+              "won": true,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "BEST PICTURE",
+              "entity": "Traffic",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "CINEMATOGRAPHY",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": true,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "CINEMATOGRAPHY",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "CINEMATOGRAPHY",
+              "entity": "Malèna",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "CINEMATOGRAPHY",
+              "entity": "O Brother, Where Art Thou?",
+              "won": false,
+              "entityId": "tt0190590",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "CINEMATOGRAPHY",
+              "entity": "The Patriot",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "COSTUME DESIGN",
+              "entity": "102 Dalmatians",
+              "won": false,
+              "entityId": "tt0211181",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "COSTUME DESIGN",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "COSTUME DESIGN",
+              "entity": "Dr. Seuss' How the Grinch Stole Christmas",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "COSTUME DESIGN",
+              "entity": "Gladiator",
+              "won": true,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "COSTUME DESIGN",
+              "entity": "Quills",
+              "won": false,
+              "entityId": "tt0180073",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DIRECTING",
+              "entity": "Billy Elliot",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DIRECTING",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DIRECTING",
+              "entity": "Erin Brockovich",
+              "won": false,
+              "entityId": "tt0195685",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DIRECTING",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DIRECTING",
+              "entity": "Traffic",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Feature)",
+              "entity": "Into the Arms of Strangers: Stories of the Kindertransport",
+              "won": true,
+              "entityId": "tt0248912",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Feature)",
+              "entity": "Legacy",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Feature)",
+              "entity": "Long Night's Journey into Day",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Feature)",
+              "entity": "Scottsboro: An American Tragedy",
+              "won": false,
+              "entityId": "tt0240885",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Feature)",
+              "entity": "Sound and Fury",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Short Subject)",
+              "entity": "Big Mama",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Short Subject)",
+              "entity": "Curtain Call",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Short Subject)",
+              "entity": "Dolphins",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Short Subject)",
+              "entity": "On Tiptoe: Gentle Steps to Freedom",
+              "won": false,
+              "entityId": "tt0281010",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "DOCUMENTARY (Short Subject)",
+              "entity": "The Man on Lincoln's Nose",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FILM EDITING",
+              "entity": "Almost Famous",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FILM EDITING",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FILM EDITING",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FILM EDITING",
+              "entity": "Traffic",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FILM EDITING",
+              "entity": "Wonder Boys",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FOREIGN LANGUAGE FILM",
+              "entity": "Amores Perros",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FOREIGN LANGUAGE FILM",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": true,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FOREIGN LANGUAGE FILM",
+              "entity": "Divided We Fall",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FOREIGN LANGUAGE FILM",
+              "entity": "Everybody Famous!",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "FOREIGN LANGUAGE FILM",
+              "entity": "The Taste of Others",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "GORDON E. SAWYER AWARD",
+              "entity": "Irwin W. Young",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "HONORARY AWARD",
+              "entity": "To Ernest Lehman, in appreciation of a body of varied and enduring work.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "HONORARY AWARD",
+              "entity": "To Jack Cardiff, master of light and color.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "IRVING G. THALBERG MEMORIAL AWARD",
+              "entity": "Dino De Laurentiis",
+              "won": true,
+              "entityId": "nm0209569",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "JOHN A. BONNER MEDAL OF COMMENDATION",
+              "entity": "To N. Paul Kenworthy, Jr. in appreciation for outstanding service and dedication in upholding the high standards of the Academy of Motion Picture Arts and Sciences.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MAKEUP",
+              "entity": "Dr. Seuss' How the Grinch Stole Christmas",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MAKEUP",
+              "entity": "Shadow of the Vampire",
+              "won": false,
+              "entityId": "tt0189998",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MAKEUP",
+              "entity": "The Cell",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Score)",
+              "entity": "Chocolat",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Score)",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": true,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Score)",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Score)",
+              "entity": "Malèna",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Score)",
+              "entity": "The Patriot",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Song)",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Song)",
+              "entity": "Dancer in the Dark",
+              "won": false,
+              "entityId": "tt0168629",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Song)",
+              "entity": "Meet the Parents",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Song)",
+              "entity": "The Emperor's New Groove",
+              "won": false,
+              "entityId": "tt0120917",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "MUSIC (Original Song)",
+              "entity": "Wonder Boys",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Academy Award of Merit)",
+              "entity": "To ROB COOK, LOREN CARPENTER and ED CATMULL for their significant advancements to the field of motion picture rendering as exemplified in Pixar's \"Renderman.\"",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To ADVANCED DIGITAL SYSTEMS GROUP (ADSG) for the design and development of the Sony DADR 5000 digital audio dubber specifically designed for the motion picture industry.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To AKAI DIGITAL for the design and development of the DD8plus digital audio dubber specifically designed for the motion picture industry.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To AL MAYER, SR. and AL MAYER, JR., for the mechanical design, IAIN NEIL for the optical design and BRIAN DANG for the electronic design of the Panavision Millennium XL Camera System.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To ALVAH J. MILLER and PAUL JOHNSON of Lynx Robotics for the electronic and software design of the Lynx C-50 Camera Motor System.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To FAIRLIGHT for the design and development of the DAD digital audio dubber specifically designed for the motion picture industry.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To JOE WARY, GERALD PAINTER and COLIN F. MOSSMAN for the design and development of the Deluxe Laboratories Multi Roller Film Transport System.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+              "entity": "To TIMELINE, INCORPORATED for the design and development of the MMR 8 digital audio dubber specifically designed for the motion picture industry.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To BILL TONDREAU of Kuper Systems, ALVAH J. MILLER and PAUL JOHNSON of Lynx Robotics, and DAVID STUMP of Visual Effects Rental Services for the conception, design and development of data capture systems that enable superior accuracy, efficiency and economy in the creation of composite imagery.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To GEORGE BORSHUKOV, KIM LIBRERI and DAN PIPONI for the development of a system for image-based rendering allowing choreographed camera movements through computer graphic reconstructed sets.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To GLENN M. BERGGREN for the concept, HORST LINGE for research and development, and WOLFGANG REINECKE for the optical design of the ISCO Ultra-Star Plus lenses for motion picture projection.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To JOHN P. PYTLAK for the development of the Laboratory Aim Density (LAD) system.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To LEONARD PINCUS, ASHOT NALBANDYAN, GEORGE JOHNSON, THOMAS KONG and DAVID PRINGLE for the design and development of the SoftSun low pressure xenon long-arc light sources, their power supplies and fixtures.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To PHILIP GREENSTREET of Rosco Laboratories for the concept and development of the Roscolight Day/Night Backdrop.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To UDO SCHAUSS, HILDEGARD EBBESMEIER and KARL LENHARDT for the optical design, and RALF LINN and NORBERT BRINKER for the mechanical design of the Schneider Super Cinelux lenses for motion picture projection.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To VENKAT KRISHNAMURTHY for the creation of the Paraform Software for 3D Digital Form Development.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+              "entity": "To VIC ARMSTRONG for the refinement and application to the film industry of the Fan Descender for accurately and safely arresting the descent of stunt persons in high freefalls.",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Animated)",
+              "entity": "Father and Daughter",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Animated)",
+              "entity": "Rejected",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Animated)",
+              "entity": "The Periwig-Maker",
+              "won": false,
+              "entityId": "tt0239797",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Live Action)",
+              "entity": "A Soccer Story (Uma Historia de Futebol)",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Live Action)",
+              "entity": "By Courier",
+              "won": false,
+              "entityId": "tt0278378",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Live Action)",
+              "entity": "One Day Crossing",
+              "won": false,
+              "entityId": "tt0269658",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Live Action)",
+              "entity": "Quiero Ser (I want to be...)",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SHORT FILM (Live Action)",
+              "entity": "Seraglio",
+              "won": false,
+              "entityId": "tt0262758",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND",
+              "entity": "Cast Away",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND",
+              "entity": "Gladiator",
+              "won": true,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND",
+              "entity": "The Patriot",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND",
+              "entity": "The Perfect Storm",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND",
+              "entity": "U-571",
+              "won": false,
+              "entityId": "tt0141926",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND EDITING",
+              "entity": "Space Cowboys",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "SOUND EDITING",
+              "entity": "U-571",
+              "won": true,
+              "entityId": "tt0141926",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "VISUAL EFFECTS",
+              "entity": "Gladiator",
+              "won": true,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "VISUAL EFFECTS",
+              "entity": "Hollow Man",
+              "won": false,
+              "entityId": "tt0164052",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "VISUAL EFFECTS",
+              "entity": "The Perfect Storm",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Based on Material Previously Produced or Published)",
+              "entity": "Chocolat",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Based on Material Previously Produced or Published)",
+              "entity": "Crouching Tiger, Hidden Dragon",
+              "won": false,
+              "entityId": "tt0190332",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Based on Material Previously Produced or Published)",
+              "entity": "O Brother, Where Art Thou?",
+              "won": false,
+              "entityId": "tt0190590",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Based on Material Previously Produced or Published)",
+              "entity": "Traffic",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Based on Material Previously Produced or Published)",
+              "entity": "Wonder Boys",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Written Directly for the Screen)",
+              "entity": "Almost Famous",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Written Directly for the Screen)",
+              "entity": "Billy Elliot",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Written Directly for the Screen)",
+              "entity": "Erin Brockovich",
+              "won": false,
+              "entityId": "tt0195685",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Written Directly for the Screen)",
+              "entity": "Gladiator",
+              "won": false,
+              "entityId": "nm3766100",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "WRITING (Screenplay Written Directly for the Screen)",
+              "entity": "You Can Count on Me",
+              "won": false,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00035",
+            "name": "Asia Pacific Film Festival",
+            "image": {
+              "poster": "https://wikipedia.org/wiki/Special:Redirect/file/%EB%B6%80%EC%82%B0%EC%8B%9C%EB%AF%BC%ED%9A%8C%EA%B4%80%EC%97%90%EC%84%9C_%EC%97%B4%EB%A6%B0_%EC%A0%9C22%ED%9A%8C_%EC%95%84%EC%8B%9C%EC%95%84%EC%98%81%ED%99%94%EC%A0%9C_%EA%B0%9C%EB%A7%89%ED%96%89%EC%82%AC.jpg",
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "best film winners",
+              "entity": "Sandy Lives",
+              "won": true,
+              "entityId": "tt0276077",
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00050",
+            "name": "Changchun Film Festival",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "best actor",
+              "entity": "Heng Kong Chu Shi",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best actress",
+              "entity": "The Last Deer Hunter",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best director",
+              "entity": "Roaring Across the Horizon",
+              "won": true,
+              "entityId": "tt0459399",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best screenplay",
+              "entity": "Shadow Magic",
+              "won": true,
+              "entityId": "tt0238588",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best supporting actor",
+              "entity": "Shower",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best supporting actress",
+              "entity": "Roaring Across the Horizon",
+              "won": true,
+              "entityId": "tt0459399",
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "golden deer award (best film)",
+              "entity": "Roaring Across the Horizon",
+              "won": true,
+              "entityId": "tt0459399",
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00175",
+            "name": "Flanders International Film Festival Ghent",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "georges delerue award for best soundtrack/sound design",
+              "entity": "Crouching Tiger, Hidden Dragon (Tan Dun)",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "grand prix for best film",
+              "entity": "Amores Perros",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00189",
+            "name": "Göteborg International Film Festival",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "dragon award for best nordic film",
+              "entity": "Min mamma hade 14 barn",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00231",
+            "name": "Paris Lesbian and Feminist Film Festival",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "best feature film awards",
+              "entity": "If These Walls Could Talk 2",
+              "won": true,
+              "entityId": "tt0206036",
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00253",
+            "name": "Stockholm International Film Festival",
+            "image": {
+              "poster": "https://wikipedia.org/wiki/Special:Redirect/file/Mike_Leigh_at_Stockholm_International_Film_Festival_in_Nov_2014.jpg",
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "bronze horse: best film",
+              "entity": "Ali Zaoua",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00412",
+            "name": "Montreal World Film Festival",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "golden zenith winners for the best feature film in competition first films world competition",
+              "entity": "Dakhtaran-e khorshid",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00451",
+            "name": "RiverRun International Film Festival",
+            "image": {
+              "poster": "https://wikipedia.org/wiki/Special:Redirect/file/RR_Simple.png",
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "best narrative feature",
+              "entity": "Jacks or Better ( <$500k budget )",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            },
+            {
+              "category": "best narrative feature",
+              "entity": "The Magic of Marciano ( >$500k budget )",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        },
+        {
+          "festival": {
+            "id": "mf00470",
+            "name": "Seattle International Film Festival",
+            "image": {
+              "poster": null,
+              "__typename": "Image"
+            },
+            "__typename": "MovieFestival"
+          },
+          "year": 2000,
+          "awarded": [
+            {
+              "category": "golden space needle (best film) and siff awards for best short and documentary",
+              "entity": "Shower (Zhang Yang, China)",
+              "won": true,
+              "entityId": null,
+              "__typename": "AwardedListItem"
+            }
+          ],
+          "__typename": "StoryMovieAward"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "get",
+    "variables": {
+      "year": 2000,
+      "page": null
+    },
+    "query": "query get($year: Int, $page: Int) {\n  storiesMoviesAwards(year: $year, page: $page) {\n    festival {\n      id\n      name\n      image {\n        poster\n        __typename\n      }\n      __typename\n    }\n    year\n    awarded {\n      category\n      entity\n      won\n      entityId\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

@@ -51,12 +51,6 @@ describe('verify google analytics', () => {
 
     console.log(data)
 
-    /*
-    expect(res.status).to.equal(200);
-    chai.use(apiValidator);
-    expect(res).to.satisfyApiSpec;
-    */
-
   });
 });
 

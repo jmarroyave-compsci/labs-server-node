@@ -1,0 +1,66 @@
+{
+  "data": {
+    "data": {
+      "movies": [
+        {
+          "id": "tt0001257",
+          "title": "The House of the Seven Gables",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0001375",
+          "title": "The Range Riders",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0001643",
+          "title": "The Ghost's Warning",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0001982",
+          "title": "The White Red Man",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002062",
+          "title": "Billy and the Butler",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002105",
+          "title": "A Clue to Her Parentage",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002208",
+          "title": "The Girl and Her Trust",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002260",
+          "title": "How a Mosquito Operates",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002271",
+          "title": "The Indian Raiders",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0002284",
+          "title": "The Guerrillas of Algiers; or, The Mosque in the Desert",
+          "__typename": "Movie"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "GetItems",
+    "variables": {
+      "page": 1,
+      "field": "{\"op\":\"eq\",\"field\":\"genres\",\"value\":\"Thriller\"}"
+    },
+    "query": "query GetItems($page: Int, $field: String) {\n  movies(page: $page, field: $field) {\n    id\n    title\n    __typename\n  }\n}\n"
+  }
+}

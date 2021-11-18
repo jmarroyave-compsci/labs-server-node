@@ -33,7 +33,7 @@ export const peopleFind = async function( where=null, paging=null ) {
 
   let results = [];
 
-  console.log(where);
+  //console.log(where);
 
   results = await DBPerson.find( where )
       .populate("produced.id")

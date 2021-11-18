@@ -12,6 +12,7 @@ const Entity = new mongoose.Schema({
 	classification: String,
 	language: String,
 	releaseYear: Number,
+	startYear: Number,
 	endedYear: Number,
 	rating: [ { 
 		name: String,

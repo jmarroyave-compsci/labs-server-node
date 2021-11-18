@@ -13,7 +13,7 @@ export const entityGet = async function( params ) {
       .populate("crew.id")
       .populate("awards.festival")
 
-  console.log(result)
+  //console.log(result)
 
   if(result){
     results = await StoriesService.getMovieRemakes( { name: result['title'], maxMovies: 50 } )
@@ -38,7 +38,7 @@ export const entitiesFind = async function( where, type, params=null ) {
   let results = [];
   var model = null;
 
-  console.log(where);
+  //console.log(where);
 
   switch(type){
     case "movie":
