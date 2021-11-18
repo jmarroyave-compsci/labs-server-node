@@ -773,7 +773,7 @@ components:
           type: object
           additionalProperties:
             type: number
-        releaseYear:
+        releaseDecade:
           description: Distribution by year released
           type: object
           additionalProperties:
@@ -830,7 +830,7 @@ components:
           type: object
           additionalProperties:
             type: number
-        releaseYear:
+        releaseDecade:
           description: Distribution by year released
           type: object
           additionalProperties:
@@ -887,7 +887,7 @@ components:
           type: object
           additionalProperties:
             type: number
-        releaseYear:
+        releaseDecade:
           description: Distribution by year released
           type: object
           additionalProperties:
