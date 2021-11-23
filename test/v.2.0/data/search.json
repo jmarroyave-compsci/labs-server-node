@@ -1,0 +1,43 @@
+{
+  "data": {
+    "data": {
+      "search": [
+        {
+          "entity": "maximum surge",
+          "entityId": "tt0117012",
+          "type": "video_game",
+          "desc": "released: 1996",
+          "year": 1996,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "maximum surge",
+          "entityId": "tt0382178",
+          "type": "tv_show",
+          "desc": "released: 2003",
+          "year": 2003,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "maximum thrust",
+          "entityId": "tt0339371",
+          "type": "tv_show",
+          "desc": "released: 2003",
+          "year": 2003,
+          "__typename": "SearchResultsListItem"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "search",
+    "variables": {
+      "qry": "maxim",
+      "page": 1,
+      "entities": "%5B%22tv_show%22%2C%22video_game%22%2C%22festival%22%5D",
+      "year": null,
+      "timeframe": null
+    },
+    "query": "query search($qry: String, $page: Int, $entities: String, $year: Int, $timeframe: Int) {\n  search(\n    qry: $qry\n    page: $page\n    entities: $entities\n    year: $year\n    timeframe: $timeframe\n  ) {\n    entity\n    entityId\n    type\n    desc\n    year\n    __typename\n  }\n}\n"
+  }
+}

@@ -5,18 +5,18 @@ const Entity = new mongoose.Schema({
 	title: { type: String, required: true},
 	plot: String,
 	description: String,
-	country: [ String ],
+	countries: [ String ],
 	type: String,
 	genres: [ String ],
-	duration: String,
+	duration: Number,
 	classification: String,
 	language: String,
 	releaseYear: Number,
 	startYear: Number,
 	endedYear: Number,
-	rating: [ { 
-		name: String,
-		averageRating: String,
+	ratings: [ { 
+		entity: String,
+		rating: String,
 		votes: Number,		
 	} ], 
 	remakes: [],
@@ -31,14 +31,12 @@ const Entity = new mongoose.Schema({
 		won: Boolean,
 		film: String,
 	} ], 
-
 	image: {
-		poster: 	String,
+		poster: String,
 	},
 	boxOffice: 	String,
 	production: String,
-	website: 		String,
-
+	website: 	String,
 	directed: 	[{
 		id: { type: String, ref: 'person' }, 
 	}], 
@@ -58,8 +56,6 @@ const Entity = new mongoose.Schema({
 		job: String,
 		as: String, 
 	}], 
-
-	created: 		{ type: Number, default: Date.now()},
 }, { 
 	collection: 'entity',
 	timestamps: false,

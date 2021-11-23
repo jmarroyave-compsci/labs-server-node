@@ -1,0 +1,184 @@
+{
+  "data": {
+    "data": {
+      "people": [
+        {
+          "id": "nm0000084",
+          "name": "Gong Li",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000093",
+          "name": "Brad Pitt",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000096",
+          "name": "Gillian Anderson",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000097",
+          "name": "Pamela Anderson",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000098",
+          "name": "Jennifer Aniston",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000099",
+          "name": "Patricia Arquette",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000104",
+          "name": "Antonio Banderas",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": {
+                "id": "tt0142201",
+                "title": "Crazy in Alabama",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000109",
+          "name": "Yasmine Bleeth",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000110",
+          "name": "Kenneth Branagh",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": {
+                "id": "tt0105506",
+                "title": "Swan Song",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0450972",
+                "title": "As You Like It",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0475331",
+                "title": "The Magic Flute",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt1661199",
+                "title": "Cinderella",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt3089630",
+                "title": "Artemis Fowl",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt5226844",
+                "title": "Branagh Theatre Live: The Winter's Tale",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000111",
+          "name": "Matthew Broderick",
+          "__typename": "Person",
+          "directed": []
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "people_dashboard_click",
+    "variables": {
+      "page": 1,
+      "withActed": false,
+      "withDirected": true,
+      "withProduced": false,
+      "withWrote": false,
+      "field": "{\"op\":\"range\",\"field\":\"birthYear\",\"value\":[1960,1970]}"
+    },
+    "query": "fragment EntityTinyFragment on Entity {\n  id: _id\n  title\n  __typename\n}\n\nfragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nquery people_dashboard_click($page: Int, $field: String, $withActed: Boolean!, $withProduced: Boolean!, $withDirected: Boolean!, $withWrote: Boolean!) {\n  people(\n    page: $page\n    field: $field\n    withActed: $withActed\n    withWrote: $withWrote\n    withDirected: $withDirected\n    withProduced: $withProduced\n  ) {\n    ...PersonTinyFragment\n    directed @include(if: $withDirected) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    acted @include(if: $withActed) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    produced @include(if: $withProduced) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    wrote @include(if: $withWrote) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

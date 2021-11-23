@@ -1,0 +1,76 @@
+{
+  "data": {
+    "data": {
+      "movies": [
+        {
+          "id": "tt0048066",
+          "releaseYear": 1960,
+          "title": "Toro bravo",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0048162",
+          "releaseYear": 1960,
+          "title": "Herr Puntila and His Servant Matti",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0049360",
+          "releaseYear": 1960,
+          "title": "The Imposter",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0050595",
+          "releaseYear": 1960,
+          "title": "Code of Silence",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051474",
+          "releaseYear": 1960,
+          "title": "Una chica de Chicago",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051506",
+          "releaseYear": 1960,
+          "title": "Culpables",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051596",
+          "releaseYear": 1960,
+          "title": "La estrella vacía",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051832",
+          "releaseYear": 1960,
+          "title": "Nobody's Child",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051863",
+          "releaseYear": 1960,
+          "title": "Life Is a Circus",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0051869",
+          "releaseYear": 1960,
+          "title": "Los pequeños gigantes",
+          "__typename": "Movie"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "movies_dashboard_click",
+    "variables": {
+      "page": 1,
+      "field": "{\"op\":\"range\",\"field\":\"releaseYear\",\"value\":[1960,1970]}"
+    },
+    "query": "query movies_dashboard_click($page: Int, $field: String) {\n  movies(page: $page, field: $field) {\n    id: _id\n    releaseYear\n    title\n    __typename\n  }\n}\n"
+  }
+}

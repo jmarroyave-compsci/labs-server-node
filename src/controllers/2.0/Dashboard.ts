@@ -32,3 +32,8 @@ export async function dashboardTVGet(req: Request, res: Response): P<any> {
   const data = await Service.dashboardTVGet( {} );
   utils.writeJSON(res, data);
 };
+
+export async function dashboardMovieFestivals(req: Request, res: Response): P<any> {
+  const data = await Service.dashboardMovieFestivals( {} );
+  utils.writeJSON(res, data);
+};

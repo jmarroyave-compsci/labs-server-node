@@ -14,26 +14,21 @@ export const personGet = async function( params ) {
   return (results) ? results[0] : null
 };
 
-export const peopleGet = async function( params, paging=null ) {
-  paging = (paging) ? paging : {}
-  paging.page = (params.page) ? params.page : 1;
-  paging.limit = (params.limit) ? params.limit : 4;
-
+export const peopleGet = async function( params ) {
   const where = getWhereFromQuery(params.field);
- 
-  return await peopleFind( where, paging )
+  return await peopleFind( where, params )
 } 
 
-export const peopleFind = async function( where=null, paging=null ) {
-  paging = (paging) ? paging : {}
-  paging.page = (paging.page) ? paging.page : 1;
-  paging.limit = (paging.limit) ? paging.limit : 10;
+export const peopleFind = async function( where, params=null ) {
+  const paging = { page: 1, limit: 10}
+  paging.page = params?.page ?? 1;
+  paging.limit = params?.limit ?? 10;
 
   where = (where != null) ? where : {};
 
   let results = [];
 
-  //console.log(where);
+  console.log(where);
 
   results = await DBPerson.find( where )
       .populate("produced.id")

@@ -1,0 +1,15 @@
+{
+  "data": {
+    "data": {
+      "movieFestivals": []
+    }
+  },
+  "body": {
+    "operationName": "movie_festivals_dashboard_click",
+    "variables": {
+      "page": 1,
+      "field": "{\"op\":\"range\",\"field\":\"startYear\",\"value\":[2000,2010]}"
+    },
+    "query": "query movie_festivals_dashboard_click($page: Int, $field: String) {\n  movieFestivals(page: $page, field: $field) {\n    id: _id\n    startYear\n    name\n    __typename\n  }\n}\n"
+  }
+}

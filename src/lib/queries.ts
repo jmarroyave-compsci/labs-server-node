@@ -26,6 +26,9 @@ export const getWhereFromQuery = function(query) {
     case "gte":
         where[op.field] = { "$gte" : op.value };
         break;
+    case "in":
+        where[op.field] = { "$in" : op.value };
+        break;
   }
 
   return where

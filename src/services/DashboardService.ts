@@ -34,9 +34,10 @@ export const dashboardGamesGet = async function( params ) {
   return data['videoGames'];
 };
 
-export const dashboardFestivalsGet = async function( params ) {
+export const dashboardMovieFestivals = async function( params ) {
   const data = await dashboardGet( params )
   return data['festivals'];
+
 };
 
 export const getDashboardToVersion = async function( params ) {

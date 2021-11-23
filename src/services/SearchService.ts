@@ -24,11 +24,10 @@ export const searchResults = async function( params ) {
   console.log(params, query)
 
   const data =  await DBSearch.find( query )
-                            .sort({ ranking: -1, entity : 1  })
-                            .skip( pageSize * (page - 1) )
-                            .limit(pageSize);
+      .sort({ ranking: -1, entity : 1  })
+      .skip( pageSize * (page - 1) )
+      .limit(pageSize);
 
-  console.log(data)
   return data;
 };
 

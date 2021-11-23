@@ -1,0 +1,78 @@
+{
+  "data": {
+    "data": {
+      "dashboardVideoGames": {
+        "total": 20,
+        "type": {
+          "videoGame": 20
+        },
+        "releaseDecade": {
+          "_1990": 4,
+          "_2000": 3,
+          "_2010": 9,
+          "_2020": 4
+        },
+        "duration": {
+          "_10": 3,
+          "_30": 7,
+          "_60": 3,
+          "_120": 5,
+          "_180": 1,
+          "_500": 1
+        },
+        "genres": {
+          "Action": 5,
+          "SciFi": 5,
+          "Adventure": 11,
+          "Thriller": 2,
+          "Animation": 2,
+          "Comedy": 2,
+          "Family": 2,
+          "Drama": 1,
+          "Horror": 2,
+          "Romance": 1,
+          "Fantasy": 1,
+          "History": 1,
+          "Crime": 1
+        },
+        "awards": null,
+        "countries": null,
+        "ratings": {
+          "imdb": 11
+        },
+        "production": null,
+        "boxOffice": null,
+        "cast": {
+          "_1": 4,
+          "_2": 1,
+          "_3": 3,
+          "_4": 10,
+          "_5": 1,
+          "_6": 1
+        },
+        "directors": {
+          "_1": 19,
+          "_4": 1
+        },
+        "producers": {
+          "_1": 13,
+          "_2": 5,
+          "_3": 2
+        },
+        "writers": {
+          "_1": 11,
+          "_2": 4,
+          "_3": 2,
+          "_4": 2,
+          "_5": 1
+        },
+        "__typename": "DashboardVideoGames"
+      }
+    }
+  },
+  "body": {
+    "operationName": "dashboard_video_games",
+    "variables": {},
+    "query": "query dashboard_video_games {\n  dashboardVideoGames {\n    total\n    type\n    releaseDecade\n    duration\n    genres\n    awards\n    countries\n    ratings\n    production\n    boxOffice\n    cast\n    directors\n    producers\n    writers\n    __typename\n  }\n}\n"
+  }
+}

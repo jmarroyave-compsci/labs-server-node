@@ -124,10 +124,50 @@ app.use(function(req, res, next) {
         }
     }
 
-    var oldSend = res.send;
+
+    const overwrite = false;
+
+    const saveResults = (results, from) => {
+        if(!results) return;
+
+        try{
+            results = JSON.parse(results)    
+        } catch(ex){
+            console.log(results);
+            console.error(ex);
+            return;
+        }
+
+        if(results['errors']) return;
+
+        const data = JSON.stringify({ data : results, body: body}, null, 2);
+        if(config.LOCAL){
+            fs.writeFileSync(cacheFile, data);            
+            //console.log(from.toLowerCase(), "->", body.operationName)
+            if(!body.operationName) return;
+            const dataTestFile = `${__dirname}/../test/v.2.0/data/${body.operationName?.toLowerCase()}.json`;
+            if(overwrite || !fs.existsSync(dataTestFile)){
+                fs.writeFileSync(dataTestFile, data);
+            }
+        }
+    }
+
+    const oldSend = res.send;
     res.send = function() : Response {
-        if(config.LOCAL) fs.writeFileSync(cacheFile, JSON.stringify({ data : JSON.parse(arguments[0]), body: body}, null, 2));
+        saveResults( arguments[0], "send" )
         return oldSend.apply(this, arguments);
+    }
+
+    const oldJSON = res.json;
+    res.json = function() : Response {
+        saveResults( arguments[0], "json" )
+        return oldJSON.apply(this, arguments);
+    }
+
+    const oldEnd = res.end;
+    res.end = function() : Response {
+        saveResults( arguments[0], "end" )
+        return oldEnd.apply(this, arguments);
     }
 
     next();

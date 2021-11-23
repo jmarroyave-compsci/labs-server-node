@@ -38,18 +38,20 @@ export const entitiesFind = async function( where, type, params=null ) {
   let results = [];
   var model = null;
 
-  //console.log(where);
+  console.log(where);
 
-  switch(type){
-    case "movie":
-        where['type'] = {$in : ["movie", "short"]};
-        break;
-    case "tvShow":
-        where['type'] = {$in : ["tvEpisode", "tvMiniSeries","tvMovie","tvPilot","tvSeries","tvShort","tvSpecial"]};
-        break;
-    case "videoGame":
-        where['type'] = {$in : ["videoGame"]};
-        break;
+  if( !where['type'] ){
+    switch(type){
+      case "movie":
+          where['type'] = {$in : ["movie", "short"]};
+          break;
+      case "tvShow":
+          where['type'] = {$in : ["tvEpisode", "tvMiniSeries","tvMovie","tvPilot","tvSeries","tvShort","tvSpecial"]};
+          break;
+      case "videoGame":
+          where['type'] = {$in : ["videoGame"]};
+          break;
+    }    
   }
 
   results = await DBEntity.find( where )

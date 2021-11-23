@@ -1,0 +1,15 @@
+{
+  "data": {
+    "data": {
+      "tvShows": []
+    }
+  },
+  "body": {
+    "operationName": "tv_shows_dashboard_click",
+    "variables": {
+      "page": 1,
+      "field": "{\"op\":\"eq\",\"field\":\"type\",\"value\":\"tv movie\"}"
+    },
+    "query": "query tv_shows_dashboard_click($page: Int, $field: String) {\n  tvShows(page: $page, field: $field) {\n    id: _id\n    title\n    __typename\n  }\n}\n"
+  }
+}

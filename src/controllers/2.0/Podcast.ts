@@ -9,7 +9,7 @@ export async function podcastGet(req: Request, res: Response): P<any> {
 };
 
 export async function podcastsGet(req: Request, res: Response): P<any> {
-  const data = await Service.podcastsGet( req );
+  const data = await Service.podcastsGet( req.query );
   utils.writeJSON(res, data);
 };
 

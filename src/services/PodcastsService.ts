@@ -1,4 +1,5 @@
 import DBPodcast from '../models/podcast';
+import { getWhereFromQuery } from '../lib/queries';
 
 export const podcastGet = async function( params ) {
   let results = [];
@@ -6,9 +7,14 @@ export const podcastGet = async function( params ) {
 };
 
 export const podcastsGet = async function( params ) {
-  let results = [];
-  results = await DBPodcast.find(  );
-  return (results.length > 0) ? results[0] : null
+  const page = (params.page) ? params.page : 1;
+  const size = 10;
+
+  const where = getWhereFromQuery(params.field);
+  console.log(params.field, where);
+  return await DBPodcast.find( where )
+                        .skip(size * ( page - 1))
+                        .limit(size);
 };
 
 export const getPodcastsByCategory = async function( params ) {
@@ -21,8 +27,5 @@ export const getPodcastsByCategory = async function( params ) {
                                 .limit(size);
 
   if(!data) return [];
-
-  //console.log(data)
-
   return data;
 };

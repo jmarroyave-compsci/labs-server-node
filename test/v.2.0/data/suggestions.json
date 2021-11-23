@@ -1,0 +1,13 @@
+{
+  "data": 
+
+{"data":{"suggestions":{"suggestions":["test your reflex","testosterone","test shot starfish","test/beszéd","testigos ocultos"],"__typename":"SearchSuggestions"}}}
+  ,
+  "body": {
+    "operationName": "suggestions",
+    "variables": {
+      "qry": "test"
+    },
+    "query": "query suggestions($qry: String) {\n  suggestions(qry: $qry) {\n    suggestions\n    __typename\n  }\n}\n"
+  }
+}

@@ -9,8 +9,11 @@ const router = express.Router();
 ( async () => {
 	const oasFile = await getSpecs( { version : "2.0"} );
 	const oasDoc = jsyaml.safeLoad(oasFile);
-	const {schema} = await createGraphQLSchema(oasDoc)
-	router.use('/2.0/graphql', graphqlHTTP({schema, graphiql: true, pretty: false}));
+	const {schema} = await createGraphQLSchema(oasDoc, { 
+		simpleNames: true,
+		operationIdFieldNames : true,
+	})
+	router.use('/2.0/graphql', graphqlHTTP({schema, graphiql: true, pretty: true}));
 })();
 
 

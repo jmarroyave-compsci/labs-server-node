@@ -1,0 +1,93 @@
+{
+  "data": {
+    "data": {
+      "tvShow": {
+        "id": "tt0438489",
+        "title": "Test the Nation 2",
+        "countries": [],
+        "type": "tvSpecial",
+        "genres": [
+          "Game-Show"
+        ],
+        "duration": "120",
+        "ratings": [],
+        "releaseYear": 2004,
+        "classification": null,
+        "streamBy": [],
+        "produced": [
+          {
+            "id": {
+              "id": "nm3778409",
+              "name": "Tom Boles",
+              "__typename": "Person"
+            },
+            "__typename": "ProducedListItem"
+          }
+        ],
+        "directed": [
+          {
+            "id": {
+              "id": "nm0506354",
+              "name": "Bob Levy",
+              "__typename": "Person"
+            },
+            "__typename": "DirectedListItem"
+          }
+        ],
+        "cast": [
+          {
+            "id": {
+              "id": "nm2107475",
+              "name": "Reina Boone",
+              "__typename": "Person"
+            },
+            "as": "[\"Unemployed Professional\"]",
+            "__typename": "Cast2ListItem"
+          }
+        ],
+        "written": [
+          {
+            "id": {
+              "id": "nm0012912",
+              "name": "Michael Agbabian",
+              "__typename": "Person"
+            },
+            "__typename": "WrittenListItem"
+          },
+          {
+            "id": {
+              "id": "nm0348625",
+              "name": "Philip Gurin",
+              "__typename": "Person"
+            },
+            "__typename": "WrittenListItem"
+          },
+          {
+            "id": {
+              "id": "nm0808054",
+              "name": "Dwight D. Smith",
+              "__typename": "Person"
+            },
+            "__typename": "WrittenListItem"
+          }
+        ],
+        "crew": null,
+        "awards": [],
+        "image": null,
+        "boxOffice": null,
+        "production": null,
+        "language": null,
+        "plot": null,
+        "remakes": [],
+        "__typename": "Tvshow"
+      }
+    }
+  },
+  "body": {
+    "operationName": "tv_show",
+    "variables": {
+      "id": "tt0438489"
+    },
+    "query": "fragment MovieFestivalTinyFragment on MovieFestival {\n  id: _id\n  name\n  startYear\n  __typename\n}\n\nfragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nquery tv_show($id: String!) {\n  tvShow(id: $id) {\n    id: _id\n    title\n    countries\n    type\n    genres\n    duration\n    ratings {\n      averageRating\n      name\n      __typename\n    }\n    releaseYear\n    classification\n    streamBy {\n      name\n      yearAdded\n      __typename\n    }\n    produced {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    cast {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      __typename\n    }\n    written {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    awards {\n      category\n      festival {\n        ...MovieFestivalTinyFragment\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    image {\n      poster\n      __typename\n    }\n    boxOffice\n    production\n    language\n    plot\n    remakes {\n      title\n      releaseYear\n      directed {\n        id {\n          ...PersonTinyFragment\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

@@ -6,7 +6,7 @@ const Festival = new mongoose.Schema({
 	wiki_topic: String,
 	country: String,
 	continent: String,
-	established: Number,
+	startYear: Number,
 }, { 
 	collection: 'festival',
 	timestamps: false,

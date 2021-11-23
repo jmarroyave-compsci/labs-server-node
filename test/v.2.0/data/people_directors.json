@@ -1,0 +1,454 @@
+{
+  "data": {
+    "data": {
+      "people": [
+        {
+          "id": "nm0000001",
+          "name": "Fred Astaire",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000002",
+          "name": "Lauren Bacall",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000003",
+          "name": "Brigitte Bardot",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000004",
+          "name": "John Belushi",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000005",
+          "name": "Ingmar Bergman",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": {
+                "id": "tt0038468",
+                "title": "It Rains on Our Love",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0038675",
+                "title": "Crisis",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0039834",
+                "title": "A Ship to India",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0040418",
+                "title": "Port of Call",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0040622",
+                "title": "Music in Darkness",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0041998",
+                "title": "Thirst",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0043019",
+                "title": "This Can't Happen Here",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0044060",
+                "title": "Summer Interlude",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0044811",
+                "title": "Kvinnors väntan",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0050502",
+                "title": "Mr. Sleeman Is Coming",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0090222",
+                "title": "The Blessed Ones",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0104819",
+                "title": "Madame de Sade",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0129891",
+                "title": "A Dream Play",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0130010",
+                "title": "Hustruskolan",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0130171",
+                "title": "Storm Weather",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0130204",
+                "title": "Rabies",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0130344",
+                "title": "The Venetian",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0184741",
+                "title": "The Misanthrope",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0313247",
+                "title": "Backanterna",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000006",
+          "name": "Ingrid Bergman",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000007",
+          "name": "Humphrey Bogart",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000008",
+          "name": "Marlon Brando",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000009",
+          "name": "Richard Burton",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000010",
+          "name": "James Cagney",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "people_directors",
+    "variables": {
+      "page": 1,
+      "withActed": false,
+      "withDirected": true,
+      "withProduced": false,
+      "withWrote": false,
+      "field": "{\"op\":\"eq\",\"field\":\"professions\",\"value\":\"director\"}"
+    },
+    "query": "fragment EntityTinyFragment on Entity {\n  id: _id\n  title\n  __typename\n}\n\nfragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nquery people_directors($page: Int, $field: String, $withActed: Boolean!, $withProduced: Boolean!, $withDirected: Boolean!, $withWrote: Boolean!) {\n  people(\n    page: $page\n    field: $field\n    withActed: $withActed\n    withWrote: $withWrote\n    withDirected: $withDirected\n    withProduced: $withProduced\n  ) {\n    ...PersonTinyFragment\n    directed @include(if: $withDirected) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    acted @include(if: $withActed) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    produced @include(if: $withProduced) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    wrote @include(if: $withWrote) {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

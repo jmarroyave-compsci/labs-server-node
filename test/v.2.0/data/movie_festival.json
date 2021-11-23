@@ -1,0 +1,26 @@
+{
+  "data": {
+    "data": {
+      "movieFestival": {
+        "id": "mf00001",
+        "name": "Academy Awards",
+        "wiki": "Academy Awards",
+        "startYear": "1929",
+        "country": "?",
+        "continent": "America",
+        "image": {
+          "poster": null,
+          "__typename": "Image"
+        },
+        "__typename": "MovieFestival"
+      }
+    }
+  },
+  "body": {
+    "operationName": "movie_festival",
+    "variables": {
+      "id": "mf00001"
+    },
+    "query": "query movie_festival($id: String!) {\n  movieFestival(id: $id) {\n    id: _id\n    name\n    wiki\n    startYear\n    country\n    continent\n    image {\n      poster\n      __typename\n    }\n    __typename\n  }\n}\n"
+  }
+}

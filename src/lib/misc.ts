@@ -12,7 +12,6 @@ export const fileSearchReplace = function(file, search, replace) {
 
 }
 
-
 export const respondWithCode = function(code, payload) {
   return new ResponsePayload(code, payload);
 }

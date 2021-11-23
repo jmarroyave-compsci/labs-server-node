@@ -137,6 +137,26 @@ const DashboardGames = new mongoose.Schema({
 	created: { type: Number, default: Date.now()},	
 })
 
+const DashboardFestival = new mongoose.Schema({
+	total: Number,
+	startYear: {
+		type : Map,
+		of: Number
+	},
+	startDecade: {
+		type : Map,
+		of: Number
+	},
+	country: {
+		type : Map,
+		of: Number
+	},
+	continent: {
+		type : Map,
+		of: Number
+	},
+})
+
 
 const Dashboard = new mongoose.Schema({
 	lastUpdate: Date,
@@ -145,6 +165,7 @@ const Dashboard = new mongoose.Schema({
 	podcasts: DashboardPodcast, 	
 	tvShows: DashboardTV, 	
 	videoGames: DashboardGames, 	
+	festivals: DashboardFestival, 	
 	created: { type: Number, default: Date.now()},	
 }, { 
 	collection: 'dashboard',

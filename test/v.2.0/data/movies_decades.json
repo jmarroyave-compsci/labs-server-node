@@ -1,0 +1,75 @@
+{
+  "data": {
+    "data": {
+      "movies": [
+        {
+          "id": "tt0075859",
+          "releaseYear": 1980,
+          "title": "The Clones of Bruce Lee",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0076043",
+          "releaseYear": 1980,
+          "title": "Fontamara",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0076276",
+          "releaseYear": 1980,
+          "title": "Who's Singin' Over There?",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0076321",
+          "releaseYear": 1980,
+          "title": "The Six Directions of Boxing",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0076709",
+          "releaseYear": 1980,
+          "title": "Game of Death II",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0077428",
+          "releaseYear": 1980,
+          "title": "It Rained All Night the Day I Left",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0077567",
+          "releaseYear": 1980,
+          "title": "The Sleep of Death",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0077645",
+          "releaseYear": 1980,
+          "title": "Challenge of the Tiger",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0078113",
+          "releaseYear": 1980,
+          "title": "Primitif",
+          "__typename": "Movie"
+        },
+        {
+          "id": "tt0078356",
+          "releaseYear": 1980,
+          "title": "Tusk",
+          "__typename": "Movie"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "movies_decades",
+    "variables": {
+      "field": "{\"op\":\"range\",\"field\":\"releaseYear\",\"value\":[1980,1990]}"
+    },
+    "query": "query movies_decades($page: Int, $field: String) {\n  movies(page: $page, field: $field) {\n    id: _id\n    releaseYear\n    title\n    __typename\n  }\n}\n"
+  }
+}
