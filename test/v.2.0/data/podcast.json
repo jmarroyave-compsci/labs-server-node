@@ -8,15 +8,15 @@
         "feedUrl": null,
         "description": "Pre- and post-shows, deleted material, special announcements, and a testing ground for shows on ESN.fm",
         "summary": "Pre- and post-shows, deleted material, special announcements, and a testing ground for shows on ESN.fm",
-        "author": "ESN.fm",
+        "author": "esn.fm",
         "link": "http://www.esn.fm/testpattern/",
         "language": "english",
         "image": {
           "poster": "http://static1.squarespace.com/static/52edbc9de4b0b870f5f7ed49/t/5519cc82e4b036a3f57b07a2/1427754116498/1500w/Test-Pattern.jpg",
           "__typename": "Image"
         },
-        "category": "tv & film",
-        "subcategory": "",
+        "category": "tv and film",
+        "subcategory": null,
         "createdDate": null,
         "__typename": "Podcast"
       }

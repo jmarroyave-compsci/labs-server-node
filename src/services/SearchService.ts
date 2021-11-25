@@ -18,7 +18,7 @@ export const searchResults = async function( params ) {
   query['type'] = { $in : entities } 
   
   if( year ){
-    query['year'] = { 'year' : { $gte : year - timeframe, $lte : year + timeframe } }
+    query['year'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
 
   console.log(params, query)
@@ -32,13 +32,15 @@ export const searchResults = async function( params ) {
 };
 
 export const searchSuggestions = async function( params ) {
-  const data =  await DBSearch.aggregate(
+  var data =  await DBSearch.aggregate(
       [
           { $match : { entity : new RegExp(`^${params.qry}`) } },
           { "$group": { "_id": "$entity", count : { $sum : 1 } } },
-          { "$limit": 5 }
+          { "$limit": 5 },
       ]
   );
+
+  data = data.sort( (a,b) => (a.entity > b.entity ) ? 1 : -1 )
 
   return {suggestions : data.map( d => d._id )};
 };

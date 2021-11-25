@@ -13,8 +13,6 @@ export const entityGet = async function( params ) {
       .populate("crew.id")
       .populate("awards.festival")
 
-  //console.log(result)
-
   if(result){
     results = await StoriesService.getMovieRemakes( { name: result['title'], maxMovies: 50 } )
     result['remakes'] = (results.length > 0 && results[0].recs.length > 0) ? results[0].recs : []

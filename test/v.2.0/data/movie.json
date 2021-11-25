@@ -7,8 +7,8 @@
         "countries": [],
         "type": "movie",
         "genres": [
-          "Drama",
-          "War"
+          "drama",
+          "war"
         ],
         "duration": "118",
         "ratings": [

@@ -3,27 +3,83 @@
     "data": {
       "search": [
         {
-          "entity": "maximum surge",
-          "entityId": "tt0117012",
-          "type": "video_game",
-          "desc": "released: 1996",
-          "year": 1996,
+          "entity": "test",
+          "entityId": "tt4094328",
+          "type": "movie",
+          "desc": "",
+          "year": 2014,
           "__typename": "SearchResultsListItem"
         },
         {
-          "entity": "maximum surge",
-          "entityId": "tt0382178",
-          "type": "tv_show",
-          "desc": "released: 2003",
-          "year": 2003,
+          "entity": "test",
+          "entityId": "tt2480422",
+          "type": "movie",
+          "desc": "",
+          "year": 2012,
           "__typename": "SearchResultsListItem"
         },
         {
-          "entity": "maximum thrust",
-          "entityId": "tt0339371",
-          "type": "tv_show",
-          "desc": "released: 2003",
-          "year": 2003,
+          "entity": "test (the ivf film)",
+          "entityId": "tt15052900",
+          "type": "movie",
+          "desc": "",
+          "year": 2021,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test de cooper",
+          "entityId": "tt11580000",
+          "type": "movie",
+          "desc": "",
+          "year": 2015,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test drive",
+          "entityId": "tt3266526",
+          "type": "movie",
+          "desc": "",
+          "year": 2014,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test pack",
+          "entityId": "tt2455368",
+          "type": "movie",
+          "desc": "",
+          "year": 2012,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test pilot",
+          "entityId": "tt0224242",
+          "type": "movie",
+          "desc": "",
+          "year": 1957,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test tube babies",
+          "entityId": "tt0046416",
+          "type": "movie",
+          "desc": "",
+          "year": 1948,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "test/beszéd",
+          "entityId": "tt10557936",
+          "type": "movie",
+          "desc": "",
+          "year": 2008,
+          "__typename": "SearchResultsListItem"
+        },
+        {
+          "entity": "testament",
+          "entityId": "tt0086429",
+          "type": "movie",
+          "desc": "",
+          "year": 1983,
           "__typename": "SearchResultsListItem"
         }
       ]
@@ -32,9 +88,9 @@
   "body": {
     "operationName": "search",
     "variables": {
-      "qry": "maxim",
+      "qry": "test",
       "page": 1,
-      "entities": "%5B%22tv_show%22%2C%22video_game%22%2C%22festival%22%5D",
+      "entities": "%5B%22movie%22%2C%22video_game%22%2C%22festival%22%5D",
       "year": null,
       "timeframe": null
     },

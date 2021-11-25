@@ -146,9 +146,10 @@ app.use(function(req, res, next) {
             //console.log(from.toLowerCase(), "->", body.operationName)
             if(!body.operationName) return;
             const dataTestFile = `${__dirname}/../test/v.2.0/data/${body.operationName?.toLowerCase()}.json`;
-            if(overwrite || !fs.existsSync(dataTestFile)){
+            if(!fs.existsSync(dataTestFile)){
                 fs.writeFileSync(dataTestFile, data);
             }
+            fs.writeFileSync(`${__dirname}/../cache/operations/${body.operationName?.toLowerCase()}.json`, data);
         }
     }
 

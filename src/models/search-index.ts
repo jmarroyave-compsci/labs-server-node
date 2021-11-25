@@ -6,6 +6,7 @@ const SearchIndex = new mongoose.Schema({
 	type: String,
 	desc: String,
 	ranking: Number,
+	year: Number,
 }, { 
 	collection: 'search_index',
 	timestamps: false,

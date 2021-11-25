@@ -1,7 +1,58 @@
 {
   "data": {
     "data": {
-      "tvShows": []
+      "tvShows": [
+        {
+          "id": "tt0046316",
+          "title": "Silver Needle in the Sky",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0046619",
+          "title": "Mandrake the Magician",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0046684",
+          "title": "The Adventures of Huckleberry Finn",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0047198",
+          "title": "Macbeth",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0048205",
+          "title": "The Indiscreet Mrs. Jarvis",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0048957",
+          "title": "Invaders from Space",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0050502",
+          "title": "Mr. Sleeman Is Coming",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0052299",
+          "title": "Der Tod auf dem Rummelplatz",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0052616",
+          "title": "The Bells of St. Mary's",
+          "__typename": "TVShow"
+        },
+        {
+          "id": "tt0053812",
+          "title": "Die Falle",
+          "__typename": "TVShow"
+        }
+      ]
     }
   },
   "body": {

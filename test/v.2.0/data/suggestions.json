@@ -1,8 +1,18 @@
 {
-  "data": 
-
-{"data":{"suggestions":{"suggestions":["test your reflex","testosterone","test shot starfish","test/beszéd","testigos ocultos"],"__typename":"SearchSuggestions"}}}
-  ,
+  "data": {
+    "data": {
+      "suggestions": {
+        "suggestions": [
+          "test icicles",
+          "testamento de un pueblo",
+          "test test",
+          "testing time, teddy boy",
+          "test department"
+        ],
+        "__typename": "SearchSuggestions"
+      }
+    }
+  },
   "body": {
     "operationName": "suggestions",
     "variables": {

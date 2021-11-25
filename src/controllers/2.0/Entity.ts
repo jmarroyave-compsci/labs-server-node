@@ -4,7 +4,6 @@ import * as utils from '../../lib/misc';
 import { default as P } from "bluebird";
 
 export async function movieGet(req: Request, res: Response): P<any> {
-  console.log(req.params)
   const data = await Service.entityGet( { id: req.params.id  } );
   utils.writeJSON(res, data);
 };
