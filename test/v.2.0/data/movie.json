@@ -2,15 +2,16 @@
   "data": {
     "data": {
       "movie": {
-        "id": "tt0036606",
-        "title": "Another Time, Another Place",
-        "countries": [],
+        "id": "tt0053602",
+        "title": "The Angry Silence",
+        "countries": [
+          "united_kingdom"
+        ],
         "type": "movie",
         "genres": [
-          "drama",
-          "war"
+          "drama"
         ],
-        "duration": "118",
+        "duration": "95",
         "ratings": [
           {
             "averageRating": null,
@@ -18,24 +19,15 @@
             "__typename": "RatingsListItem"
           }
         ],
-        "releaseYear": 1983,
+        "releaseYear": 1960,
         "classification": null,
         "streamBy": [],
-        "produced": [
-          {
-            "id": {
-              "id": "nm0675294",
-              "name": "Simon Perry",
-              "__typename": "Person"
-            },
-            "__typename": "ProducedListItem"
-          }
-        ],
+        "produced": [],
         "directed": [
           {
             "id": {
-              "id": "nm0705535",
-              "name": "Michael Radford",
+              "id": "nm0337885",
+              "name": "Guy Green",
               "__typename": "Person"
             },
             "__typename": "DirectedListItem"
@@ -44,98 +36,80 @@
         "cast": [
           {
             "id": {
-              "id": "nm0517642",
-              "name": "Phyllis Logan",
+              "id": "nm0000277",
+              "name": "Richard Attenborough",
               "__typename": "Person"
             },
-            "as": "[\"Janie\"]",
+            "as": "[\"Tom Curtis\"]",
             "__typename": "Cast2ListItem"
           },
           {
             "id": {
-              "id": "nm0561155",
-              "name": "Giovanni Mauriello",
+              "id": "nm0000765",
+              "name": "Pier Angeli",
               "__typename": "Person"
             },
-            "as": "[\"Luigi\"]",
+            "as": "[\"Anna Curtis\"]",
             "__typename": "Cast2ListItem"
           },
           {
             "id": {
-              "id": "nm0269416",
-              "name": "Gianluca Favilla",
+              "id": "nm0185954",
+              "name": "Michael Craig",
               "__typename": "Person"
             },
-            "as": "[\"Umberto\"]",
+            "as": "[\"Joe Wallace\"]",
             "__typename": "Cast2ListItem"
           },
           {
             "id": {
-              "id": "nm0743027",
-              "name": "Claudio Rosini",
+              "id": "nm0496866",
+              "name": "Bernard Lee",
               "__typename": "Person"
             },
-            "as": "[\"Paolo\"]",
+            "as": "[\"Bert Connolly\"]",
             "__typename": "Cast2ListItem"
           }
         ],
         "written": [
           {
             "id": {
-              "id": "nm0450407",
-              "name": "Jessie Kesson",
+              "id": "nm0339995",
+              "name": "Richard Gregson",
               "__typename": "Person"
             },
             "__typename": "WrittenListItem"
           },
           {
             "id": {
-              "id": "nm0485392",
-              "name": "John Francis Lane",
+              "id": "nm0285302",
+              "name": "Bryan Forbes",
               "__typename": "Person"
             },
             "__typename": "WrittenListItem"
           }
         ],
         "crew": null,
-        "awards": [],
-        "image": null,
-        "boxOffice": null,
-        "production": null,
-        "language": null,
-        "plot": null,
-        "remakes": [
+        "awards": [
           {
-            "title": "Another Time, Another Place",
-            "releaseYear": 1983,
-            "directed": [
-              {
-                "id": {
-                  "id": "nm0705535",
-                  "name": "Michael Radford",
-                  "__typename": "Person"
-                },
-                "__typename": "DirectedListItem"
-              }
-            ],
-            "__typename": "Entity"
-          },
-          {
-            "title": "Another Time, Another Place",
-            "releaseYear": 1958,
-            "directed": [
-              {
-                "id": {
-                  "id": "nm0020765",
-                  "name": "Lewis Allen",
-                  "__typename": "Person"
-                },
-                "__typename": "DirectedListItem"
-              }
-            ],
-            "__typename": "Entity"
+            "category": "WRITING (Story and Screenplay--written directly for the screen)",
+            "festival": {
+              "id": "mf00001",
+              "name": "Academy Awards",
+              "startYear": "1929",
+              "__typename": "MovieFestival"
+            },
+            "won": false,
+            "year": 1960,
+            "__typename": "Award"
           }
         ],
+        "image": null,
+        "boxOffice": "N/A",
+        "production": "beaver_films",
+        "language": null,
+        "plot": "The right of every individual to be different from his fellow man is the theme behind this internationally-hailed, British production. The story tells of a man's dilemma when he refused to participate in an unofficial strike, where he works. While vicious, calculated violence brings the other dissenters into line, he goes it alone and is sent to Coventry (given the silent treatment) by his fellow workers. A stirring, thought-provoking movie that portrays the human problems and high emotions generated when a man dares to act on the courage of his convictions, and dares fight to keep his individual freedom.",
+        "remakes": [],
         "__typename": "Movie2"
       }
     }
@@ -143,7 +117,7 @@
   "body": {
     "operationName": "movie",
     "variables": {
-      "id": "tt0036606"
+      "id": "tt0053602"
     },
     "query": "fragment MovieFestivalTinyFragment on MovieFestival {\n  id: _id\n  name\n  startYear\n  __typename\n}\n\nfragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nquery movie($id: String!) {\n  movie(id: $id) {\n    id: _id\n    title\n    countries\n    type\n    genres\n    duration\n    ratings {\n      averageRating\n      name\n      __typename\n    }\n    releaseYear\n    classification\n    streamBy {\n      name\n      yearAdded\n      __typename\n    }\n    produced {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    cast {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      __typename\n    }\n    written {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    awards {\n      category\n      festival {\n        ...MovieFestivalTinyFragment\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    image {\n      poster\n      __typename\n    }\n    boxOffice\n    production\n    language\n    plot\n    remakes {\n      title\n      releaseYear\n      directed {\n        id {\n          ...PersonTinyFragment\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
   }

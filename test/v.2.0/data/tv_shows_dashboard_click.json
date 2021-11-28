@@ -3,53 +3,53 @@
     "data": {
       "tvShows": [
         {
-          "id": "tt0046316",
-          "title": "Silver Needle in the Sky",
+          "id": "tt0053205",
+          "title": "The Race for Space",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0046619",
-          "title": "Mandrake the Magician",
+          "id": "tt0071741",
+          "title": "The Last Angry Man",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0046684",
-          "title": "The Adventures of Huckleberry Finn",
+          "id": "tt0098555",
+          "title": "Unconquered",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0047198",
-          "title": "Macbeth",
+          "id": "tt0112910",
+          "title": "Duke of Groove",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0048205",
-          "title": "The Indiscreet Mrs. Jarvis",
+          "id": "tt0160139",
+          "title": "Clockmaker",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0048957",
-          "title": "Invaders from Space",
+          "id": "tt0206036",
+          "title": "If These Walls Could Talk 2",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0050502",
-          "title": "Mr. Sleeman Is Coming",
+          "id": "tt0240533",
+          "title": "La gazza ladra",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0052299",
-          "title": "Der Tod auf dem Rummelplatz",
+          "id": "tt0240555",
+          "title": "The Great Waltz",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0052616",
-          "title": "The Bells of St. Mary's",
+          "id": "tt0241363",
+          "title": "The Desert Song",
           "__typename": "TVShow"
         },
         {
-          "id": "tt0053812",
-          "title": "Die Falle",
+          "id": "tt0261210",
+          "title": "Pulcinella",
           "__typename": "TVShow"
         }
       ]
@@ -59,7 +59,7 @@
     "operationName": "tv_shows_dashboard_click",
     "variables": {
       "page": 1,
-      "field": "{\"op\":\"eq\",\"field\":\"type\",\"value\":\"tv movie\"}"
+      "field": "{\"op\":\"eq\",\"field\":\"type\",\"value\":\"tv_movie\"}"
     },
     "query": "query tv_shows_dashboard_click($page: Int, $field: String) {\n  tvShows(page: $page, field: $field) {\n    id: _id\n    title\n    __typename\n  }\n}\n"
   }

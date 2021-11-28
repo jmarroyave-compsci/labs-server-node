@@ -5,10 +5,10 @@
         "id": "tt0117012",
         "title": "Maximum Surge",
         "countries": [],
-        "type": "video game",
+        "type": "video_game",
         "genres": [
           "action",
-          "sci-fi"
+          "sci_fi"
         ],
         "duration": "97",
         "ratings": [

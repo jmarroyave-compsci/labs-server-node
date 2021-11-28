@@ -2,33 +2,32 @@
   "data": {
     "data": {
       "tvShow": {
-        "id": "tt0438489",
-        "title": "Test the Nation 2",
-        "countries": [],
-        "type": "tv special",
-        "genres": [
-          "game-show"
+        "id": "tt0053205",
+        "title": "The Race for Space",
+        "countries": [
+          "usa"
         ],
-        "duration": "120",
-        "ratings": [],
-        "releaseYear": 2004,
-        "classification": null,
-        "streamBy": [],
-        "produced": [
+        "type": "tv_movie",
+        "genres": [
+          "documentary"
+        ],
+        "duration": "55",
+        "ratings": [
           {
-            "id": {
-              "id": "nm3778409",
-              "name": "Tom Boles",
-              "__typename": "Person"
-            },
-            "__typename": "ProducedListItem"
+            "averageRating": null,
+            "name": null,
+            "__typename": "RatingsListItem"
           }
         ],
+        "releaseYear": 1959,
+        "classification": null,
+        "streamBy": [],
+        "produced": [],
         "directed": [
           {
             "id": {
-              "id": "nm0506354",
-              "name": "Bob Levy",
+              "id": "nm0938678",
+              "name": "David L. Wolper",
               "__typename": "Person"
             },
             "__typename": "DirectedListItem"
@@ -37,47 +36,44 @@
         "cast": [
           {
             "id": {
-              "id": "nm2107475",
-              "name": "Reina Boone",
+              "id": "nm0908794",
+              "name": "Mike Wallace",
               "__typename": "Person"
             },
-            "as": "[\"Unemployed Professional\"]",
+            "as": "[\"Narrator\"]",
             "__typename": "Cast2ListItem"
           }
         ],
         "written": [
           {
             "id": {
-              "id": "nm0012912",
-              "name": "Michael Agbabian",
-              "__typename": "Person"
-            },
-            "__typename": "WrittenListItem"
-          },
-          {
-            "id": {
-              "id": "nm0348625",
-              "name": "Philip Gurin",
-              "__typename": "Person"
-            },
-            "__typename": "WrittenListItem"
-          },
-          {
-            "id": {
-              "id": "nm0808054",
-              "name": "Dwight D. Smith",
+              "id": "nm0556226",
+              "name": "Laurence E. Mascott",
               "__typename": "Person"
             },
             "__typename": "WrittenListItem"
           }
         ],
         "crew": null,
-        "awards": [],
+        "awards": [
+          {
+            "category": "DOCUMENTARY (Feature)",
+            "festival": {
+              "id": "mf00001",
+              "name": "Academy Awards",
+              "startYear": "1929",
+              "__typename": "MovieFestival"
+            },
+            "won": false,
+            "year": 1959,
+            "__typename": "Award"
+          }
+        ],
         "image": null,
-        "boxOffice": null,
-        "production": null,
+        "boxOffice": "N/A",
+        "production": "n/a",
         "language": null,
-        "plot": null,
+        "plot": "The history of the beginning of man's reach for space travel. Some previously classified American and Russia footage is inter-spliced with Mike Wallace interviewing people about their first-hand experiences.",
         "remakes": [],
         "__typename": "Tvshow"
       }
@@ -86,7 +82,7 @@
   "body": {
     "operationName": "tv_show",
     "variables": {
-      "id": "tt0438489"
+      "id": "tt0053205"
     },
     "query": "fragment MovieFestivalTinyFragment on MovieFestival {\n  id: _id\n  name\n  startYear\n  __typename\n}\n\nfragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nquery tv_show($id: String!) {\n  tvShow(id: $id) {\n    id: _id\n    title\n    countries\n    type\n    genres\n    duration\n    ratings {\n      averageRating\n      name\n      __typename\n    }\n    releaseYear\n    classification\n    streamBy {\n      name\n      yearAdded\n      __typename\n    }\n    produced {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    cast {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      __typename\n    }\n    written {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...PersonTinyFragment\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    awards {\n      category\n      festival {\n        ...MovieFestivalTinyFragment\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    image {\n      poster\n      __typename\n    }\n    boxOffice\n    production\n    language\n    plot\n    remakes {\n      title\n      releaseYear\n      directed {\n        id {\n          ...PersonTinyFragment\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
   }

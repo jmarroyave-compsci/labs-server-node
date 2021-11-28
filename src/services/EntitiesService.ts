@@ -44,10 +44,10 @@ export const entitiesFind = async function( where, type, params=null ) {
           where['type'] = {$in : ["movie", "short"]};
           break;
       case "tvShow":
-          where['type'] = {$in : ["tvEpisode", "tvMiniSeries","tvMovie","tvPilot","tvSeries","tvShort","tvSpecial"]};
+          where['type'] = {$in : ["tv_episode", "tv_mini_series","tv_movie","tv_pilot","tv_series","tv_short","tv_special"]};
           break;
       case "videoGame":
-          where['type'] = {$in : ["videoGame"]};
+          where['type'] = {$in : ["video_game"]};
           break;
     }    
   }

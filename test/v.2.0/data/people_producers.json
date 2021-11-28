@@ -43,11 +43,7 @@
           "__typename": "Person",
           "produced": [
             {
-              "id": {
-                "id": "tt0067804",
-                "title": "Summertree",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Produced2ListItem"
             },
             {

@@ -15,60 +15,12 @@
           "directed": []
         },
         {
-          "id": "nm0000003",
-          "name": "Brigitte Bardot",
-          "__typename": "Person",
-          "directed": []
-        },
-        {
-          "id": "nm0000004",
-          "name": "John Belushi",
-          "__typename": "Person",
-          "directed": []
-        },
-        {
           "id": "nm0000005",
           "name": "Ingmar Bergman",
           "__typename": "Person",
           "directed": [
             {
-              "id": {
-                "id": "tt0038468",
-                "title": "It Rains on Our Love",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0038675",
-                "title": "Crisis",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0039834",
-                "title": "A Ship to India",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0040418",
-                "title": "Port of Call",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0040622",
-                "title": "Music in Darkness",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -76,19 +28,7 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0041998",
-                "title": "Thirst",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0043019",
-                "title": "This Can't Happen Here",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -96,19 +36,39 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0044060",
-                "title": "Summer Interlude",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0044811",
-                "title": "Kvinnors väntan",
-                "__typename": "Entity"
-              },
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -133,8 +93,28 @@
             },
             {
               "id": {
-                "id": "tt0050502",
-                "title": "Mr. Sleeman Is Coming",
+                "id": "tt0050986",
+                "title": "Wild Strawberries",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0053976",
+                "title": "The Virgin Spring",
                 "__typename": "Entity"
               },
               "__typename": "Directed2ListItem"
@@ -244,19 +224,11 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0090222",
-                "title": "The Blessed Ones",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0104819",
-                "title": "Madame de Sade",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -268,54 +240,6 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0129891",
-                "title": "A Dream Play",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0130010",
-                "title": "Hustruskolan",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0130171",
-                "title": "Storm Weather",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0130204",
-                "title": "Rabies",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0130344",
-                "title": "The Venetian",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0184741",
-                "title": "The Misanthrope",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
               "id": null,
               "__typename": "Directed2ListItem"
             },
@@ -324,11 +248,7 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0313247",
-                "title": "Backanterna",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -435,6 +355,18 @@
               "__typename": "Directed2ListItem"
             }
           ]
+        },
+        {
+          "id": "nm0000011",
+          "name": "Gary Cooper",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000012",
+          "name": "Bette Davis",
+          "__typename": "Person",
+          "directed": []
         }
       ]
     }

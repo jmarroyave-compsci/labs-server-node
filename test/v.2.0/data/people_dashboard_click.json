@@ -21,12 +21,6 @@
           "directed": []
         },
         {
-          "id": "nm0000097",
-          "name": "Pamela Anderson",
-          "__typename": "Person",
-          "directed": []
-        },
-        {
           "id": "nm0000098",
           "name": "Jennifer Aniston",
           "__typename": "Person",
@@ -58,11 +52,7 @@
           "__typename": "Person",
           "directed": [
             {
-              "id": {
-                "id": "tt0142201",
-                "title": "Crazy in Alabama",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -87,14 +77,6 @@
           "__typename": "Person",
           "directed": [
             {
-              "id": {
-                "id": "tt0105506",
-                "title": "Swan Song",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
               "id": null,
               "__typename": "Directed2ListItem"
             },
@@ -103,19 +85,7 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt0450972",
-                "title": "As You Like It",
-                "__typename": "Entity"
-              },
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": {
-                "id": "tt0475331",
-                "title": "The Magic Flute",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -131,27 +101,23 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt1661199",
-                "title": "Cinderella",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt3089630",
-                "title": "Artemis Fowl",
-                "__typename": "Entity"
-              },
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
-              "id": {
-                "id": "tt5226844",
-                "title": "Branagh Theatre Live: The Winter's Tale",
-                "__typename": "Entity"
-              },
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
               "__typename": "Directed2ListItem"
             },
             {
@@ -161,10 +127,21 @@
           ]
         },
         {
-          "id": "nm0000111",
-          "name": "Matthew Broderick",
+          "id": "nm0000113",
+          "name": "Sandra Bullock",
           "__typename": "Person",
           "directed": []
+        },
+        {
+          "id": "nm0000115",
+          "name": "Nicolas Cage",
+          "__typename": "Person",
+          "directed": [
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            }
+          ]
         }
       ]
     }

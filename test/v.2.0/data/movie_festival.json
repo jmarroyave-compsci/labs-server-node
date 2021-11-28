@@ -7,7 +7,7 @@
         "wiki": "Academy Awards",
         "startYear": "1929",
         "country": "?",
-        "continent": "America",
+        "continent": "america",
         "image": {
           "poster": null,
           "__typename": "Image"

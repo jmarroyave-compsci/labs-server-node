@@ -1,7 +1,68 @@
 {
   "data": {
     "data": {
-      "movieFestivals": []
+      "movieFestivals": [
+        {
+          "id": "mf00084",
+          "startYear": "2000",
+          "name": "Jeonju International Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00120",
+          "startYear": "2000",
+          "name": "Tokyo Filmex",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00141",
+          "startYear": "2000",
+          "name": "Bergen International Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00171",
+          "startYear": "2000",
+          "name": "Festival del Cinema all'Aperto \"Accordi @ DISACCORDI\"",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00223",
+          "startYear": "2000",
+          "name": "Neuchâtel International Fantastic Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00292",
+          "startYear": "2000",
+          "name": "Big Bear Lake International Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00304",
+          "startYear": "2000",
+          "name": "Calgary International Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00362",
+          "startYear": "2000",
+          "name": "Havana Film Festival New York (HFFNY)",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00414",
+          "startYear": "2000",
+          "name": "Moondance International Film Festival",
+          "__typename": "MovieFestival"
+        },
+        {
+          "id": "mf00455",
+          "startYear": "2000",
+          "name": "Sacramento Film and Music Festival",
+          "__typename": "MovieFestival"
+        }
+      ]
     }
   },
   "body": {
