@@ -767,6 +767,7 @@ components:
     DashboardEntities:
       type: object
       title: Entities Dashboard
+      x-internal: false
       properties:
         total:
           description: Number of movies
@@ -822,7 +823,21 @@ components:
           type: object
         ratingsEntities:
           type: object
-      x-internal: false
+        genresByYear:
+          type: object
+        releasesByYear:
+          type: object
+        durationByYear:
+          type: object
+        countryByYear:
+          type: object
+        typeByYear:
+          type: object
+        boxOfficeByYear:
+          type: object
+        wordsByDecadeAndGenre:
+          type: array
+          items: {}
     DashboardMovies:
       $ref: '#/components/schemas/DashboardEntities'
     DashboardTVShows:
@@ -980,6 +995,18 @@ components:
             properties:
               id:
                 $ref: '#/components/schemas/Entity'
+        directedTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'                
+        directedBy:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'                
+        actedWith:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'                
       title: Person
     Entity:
       type: object

@@ -33,6 +33,9 @@ const Person = new mongoose.Schema({
 		job: String,
 		as: String, 
 	}], 
+	directedTo: 	[{ type: String, ref: 'person' }], 
+	directedBy: 	[{ type: String, ref: 'person' }], 
+	actedWith: 	[{ type: String, ref: 'person' }], 
 	
 	created: { type: Number, default: Date.now()},
 }, { 

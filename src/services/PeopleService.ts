@@ -10,6 +10,9 @@ export const personGet = async function( params ) {
       .populate("acted.id")
       .populate("crew.id")
       .populate("awards.festival")
+      .populate("directedTo")
+      .populate("directedBy")
+      .populate("actedWith")
 
   return (results) ? results[0] : null
 };
