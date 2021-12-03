@@ -5,7 +5,7 @@ const StoryRemake = new mongoose.Schema({
 	count: Number,
 	recs: [ { type: String, ref: 'entity' } ], 
 }, { 
-	collection: 'compute_movies_remakes',
+	collection: 'movie_remakes',
 	timestamps: false,
 })
 

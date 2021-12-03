@@ -5,61 +5,536 @@
         {
           "name": "Home",
           "count": 353,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0005504",
+              "releaseYear": 1915,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0002061",
+                    "name": "Maurice Elvey",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0010261",
+              "releaseYear": 1919,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0916665",
+                    "name": "Lois Weber",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0205131",
+              "releaseYear": 1916,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0922304",
+                    "name": "Raymond B. West",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Alone",
           "count": 299,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0022215",
+              "releaseYear": 1931,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0468882",
+                    "name": "Grigoriy Kozintsev",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0871185",
+                    "name": "Leonid Trauberg",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0022408",
+              "releaseYear": 1931,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0224543",
+                    "name": "Henri Diamant-Berger",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0053239",
+              "releaseYear": 1959,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0688191",
+                    "name": "Vladimir Pogacic",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Broken",
           "count": 226,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0454839",
+              "releaseYear": 2006,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm1899220",
+                    "name": "Simon Boyes",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0556573",
+                    "name": "Adam Mason",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0469045",
+              "releaseYear": 2006,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0924429",
+                    "name": "Alan White",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0859597",
+              "releaseYear": 2005,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm1237928",
+                    "name": "Jay Hollinsworth",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Trapped",
           "count": 192,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0029689",
+              "releaseYear": 1937,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0058270",
+                    "name": "Leon Barsha",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0041983",
+              "releaseYear": 1949,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0281507",
+                    "name": "Richard Fleischer",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0138885",
+              "releaseYear": 1999,
+              "directed": [],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Gift",
           "count": 180,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0193192",
+              "releaseYear": 1999,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0001200",
+                    "name": "Gary Farmer",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0219699",
+              "releaseYear": 2000,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0000600",
+                    "name": "Sam Raimi",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0237269",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0426183",
+                    "name": "Sandy Johnson",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Interview",
           "count": 179,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0113466",
+              "releaseYear": 1995,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0306677",
+                    "name": "Monique Gardenberg",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0120714",
+              "releaseYear": 1998,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0597516",
+                    "name": "Craig Monahan",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0280774",
+              "releaseYear": 1999,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0874164",
+                    "name": "Ian Truitner",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Box",
           "count": 173,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0072727",
+              "releaseYear": 1975,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0248906",
+                    "name": "Paul Eddey",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0359024",
+              "releaseYear": 2003,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0160614",
+                    "name": "Richard Pepin",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0362478",
+              "releaseYear": 2009,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0446819",
+                    "name": "Richard Kelly",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Silence",
           "count": 168,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0017385",
+              "releaseYear": 1926,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0432216",
+                    "name": "Rupert Julian",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0022384",
+              "releaseYear": 1931,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0309163",
+                    "name": "Louis J. Gasnier",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0545730",
+                    "name": "Max Marcin",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0067755",
+              "releaseYear": 1971,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0793983",
+                    "name": "Masahiro Shinoda",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Hope",
           "count": 165,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0010268",
+              "releaseYear": 1919,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0934010",
+                    "name": "Rex Wilson",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0066500",
+              "releaseYear": 1970,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0351410",
+                    "name": "Serif Gören",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0159027",
+              "releaseYear": 1996,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0864269",
+                    "name": "Oren Tirosh",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Escape",
           "count": 162,
-          "recs": [],
+          "recs": [
+            {
+              "id": "tt0032447",
+              "releaseYear": 1940,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0503777",
+                    "name": "Mervyn LeRoy",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0040325",
+              "releaseYear": 1948,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0000581",
+                    "name": "Joseph L. Mankiewicz",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "id": "tt0095111",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0246986",
+                    "name": "Atef El-Tayeb",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         }
       ]

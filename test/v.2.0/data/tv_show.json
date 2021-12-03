@@ -46,15 +46,58 @@
         ],
         "written": [
           {
-            "id": {
-              "id": "nm0556226",
-              "name": "Laurence E. Mascott",
-              "__typename": "Person"
-            },
+            "id": null,
             "__typename": "WrittenListItem"
           }
         ],
-        "crew": null,
+        "crew": [
+          {
+            "id": null,
+            "as": "[\"Self - Interviewee\"]",
+            "cat": "self",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": "[\"Self - Interviewee\"]",
+            "cat": "self",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": null,
+            "cat": "composer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": {
+              "id": "nm0623852",
+              "name": "Michael Nebbia",
+              "__typename": "Person"
+            },
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": null,
+            "cat": "editor",
+            "job": null,
+            "__typename": "CrewListItem"
+          }
+        ],
         "awards": [
           {
             "category": "DOCUMENTARY (Feature)",

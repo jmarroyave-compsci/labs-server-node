@@ -21,12 +21,22 @@
           "directed": []
         },
         {
+          "id": "nm0000097",
+          "name": "Pamela Anderson",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
           "id": "nm0000098",
           "name": "Jennifer Aniston",
           "__typename": "Person",
           "directed": [
             {
-              "id": null,
+              "id": {
+                "id": "tt0867415",
+                "title": "Room 10",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -41,7 +51,11 @@
           "__typename": "Person",
           "directed": [
             {
-              "id": null,
+              "id": {
+                "id": "tt7510348",
+                "title": "Love Canal",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             }
           ]
@@ -56,11 +70,19 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
+              "id": {
+                "id": "tt0477273",
+                "title": "Summer Rain",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
+              "id": {
+                "id": "tt2700736",
+                "title": "Akil",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             }
           ]
@@ -85,7 +107,43 @@
               "__typename": "Directed2ListItem"
             },
             {
+              "id": {
+                "id": "tt0357865",
+                "title": "Listening",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
               "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0475331",
+                "title": "The Magic Flute",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0800369",
+                "title": "Thor",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt12789558",
+                "title": "Belfast",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -97,27 +155,11 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt5226844",
+                "title": "Branagh Theatre Live: The Winter's Tale",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -127,21 +169,10 @@
           ]
         },
         {
-          "id": "nm0000113",
-          "name": "Sandra Bullock",
+          "id": "nm0000111",
+          "name": "Matthew Broderick",
           "__typename": "Person",
           "directed": []
-        },
-        {
-          "id": "nm0000115",
-          "name": "Nicolas Cage",
-          "__typename": "Person",
-          "directed": [
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            }
-          ]
         }
       ]
     }

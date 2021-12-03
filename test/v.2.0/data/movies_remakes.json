@@ -5,61 +5,502 @@
         {
           "name": "Strangers",
           "count": 99,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0100702",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0134176",
+                    "name": "Danny Cannon",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0140573",
+              "releaseYear": 1974,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0409723",
+                    "name": "Ciro Ippolito",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0186580",
+              "releaseYear": 1996,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0399011",
+                    "name": "Jun Huang",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Deal",
           "count": 99,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0165210",
+              "releaseYear": 1997,
+              "directed": [],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0405861",
+              "releaseYear": 2005,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0434838",
+                    "name": "Harvey Kahn",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0493118",
+              "releaseYear": 2007,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0324426",
+                    "name": "Bryan Goeres",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Visitor",
           "count": 99,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0080100",
+              "releaseYear": 1979,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0660873",
+                    "name": "Giulio Paradisi",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0253904",
+              "releaseYear": 1973,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0942512",
+                    "name": "John Wright",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0324457",
+              "releaseYear": 2002,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0177204",
+                    "name": "Miles Cook",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Promise",
           "count": 98,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0008468",
+              "releaseYear": 1917,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0402489",
+                    "name": "Jay Hunt",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0079756",
+              "releaseYear": 1979,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0146062",
+                    "name": "Gilbert Cates",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0117398",
+              "releaseYear": 1996,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0201094",
+                    "name": "Jean-Pierre Dardenne",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                },
+                {
+                  "id": {
+                    "id": "nm0201095",
+                    "name": "Luc Dardenne",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Touch",
           "count": 98,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0120357",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0001707",
+                    "name": "Paul Schrader",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0206353",
+              "releaseYear": 1991,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0807923",
+                    "name": "Debra Smith",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0257233",
+              "releaseYear": 2000,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0002576",
+                    "name": "Walter Fasano",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Ashes",
           "count": 97,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0012907",
+              "releaseYear": 1922,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0001908",
+                    "name": "Gilbert M. 'Broncho Billy' Anderson",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0387036",
+              "releaseYear": 2005,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm2050631",
+                    "name": "Corinna Faith",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0815101",
+              "releaseYear": 2010,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0619651",
+                    "name": "Ajay Naidu",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Still Life",
           "count": 97,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0072248",
+              "releaseYear": 1974,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0758137",
+                    "name": "Sohrab Shahid Saless",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0122734",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0267943",
+                    "name": "Harun Farocki",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0166186",
+              "releaseYear": 2001,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm1093039",
+                    "name": "Mike Flanagan",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "The Date",
           "count": 97,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0216662",
+              "releaseYear": 1980,
+              "directed": [],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt8435210",
+              "releaseYear": 2020,
+              "directed": [],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0112807",
+              "releaseYear": 1997,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0568230",
+                    "name": "Francine McDougall",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Legacy",
           "count": 96,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0073272",
+              "releaseYear": 1975,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0037790",
+                    "name": "Karen Arthur",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0099996",
+              "releaseYear": 1993,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0581303",
+                    "name": "Kieth Merrill",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0156734",
+              "releaseYear": 1998,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0779830",
+                    "name": "T.J. Scott",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         },
         {
           "name": "Lullaby",
           "count": 96,
-          "recs": [],
+          "recs": [
+            {
+              "_id": "tt0029089",
+              "releaseYear": 1937,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0895048",
+                    "name": "Dziga Vertov",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt0404213",
+              "releaseYear": 2002,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm0672373",
+                    "name": "Dorne M. Pentes",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            },
+            {
+              "_id": "tt1010324",
+              "releaseYear": 2004,
+              "directed": [
+                {
+                  "id": {
+                    "id": "nm1200822",
+                    "name": "Matt Shannon",
+                    "__typename": "Person"
+                  },
+                  "__typename": "DirectedListItem"
+                }
+              ],
+              "__typename": "Entity"
+            }
+          ],
           "__typename": "StoryMovieRemakes"
         }
       ]

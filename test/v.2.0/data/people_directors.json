@@ -15,6 +15,18 @@
           "directed": []
         },
         {
+          "id": "nm0000003",
+          "name": "Brigitte Bardot",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
+          "id": "nm0000004",
+          "name": "John Belushi",
+          "__typename": "Person",
+          "directed": []
+        },
+        {
           "id": "nm0000005",
           "name": "Ingmar Bergman",
           "__typename": "Person",
@@ -24,7 +36,55 @@
               "__typename": "Directed2ListItem"
             },
             {
+              "id": {
+                "id": "tt0038675",
+                "title": "Crisis",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
               "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0040418",
+                "title": "Port of Call",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0041399",
+                "title": "Prison",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0041998",
+                "title": "Thirst",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0043048",
+                "title": "To Joy",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -44,7 +104,19 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
+              "id": {
+                "id": "tt0047167",
+                "title": "A Lesson in Love",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0048272",
+                "title": "Dreams",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -56,39 +128,11 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0050976",
+                "title": "The Seventh Seal",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -100,6 +144,86 @@
               "__typename": "Directed2ListItem"
             },
             {
+              "id": {
+                "id": "tt0051365",
+                "title": "The Magician",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0053772",
+                "title": "The Devil's Eye",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0053976",
+                "title": "The Virgin Spring",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0055499",
+                "title": "Through a Glass Darkly",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0057358",
+                "title": "Winter Light",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0057611",
+                "title": "The Silence",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0060827",
+                "title": "Persona",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": null,
+              "__typename": "Directed2ListItem"
+            },
+            {
+              "id": {
+                "id": "tt0063759",
+                "title": "Hour of the Wolf",
+                "__typename": "Entity"
+              },
+              "__typename": "Directed2ListItem"
+            },
+            {
               "id": null,
               "__typename": "Directed2ListItem"
             },
@@ -113,8 +237,8 @@
             },
             {
               "id": {
-                "id": "tt0053976",
-                "title": "The Virgin Spring",
+                "id": "tt0066826",
+                "title": "The Touch",
                 "__typename": "Entity"
               },
               "__typename": "Directed2ListItem"
@@ -136,55 +260,11 @@
               "__typename": "Directed2ListItem"
             },
             {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
-              "__typename": "Directed2ListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0077711",
+                "title": "Autumn Sonata",
+                "__typename": "Entity"
+              },
               "__typename": "Directed2ListItem"
             },
             {
@@ -355,18 +435,6 @@
               "__typename": "Directed2ListItem"
             }
           ]
-        },
-        {
-          "id": "nm0000011",
-          "name": "Gary Cooper",
-          "__typename": "Person",
-          "directed": []
-        },
-        {
-          "id": "nm0000012",
-          "name": "Bette Davis",
-          "__typename": "Person",
-          "directed": []
         }
       ]
     }

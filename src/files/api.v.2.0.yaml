@@ -922,6 +922,7 @@ components:
     Person:
       type: object
       description: Person model
+      title: Person
       properties:
         _id:
           type: string
@@ -998,16 +999,30 @@ components:
         directedTo:
           type: array
           items:
-            $ref: '#/components/schemas/Person'                
+            type: object
+            properties:
+              p:
+                $ref: '#/components/schemas/Person'
+              'n':
+                type: number
         directedBy:
           type: array
           items:
-            $ref: '#/components/schemas/Person'                
+            type: object
+            properties:
+              p:
+                $ref: '#/components/schemas/Person'
+              'n':
+                type: number
         actedWith:
           type: array
           items:
-            $ref: '#/components/schemas/Person'                
-      title: Person
+            type: object
+            properties:
+              p:
+                $ref: '#/components/schemas/Person'
+              'n':
+                type: number
     Entity:
       type: object
       properties:
@@ -1136,9 +1151,9 @@ components:
       x-internal: false
     Movie:
       $ref: '#/components/schemas/Entity'
-    TVShow:
-      $ref: '#/components/schemas/Entity'
     VideoGame:
+      $ref: '#/components/schemas/Entity'
+    TVShow:
       $ref: '#/components/schemas/Entity'
     Podcast:
       type: object

@@ -13,31 +13,37 @@ const Person = new mongoose.Schema({
 		won: Boolean,
 		film: String,
 	} ], 
-
-	directed: 	[{
+	directed: [{
 		id: { type: String, ref: 'entity' }, 
 	}], 
-	produced: 	[{
+	produced: [{
 		id: { type: String, ref: 'entity' }, 
 	}], 
-	wrote: 	[{
+	wrote: [{
 		id: { type: String, ref: 'entity' }, 
 	}], 
-	acted: 	[{
+	acted: [{
 		id: { type: String, ref: 'entity' },
 		as: String, 
 	}], 
-	crew: 	[{
+	crew: [{
 		id: { type: String, ref: 'entity' },
 		cat: String,
 		job: String,
 		as: String, 
 	}], 
-	directedTo: 	[{ type: String, ref: 'person' }], 
-	directedBy: 	[{ type: String, ref: 'person' }], 
-	actedWith: 	[{ type: String, ref: 'person' }], 
-	
-	created: { type: Number, default: Date.now()},
+	directedTo: [{
+		p: { type: String, ref: 'person' },
+		n: Number, 
+	}], 
+	directedBy: [{
+		p: { type: String, ref: 'person' },
+		n: Number, 
+	}], 
+	actedWith: [{
+		p: { type: String, ref: 'person' },
+		n: Number, 
+	}], 
 }, { 
 	collection: 'person',
 	timestamps: false,

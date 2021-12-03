@@ -23,11 +23,7 @@
         "streamBy": [],
         "produced": [
           {
-            "id": {
-              "id": "nm0490165",
-              "name": "Amanda Lathroum",
-              "__typename": "Person"
-            },
+            "id": null,
             "__typename": "ProducedListItem"
           }
         ],
@@ -81,19 +77,11 @@
         ],
         "written": [
           {
-            "id": {
-              "id": "nm0323128",
-              "name": "J. Garrett Glover",
-              "__typename": "Person"
-            },
+            "id": null,
             "__typename": "WrittenListItem"
           },
           {
-            "id": {
-              "id": "nm0644595",
-              "name": "Charlie Ogden",
-              "__typename": "Person"
-            },
+            "id": null,
             "__typename": "WrittenListItem"
           },
           {
@@ -105,7 +93,7 @@
             "__typename": "WrittenListItem"
           }
         ],
-        "crew": null,
+        "crew": [],
         "awards": [],
         "image": null,
         "boxOffice": null,

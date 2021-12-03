@@ -3,8 +3,8 @@
     "data": {
       "people": [
         {
-          "id": "nm0000005",
-          "name": "Ingmar Bergman",
+          "id": "nm0000004",
+          "name": "John Belushi",
           "__typename": "Person",
           "wrote": [
             {
@@ -30,9 +30,84 @@
             {
               "id": null,
               "__typename": "WroteListItem"
+            }
+          ]
+        },
+        {
+          "id": "nm0000005",
+          "name": "Ingmar Bergman",
+          "__typename": "Person",
+          "wrote": [
+            {
+              "id": {
+                "id": "tt0036914",
+                "title": "Torment",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
             },
             {
               "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0040330",
+                "title": "Eva",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0042723",
+                "title": "While the City Sleeps",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0043566",
+                "title": "Divorced",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0050756",
+                "title": "Night Light",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0055103",
+                "title": "The Pleasure Garden",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0076319",
+                "title": "A Little Night Music",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -48,23 +123,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0157122",
+                "title": "Faithless",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -143,7 +206,39 @@
               "__typename": "WroteListItem"
             },
             {
+              "id": {
+                "id": "tt0035641",
+                "title": "Apparition",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
               "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0036470",
+                "title": "The Last Wagon",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0038823",
+                "title": "Paisan",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -171,7 +266,27 @@
               "__typename": "WroteListItem"
             },
             {
+              "id": {
+                "id": "tt0041506",
+                "title": "In the Name of the Law",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
               "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0043373",
+                "title": "Position Wanted",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -187,39 +302,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0065054",
+                "title": "Sweet Charity",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -279,7 +366,35 @@
           "__typename": "Person",
           "wrote": [
             {
-              "id": null,
+              "id": {
+                "id": "tt0026778",
+                "title": "A Night at the Opera",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0030879",
+                "title": "Too Hot to Handle",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0031060",
+                "title": "At the Circus",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0031511",
+                "title": "Quick Millions",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -287,7 +402,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
+              "id": {
+                "id": "tt0032536",
+                "title": "Go West",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -295,19 +414,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0039293",
+                "title": "Cynthia",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -493,7 +604,107 @@
               "__typename": "WroteListItem"
             },
             {
+              "id": {
+                "id": "tt0040782",
+                "title": "The Portrait",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
               "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0048583",
+                "title": "Sanshiro Sugata",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0054047",
+                "title": "The Magnificent Seven",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0058437",
+                "title": "The Outrage",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0059677",
+                "title": "Sanshiro Sugata",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0089941",
+                "title": "Runaway Train",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0116830",
+                "title": "Last Man Standing",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": null,
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt0181960",
+                "title": "After the Rain",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -549,75 +760,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt0329431",
+                "title": "Stray Dog",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -781,35 +928,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt1134519",
+                "title": "The Last Princess",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -882,8 +1005,16 @@
             },
             {
               "id": {
-                "id": "tt5818106",
-                "title": "Nioh",
+                "id": "tt2190475",
+                "title": "The Outrage",
+                "__typename": "Entity"
+              },
+              "__typename": "WroteListItem"
+            },
+            {
+              "id": {
+                "id": "tt2404435",
+                "title": "The Magnificent Seven",
                 "__typename": "Entity"
               },
               "__typename": "WroteListItem"
@@ -899,17 +1030,6 @@
             {
               "id": null,
               "__typename": "WroteListItem"
-            }
-          ]
-        },
-        {
-          "id": "nm0000045",
-          "name": "Bruce Lee",
-          "__typename": "Person",
-          "wrote": [
-            {
-              "id": null,
-              "__typename": "WroteListItem"
             },
             {
               "id": null,
@@ -920,7 +1040,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
+              "id": {
+                "id": "tt5818106",
+                "title": "Nioh",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {
@@ -928,63 +1052,11 @@
               "__typename": "WroteListItem"
             },
             {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
-              "__typename": "WroteListItem"
-            },
-            {
-              "id": null,
+              "id": {
+                "id": "tt9051908",
+                "title": "Living",
+                "__typename": "Entity"
+              },
               "__typename": "WroteListItem"
             },
             {

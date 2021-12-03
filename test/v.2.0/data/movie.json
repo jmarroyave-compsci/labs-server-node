@@ -73,11 +73,7 @@
         ],
         "written": [
           {
-            "id": {
-              "id": "nm0339995",
-              "name": "Richard Gregson",
-              "__typename": "Person"
-            },
+            "id": null,
             "__typename": "WrittenListItem"
           },
           {
@@ -89,7 +85,33 @@
             "__typename": "WrittenListItem"
           }
         ],
-        "crew": null,
+        "crew": [
+          {
+            "id": {
+              "id": "nm0367431",
+              "name": "Anthony Harvey",
+              "__typename": "Person"
+            },
+            "as": null,
+            "cat": "editor",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": null,
+            "cat": "composer",
+            "job": null,
+            "__typename": "CrewListItem"
+          },
+          {
+            "id": null,
+            "as": null,
+            "cat": "cinematographer",
+            "job": null,
+            "__typename": "CrewListItem"
+          }
+        ],
         "awards": [
           {
             "category": "WRITING (Story and Screenplay--written directly for the screen)",

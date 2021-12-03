@@ -2,29 +2,16 @@
   "data": {
     "data": {
       "person": {
-        "id": "nm0000005",
-        "name": "Ingmar Bergman",
-        "birthYear": "1918",
+        "id": "nm0000165",
+        "name": "Ron Howard",
+        "birthYear": "1954",
         "deathYear": null,
         "profession": [
-          "writer",
-          "director",
-          "actor"
+          "actor",
+          "producer",
+          "director"
         ],
-        "awards": [
-          {
-            "category": "IRVING G. THALBERG MEMORIAL AWARD",
-            "festival": {
-              "id": "mf00001",
-              "name": "Academy Awards",
-              "startYear": "1929",
-              "__typename": "MovieFestival"
-            },
-            "won": true,
-            "year": 1970,
-            "__typename": "Award"
-          }
-        ],
+        "awards": [],
         "references": null,
         "produced": [
           {
@@ -36,7 +23,223 @@
             "__typename": "Produced2ListItem"
           },
           {
+            "id": {
+              "id": "tt0218043",
+              "title": "Beyond the Mat",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0318974",
+              "title": "The Alamo",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0381971",
+              "title": "Curious George",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0824747",
+              "title": "Changeling",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
             "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt11437110",
+              "title": "Afterlife",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1362044",
+              "title": "B-Minor",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1452938",
+              "title": "The Originals",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt15215108",
+              "title": "Winter Wonderland",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1648190",
+              "title": "The Dark Tower",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1702427",
+              "title": "Curious George",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1849127",
+              "title": "The Boss of It All",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1912989",
+              "title": "Amnesty",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1975957",
+              "title": "Spy vs. Spy",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt2054732",
+              "title": "364",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt2215719",
+              "title": "Part of Me",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt2652092",
+              "title": "The Good Lie",
+              "__typename": "Entity"
+            },
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Produced2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt5798014",
+              "title": "Splash",
+              "__typename": "Entity"
+            },
             "__typename": "Produced2ListItem"
           },
           {
@@ -66,7 +269,131 @@
             "__typename": "Directed2ListItem"
           },
           {
+            "id": {
+              "id": "tt0084412",
+              "title": "Night Shift",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0088161",
+              "title": "Splash",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0088933",
+              "title": "Cocoon",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0091159",
+              "title": "Gung Ho",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0096446",
+              "title": "Willow",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0098067",
+              "title": "Parenthood",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0101393",
+              "title": "Backdraft",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
             "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0110771",
+              "title": "The Paper",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0112384",
+              "title": "Apollo 13",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0117438",
+              "title": "Ransom",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0170016",
+              "title": "How the Grinch Stole Christmas",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0268978",
+              "title": "A Beautiful Mind",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0338188",
+              "title": "The Missing",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0352248",
+              "title": "Cinderella Man",
+              "__typename": "Entity"
+            },
             "__typename": "Directed2ListItem"
           },
           {
@@ -83,6 +410,46 @@
           },
           {
             "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt0870111",
+              "title": "Frost/Nixon",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt11708502",
+              "title": "The Fixer",
+              "__typename": "Entity"
+            },
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": null,
+            "__typename": "Directed2ListItem"
+          },
+          {
+            "id": {
+              "id": "tt1578275",
+              "title": "The Dilemma",
+              "__typename": "Entity"
+            },
             "__typename": "Directed2ListItem"
           },
           {
@@ -123,14 +490,10 @@
           },
           {
             "id": {
-              "id": "tt0050986",
-              "title": "Wild Strawberries",
+              "id": "tt5232622",
+              "title": "The Girl Before",
               "__typename": "Entity"
             },
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
             "__typename": "Directed2ListItem"
           },
           {
@@ -143,194 +506,10 @@
           },
           {
             "id": {
-              "id": "tt0053976",
-              "title": "The Virgin Spring",
+              "id": "tt6173448",
+              "title": "Zelda",
               "__typename": "Entity"
             },
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
-            "__typename": "Directed2ListItem"
-          },
-          {
-            "id": null,
             "__typename": "Directed2ListItem"
           },
           {
@@ -352,33 +531,36 @@
         ],
         "acted": [
           {
-            "id": null,
-            "as": "[\"Interviewer\"]",
+            "id": {
+              "id": "tt0053479",
+              "title": "The Andy Griffith Show",
+              "__typename": "Entity"
+            },
+            "as": "[\"Opie Taylor\"]",
+            "__typename": "ActedListItem"
+          },
+          {
+            "id": {
+              "id": "tt0056956",
+              "title": "The Courtship of Eddie's Father",
+              "__typename": "Entity"
+            },
+            "as": "[\"Eddie Corbett\"]",
             "__typename": "ActedListItem"
           },
           {
             "id": null,
-            "as": null,
+            "as": "[\"Genius\"]",
             "__typename": "ActedListItem"
           },
           {
             "id": null,
-            "as": null,
+            "as": "[\"Richie 'Nuthin'' Caldwell\"]",
             "__typename": "ActedListItem"
           },
           {
             "id": null,
-            "as": null,
-            "__typename": "ActedListItem"
-          },
-          {
-            "id": null,
-            "as": null,
-            "__typename": "ActedListItem"
-          },
-          {
-            "id": null,
-            "as": null,
+            "as": "[\"Chris\"]",
             "__typename": "ActedListItem"
           }
         ],
@@ -486,640 +668,132 @@
           {
             "id": null,
             "__typename": "WroteListItem"
-          },
-          {
-            "id": null,
-            "__typename": "WroteListItem"
-          },
-          {
-            "id": null,
-            "__typename": "WroteListItem"
-          },
-          {
-            "id": null,
-            "__typename": "WroteListItem"
-          },
-          {
-            "id": null,
-            "__typename": "WroteListItem"
           }
         ],
-        "crew": [
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Interviewee\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Commenting on New Freedom and Trends in Film\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Guest\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\",\"Guest\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Om hans liv\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": null,
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": null,
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Narrator\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self - Guest\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self (voice)\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "self",
-            "job": null,
-            "__typename": "Crew2ListItem"
-          },
-          {
-            "id": null,
-            "as": "[\"Self\"]",
-            "cat": "archive_footage",
-            "job": null,
-            "__typename": "Crew2ListItem"
+        "crew": [],
+        "directedTo": [
+          {
+            "p": {
+              "id": "nm0661577",
+              "name": "Jerry Paris",
+              "__typename": "Person"
+            },
+            "n": 149,
+            "__typename": "DirectedToListItem"
+          },
+          {
+            "p": null,
+            "n": 81,
+            "__typename": "DirectedToListItem"
+          },
+          {
+            "p": {
+              "id": "nm0680097",
+              "name": "Lee Philips",
+              "__typename": "Person"
+            },
+            "n": 49,
+            "__typename": "DirectedToListItem"
+          },
+          {
+            "p": null,
+            "n": 39,
+            "__typename": "DirectedToListItem"
+          },
+          {
+            "p": {
+              "id": "nm0706347",
+              "name": "Alan Rafkin",
+              "__typename": "Person"
+            },
+            "n": 23,
+            "__typename": "DirectedToListItem"
+          }
+        ],
+        "directedBy": [
+          {
+            "p": {
+              "id": "nm0661577",
+              "name": "Jerry Paris",
+              "__typename": "Person"
+            },
+            "n": 149,
+            "__typename": "DirectedByListItem"
+          },
+          {
+            "p": null,
+            "n": 81,
+            "__typename": "DirectedByListItem"
+          },
+          {
+            "p": {
+              "id": "nm0680097",
+              "name": "Lee Philips",
+              "__typename": "Person"
+            },
+            "n": 49,
+            "__typename": "DirectedByListItem"
+          },
+          {
+            "p": null,
+            "n": 39,
+            "__typename": "DirectedByListItem"
+          },
+          {
+            "p": {
+              "id": "nm0706347",
+              "name": "Alan Rafkin",
+              "__typename": "Person"
+            },
+            "n": 23,
+            "__typename": "DirectedByListItem"
+          }
+        ],
+        "actedWith": [
+          {
+            "p": {
+              "id": "nm0341431",
+              "name": "Andy Griffith",
+              "__typename": "Person"
+            },
+            "n": 236,
+            "__typename": "ActedWithListItem"
+          },
+          {
+            "p": {
+              "id": "nm0005385",
+              "name": "Marion Ross",
+              "__typename": "Person"
+            },
+            "n": 169,
+            "__typename": "ActedWithListItem"
+          },
+          {
+            "p": {
+              "id": "nm0062592",
+              "name": "Frances Bavier",
+              "__typename": "Person"
+            },
+            "n": 165,
+            "__typename": "ActedWithListItem"
+          },
+          {
+            "p": {
+              "id": "nm0930041",
+              "name": "Anson Williams",
+              "__typename": "Person"
+            },
+            "n": 164,
+            "__typename": "ActedWithListItem"
+          },
+          {
+            "p": {
+              "id": "nm0461455",
+              "name": "Don Knotts",
+              "__typename": "Person"
+            },
+            "n": 160,
+            "__typename": "ActedWithListItem"
           }
         ],
         "__typename": "Person"
@@ -1129,8 +803,8 @@
   "body": {
     "operationName": "person",
     "variables": {
-      "id": "nm0000005"
+      "id": "nm0000165"
     },
-    "query": "fragment MovieFestivalTinyFragment on MovieFestival {\n  id: _id\n  name\n  startYear\n  __typename\n}\n\nfragment EntityTinyFragment on Entity {\n  id: _id\n  title\n  __typename\n}\n\nquery person($id: String!) {\n  person(id: $id) {\n    id: _id\n    name\n    birthYear\n    deathYear\n    profession\n    awards {\n      category\n      festival {\n        ...MovieFestivalTinyFragment\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    references {\n      imdb\n      __typename\n    }\n    produced {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    acted {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      as\n      __typename\n    }\n    wrote {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    __typename\n  }\n}\n"
+    "query": "fragment PersonTinyFragment on Person {\n  id: _id\n  name\n  __typename\n}\n\nfragment MovieFestivalTinyFragment on MovieFestival {\n  id: _id\n  name\n  startYear\n  __typename\n}\n\nfragment EntityTinyFragment on Entity {\n  id: _id\n  title\n  __typename\n}\n\nquery person($id: String!) {\n  person(id: $id) {\n    id: _id\n    name\n    birthYear\n    deathYear\n    profession\n    awards {\n      category\n      festival {\n        ...MovieFestivalTinyFragment\n        __typename\n      }\n      won\n      year\n      __typename\n    }\n    references {\n      imdb\n      __typename\n    }\n    produced {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    directed {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    acted {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      as\n      __typename\n    }\n    wrote {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      __typename\n    }\n    crew {\n      id {\n        ...EntityTinyFragment\n        __typename\n      }\n      as\n      cat\n      job\n      __typename\n    }\n    directedTo {\n      p {\n        ...PersonTinyFragment\n        __typename\n      }\n      n\n      __typename\n    }\n    directedBy {\n      p {\n        ...PersonTinyFragment\n        __typename\n      }\n      n\n      __typename\n    }\n    actedWith {\n      p {\n        ...PersonTinyFragment\n        __typename\n      }\n      n\n      __typename\n    }\n    __typename\n  }\n}\n"
   }
 }
