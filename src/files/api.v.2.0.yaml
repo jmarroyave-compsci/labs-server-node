@@ -541,13 +541,45 @@ paths:
                   $ref: '#/components/schemas/StoryMovieRemakes'
       operationId: StoryRemakes
       description: 'return the movie remakes '
-      summary: StoryMoviesRemakes
+      summary: StoryRemakes
       parameters:
         - schema:
             type: integer
           in: query
           name: page
           description: page
+    parameters: []
+  /stories/movies/topics:
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryMovieTopics'
+      operationId: StoryTopics
+      description: 'return the movie remakes '
+      summary: StoryTopics
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+          description: page
+        - schema:
+            type: string
+          in: query
+          name: genre
+          description: genre
+        - schema:
+            type: integer
+          in: query
+          name: year
+          description: year
     parameters: []
   /stories/movies/awards:
     get:
@@ -749,6 +781,71 @@ paths:
           description: query to search
       description: return search suggestions for query
       summary: SearchSuggestions
+  /comments:
+    post:
+      tags: []
+      summary: post a comment
+      operationId: postComment
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                who:
+                  type: string
+      description: post a comment
+    put:
+      tags: []
+      summary: put a comment
+      operationId: putComment
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                who:
+                  type: string
+      description: post a comment
+    get:
+      tags: []
+      description: post a comment
+      summary: ''
+      operationId: postCommentTmp
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: text
+        - schema:
+            type: string
+          in: query
+          name: who
+        - schema:
+            type: string
+          in: query
+          description: from
+          name: from
+    parameters: []
 components:
   schemas:
     DashboardHome:
@@ -1259,7 +1356,7 @@ components:
                 type: string
     StoryMovieRemakes:
       type: object
-      description: TV model
+      description: Remakes
       properties:
         name:
           type: string
@@ -1268,6 +1365,27 @@ components:
           items:
             $ref: '#/components/schemas/Entity'
         count:
+          type: number
+    StoryMovieTopics:
+      type: object
+      description: topics
+      properties:
+        genre:
+          type: string
+        words:
+          type: array
+          items:
+            type: object
+            properties:
+              p:
+                type: string
+              'n':
+                type: number
+        year:
+          type: number
+        max:
+          type: number
+        min:
           type: number
   securitySchemes: {}
   headers: {}

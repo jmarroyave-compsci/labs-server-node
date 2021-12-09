@@ -133,8 +133,6 @@ app.use(function(req, res, next) {
         try{
             results = JSON.parse(results)    
         } catch(ex){
-            console.log(results);
-            console.error(ex);
             return;
         }
 
