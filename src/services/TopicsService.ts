@@ -13,14 +13,11 @@ export const get = async function( params ) {
   if( year ) query['year'] = year
   if( genre && genre != "all" ) query['genre'] = genre
 
-  //console.log(params, query)
-
   const data =  await DBTopic.find( query )
       .skip( pageSize * (page - 1) )
       .limit(pageSize);
 
   return data.map( d => {
-    //const words = d['words'].filter( r => r['n'] > 1).slice(0,200);
     const words = d['words'].slice(0,200);
     return {
       year: d['year'],
