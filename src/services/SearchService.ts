@@ -11,7 +11,8 @@ export const searchResults = async function( params ) {
 
   if( qry == "") return []
 
-  query['entity'] = new RegExp(`^${params.qry}`)
+  //query['entity'] = new RegExp(`^${params.qry}`)
+  query['$text'] = { $search : params.qry}
 
   if( entities == "") return []
 
@@ -21,12 +22,12 @@ export const searchResults = async function( params ) {
     query['year'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
 
-  console.log(params, query)
+  //console.log(params, query)
 
-  const data =  await DBSearch.find( query )
-      .sort({ ranking: -1, entity : 1  })
+  const data =  await DBSearch.find( query, { score : { $meta: 'textScore' } } )
+      .sort( { score : { $meta : 'textScore' } } )
       .skip( pageSize * (page - 1) )
-      .limit(pageSize);
+      .limit( pageSize );
 
   return data;
 };
@@ -34,7 +35,7 @@ export const searchResults = async function( params ) {
 export const searchSuggestions = async function( params ) {
   var data =  await DBSearch.aggregate(
       [
-          { $match : { entity : new RegExp(`^${params.qry}`) } },
+          { $match : { $text : { $search : params.qry } } },
           { "$group": { "_id": "$entity", count : { $sum : 1 } } },
           { "$limit": 5 },
       ]
