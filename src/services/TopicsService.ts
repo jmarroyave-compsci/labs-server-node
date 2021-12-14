@@ -28,3 +28,18 @@ export const get = async function( params ) {
     }
   })
 }
+
+export const getTopic = async function( params ) {
+  const topic = ( params.topic ) ? params.topic : null;
+  if(!topic) return []
+
+  const query = { $text: { $search : topic } }
+
+  const data =  await DBTopic.find( query, { year: 1, genre: 1, _id: 0 } )
+      .limit(1000)
+      .sort({ genre: 1, year: 1, });
+
+  console.log(data.length)
+
+  return data;
+}

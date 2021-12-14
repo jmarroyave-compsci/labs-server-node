@@ -581,6 +581,29 @@ paths:
           name: year
           description: year
     parameters: []
+  '/stories/movies/topics/{topic}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryMovieTopic'
+      operationId: StoryTopic
+      description: 'return the info related to the topic '
+      summary: StoryTopic
+      parameters: []
+    parameters:
+      - schema:
+          type: string
+        name: topic
+        in: path
+        required: true
+        description: topic
   /stories/movies/awards:
     get:
       tags: []
@@ -1386,6 +1409,14 @@ components:
         max:
           type: number
         min:
+          type: number
+    StoryMovieTopic:
+      type: object
+      description: topics
+      properties:
+        genre:
+          type: string
+        year:
           type: number
   securitySchemes: {}
   headers: {}

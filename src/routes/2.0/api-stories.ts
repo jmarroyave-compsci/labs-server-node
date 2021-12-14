@@ -4,6 +4,7 @@ import * as topicsController from "../../controllers/2.0/Topic";
 import { asyncHandler } from "../../lib/asyncHandler";
 
 const router = express.Router();
+router.use("/2.0/api/stories/movies/topics/:topic", asyncHandler(topicsController.getTopic, "topic-get"));
 router.use("/2.0/api/stories/movies/topics", asyncHandler(topicsController.get, "topics-get"));
 router.use("/2.0/api/stories/movies/awards", asyncHandler(controller.awards, "awards"));
 router.use("/2.0/api/stories/movies/remakes", asyncHandler(controller.remakes, "remakes"));

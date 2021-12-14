@@ -1,0 +1,65 @@
+{
+  "data": {
+    "data": {
+      "storyTopic": [
+        {
+          "year": 1900,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1910,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1920,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1930,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1940,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1950,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1960,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1970,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1980,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        },
+        {
+          "year": 1990,
+          "genre": "action",
+          "__typename": "StoryMovieTopic"
+        }
+      ]
+    }
+  },
+  "body": {
+    "operationName": "undefined_topic",
+    "variables": {
+      "topic": "hare"
+    },
+    "query": "query undefined_topic($topic: String!) {\n  storyTopic(topic: $topic) {\n    year\n    genre\n    __typename\n  }\n}\n"
+  }
+}
