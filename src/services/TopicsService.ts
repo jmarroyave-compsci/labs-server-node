@@ -40,7 +40,7 @@ export const getTopic = async function( params ) {
 
   const data =  await DBTopic.find( query, { year: 1, genre: 1, _id: 0 } )
       .limit(1000)
-      .sort({ genre: 1, year: 1, });
+      .sort({ year: 1, genre: 1});
 
   return data;
 }
