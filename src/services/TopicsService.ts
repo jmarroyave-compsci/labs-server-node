@@ -3,14 +3,17 @@ import { shuffle } from '../lib/array';
 
 export const get = async function( params ) {
   const year = ( params.year ) ? parseInt(params.year) : null;
-  const genre = ( params.genre ) ? params.genre : null;
+  const genre = ( params.genre ) ? params.genre.replace("-", "_") : null;
   const page = ( params.page ) ? parseInt(params.page) : 1;
-  const pageSize = 10;
+  const pageSize = (year === 0) ? 0 : 10;
 
   //const query = { decade : true }
   const query = {  }
 
-  if( year ) query['year'] = year
+  if( year && year != 0 ) {
+    query['year'] = year
+  }
+
   if( genre && genre != "all" ) query['genre'] = genre
 
   const data =  await DBTopic.find( query )
@@ -18,13 +21,13 @@ export const get = async function( params ) {
       .limit(pageSize);
 
   return data.map( d => {
-    const words = d['words'].slice(0,200);
+    const words = d['words'].slice(0, ( year == 0 ) ? 10 : 200 );
     return {
       year: d['year'],
       genre: d['genre'],
       words: words,
-      max: words[0]['n'],
-      min: words[words.length - 1]['n'],
+      max: (words[0]) ? words[0]['n'] : 0,
+      min: (words[0]) ? words[words.length - 1]['n'] : 0,
     }
   })
 }
@@ -38,8 +41,6 @@ export const getTopic = async function( params ) {
   const data =  await DBTopic.find( query, { year: 1, genre: 1, _id: 0 } )
       .limit(1000)
       .sort({ genre: 1, year: 1, });
-
-  console.log(data.length)
 
   return data;
 }

@@ -3,1007 +3,1009 @@
     "data": {
       "storyTopics": [
         {
-          "year": 2000,
-          "genre": "action",
+          "year": 1930,
+          "genre": "comedy",
+          "max": 158,
+          "min": 12,
           "words": [
             {
-              "n": 93,
-              "p": "the",
+              "n": 158,
+              "p": "love",
               "__typename": "WordsListItem"
             },
             {
-              "n": 31,
-              "p": "of",
+              "n": 76,
+              "p": "night",
               "__typename": "WordsListItem"
             },
             {
-              "n": 16,
-              "p": "de",
+              "n": 72,
+              "p": "felix",
               "__typename": "WordsListItem"
             },
             {
-              "n": 12,
-              "p": "and",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 10,
-              "p": "2",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 10,
-              "p": "to",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 10,
-              "p": "in",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 10,
-              "p": "la",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 9,
-              "p": "no",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 9,
-              "p": "ang",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 8,
-              "p": "a",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 8,
-              "p": "black",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 7,
-              "p": "daku",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "2000",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "man",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "die",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "movie",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "last",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "na",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "mo",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 6,
-              "p": "el",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 5,
-              "p": "war",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 5,
-              "p": "my",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 5,
-              "p": "tiger",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 5,
-              "p": "of,the",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 5,
-              "p": "mera",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "for",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "one",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "dragon",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "is",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "the,last",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "bad",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "new",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "blood",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "boy",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "jung",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "ko",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "los",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "ley",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "ka",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 4,
-              "p": "naam",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "1",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "3",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "mission",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "ii",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "red",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "way",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "force",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "six",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "space",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "&",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "and,the",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "day",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "it",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "i",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "time",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "vs",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "khiladi",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "journey",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "killer",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "return",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "fist",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "dao",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "dead",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "ki",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "dacait",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 3,
-              "p": "rani",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "13",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "60",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gang",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "crow",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "yup",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "sea",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "black,sea",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "prince",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "prince,of",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "delta",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "lost",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "patrol",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "delta,force",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "point",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "doom",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gone",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "seconds",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gone,in",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "in,60",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gone,in,60",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gone,in,60,seconds",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "hidden",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "limit",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "iii",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "chase",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "deep",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "the,way",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "way,of",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "the,way,of",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "airboss",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "iv",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "factor",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "command",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "dog",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "da",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "vampire",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "death",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "blue",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "from",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "don't",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "operation",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
+              "n": 71,
               "p": "life",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "tokyo",
+              "n": 68,
+              "p": "hot",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
+              "n": 68,
+              "p": "day",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 59,
+              "p": "wild",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 55,
               "p": "girl",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "hai",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "target",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "back",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "were",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "age",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "revenge",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "digimon",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "spirit",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "dangerous",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "battle",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "road",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "ransom",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "express",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "bhai",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "en",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "cop",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "name",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "power",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "out",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "woman",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "ying",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "five",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "warriors",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "boy,and",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "rojo",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "legend",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "legend,of",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "all",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "wanted",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "sagot",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "na,ang",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "tunay",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "gets",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "-",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
-              "p": "ng",
-              "__typename": "WordsListItem"
-            },
-            {
-              "n": 2,
+              "n": 55,
               "p": "cat",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "oras",
+              "n": 48,
+              "p": "dog",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "ko,ang",
+              "n": 48,
+              "p": "boy",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "las",
+              "n": 45,
+              "p": "days",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "tequila",
+              "n": 42,
+              "p": "romance",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "y",
+              "n": 42,
+              "p": "baby",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "boum",
+              "n": 41,
+              "p": "wife",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "drop",
+              "n": 41,
+              "p": "time",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "maten",
+              "n": 41,
+              "p": "'em",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "kahit",
+              "n": 40,
+              "p": "kid",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "buhay",
+              "n": 39,
+              "p": "husband",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "barrio",
+              "n": 38,
+              "p": "west",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "al",
+              "n": 38,
+              "p": "the,cat",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "cazador",
+              "n": 38,
+              "p": "alice",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "guerrero",
+              "n": 36,
+              "p": "luck",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "fei",
+              "n": 36,
+              "p": "business",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "la,ley",
+              "n": 35,
+              "p": "trouble",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "del",
+              "n": 33,
+              "p": "felix,the",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "che",
+              "n": 32,
+              "p": "monkey",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "aaj",
+              "n": 32,
+              "p": "house",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "aaj,ka",
+              "n": 32,
+              "p": "hero",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "jack",
+              "n": 31,
+              "p": "husbands",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "geeta",
+              "n": 31,
+              "p": "hollywood",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "who",
+              "n": 31,
+              "p": "felix,the,cat",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "right",
+              "n": 31,
+              "p": "circus",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "wu",
+              "n": 31,
+              "p": "bride",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "kaali",
+              "n": 30,
+              "p": "sweet",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "saugandh",
+              "n": 30,
+              "p": "such,is,life",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "babu",
+              "n": 30,
+              "p": "fool",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "di",
+              "n": 29,
+              "p": "is,life",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "sultana",
+              "n": 28,
+              "p": "wedding",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "ganga",
+              "n": 28,
+              "p": "mickey's",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "bai",
+              "n": 27,
+              "p": "lady",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "daku,rani",
+              "n": 27,
+              "p": "girls",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "kanoon",
+              "n": 26,
+              "p": "romeo",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "kanoon,ki",
+              "n": 25,
+              "p": "town",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "main",
+              "n": 25,
+              "p": "paris",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "blade",
+              "n": 25,
+              "p": "hold",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "mur",
+              "n": 25,
+              "p": "farm",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "world",
+              "n": 25,
+              "p": "fable",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "the,killer",
+              "n": 25,
+              "p": "broadway",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "legolomo",
+              "n": 24,
+              "p": "the,fable,of",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "but",
+              "n": 24,
+              "p": "school",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "fuego",
+              "n": 24,
+              "p": "red",
               "__typename": "WordsListItem"
             },
             {
-              "n": 2,
-              "p": "samurai",
+              "n": 24,
+              "p": "money",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "5",
+              "n": 24,
+              "p": "lucky",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "12",
+              "n": 24,
+              "p": "king",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "23",
+              "n": 24,
+              "p": "family",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "80",
+              "n": 24,
+              "p": "easy",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "213",
+              "n": 24,
+              "p": "blues",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "395",
+              "n": 24,
+              "p": "andy",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "405",
+              "n": 23,
+              "p": "women",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "420",
+              "n": 23,
+              "p": "the,newlyweds'",
               "__typename": "WordsListItem"
             },
             {
-              "n": 1,
-              "p": "786",
+              "n": 23,
+              "p": "heart",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 23,
+              "p": "game",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 23,
+              "p": "buster's",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 23,
+              "p": "bobby",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 22,
+              "p": "watch",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 22,
+              "p": "smith's",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 22,
+              "p": "lost",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 22,
+              "p": "honeymoon",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 22,
+              "p": "george",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 21,
+              "p": "flying",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 21,
+              "p": "daze",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 21,
+              "p": "bumps",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "uncle",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "movie",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "meet",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "ladies",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "knight",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "hard",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "film",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "fair",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "cold",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "buster",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 20,
+              "p": "alice's",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "woman",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "wives",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "lions",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "jungle",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "heeza",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "fresh",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "fast",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "crazy",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "bobby,bumps",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 19,
+              "p": "air",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "youth",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "the,love",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "society",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "papa",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "o'",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "married",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "marriage",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "happy",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "fighting",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "dry",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "colonel,heeza",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "city",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 18,
+              "p": "chicken",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "water",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "vacation",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "taxi",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "speed",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "poor",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "party",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "live",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "ice",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "horse",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "hearts",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "dumb",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "college",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "bird",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 17,
+              "p": "bad",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "troubles",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "such,is,life,in",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "sailor",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "prince",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "perfect",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "nuts",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "friend",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "follies",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "east",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "country",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "beauty",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 16,
+              "p": "babies",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "wrong",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "the,fable,of,the",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "play",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "pie",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "motion",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "morning",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "liar",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "kiss",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "haunted",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "golf",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "fever",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "feet",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "double",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "dark",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "dangerous",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "bull",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "blue",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "black",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 15,
+              "p": "adventures",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "wise",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "winning",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "week",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "spooks",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "movies",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "marvels,of",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "lover",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "love's",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "leave",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "issue",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "idea",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "gold",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "fish",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "fable,of,the",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 14,
+              "p": "bear",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "white",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "wet",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "the,girl",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "stuff",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "stage",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "rough",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "ride",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "oh!",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "of,motion",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "naughty",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "marvels,of,motion,issue",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "knights",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "jazz",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "hunter",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "boys",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "beware",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "battling",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "andy's",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "alarm",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 13,
+              "p": "adventures,of",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "torchy",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "tin",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "silly",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "rent",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "red,hot",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "race",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "pop",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "pie,no",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "mystery",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "meet,the",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "marry",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "mad",
+              "__typename": "WordsListItem"
+            },
+            {
+              "n": 12,
+              "p": "koko",
               "__typename": "WordsListItem"
             }
           ],
@@ -1015,10 +1017,10 @@
   "body": {
     "operationName": "movies_topics",
     "variables": {
-      "page": 1,
-      "genre": "action",
-      "year": 2000
+      "page": null,
+      "year": 1930,
+      "genre": "comedy"
     },
-    "query": "query movies_topics($page: Int, $genre: String, $year: Int) {\n  storyTopics(page: $page, genre: $genre, year: $year) {\n    year\n    genre\n    words {\n      n\n      p\n      __typename\n    }\n    __typename\n  }\n}\n"
+    "query": "query movies_topics($page: Int, $genre: String, $year: Int) {\n  storyTopics(page: $page, genre: $genre, year: $year) {\n    year\n    genre\n    max\n    min\n    words {\n      n\n      p\n      __typename\n    }\n    __typename\n  }\n}\n"
   }
 }
