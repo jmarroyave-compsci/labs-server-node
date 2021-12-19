@@ -548,6 +548,15 @@ paths:
           in: query
           name: page
           description: page
+        - schema:
+            type: boolean
+          in: query
+          name: extended
+          description: extended
+        - schema:
+            type: integer
+          in: query
+          name: limit
     parameters: []
   /stories/movies/topics:
     get:

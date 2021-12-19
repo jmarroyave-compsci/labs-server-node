@@ -35,29 +35,30 @@ export const getAwards = async function( params ) {
 
 export const getMovieRemakes = async function( params ) {
   const page = (params.page) ? params.page : 1;
+  const limit = (params.limit) ? params.limit : 10;
+  const extended = (params.extended) ? params.extended : true;
   const name = (params.name) ? params.name : null;
   const qry = {  };
-  const MAX_MOVIES = (params.maxMovies) ? params.maxMovies : 10;
-  const size = 10;
+  const MAX_MOVIES = (extended) ? 10 : 0;
 
   if( name ){
     qry['name'] = name
   }
 
-  const data =  await DBStoryRemakes.find( qry )
-                  .populate(
-                    {
-                        path:'recs',
-                        options: {
-                            limit: MAX_MOVIES,
-                            skip: 0
-                        },
-                        populate : {
-                          path:'directed.id',                          
-                        }
-                    })  
-                   .skip(size * ( page - 1))
-                   .limit(size);
+  const data = await DBStoryRemakes.find( qry )
+                    .populate(
+                      {
+                          path:'recs',
+                          options: {
+                              limit: MAX_MOVIES,
+                              skip: 0
+                          },
+                          populate : {
+                            path:'directed.id',                          
+                          }
+                      })  
+                     .skip(limit * ( page - 1))
+                     .limit(limit);
 
   if(!data) return [];
   return data;
