@@ -1,7 +1,7 @@
 import * as express from "express";
 import { default as P } from "bluebird";
-import log from "../log";
-import { TDebug } from "../log";
+import log from "config/log";
+import { TDebug } from "config/log";
 const debug = new TDebug("src:lib:asyncHandler");
 
 export interface HandlerOption {

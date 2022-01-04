@@ -1,9 +1,9 @@
 import app from "./app";
-import log from "./log";
+import log from "config/log";
 import mongoose from "mongoose"
-import config from './config'
+import config from 'config/config'
 import { Server as SocketIO } from 'socket.io';
-import chat from './lib/io'
+import chat from 'lib/io'
 
 const PORT = config.PORT;
 const DB_SERVER = config.DB_SERVER

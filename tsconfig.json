@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
+    "baseUrl": "./src",
+    "paths" : {
+      "v1/*" : ["api/1.0/*"],
+      "v2/*" : ["api/2.0/*"],
+      "v3/*" : ["api/3.0/*"]
+    },
     "esModuleInterop": true,
     "moduleResolution": "node",
     "target": "es5",
     "module": "commonjs",
-    "outDir": "dist",
-    "sourceMap": true,
+    "outDir": "./dist",
+    "sourceMap": false,
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      }
+    ],
   },
   "include": [
-    "src/**/*.ts",
-    "package.json"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "test",
     "node_modules"
   ]
 }
