@@ -13,4 +13,4 @@ const Topic = new mongoose.Schema({
 	timestamps: false,
 })
 
-export default mongoose.model("topic_2", Topic);
+export default mongoose.model("topic", Topic);

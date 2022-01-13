@@ -17,4 +17,4 @@ const Award = new mongoose.Schema({
 })
 
 
-export default mongoose.model("award_2", Award);
+export default mongoose.model("award", Award);

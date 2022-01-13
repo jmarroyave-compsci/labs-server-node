@@ -10,4 +10,4 @@ const StoryRemake = new mongoose.Schema({
 })
 
 
-export default mongoose.model("StoryRemake_2", StoryRemake);
+export default mongoose.model("StoryRemake", StoryRemake);

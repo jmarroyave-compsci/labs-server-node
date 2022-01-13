@@ -12,4 +12,4 @@ const SearchIndex = new mongoose.Schema({
 	timestamps: false,
 })
 
-export default mongoose.model("search_index_2", SearchIndex);
+export default mongoose.model("search_index", SearchIndex);

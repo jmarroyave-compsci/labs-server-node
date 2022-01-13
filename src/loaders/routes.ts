@@ -5,6 +5,7 @@ export const load = function(app){
     var dirs = [
         "1.0/routes",
         "2.0/routes",
+        "3.0/routes",
         "global/routes",
     ]
 
