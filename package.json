@@ -1,6 +1,6 @@
 {
   "name": "labs-server-node",
-  "version": "3.1.4",
+  "version": "3.1.6",
   "description": "Labs: Server (node)",
   "main": "index.ts",
   "scripts": {

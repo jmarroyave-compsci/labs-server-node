@@ -589,6 +589,11 @@ paths:
           in: query
           name: year
           description: year
+        - schema:
+            type: integer
+          in: query
+          name: nratio
+          description: neighbors ratio
     parameters: []
   '/stories/movies/topics/{topic}':
     get:

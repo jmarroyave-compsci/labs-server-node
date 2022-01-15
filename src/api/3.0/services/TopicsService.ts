@@ -2,6 +2,7 @@ import DBTopic from 'v3/models/topic';
 import { shuffle } from 'lib/array';
 
 export const get = async function( params ) {
+  const nratio = ( params.nratio ) ? parseInt(params.nratio) : 0;
   const year = ( params.year ) ? parseInt(params.year) : null;
   const genre = ( params.genre ) ? params.genre.replace("-", "_") : null;
   const page = ( params.page ) ? parseInt(params.page) : 1;
@@ -11,13 +12,19 @@ export const get = async function( params ) {
   const query = {  }
 
   if( year && year != 0 ) {
-    query['year'] = { $in : [ (year - 10), year, (year + 10)] }
-  } 
+    var decades = [year]
+    for( var i = 1; i <= nratio; i++){
+      decades.push( year + ( 10 * i))
+      decades.push( year - ( 10 * i))
+    }
+    decades = decades.sort()
 
-  if( genre && genre != "all" ) query['genre'] = genre
+    query['year'] = { $in : decades }
+  } 
 
   console.log(query)
 
+  if( genre && genre != "all" ) query['genre'] = genre
 
   const data =  await DBTopic.find( query )
       .skip( pageSize * (page - 1) )
