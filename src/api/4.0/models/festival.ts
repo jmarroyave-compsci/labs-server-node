@@ -13,4 +13,4 @@ const Festival = new mongoose.Schema({
 })
 
 
-export default mongoose.model("festival_3", Festival);
+export default mongoose.model("festival", Festival);

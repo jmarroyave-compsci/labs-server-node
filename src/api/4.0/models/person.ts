@@ -7,41 +7,41 @@ const Person = new mongoose.Schema({
 	deathYear: Number,
 	profession: [ String ],
 	awards: [ {  
-		festival: { type: String, ref: 'festival_3' }, 
+		festival: { type: String, ref: 'festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
 		film: String,
 	} ], 
 	directed: [{
-		id: { type: String, ref: 'entity_3' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	produced: [{
-		id: { type: String, ref: 'entity_3' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	wrote: [{
-		id: { type: String, ref: 'entity_3' }, 
+		id: { type: String, ref: 'entity' }, 
 	}], 
 	acted: [{
-		id: { type: String, ref: 'entity_3' },
+		id: { type: String, ref: 'entity' },
 		as: String, 
 	}], 
 	crew: [{
-		id: { type: String, ref: 'entity_3' },
+		id: { type: String, ref: 'entity' },
 		cat: String,
 		job: String,
 		as: String, 
 	}], 
 	directedTo: [{
-		p: { type: String, ref: 'person_3' },
+		p: { type: String, ref: 'person' },
 		n: Number, 
 	}], 
 	directedBy: [{
-		p: { type: String, ref: 'person_3' },
+		p: { type: String, ref: 'person' },
 		n: Number, 
 	}], 
 	actedWith: [{
-		p: { type: String, ref: 'person_3' },
+		p: { type: String, ref: 'person' },
 		n: Number, 
 	}], 
 }, { 
@@ -50,4 +50,4 @@ const Person = new mongoose.Schema({
 })
 
 
-export default mongoose.model("person_3", Person);
+export default mongoose.model("person", Person);

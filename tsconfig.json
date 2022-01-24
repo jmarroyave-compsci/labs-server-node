@@ -4,7 +4,8 @@
     "paths" : {
       "v1/*" : ["api/1.0/*"],
       "v2/*" : ["api/2.0/*"],
-      "v3/*" : ["api/3.0/*"]
+      "v3/*" : ["api/3.0/*"],
+      "v4/*" : ["api/4.0/*"]
     },
     "esModuleInterop": true,
     "moduleResolution": "node",

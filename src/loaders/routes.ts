@@ -6,6 +6,7 @@ export const load = function(app){
         "1.0/routes",
         "2.0/routes",
         "3.0/routes",
+        "4.0/routes",
         "global/routes",
     ]
 

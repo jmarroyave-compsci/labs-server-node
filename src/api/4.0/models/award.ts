@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import DBFestival from './festival.js'
 
 const Award = new mongoose.Schema({
-	festival: { type: String, ref: 'festival_3' }, 
+	festival: { type: String, ref: 'festival' }, 
 	year: { type: String, required: true},
 	awarded : [{
 		entity: String,
@@ -17,4 +17,4 @@ const Award = new mongoose.Schema({
 })
 
 
-export default mongoose.model("award_3", Award);
+export default mongoose.model("award", Award);

@@ -172,4 +172,4 @@ const Dashboard = new mongoose.Schema({
 	timestamps: false,
 })
 
-export default mongoose.model("dashboard_3", Dashboard);
+export default mongoose.model("dashboard", Dashboard);

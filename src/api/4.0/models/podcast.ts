@@ -24,4 +24,4 @@ const Podcast = new mongoose.Schema({
 	timestamps: false,
 })
 
-export default mongoose.model("podcast_3", Podcast);
+export default mongoose.model("podcast", Podcast);

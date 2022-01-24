@@ -25,7 +25,7 @@ const Entity = new mongoose.Schema({
 		yearAdded: Number,		
 	} ], 
 	awards: [ { 
-		festival:  { type: String, ref: 'festival_3' }, 
+		festival:  { type: String, ref: 'festival' }, 
 		year: Number,
 		category: String,
 		won: Boolean,
@@ -38,20 +38,20 @@ const Entity = new mongoose.Schema({
 	production: String,
 	website: 	String,
 	directed: 	[{
-		id: { type: String, ref: 'person_3' }, 
+		id: { type: String, ref: 'person' }, 
 	}], 
 	produced: 	[{
-		id: { type: String, ref: 'person_3' }, 
+		id: { type: String, ref: 'person' }, 
 	}], 
 	written: 	[{
-		id: { type: String, ref: 'person_3' }, 
+		id: { type: String, ref: 'person' }, 
 	}], 
 	cast: 	[{
-		id: { type: String, ref: 'person_3' },
+		id: { type: String, ref: 'person' },
 		as: String, 
 	}], 
 	crew: 	[{
-		id: { type: String, ref: 'person_3' },
+		id: { type: String, ref: 'person' },
 		cat: String,
 		job: String,
 		as: String, 
@@ -61,4 +61,4 @@ const Entity = new mongoose.Schema({
 	timestamps: false,
 })
 
-export default mongoose.model("entity_3", Entity);
+export default mongoose.model("entity", Entity);
