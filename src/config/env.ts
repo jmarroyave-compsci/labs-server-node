@@ -3,7 +3,7 @@ exports.get = get;
 exports.set = set;
 const def = {
   "LOG_LEVEL": "silly",
-  "CORS" : "http://localhost:3000,https://jmarroyave-compsci.github.io,https://entertainment-analysis.herokuapp.com/"
+  "CORS" : "http://localhost:3000,https://jmarroyave-compsci.github.io,https://entertainment-analysis.herokuapp.com"
 };
 
 const dynamic = {
