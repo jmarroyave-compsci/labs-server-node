@@ -23,6 +23,20 @@ export async function moviesGet(req: Request, res: Response): P<any> {
   utils.writeJSON(res, data);
 };
 
+export async function tvShowsListGet(req: Request, res: Response): P<any> {
+  var where;
+  switch(req.params.list){
+      case "coming-soon":
+          where = {};
+          break;
+      case "popular":
+          where = {}
+          break;
+  }   
+  const data = await Service.entitiesFindGet( where, req.query, "tvShow" );
+  utils.writeJSON(res, data);
+};
+
 export async function tvShowsGet(req: Request, res: Response): P<any> {
   const data = await Service.entitiesGet( req.query, "tvShow" );
   utils.writeJSON(res, data);

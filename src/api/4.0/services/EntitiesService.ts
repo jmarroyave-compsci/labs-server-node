@@ -23,6 +23,10 @@ export const entityGet = async function( params ) {
 
 export const entitiesGet = async function( params, type ) {
   const where = getWhereFromQuery(params.field);
+  return await entitiesFindGet(where, type, params)
+} 
+
+export const entitiesFindGet = async function( where, params, type ) {
   return await entitiesFind( where, type, params )
 } 
 

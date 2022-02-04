@@ -585,7 +585,7 @@ paths:
           name: genre
           description: genre
         - schema:
-            type: integer
+            type: number
           in: query
           name: year
           description: year

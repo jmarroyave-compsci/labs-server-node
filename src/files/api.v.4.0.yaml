@@ -268,6 +268,33 @@ paths:
           name: limit
           description: limit
     parameters: []
+  '/tv-shows/list/{list}':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TVShow'
+      description: 'return the movie festivals '
+      summary: TVShowList
+      operationId: tvShowList
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: page
+    parameters:
+      - schema:
+          type: string
+        name: list
+        in: path
+        required: true
+        description: 'list name: soon, popular, etc'
   '/tv-shows/{id}':
     get:
       tags: []
@@ -585,7 +612,7 @@ paths:
           name: genre
           description: genre
         - schema:
-            type: integer
+            type: string
           in: query
           name: year
           description: year
@@ -1419,7 +1446,7 @@ components:
               'n':
                 type: number
         year:
-          type: number
+          type: string
         max:
           type: number
         min:
