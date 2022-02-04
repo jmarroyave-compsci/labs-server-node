@@ -37,7 +37,7 @@ export const get = async function( params ) {
   return data.map( d => {
     const words = d['words'];
     return {
-      year: (isNaN(d['year'])) ? year : d['year'],
+      year: ( d['year'] && d['year'] > 0 ) ? d['year'] : year,
       genre: d['genre'],
       words: words,
       max: (words[0]) ? words[0]['n'] : 0,
