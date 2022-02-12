@@ -7,6 +7,7 @@ const SearchIndex = new mongoose.Schema({
 	desc: String,
 	ranking: Number,
 	year: Number,
+	thumbnail: String,
 }, { 
 	collection: 'search_index',
 	timestamps: false,

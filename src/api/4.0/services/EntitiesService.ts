@@ -23,17 +23,17 @@ export const entityGet = async function( params ) {
 
 export const entitiesGet = async function( params, type ) {
   const where = getWhereFromQuery(params.field);
-  return await entitiesFindGet(where, type, params)
+  return await entitiesFindGet(type, where, {}, params.page, params.limit)
 } 
 
-export const entitiesFindGet = async function( where, params, type ) {
-  return await entitiesFind( where, type, params )
+export const entitiesFindGet = async function(type, where, sort, page, limit ) {
+  return await entitiesFind( type, where, sort, page, limit )
 } 
 
-export const entitiesFind = async function( where, type, params=null ) {
+export const entitiesFind = async function( type, where, sort, page, limit ) {
   const paging = {page: 1, limit: 10}
-  paging.page = (params.page) ? params.page : 1;
-  paging.limit = (params.limit) ? params.limit : 10;
+  paging.page = (page) ? page : 1;
+  paging.limit = (limit) ? limit : 10;
 
   where = (where != null) ? where : {};
 
@@ -59,6 +59,7 @@ export const entitiesFind = async function( where, type, params=null ) {
   results = await DBEntity.find( where )
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit)
+      .sort(sort)
       .populate("produced.id")
       .populate("directed.id")
       .populate("written.id")

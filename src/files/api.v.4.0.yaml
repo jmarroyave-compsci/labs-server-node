@@ -776,20 +776,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    type:
-                      type: string
-                    entity:
-                      type: string
-                    entityId:
-                      type: string
-                    description:
-                      type: string
-                    desc:
-                      type: string
-                    year:
-                      type: integer
+                  $ref: '#/components/schemas/SearchResult'
       operationId: Search
       description: return search results for query
       parameters:
@@ -1387,6 +1374,25 @@ components:
         film:
           type: string
         category:
+          type: string
+    SearchResult:
+      type: object
+      description: search result
+      title: SearchResult
+      properties:
+        type:
+          type: string
+        entity:
+          type: string
+        entityId:
+          type: string
+        description:
+          type: string
+        desc:
+          type: string
+        year:
+          type: integer
+        thumbnail:
           type: string
     StoryMovieAward:
       type: object
