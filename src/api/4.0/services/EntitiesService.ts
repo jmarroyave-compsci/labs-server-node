@@ -6,12 +6,15 @@ export const entityGet = async function( params ) {
   var results;
   var result = await DBEntity
       .findOne( { _id: params.id } )
+      .populate("related.id")
       .populate("produced.id")
       .populate("directed.id")
       .populate("written.id")
       .populate("cast.id")
       .populate("crew.id")
       .populate("awards.festival")
+
+  console.log(result)
 
   if(result){
     results = await StoriesService.getMovieRemakes( { name: result['title'], maxMovies: 50 } )
@@ -60,6 +63,7 @@ export const entitiesFind = async function( type, where, sort, page, limit ) {
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit)
       .sort(sort)
+      .populate("related.id")
       .populate("produced.id")
       .populate("directed.id")
       .populate("written.id")

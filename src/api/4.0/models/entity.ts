@@ -56,6 +56,10 @@ const Entity = new mongoose.Schema({
 		job: String,
 		as: String, 
 	}], 
+	related: 	[{
+		id: { type: String, ref: 'entity' }, 
+		source: String,
+	}], 
 }, { 
 	collection: 'entity',
 	timestamps: false,

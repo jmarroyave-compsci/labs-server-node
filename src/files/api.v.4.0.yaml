@@ -1173,6 +1173,7 @@ components:
                 type: number
     Entity:
       type: object
+      x-internal: false
       properties:
         _id:
           description: Id
@@ -1296,7 +1297,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Entity'
-      x-internal: false
+        related:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Entity'
+              source:
+                type: string
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:
