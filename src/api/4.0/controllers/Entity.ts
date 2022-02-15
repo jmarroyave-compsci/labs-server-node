@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import * as Service from 'v4/services/EntitiesService';
+import * as ListsService from 'v4/services/ListsService';
 import * as utils from 'lib/misc';
 import { default as P } from "bluebird";
 
@@ -24,28 +25,10 @@ export async function moviesGet(req: Request, res: Response): P<any> {
 };
 
 export async function tvShowsListGet(req: Request, res: Response): P<any> {
-  var where;
-  var limit;
-  var sort;
-  switch(req.params.list){
-      case "coming-soon":
-      case "soon":
-          where = { "released" : [ {"$ne" : null },  { "$gt" : new Date() } ] };
-          sort = { "released" : -1 }
-          limit = 10
-          break;
-      case "recent":
-          where = { "released" : [{"$ne" : null },  { "$lt" : new Date() }] };
-          sort = { "released" : -1 }
-          limit = 10
-          break;
-      case "popular":
-          where = { "released" : [{"$ne" : null },  { "$lt" : new Date() }] };
-          sort = { "released" : -1 }
-          limit = 10
-          break;
-  }   
-  const data = await Service.entitiesFindGet( "tvShow", where, sort, req.query['page'], limit );
+  const list = req.params.list
+  const limit = req.query['limit'] ?? 10
+  const page = req.query['page'] ?? 1
+  const data = await ListsService.getListItems( list, page, limit );
   utils.writeJSON(res, data);
 };
 

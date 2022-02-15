@@ -1306,6 +1306,15 @@ components:
                 $ref: '#/components/schemas/Entity'
               source:
                 type: string
+        listedOn:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:
