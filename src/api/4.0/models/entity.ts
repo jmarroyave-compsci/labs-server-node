@@ -20,6 +20,9 @@ const Entity = new mongoose.Schema({
 		votes: Number,		
 	} ], 
 	remakes: [],
+	images: {
+		poster: String,
+	},
 	streamBy: [ { 
 		name: String,
 		yearAdded: Number,		
@@ -31,9 +34,6 @@ const Entity = new mongoose.Schema({
 		won: Boolean,
 		film: String,
 	} ], 
-	image: {
-		poster: String,
-	},
 	boxOffice: 	String,
 	production: String,
 	website: 	String,
@@ -56,9 +56,9 @@ const Entity = new mongoose.Schema({
 		job: String,
 		as: String, 
 	}], 
-	related: 	[{
-		id: { type: String, ref: 'entity' }, 
-		source: String,
+	lists: 	[{
+		name: String,
+		items: [{ type: String, ref: 'entity' }], 
 	}], 
 }, { 
 	collection: 'entity',

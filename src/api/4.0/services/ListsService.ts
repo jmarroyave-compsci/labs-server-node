@@ -13,14 +13,14 @@ export const getListItems = async function( list, page, limit ) {
 
   console.log(where)
 
-  const results = await DBList.findOne( where )
+  const result = await DBList.findOne( where )
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit)
       .populate("items._id")
 
-  const resp = results?.['items'].map( r => r._id ).filter( r => r != null) ?? []
+  const resp = result?.['items'].map( r => r._id ).filter( r => r != null) ?? []
 
-  console.log(list, results["_id"] , resp.length ?? 0)
+  console.log("LIST:", `'${list}' id: '${result?.["_id"] ?? "null"} ${resp.length ?? 0} items'`)
 
   return resp
 };

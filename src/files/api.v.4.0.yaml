@@ -1171,6 +1171,11 @@ components:
                 $ref: '#/components/schemas/Person'
               'n':
                 type: number
+        images:
+          type: object
+          properties:
+            avatar:
+              type: string
     Entity:
       type: object
       x-internal: false
@@ -1278,7 +1283,7 @@ components:
                 $ref: '#/components/schemas/Person'
         created:
           type: string
-        image:
+        images:
           type: object
           properties:
             poster:
@@ -1297,15 +1302,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Entity'
-        related:
+        lists:
           type: array
           items:
             type: object
             properties:
-              id:
-                $ref: '#/components/schemas/Entity'
-              source:
+              name:
                 type: string
+              items:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Entity'
         listedOn:
           type: array
           items:

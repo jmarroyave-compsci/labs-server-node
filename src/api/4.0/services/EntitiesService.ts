@@ -1,12 +1,12 @@
 import DBEntity from 'v4/models/entity';
 import * as StoriesService from './StoriesService';
 import { getWhereFromQuery } from 'lib/queries';
+import * as ListsService from 'v4/services/ListsService';
 
 export const entityGet = async function( params ) {
   var results;
   var result = await DBEntity
       .findOne( { _id: params.id } )
-      .populate("related.id")
       .populate("produced.id")
       .populate("directed.id")
       .populate("written.id")
@@ -14,7 +14,17 @@ export const entityGet = async function( params ) {
       .populate("crew.id")
       .populate("awards.festival")
 
-  console.log(result)
+  var list;
+  const page = 1, limit = 10;
+
+  list = await ListsService.getListItems( `entity_${params.id}_related`, page, limit );
+  result['lists'].push( { name : "related", items : list} )
+
+  for(var genre of result["genres"]){
+    list = await ListsService.getListItems( `genre_${genre}`, page, limit );
+    result['lists'].push( { name : `${genre}`, items : list} )    
+  }
+
 
   if(result){
     results = await StoriesService.getMovieRemakes( { name: result['title'], maxMovies: 50 } )

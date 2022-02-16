@@ -6,6 +6,9 @@ const Person = new mongoose.Schema({
 	birthYear: Number,
 	deathYear: Number,
 	profession: [ String ],
+	images: {
+		poster: String,
+	},
 	awards: [ {  
 		festival: { type: String, ref: 'festival' }, 
 		year: Number,
