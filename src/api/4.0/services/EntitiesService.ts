@@ -17,21 +17,26 @@ export const entityGet = async function( params ) {
   var list;
   const page = 1, limit = 10;
 
+  var resp = result.toObject();
+
   list = await ListsService.getListItems( `entity_${params.id}_related`, page, limit );
-  result['lists'].push( { name : "related", items : list} )
+  resp['lists'].push( { name : "related", items : list} )
 
-  for(var genre of result["genres"]){
+  for(var genre of resp?.["genres"]){
     list = await ListsService.getListItems( `genre_${genre}`, page, limit );
-    result['lists'].push( { name : `${genre}`, items : list} )    
+    resp['lists'].push( { name : `${genre}`, items : list} )    
   }
 
-
-  if(result){
-    results = await StoriesService.getMovieRemakes( { name: result['title'], maxMovies: 50 } )
-    result['remakes'] = (results.length > 0 && results[0].recs.length > 0) ? results[0].recs : []
+  if(resp){
+    results = await StoriesService.getMovieRemakes( { name: resp['title'], maxMovies: 50 } )
+    resp['remakes'] = (results.length > 0 && results[0].recs.length > 0) ? results[0].recs : []
   }
 
-  return result
+  if(resp){
+    resp['images'] = resp['media']?.['images']
+  }
+
+  return resp
 };
 
 export const entitiesGet = async function( params, type ) {

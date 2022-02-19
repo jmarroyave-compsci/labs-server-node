@@ -19,7 +19,9 @@ const config = {
       TRACK_ID: process.env.PLUGINS_GOOGLE_ANALYTICS_TRACK_ID,
     }
   },
-  LOCAL: LOCAL
+  LOCAL: LOCAL,
+  SESSION_SECRET: process.env.SESSION_SECRET,
+  CORS: { origin: process.env.CORS.split("|") }
 }
 
 

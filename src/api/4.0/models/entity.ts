@@ -20,8 +20,10 @@ const Entity = new mongoose.Schema({
 		votes: Number,		
 	} ], 
 	remakes: [],
-	images: {
-		poster: String,
+	media : {
+		images: {
+			poster: String,
+		},
 	},
 	streamBy: [ { 
 		name: String,

@@ -1,10 +1,8 @@
 import cors from "cors";
 import express from "express";
 import { Express, Request, Response, NextFunction, Send } from 'express';
-import * as env from "config/env";
 import { inOutLogger } from "config/log";
 import * as cls from "lib/cls";
-import { getCorsOptions } from "config/cors_options";
 import bodyParser from 'body-parser';
 import RequestID from 'express-request-id';
 import log from "config/log";
@@ -14,16 +12,25 @@ import * as misc from 'lib/misc';
 import serveIndex from 'serve-index';
 import { load as loadRoutes } from 'loaders/routes';
 
+import session from 'express-session'
+
 import errorMiddleware from 'middleware/error'
 import cacheMiddleware from 'middleware/cache'
 import guestbookMiddleware from 'middleware/guestbook'
+import historyMiddleware from 'middleware/history'
 
 const app = express();
 
-log.info(" - loading environment vars")
-env.checkEnv();
-
 log.info(" - configuring middleware")
+
+app.use(session({
+  secret: config.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+/*
+  cookie: { secure: true }
+*/
+}))
 
 app.use((req, res, next) => {
   const test = /\?[^]*\//.test(req.url);
@@ -32,7 +39,7 @@ app.use((req, res, next) => {
   else
     next();
 });
-app.use(cors(getCorsOptions()));
+app.use(cors( config.CORS ));
 app.use(cls.setRequestId);
 app.use(inOutLogger);
 app.use(bodyParser.json({
@@ -66,6 +73,9 @@ app.use(cacheMiddleware)
 
 // guestbook
 app.use(guestbookMiddleware)
+
+// history
+app.use(historyMiddleware)
 
 app.use(function (err, req, res, next) {
     console.log(err.stack);

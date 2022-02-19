@@ -34,6 +34,7 @@
     "express-graphql": "0.12.0",
     "express-request-id": "1.4.1",
     "express-requests-logger": "3.0.3",
+    "express-session": "^1.17.2",
     "express-winston": "4.2.0",
     "g": "2.0.1",
     "graphql": "15.5.3",

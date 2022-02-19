@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import * as HistoryService from 'api/global/services/HistoryService';
 import * as Service from 'v4/services/EntitiesService';
 import * as ListsService from 'v4/services/ListsService';
 import * as utils from 'lib/misc';
@@ -11,6 +12,7 @@ export async function movieGet(req: Request, res: Response): P<any> {
 
 export async function tvShowGet(req: Request, res: Response): P<any> {
   const data = await Service.entityGet( { id: req.params.id  } );
+  if(data != null) HistoryService.addTVShow(req, req.params.id)
   utils.writeJSON(res, data);
 };
 

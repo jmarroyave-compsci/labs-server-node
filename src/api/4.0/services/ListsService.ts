@@ -18,7 +18,13 @@ export const getListItems = async function( list, page, limit ) {
       .limit( paging.limit)
       .populate("items._id")
 
-  const resp = result?.['items'].map( r => r._id ).filter( r => r != null) ?? []
+  const resp = result?.['items'].map( r => { 
+    var obj = r.toObject()
+    obj = obj['_id']
+    obj['images'] = obj.media?.images
+    obj['releaseYear'] = obj?.on_air?.start_year
+    return obj
+  }).filter( r => r != null) ?? []
 
   console.log("LIST:", `'${list}' id: '${result?.["_id"] ?? "null"} ${resp.length ?? 0} items'`)
 
