@@ -21,6 +21,7 @@
   "dependencies": {
     "@analytics/google-analytics": "0.5.3",
     "@analytics/google-tag-manager": "0.5.1",
+    "actions-on-google": "^3.0.0",
     "analytics": "0.7.16",
     "axios": "0.21.4",
     "bluebird": "3.7.2",
