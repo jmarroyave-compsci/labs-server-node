@@ -8,7 +8,7 @@ const LOCAL = (!process.env.DB_SERVER && process.env.DEFAULT_DB_SERVER.includes(
 
 const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
-  DB_SERVER: process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER,
+  DB_SERVER: `${process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER}?connectTimeoutMS=60000`,
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
   DB_VERSION: _package_.version,
@@ -20,12 +20,12 @@ const config = {
     }
   },
   LOCAL: LOCAL,
-  SESSION_SECRET: process.env.SESSION_SECRET,
-  CORS: { origin: process.env.CORS.split("|") }
+  SESSION : {
+    SECRET: process.env.SESSION_SECRET,
+    MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
+  },
+  CORS: { origin: process.env.CORS.split("|"), credentials: true },
 }
 
-
 console.log(config)
-
-
 export default config;

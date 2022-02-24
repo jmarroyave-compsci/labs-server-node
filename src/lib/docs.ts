@@ -1,8 +1,8 @@
 import config from 'config/config'
 import * as misc from 'lib/misc';
 
-const WEB_SERVER_CURRENT = config.WEB_SERVER
-const WEB_SERVER = process.env.WEB_SERVER || WEB_SERVER_CURRENT
+const WEB_SERVER_CURRENT = "http://localhost:8080"
+const WEB_SERVER = process.env.WEB_SERVER || config.WEB_SERVER
 
 const FILES_PATH = `${__dirname}/../files`
 
