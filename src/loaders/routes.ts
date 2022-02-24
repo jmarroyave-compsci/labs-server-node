@@ -18,7 +18,7 @@ export const load = function(app){
 const loadRoutesFromDir = (app, routeRoot, routePath) => {
     const dirs = [];
     fs.readdirSync(routePath).sort().forEach(async (filename) => {
-
+        console.log(filename)
         if(fs.lstatSync(`${routePath}/${filename}`).isDirectory()){
             dirs.push(`${routePath}/${filename}`);
             return;
