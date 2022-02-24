@@ -15,14 +15,18 @@ import { load as loadRoutes } from 'loaders/routes';
 import session from 'express-session'
 import MongoDBStore from 'connect-mongodb-session'
 
-const store = new MongoDBStore(session)({
-  uri: config.DB_SERVER,
-  collection: 'srv_sess'
-});
-
-store.on('error', function(error) {
-  console.log(error);
-});
+const getStore = () => {
+  console.log("creating session store")
+  const store = new MongoDBStore(session)({
+    uri: config.DB_SERVER,
+    collection: 'srv_sess'
+  });
+  
+  store.on('error', function(error) {
+    console.log(error);
+  });
+  return store  
+}
 
 /*
 import helmet from 'helmet'
@@ -49,7 +53,7 @@ app.use(hpp());
 app.use(session({
   name: 'session',
   secret: config.SESSION.SECRET,
-  store: store,
+  store: (true) ? null : getStore(),
   resave: true,
   saveUninitialized: true,
   cookie: {

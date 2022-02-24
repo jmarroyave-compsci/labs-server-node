@@ -25,13 +25,19 @@ log.info(`DB SERVER:\t${DB_SERVER.split("?")[0]}`)
 log.info("-".repeat(50))
 
 const initServer = () => {
-    const httpsOptions = {
-      key: fs.readFileSync(`${__dirname}/files/certificates/localhost.key`),
-      cert: fs.readFileSync(`${__dirname}/files/certificates/localhost.crt`),
-    };
-
-    const server = require('https').createServer(httpsOptions, app)
-    //const server = require('http').createServer(app)
+    let server;
+    if(config.LOCAL){
+      const httpsOptions = {
+        key: fs.readFileSync(`${__dirname}/files/certificates/localhost.key`),
+        cert: fs.readFileSync(`${__dirname}/files/certificates/localhost.crt`),
+      };
+  
+  
+      server = require('https').createServer(httpsOptions, app)  
+    } else {
+      server = require('http').createServer(app)
+    }
+    
 
     //const io = io.listen(server);
     const io = new SocketIO(server,{
