@@ -277,9 +277,12 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/TVShow'
+                type: object
+                properties:
+                  items:
+                    $ref: '#/components/schemas/TVShow'
+                  ref:
+                    type: string
       description: 'return the movie festivals '
       summary: TVShowList
       operationId: tvShowList
@@ -307,7 +310,7 @@ paths:
                 $ref: '#/components/schemas/TVShow'
       description: 'return the movie festivals '
       summary: TVShow
-      operationId: tvShow
+      operationId: tvShowItem
       parameters: []
     parameters:
       - schema:
@@ -1184,120 +1187,133 @@ components:
           description: Id
           type: string
           example: The lord of the rings
-        title:
-          description: Title
-          type: string
-          example: The lord of the rings
-        type:
-          description: Type
-          type: string
-        genres:
-          description: Genre
-          type: array
-          items:
-            type: string
-        countries:
-          description: Country
-          type: array
-          items:
-            type: string
-        duration:
-          description: Duration
-          type: string
-        classification:
-          description: 'Classification [PG,PG13...]'
-          type: string
-        ratings:
-          description: Rating
-          type: array
-          items:
-            type: object
-            properties:
-              name:
+        info:
+          type: object
+          properties:
+            title:
+              description: Title
+              type: string
+              example: The lord of the rings
+            type:
+              description: Type
+              type: string
+            genres:
+              description: Genre
+              type: array
+              items:
                 type: string
-              averageRating:
+            country_origin:
+              description: Country
+              type: array
+              items:
                 type: string
-        streamBy:
-          description: Rating
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              yearAdded:
+            duration:
+              description: Duration
+              type: string
+            classification:
+              description: 'Classification [PG,PG13...]'
+              type: string
+            rating:
+              type: number
+            ratings:
+              description: Rating
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  averageRating:
+                    type: string
+            stream_by:
+              description: Rating
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+            on_air:
+              description: on air dates
+              type: object
+              properties:
+                start:
+                  type: string
+                start_year:
+                  type: number
+            boxOffice:
+              type: string
+            production:
+              type: string
+            website:
+              type: string
+            language:
+              type: string
+            plot:
+              type: string
+            keywords:
+              type: array
+              items:
                 type: string
         awards:
           description: awards
           type: array
           items:
             $ref: '#/components/schemas/Award'
-        description:
-          type: string
-          example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
-        releaseYear:
-          description: Year of production
-          type: number
-        produced:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                $ref: '#/components/schemas/Person'
-        directed:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                $ref: '#/components/schemas/Person'
-        cast:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                $ref: '#/components/schemas/Person'
-              as:
-                type: string
-        crew:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                $ref: '#/components/schemas/Person'
-              as:
-                type: string
-              cat:
-                type: string
-              job:
-                type: string
-        written:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                $ref: '#/components/schemas/Person'
-        created:
-          type: string
-        images:
+        people:
           type: object
           properties:
-            poster:
-              type: string
-        boxOffice:
-          type: string
-        production:
-          type: string
-        website:
-          type: string
-        language:
-          type: string
-        plot:
-          type: string
+            produced:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/Person'
+            directed:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/Person'
+            cast:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/Person'
+                  as:
+                    type: string
+            crew:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/Person'
+                  as:
+                    type: string
+                  cat:
+                    type: string
+                  job:
+                    type: string
+            written:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/Person'
+        media:
+          type: object
+          properties:
+            images:
+              type: object
+              properties:
+                poster:
+                  type: string
         remakes:
           type: array
           items:
@@ -1307,7 +1323,7 @@ components:
           items:
             type: object
             properties:
-              name:
+              ref:
                 type: string
               items:
                 type: array
@@ -1322,6 +1338,8 @@ components:
                 type: string
               name:
                 type: string
+      description: Entity
+      title: ''
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:

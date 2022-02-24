@@ -13,6 +13,23 @@ import serveIndex from 'serve-index';
 import { load as loadRoutes } from 'loaders/routes';
 
 import session from 'express-session'
+import MongoDBStore from 'connect-mongodb-session'
+
+const store = new MongoDBStore(session)({
+  uri: config.DB_SERVER,
+  collection: 'srv_sess'
+});
+
+store.on('error', function(error) {
+  console.log(error);
+});
+
+/*
+import helmet from 'helmet'
+import hpp from 'hpp'
+import csurf from 'csurf'
+import limiter from 'express-rate-limit'
+*/
 
 import errorMiddleware from 'middleware/error'
 import cacheMiddleware from 'middleware/cache'
@@ -23,14 +40,29 @@ const app = express();
 
 log.info(" - configuring middleware")
 
-app.use(session({
-  secret: config.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true,
 /*
-  cookie: { secure: true }
+// Set Security Configs
+app.use(helmet());
+app.use(hpp());
 */
+
+app.use(session({
+  name: 'session',
+  secret: config.SESSION.SECRET,
+  store: store,
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: config.SESSION.MAX_AGE
+  },
 }))
+
+/*
+app.use(csurf());
+app.use(limiter);
+*/
 
 app.use((req, res, next) => {
   const test = /\?[^]*\//.test(req.url);

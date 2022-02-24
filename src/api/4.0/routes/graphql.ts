@@ -10,10 +10,22 @@ const router = express.Router();
 	const oasFile = await getSpecs( { version : "4.0"} );
 	const oasDoc = jsyaml.safeLoad(oasFile);
 	const {schema} = await createGraphQLSchema(oasDoc, { 
-		simpleNames: true,
-		operationIdFieldNames : true,
-	})
-	router.use("/4.0/graphql", graphqlHTTP({schema, graphiql: true, pretty: true}));
+			simpleNames: true,
+			operationIdFieldNames : true,
+			headers: function(a,aa,c,x) {
+				const b = x['context']
+				return { cookie: b['headers']['cookie'] }
+			},			
+		}
+	)
+	router.use("/4.0/graphql", graphqlHTTP( (req, res) => {
+		return {
+			schema, 
+			context: req,
+			graphiql: true, 
+			pretty: true
+		}
+	}));
 })();
 
 
