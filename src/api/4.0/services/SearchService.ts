@@ -16,10 +16,10 @@ export const searchResults = async function( params ) {
 
   if( entities == "") return []
 
-  query['type'] = { $in : entities } 
+  query['ty'] = { $in : entities } 
   
   if( year ){
-    query['year'] = { $gte : year - timeframe, $lte : year + timeframe } 
+    query['yr'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
 
   //console.log(params, query)
@@ -29,19 +29,21 @@ export const searchResults = async function( params ) {
       .skip( pageSize * (page - 1) )
       .limit( pageSize );
 
+  console.log("results", data.length)
+
   return data;
 };
 
 export const searchSuggestions = async function( params ) {
   var data =  await DBSearch.aggregate(
       [
-          { $match : { $text : { $search : params.qry } } },
-          { "$group": { "_id": "$entity", count : { $sum : 1 } } },
+          { $match : { ty: "tv_show", $text : { $search : params.qry } } },
+          { "$group": { "_id": "$dc.title", count : { $sum : 1 } } },
           { "$limit": 5 },
       ]
   );
 
-  data = data.sort( (a,b) => (a.entity > b.entity ) ? 1 : -1 )
+  console.log("suggestions", data, data.length)
 
   return {suggestions : data.map( d => d._id )};
 };

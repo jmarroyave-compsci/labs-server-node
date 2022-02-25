@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 const History = new mongoose.Schema({
 	_id: String,
-	tvShows : [ String ],
+	tv_shows : [ { type: String, ref: "entity"} ],
+	searched : [ String ],
 }, { 
 	collection: 'user_history',
 	timestamps: false,

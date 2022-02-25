@@ -2,21 +2,13 @@ import mongoose from 'mongoose';
 
 const Entity = new mongoose.Schema({
 	_id: String,
+	/*
 	info: {
-		boxoffice: 	String,
-		production_company: String,
-		website: 	String,
-		stream_by: [ { 
-			name: String,
-			added: Number,		
-		} ], 
-		title: { type: String, required: true},
+		title: String,
 		plot: String,
-		type: String,
 		genres: [ String ],
+		type: String,
 		duration: Number,
-		classification: String,
-		language: String,
 		on_air: {
 			start: Date,
 			start_year: Number,
@@ -25,14 +17,26 @@ const Entity = new mongoose.Schema({
 		},
 		rating: Number, 
 		ratings: [ { 
-			entity: String,
+			source: String,
 			rating: String,
 			votes: Number,		
 		} ], 
 		country_origin: [ String ],
+		stream_by: [ { 
+			name: String,
+			added: Number,		
+		} ], 
+		classification: String,
+		language: String,
+		boxoffice: String,
+		production_company: String,
+		website: String,
+	},
+*/
+	info: {
 	},
 	remakes: [],
-	media : {
+	media: {
 		images: {
 			poster: String,
 		},
@@ -45,9 +49,8 @@ const Entity = new mongoose.Schema({
 		film: String,
 	} ], 
 	people: {
-		stars: 	[{
-			_id: { type: String, ref: 'person' }, 
-		}], 
+		directors: [{ type: String, ref: 'person' }], 
+		stars: [{ type: String, ref: 'person' }], 
 		directed: 	[{
 			_id: { type: String, ref: 'person' }, 
 		}], 
@@ -69,7 +72,7 @@ const Entity = new mongoose.Schema({
 		}], 
 	},
 	lists: 	[{
-		name: String,
+		ref: String,
 		items: [{ type: String, ref: 'entity' }], 
 	}], 
 }, { 

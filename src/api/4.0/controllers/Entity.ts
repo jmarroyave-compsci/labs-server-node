@@ -30,7 +30,16 @@ export async function tvShowsListGet(req: Request, res: Response): P<any> {
   const list = req.params.list
   const limit = req.query['limit'] ?? 10
   const page = req.query['page'] ?? 1
-  const data = await ListsService.getListItems( list, page, limit );
+
+  var data;
+  switch (list){
+    case "user_recent":
+      data = await HistoryService.getListItems( list, page, limit, req );
+      break;
+    default:
+      data = await ListsService.getListItems( list, page, limit );
+  }
+
   utils.writeJSON(res, data);
 };
 

@@ -14,11 +14,12 @@ export const getListItems = async function( list, page, limit ) {
   console.log(where)
 
   const result = await DBList.findOne( where )
-      .populate("items._id")
+                             .populate("items._id")
 
-  const resp = result?.['items'].slice(0,paging.limit).map( r => r._id).filter( r => r != null) ?? []
+  if(!result) return null
+  const resp = result?.['items'].slice(0,paging.limit).map( r => r._id ).filter( r => r != null) ?? []
   const ref = (result?.['ref']) ? result['ref'] : list;
   console.log("LIST:", `'${list}' id: '${result?.["_id"] ?? "null"} ${resp.length ?? 0} items'`)
 
-  return { ref : ref, items: resp}
+  return { name: list, ref : ref, items: resp}
 };

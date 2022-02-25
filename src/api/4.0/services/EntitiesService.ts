@@ -7,6 +7,8 @@ export const entityGet = async function( params ) {
   var results;
   var result = await DBEntity
       .findOne( { _id: params.id } )
+      .populate("people.stars")
+      .populate("people.directors")
       .populate("people.produced._id")
       .populate("people.directed._id")
       .populate("people.written._id")
@@ -14,16 +16,23 @@ export const entityGet = async function( params ) {
       .populate("people.crew._id")
       .populate("awards.festival")
 
+  console.log(result)
+
+  if(!result) return null
+
   var list;
   const page = 1, limit = 10;
 
   var resp = result.toObject();
 
   list = await ListsService.getListItems( `entity_${params.id}_related`, page, limit );
-  resp['lists'].push( list )
-
-  for(var genre of resp?.["genres"]){
+  if(list){
+    resp['lists'].push( list )  
+  }
+  
+  for(var genre of resp['info']["genres"]){
     list = await ListsService.getListItems( `genre_${genre}`, page, limit );
+    if(!list) continue
     resp['lists'].push( list )    
   }
 

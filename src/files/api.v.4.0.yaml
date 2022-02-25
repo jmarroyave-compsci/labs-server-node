@@ -280,8 +280,12 @@ paths:
                 type: object
                 properties:
                   items:
-                    $ref: '#/components/schemas/TVShow'
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entity'
                   ref:
+                    type: string
+                  name:
                     type: string
       description: 'return the movie festivals '
       summary: TVShowList
@@ -1182,6 +1186,8 @@ components:
     Entity:
       type: object
       x-internal: false
+      description: Entity
+      title: ''
       properties:
         _id:
           description: Id
@@ -1221,10 +1227,12 @@ components:
               items:
                 type: object
                 properties:
-                  name:
+                  source:
                     type: string
-                  averageRating:
+                  rating:
                     type: string
+                  votes:
+                    type: number
             stream_by:
               description: Rating
               type: array
@@ -1306,6 +1314,14 @@ components:
                 properties:
                   id:
                     $ref: '#/components/schemas/Person'
+            stars:
+              type: array
+              items:
+                $ref: '#/components/schemas/Person'
+            directors:
+              type: array
+              items:
+                $ref: '#/components/schemas/Person'
         media:
           type: object
           properties:
@@ -1329,6 +1345,8 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/Entity'
+              name:
+                type: string
         listedOn:
           type: array
           items:
@@ -1338,8 +1356,6 @@ components:
                 type: string
               name:
                 type: string
-      description: Entity
-      title: ''
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:
@@ -1423,20 +1439,29 @@ components:
       description: search result
       title: SearchResult
       properties:
-        type:
+        ty:
           type: string
-        entity:
-          type: string
-        entityId:
-          type: string
-        description:
-          type: string
-        desc:
-          type: string
-        year:
+        dc:
+          type: object
+          properties:
+            id:
+              type: string
+            title:
+              type: string
+            desc:
+              type: string
+            thumb:
+              type: string
+            cats:
+              type: string
+            released:
+              type: string
+            profession:
+              type: string
+            year:
+              type: string
+        yr:
           type: integer
-        thumbnail:
-          type: string
     StoryMovieAward:
       type: object
       description: Award model
