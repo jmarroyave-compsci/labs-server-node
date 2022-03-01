@@ -6,7 +6,7 @@ const Comment = new mongoose.Schema({
 	who: String,
 	when: Date,
 }, { 
-	collection: 'comment',
+	collection: '__comment',
 	timestamps: false,
 })
 

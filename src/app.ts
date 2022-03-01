@@ -19,7 +19,7 @@ const getStore = () => {
   console.log("creating session store")
   const store = new MongoDBStore(session)({
     uri: config.DB_SERVER,
-    collection: 'srv_sess'
+    collection: '__session'
   });
   
   store.on('error', function(error) {

@@ -4,8 +4,10 @@ const History = new mongoose.Schema({
 	_id: String,
 	tv_shows : [ { type: String, ref: "entity"} ],
 	searched : [ String ],
+	created: Date,
+	online: Boolean,
 }, { 
-	collection: 'user_history',
+	collection: '__user_history',
 	timestamps: false,
 })
 

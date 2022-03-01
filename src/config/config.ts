@@ -8,7 +8,7 @@ const LOCAL = (!process.env.DB_SERVER && process.env.DEFAULT_DB_SERVER.includes(
 
 const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
-  DB_SERVER: `${process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER}?connectTimeoutMS=60000`,
+  DB_SERVER: `${process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER}?retryWrites=true&w=majority&connectTimeoutMS=60000`,
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
   DB_VERSION: _package_.version,

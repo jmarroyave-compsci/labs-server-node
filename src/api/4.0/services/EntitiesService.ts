@@ -8,15 +8,12 @@ export const entityGet = async function( params ) {
   var result = await DBEntity
       .findOne( { _id: params.id } )
       .populate("people.stars")
-      .populate("people.directors")
-      .populate("people.produced._id")
-      .populate("people.directed._id")
-      .populate("people.written._id")
-      .populate("people.cast._id")
-      .populate("people.crew._id")
+      .populate("people.cast")
+      .populate("people.produced")
+      .populate("people.directed")
+      .populate("people.written")
+      .populate("people.crew")
       .populate("awards.festival")
-
-  console.log(result)
 
   if(!result) return null
 
@@ -30,15 +27,15 @@ export const entityGet = async function( params ) {
     resp['lists'].push( list )  
   }
   
+  list = await ListsService.getListItems( `entity_${params.id}_remakes`, page, limit );
+  if(list){
+    resp['lists'].push( list )  
+  }
+
   for(var genre of resp['info']["genres"]){
     list = await ListsService.getListItems( `genre_${genre}`, page, limit );
     if(!list) continue
     resp['lists'].push( list )    
-  }
-
-  if(resp){
-    results = await StoriesService.getMovieRemakes( { name: resp['title'], maxMovies: 50 } )
-    resp['remakes'] = (results.length > 0 && results[0].recs.length > 0) ? results[0].recs : []
   }
 
   return resp
@@ -83,15 +80,12 @@ export const entitiesFind = async function( type, where, sort, page, limit ) {
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit)
       .sort(sort)
-      .populate("people.produced._id")
-      .populate("people.directed._id")
-      .populate("people.written._id")
-      .populate("people.cast._id")
-      .populate("people.crew._id")
+      .populate("people.cast")
+      .populate("people.produced")
+      .populate("people.directed")
+      .populate("people.written")
+      .populate("people.crew")
       .populate("awards.festival")
-
-
-  console.log(results)
 
   return ( results ) ? results : null
 };

@@ -1274,51 +1274,24 @@ components:
             produced:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    $ref: '#/components/schemas/Person'
+                $ref: '#/components/schemas/Person'
             directed:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    $ref: '#/components/schemas/Person'
+                $ref: '#/components/schemas/Person'
             cast:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    $ref: '#/components/schemas/Person'
-                  as:
-                    type: string
+                $ref: '#/components/schemas/Person'
             crew:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    $ref: '#/components/schemas/Person'
-                  as:
-                    type: string
-                  cat:
-                    type: string
-                  job:
-                    type: string
+                $ref: '#/components/schemas/Person'
             written:
               type: array
               items:
-                type: object
-                properties:
-                  id:
-                    $ref: '#/components/schemas/Person'
-            stars:
-              type: array
-              items:
                 $ref: '#/components/schemas/Person'
-            directors:
+            stars:
               type: array
               items:
                 $ref: '#/components/schemas/Person'
@@ -1330,10 +1303,6 @@ components:
               properties:
                 poster:
                   type: string
-        remakes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
         lists:
           type: array
           items:
@@ -1345,15 +1314,6 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/Entity'
-              name:
-                type: string
-        listedOn:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
               name:
                 type: string
     Movie:

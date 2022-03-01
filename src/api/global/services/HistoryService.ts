@@ -1,14 +1,21 @@
 import HistoryModel from '../models/history'
 
-export const addTVShow = async function( req, entity ) {
-  const user = req.session.id;
 
+const getHistory = async function( req ){
+  const user = req.session.id;
   var history = await HistoryModel.findOne( { _id : user } );
 
   if( !history ){
     history = new HistoryModel();  
     history['_id'] = user;
+    history['created'] = new Date()
   }
+  
+  return history  
+}
+
+export const addTVShow = async function( req, entity ) {
+  const history = await getHistory(req)
 
   if( history['tv_shows'].includes(entity) ){
     history['tv_shows'] = history['tv_shows'].filter( r => r != entity )  
@@ -19,14 +26,7 @@ export const addTVShow = async function( req, entity ) {
 };
 
 export const addSearched = async function( req, qry ) {
-  const user = req.session.id;
-
-  var history = await HistoryModel.findOne( { _id : user } );
-
-  if( !history ){
-    history = new HistoryModel();  
-    history['_id'] = user;
-  }
+  const history = await getHistory(req)
 
   if( history['searched'].includes(qry) ){
     history['searched'] = history['searched'].filter( r => r != qry )  
