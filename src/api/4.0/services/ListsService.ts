@@ -1,5 +1,6 @@
 import DBEntity from 'v4/models/entity';
 import DBList from 'v4/models/list';
+import { shuffle2 } from 'lib/arrays'
 
 export const getListItems = async function( list, page, limit ) {
   const paging = { page: page ?? 1, limit: limit ?? 25}
@@ -19,5 +20,5 @@ export const getListItems = async function( list, page, limit ) {
 
   console.log("LIST:", `'${list}' id: '${result?.["_id"] ?? "null"} ${resp.length ?? 0} items'`)
 
-  return { name: list, ref : ref, items: resp}
+  return { name: list, ref : ref, items: shuffle2(resp)}
 };

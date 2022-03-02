@@ -28,7 +28,7 @@ export async function moviesGet(req: Request, res: Response): P<any> {
 
 export async function tvShowsListGet(req: Request, res: Response): P<any> {
   const list = req.params.list
-  const limit = req.query['limit'] ?? 10
+  const limit = req.query['limit'] ?? 25
   const page = req.query['page'] ?? 1
 
   var data;
