@@ -53,7 +53,7 @@ app.use(hpp());
 app.use(session({
   name: 'session',
   secret: config.SESSION.SECRET,
-  store: getStore(),
+  store: (config.LOCAL) ? null : getStore(),
   resave: true,
   saveUninitialized: true,
   cookie: {
