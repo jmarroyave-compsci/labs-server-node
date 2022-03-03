@@ -1,7 +1,7 @@
 import DBSearch from 'v4/models/search-index';
 
 export const searchResults = async function( params ) {
-  const qry = ( params.qry ) ? params.qry : "";
+  const qry = ( params.qry ) ? decodeURIComponent(params.qry) : "";
   const page = ( params.page ) ? parseInt(params.page) : 1;
   const entities = ( params.entities ) ? JSON.parse(decodeURIComponent(params.entities)) : ["movie", "podcast", "tv_show", "video_game", "festival", "person"];
   const year = ( params.year ) ? parseInt(params.year) : null;
@@ -22,14 +22,12 @@ export const searchResults = async function( params ) {
     query['yr'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
 
-  //console.log(params, query)
-
   const data =  await DBSearch.find( query, { score : { $meta: 'textScore' } } )
       .sort( { score : { $meta : 'textScore' } } )
       .skip( pageSize * (page - 1) )
       .limit( pageSize );
 
-  console.log("results", data.length)
+  console.log("search", query, data.length)
 
   return data;
 };
@@ -43,7 +41,7 @@ export const searchSuggestions = async function( params ) {
       ]
   );
 
-  console.log("suggestions", data, data.length)
+  console.log("suggestions", data.length)
 
   return {suggestions : data.map( d => d._id )};
 };
