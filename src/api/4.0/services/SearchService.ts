@@ -1,5 +1,11 @@
 import DBSearch from 'v4/models/search-index';
 
+export const searchExact = async function( tt ) {
+  const query = { tt : tt }
+  return  await DBSearch.findOne( query)
+};
+
+
 export const searchResults = async function( params ) {
   const qry = ( params.qry ) ? decodeURIComponent(params.qry) : "";
   const page = ( params.page ) ? parseInt(params.page) : 1;

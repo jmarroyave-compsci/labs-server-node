@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const SearchIndex = new mongoose.Schema({
+	tt: String,
 	ty: String,
 	dc: {},
 	yr: Number,

@@ -35,13 +35,27 @@ app.intent('test-3', conv => {
     return controller.getImage(conv)
 });
 
+app.intent('help', conv => {
+    return controller.help(conv)
+});
+
+app.intent('show-more', conv => {
+    return controller.getMoreItems(conv)
+});
+
 app.intent('get-genre-series', (conv, params) =>{
     return controller.getGenreList(conv, params)
 });
 
-app.intent('get-popular', (conv)=>{
-    return controller.getPopularList(conv)
+app.intent('get-popular', (conv, params)=>{
+    return controller.getPopularList(conv, params)
 });
+
+app.intent('get-popular_option', (conv, input, option)=>{
+    conv.ask(option.toString())
+});
+
+
 
 const router = express.Router();
 router.use("/4.0/webhook", app);
