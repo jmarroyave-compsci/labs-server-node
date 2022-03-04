@@ -28,9 +28,9 @@ export async function getMoreItems(conv) {
     this.help(conv)
     return
   }
+  const params = ctx.params;
 
   conv.contexts.set(CTX_NAME, 5, { ...ctx, page: ctx.page + 1});
-  const params = ctx.params;
   if(ctx.list == "popular"){
     return getPopularList(conv, params)
   } else if(ctx.list.startsWith("genre")){
