@@ -4,8 +4,9 @@ import { getWhereFromQuery } from 'lib/queries';
 import * as ListsService from 'v4/services/ListsService';
 
 export const entityGetSimple = async function( params ) {
-  return await DBEntity
+  const data = await DBEntity
       .findOne( { _id: params.id } )
+  return data ? data.toObject() : null
 };
 
 export const entityGet = async function( params ) {

@@ -1,7 +1,7 @@
 import * as ListsService from 'v4/services/ListsService';
 import * as SearchService from 'v4/services/SearchService';
 import * as EntitiesService from 'v4/services/EntitiesService';
-import * as fs from 'fs'
+import { getGenres as _getGenres } from 'lib/enums/genres'
 
 //import { Collection } from '@assistant/conversation';
 import { Image, Table, Carousel, BasicCard, Button, Suggestions, } from 'actions-on-google'
@@ -23,7 +23,7 @@ export async function fallback(conv) {
   switch(qry){
     case "more":
       conv.ask("no more items");  
-      return
+      return true
   }
 
   var ctx = conv.contexts.get("actions_intent_option");
@@ -31,18 +31,19 @@ export async function fallback(conv) {
   console.log("CTX: ACTIVE", conv.contexts.get(CTX_LIST).parameters)
   if(ctx){
     const id = ctx?.parameters?.OPTION
-    if(await getSeries(conv, id)) return
+    if(await getSeries(conv, id) === true) return true
   } 
   
-  if(await findSeries(conv, qry)) return
+  if(await findSeries(conv, qry) === true) return true
 
+  console.log("nope!!!, nothing found")
   conv.ask("sorry, I didn't get it");  
 };
 
 async function findSeries(conv, qry){
   LogOption(`FIND SERIES, ${qry}`)
   conv.ask(`searching for: ${qry}`);  
-  const resp = await SearchService.searchResults( {qry: qry, entities: ["tv_show"]} )
+  const resp = await SearchService.searchResults( {qry: qry, entities: ["tv_show"], limit: 10} )
   if(resp.length == 0) return false;
 
   if(resp.length == 1) {
@@ -63,6 +64,7 @@ async function findSeries(conv, qry){
       },
     }
   }))
+
   return true
 }
 
@@ -70,23 +72,22 @@ async function getSeries(conv, id){
   LogOption(`GET SERIES: ${id}`)
   const ent = await EntitiesService.entityGetSimple({ id : id })
   if(ent){
-    console.log("title", ent['info']['title'])
+    console.log("series item:", ent['info']['title'])
     conv.ask("here is the series")
     conv.ask(new BasicCard({
-      title: ent['info']['title'],
-      subtitle: ent['info']['keywords'],
+      title: ent?.['info']?.['title'],
       image: new Image({
         alt: "img",
-        url: ent['media']['images']['poster'],
+        url: ent?.['media']?.images?.poster,
       }),
       buttons: new Button({
         title: "imdb",
         url: `https://imdb.com/title/${ent['_id']}`,
       }),
     }));
+    return true
   }
-
-  return true
+  return false
 }
 
 export async function hello(conv) {
@@ -94,9 +95,9 @@ export async function hello(conv) {
 };
 
 export async function getGenres(conv) {
-  const genres = fs.readFileSync("lib/enums")
+  const genres = _getGenres( { all : false })
   conv.ask('Here is the list of genres');
-  conv.ask(new Suggestions([]));
+  conv.ask(new Suggestions(genres));
 
 };
 
@@ -104,7 +105,7 @@ export async function getGenres(conv) {
 export async function help(conv) {
   LogOption("HELP")
   conv.ask("you could try any genre or series name");
-  conv.ask(new Suggestions(["popular"]));
+  conv.ask(new Suggestions(["get popular list", "get genres"]));
 };
 
 export async function getMoreItems(conv) {

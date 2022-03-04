@@ -11,7 +11,7 @@ export const searchResults = async function( params ) {
   const entities = ( params.entities ) ? params.entities : ["movie", "podcast", "tv_show", "video_game", "festival", "person"];
   const year = ( params.year ) ? parseInt(params.year) : null;
   const timeframe = ( params.timeframe ) ? parseInt(params.timeframe) : 1;
-  const pageSize = 10;
+  const pageSize = params?.limit ?? 10;
   const query = {}
 
   if( qry == "") return []

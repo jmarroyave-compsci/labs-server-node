@@ -1,6 +1,5 @@
-const START_YEAR = 1880;
 
-export const getGenres = ( { all=true } ) => { 
+export function getGenres( { all=true } ){ 
   var data = [
         "all",
         "Action",
