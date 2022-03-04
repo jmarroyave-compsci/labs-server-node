@@ -50,12 +50,12 @@ function answerListCarousel( conv, title, data ){
   data.items.forEach( (o, idx) => {
     const r = o.toObject()
     const id = r._id;
-    const title = r.title;
+    const title = r.info.title;
     const img = r?.media?.images?.poster;
     items[id] = {
       title: title,
-      synonyms: [],
-      description: "",
+      synonyms: [r._id],
+      description: null,
       image: new Image({
         url: img ? img : IMG_URL_GOOGLE_HOME,
         alt: title,
