@@ -14,15 +14,25 @@ export async function hello(conv) {
 
 export async function getGenreList(conv, params) {
   const genre = params['series_genre']
-  const data = await getList(`genre-${genre}`)
+  const data = await getList(`genre_${genre}`)
   conv.ask(`here are the series for the genre ${genre}`);
-  answerListCarousel(conv, params['series_genre'], data)
+  if(data?.items?.length == 0){
+    conv.ask(`sorry, i don't have info for the genre ${genre} right now`);  
+  } else {
+    conv.ask(`here are the ${genre} series`);  
+    answerListCarousel(conv, params['series_genre'], data)  
+  }  
 };
 
 export async function getPopularList(conv) {
   const data = await getList('popular')
   conv.ask(`here are the most popular series`);
-  answerListCarousel(conv, "popular", data)
+  if(data?.items?.length == 0){
+    conv.ask("sorry, i don't have info for popular series right now");  
+  } else {
+    conv.ask(`here are the most popular series`);  
+    answerListCarousel(conv, "popular", data)
+  }  
 };
 
 async function getList(listName){
@@ -34,32 +44,28 @@ async function getList(listName){
 }
 
 function answerListCarousel( conv, title, data ){
-  if(data.items.length > 0){
+  if(data.items.length == 0) return
  
-    const items = {}
-    data.items.forEach( (o, idx) => {
-      const r = o.toObject()
-      const id = r._id;
-      const title = r.title;
-      const img = r?.media?.images?.poster;
-      items[id] = {
-        title: title,
-        synonyms: [],
-        description: "",
-        image: new Image({
-          url: img,
-          alt: title,
-        })
-      }
-    })
+  const items = {}
+  data.items.forEach( (o, idx) => {
+    const r = o.toObject()
+    const id = r._id;
+    const title = r.title;
+    const img = r?.media?.images?.poster;
+    items[id] = {
+      title: title,
+      synonyms: [],
+      description: "",
+      image: new Image({
+        url: img ? img : IMG_URL_GOOGLE_HOME,
+        alt: title,
+      })
+    }
+  })
 
-    conv.ask(new Carousel({
-      items: items
-    }));
-
-  } else {
-    conv.ask("sorry, i don't have info for this");  
-  }
+  conv.ask(new Carousel({
+    items: items
+  }));
 }
 
 export async function getCard(conv) {

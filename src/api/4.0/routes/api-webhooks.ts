@@ -2,7 +2,7 @@ import express from "express";
 import * as controller from "v4/controllers/WebHook";
 
 import { dialogflow } from 'actions-on-google'
-const app = dialogflow({debug:true});
+const app = dialogflow({debug:false});
 
 //import { conversation } from '@assistant/conversation';
 //const app = conversation({debug:true});
