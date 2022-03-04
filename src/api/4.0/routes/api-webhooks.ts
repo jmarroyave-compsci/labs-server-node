@@ -1,39 +1,45 @@
 import express from "express";
 import * as controller from "v4/controllers/WebHook";
 
-import {conversation, Card, Image } from '@assistant/conversation';
-const app = conversation({debug:true});
+import { dialogflow } from 'actions-on-google'
+const app = dialogflow({debug:true});
 
-app.handle('Default Welcome Intent', (conv)=>{
-    return controller.hello(conv)
-});
+//import { conversation } from '@assistant/conversation';
+//const app = conversation({debug:true});
 
-app.handle('Default Fallback Intent', (conv)=>{
+app.intent('Default Fallback Intent', (conv)=>{
     return controller.fallback(conv)
 });
 
-app.handle('hello', conv => {
-    conv.add('This is a card rich response.');
-    conv.add(new Card({
-      title: 'Card Title',
-      subtitle: 'Card Subtitle',
-      text: 'Card Content',
-      image: new Image({
-        url: 'https://developers.google.com/assistant/assistant_96.png',
-        alt: 'Google Assistant logo'
-      })
-    }));
-  });
-
-app.handle('get-genre-series', conv =>{
-    return controller.getGenreList(conv, null)
+app.fallback((conv) => {
+    return controller.fallback(conv)
 });
 
-app.handle('get-popular', (conv)=>{
-    return controller.getPopularList(conv)
+app.intent('Default Welcome Intent', (conv)=>{
+    return controller.hello(conv)
 });
 
-app.handle('get_popular', (conv)=>{
+app.intent('hello', conv => {
+    return controller.hello(conv)
+});
+
+app.intent('test-1', conv => {
+    return controller.getCarousel(conv)
+});
+
+app.intent('test-2', conv => {
+    return controller.getCard(conv)
+});
+
+app.intent('test-3', conv => {
+    return controller.getImage(conv)
+});
+
+app.intent('get-genre-series', (conv, params) =>{
+    return controller.getGenreList(conv, params)
+});
+
+app.intent('get-popular', (conv)=>{
     return controller.getPopularList(conv)
 });
 
