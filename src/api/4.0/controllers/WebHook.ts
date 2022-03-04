@@ -118,6 +118,7 @@ export async function getMoreItems(conv) {
     this.help(conv)
     return
   }
+  const params = ctx.params;
 
   if(parameters.list == "popular"){
     return getPopularList(conv, parameters.params)
