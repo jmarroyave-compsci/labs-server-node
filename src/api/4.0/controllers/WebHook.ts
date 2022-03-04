@@ -12,6 +12,56 @@ export async function hello(conv) {
   conv.ask('Hello!!');  
 };
 
+export async function getGenreList(conv, params) {
+  const genre = params['series_genre']
+  const data = await getList(`genre-${genre}`)
+  conv.ask(`here are the series for the genre ${genre}`);
+  answerListCarousel(conv, params['series_genre'], data)
+};
+
+export async function getPopularList(conv) {
+  const data = await getList('popular')
+  conv.ask(`here are the most popular series`);
+  answerListCarousel(conv, "popular", data)
+};
+
+async function getList(listName){
+  const list = listName
+  const limit = 5
+  const page = 1
+  const data = await ListsService.getListItems( list, page, limit );
+  return data
+}
+
+function answerListCarousel( conv, title, data ){
+  if(data.items.length > 0){
+ 
+    const items = {}
+    data.items.forEach( (o, idx) => {
+      const r = o.toObject()
+      const id = r._id;
+      const title = r.title;
+      const img = r?.media?.images?.poster;
+      items[id] = {
+        title: title,
+        synonyms: [],
+        description: "",
+        image: new Image({
+          url: img,
+          alt: title,
+        })
+      }
+    })
+
+    conv.ask(new Carousel({
+      items: items
+    }));
+
+  } else {
+    conv.ask("sorry, i don't have info for this");  
+  }
+}
+
 export async function getCard(conv) {
   conv.ask("testing cards");
   conv.ask(new BasicCard({
@@ -29,6 +79,7 @@ export async function getCard(conv) {
 };
 
 export async function getCarousel(conv) {
+  conv.ask('Which of these looks good?');  
   conv.ask(new Carousel({
     items: {
       car: {
@@ -40,7 +91,7 @@ export async function getCarousel(conv) {
         title: 'Plane',
         description: 'A flying machine',
         synonyms: ['aeroplane', 'jet'],
-      }
+      },
     }
   }));
 };
@@ -49,56 +100,8 @@ export async function getImage(conv) {
   conv.ask('Hi, how is it going?');
   conv.ask(`Here's a picture of a cat`);
   conv.ask(new Image({
-    url: '/web/fundamentals/accessibility/semantics-builtin/imgs/160204193356-01-cat-500.jpg',
+    url: IMG_URL_GOOGLE_HOME,
     alt: 'A cat',
   }));
 
 };
-
-export async function getGenreList(conv, params) {
-  const data = await getList(`genre-${params['series_genre']}`)
-  answerListCarousel(conv, params['series_genre'], data)
-};
-
-export async function getPopularList(conv) {
-  const data = await getList('popular')
-  answerListCarousel(conv, "popular", data)
-};
-
-async function getList(listName){
-  const list = listName
-  const limit = 5
-  const page = 1
-  const data = await ListsService.getListItems( list, page, limit );
-  return data
-}
-
-function answerListCarousel( conv, title, data ){
-  if(data.items.length > 0){
- 
-    const items = {}
-    data.items.forEacth( (o, idx) => {
-      const r = o.toObject()
-      const id = r._id;
-      const title = r.title;
-      const img = r?.media?.images?.poster;
-      items[id] = {
-        title: title,
-        synonyms: [],
-        description: "",
-        image: new Image({
-          url: img,
-          alt: title,
-        })
-      }
-    })
-
-    conv.ask('Which of these looks good?');
-    conv.ask(new Carousel({
-      items: items
-    }));
-
-  } else {
-    conv.ask("sorry, i don't have info for this");  
-  }
-}
