@@ -5,8 +5,13 @@ import * as utils from 'lib/misc';
 import { default as P } from "bluebird";
 
 export async function searchResultsGet(req: Request, res: Response): P<any> {
-  HistoryService.addSearched(req, req.query.qry)
-  const data = await Service.searchResults( req.query );
+  const params = { qry: "", entities: [] }
+  params.qry = decodeURIComponent(req?.query?.qry.toString())
+  params['entities'] = JSON.parse(decodeURIComponent(req?.query?.entities?.toString()))
+  HistoryService.addSearched(req, params.qry)
+  
+  
+  const data = await Service.searchResults( params );
   utils.writeJSON(res, data);
 };
 

@@ -39,23 +39,25 @@ app.intent('help', conv => {
     return controller.help(conv)
 });
 
-app.intent('show-more', conv => {
-    return controller.getMoreItems(conv)
+app.intent('get-genres', (conv, params)=>{
+    return controller.getGenres(conv, params)
 });
 
 app.intent('get-genre-series', (conv, params) =>{
     return controller.getGenreList(conv, params)
 });
 
+app.intent('get-genre-series-more', (conv, params) =>{
+    return controller.getMoreItems(conv)
+});
+
 app.intent('get-popular', (conv, params)=>{
     return controller.getPopularList(conv, params)
 });
 
-app.intent('get-popular_option', (conv, input, option)=>{
-    conv.ask(option.toString())
+app.intent('get-popular-more', (conv, params)=>{
+    return controller.getMoreItems(conv)
 });
-
-
 
 const router = express.Router();
 router.use("/4.0/webhook", app);

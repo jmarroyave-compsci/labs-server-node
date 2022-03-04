@@ -7,7 +7,7 @@
     "prestart": "npm install",
     "start": "node dist/index.js",
     "build": "npm run build:live",
-    "clean": "rm -f ./dist",
+    "clean": "",
     "build:copy": "cpx \"src/**/*.{yaml,json,html,crt,key}\" dist/",
     "build:live": "npm run clean && ttsc -p tsconfig.json && npm run build:copy",
     "build:dev": "nodemon --ignore ./test/** --ignore ./cache/ --ignore ./docs/ --ignore ./log/ --exec ts-node -r tsconfig-paths/register -- ./src/index.ts",

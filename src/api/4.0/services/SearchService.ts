@@ -5,11 +5,10 @@ export const searchExact = async function( tt ) {
   return  await DBSearch.findOne( query)
 };
 
-
 export const searchResults = async function( params ) {
-  const qry = ( params.qry ) ? decodeURIComponent(params.qry) : "";
+  const qry = ( params.qry ) ? params.qry : "";
   const page = ( params.page ) ? parseInt(params.page) : 1;
-  const entities = ( params.entities ) ? JSON.parse(decodeURIComponent(params.entities)) : ["movie", "podcast", "tv_show", "video_game", "festival", "person"];
+  const entities = ( params.entities ) ? params.entities : ["movie", "podcast", "tv_show", "video_game", "festival", "person"];
   const year = ( params.year ) ? parseInt(params.year) : null;
   const timeframe = ( params.timeframe ) ? parseInt(params.timeframe) : 1;
   const pageSize = 10;
@@ -27,6 +26,8 @@ export const searchResults = async function( params ) {
   if( year ){
     query['yr'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
+
+  console.log(query)
 
   const data =  await DBSearch.find( query, { score : { $meta: 'textScore' } } )
       .sort( { score : { $meta : 'textScore' } } )
