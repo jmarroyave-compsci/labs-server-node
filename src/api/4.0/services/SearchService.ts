@@ -5,8 +5,14 @@ export const searchExact = async function( tt ) {
   return  await DBSearch.findOne( query)
 };
 
+const fixQuery = ( qry ) => {
+  return qry.split(/[ ]+/)
+            .map( a => a.startsWith("#") ? `"${a}"` : a )
+            .join(" ")
+}
+
 export const searchResults = async function( params ) {
-  const qry = ( params.qry ) ? params.qry : "";
+  const qry = ( params.qry ) ? fixQuery(params.qry) : "";
   const page = ( params.page ) ? parseInt(params.page) : 1;
   const entities = ( params.entities ) ? params.entities : ["movie", "podcast", "tv_show", "video_game", "festival", "person"];
   const year = ( params.year ) ? parseInt(params.year) : null;
@@ -17,7 +23,7 @@ export const searchResults = async function( params ) {
   if( qry == "") return []
 
   //query['entity'] = new RegExp(`^${params.qry}`)
-  query['$text'] = { $search : params.qry}
+  query['$text'] = { $search : qry}
 
   if( entities == "") return []
 
@@ -27,7 +33,7 @@ export const searchResults = async function( params ) {
     query['yr'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
 
-  console.log(query)
+  console.log("query to search:",  query)
 
   const data =  await DBSearch.find( query, { score : { $meta: 'textScore' } } )
       .sort( { score : { $meta : 'textScore' } } )
