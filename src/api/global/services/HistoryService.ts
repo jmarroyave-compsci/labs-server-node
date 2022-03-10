@@ -1,7 +1,9 @@
 import HistoryModel from '../models/history'
-
+import config from 'config/config'
 
 const getHistory = async function( req ){
+  if(config.CACHE_SERVER) return []
+
   const user = req.session.id;
   var history = await HistoryModel.findOne( { _id : user } );
 
@@ -15,6 +17,8 @@ const getHistory = async function( req ){
 }
 
 export const addTVShow = async function( req, entity ) {
+  if(config.CACHE_SERVER) return null
+
   const history = await getHistory(req)
 
   if( history['tv_shows'].includes(entity) ){
@@ -26,6 +30,8 @@ export const addTVShow = async function( req, entity ) {
 };
 
 export const addSearched = async function( req, qry ) {
+  if(config.CACHE_SERVER) return null
+
   const history = await getHistory(req)
 
   if( history['searched'].includes(qry) ){
@@ -36,9 +42,12 @@ export const addSearched = async function( req, qry ) {
 };
 
 export const getListItems = async function( list, page, limit, req ) {
+  const resp = { name: list, ref: "recently viewed", items: []}
+  if(config.CACHE_SERVER) return resp
+
   const user = req.session.id;
   const history = await HistoryModel.findOne( { _id : user }, { "tv_shows" : { $slice : -10 }} )
                                     .populate("tv_shows")
-
-  return { name: list, ref: "recently viewed", items: history?.['tv_shows'].reverse() ?? []}
+  resp.items = history?.['tv_shows'].reverse() ?? []
+  return resp
 };
