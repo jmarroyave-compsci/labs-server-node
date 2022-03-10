@@ -1,16 +1,18 @@
 import HistoryModel from '../models/history'
 import config from 'config/config'
 
-const getHistory = async function( req ){
-  if(config.CACHE_SERVER) return []
-
+const getHistory = async function( req ) {
   const user = req.session.id;
-  var history = await HistoryModel.findOne( { _id : user } );
+  const resp = new HistoryModel();  
+  resp['_id'] = user;
+  resp['created'] = new Date()
+
+  if(config.CACHE_SERVER) return resp
+
+  const history = await HistoryModel.findOne( { _id : user } );
 
   if( !history ){
-    history = new HistoryModel();  
-    history['_id'] = user;
-    history['created'] = new Date()
+    return resp
   }
   
   return history  
