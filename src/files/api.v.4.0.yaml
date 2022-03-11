@@ -295,6 +295,10 @@ paths:
             type: integer
           in: query
           name: page
+        - schema:
+            type: boolean
+          in: query
+          name: shuffle
     parameters:
       - schema:
           type: string

@@ -30,6 +30,7 @@ export async function tvShowsListGet(req: Request, res: Response): P<any> {
   const list = req.params.list
   const limit = req.query['limit'] ?? 10
   const page = req.query['page'] ?? 1
+  const shuffle = req.query?.['shuffle'] ?? "true"
 
   var data;
   switch (list){
@@ -37,7 +38,7 @@ export async function tvShowsListGet(req: Request, res: Response): P<any> {
       data = await HistoryService.getListItems( list, page, limit, req );
       break;
     default:
-      data = await ListsService.getListItems( list, page, limit );
+      data = await ListsService.getListItems( list, page, limit, shuffle == "true" );
   }
 
   utils.writeJSON(res, data);
