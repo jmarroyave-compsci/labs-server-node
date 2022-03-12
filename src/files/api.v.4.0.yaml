@@ -299,6 +299,10 @@ paths:
             type: boolean
           in: query
           name: shuffle
+        - schema:
+            type: integer
+          in: query
+          name: limit
     parameters:
       - schema:
           type: string
