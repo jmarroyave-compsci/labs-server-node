@@ -8,11 +8,6 @@ export const getListItems = async function( list, page, limit, shuffle=true ) {
     limit: limit ?? 25
   }
 
-  if(shuffle){
-    paging.page = 1
-    paging.limit = 25
-  }
-
   const where = {
       _id : list,
       enabled: true,
