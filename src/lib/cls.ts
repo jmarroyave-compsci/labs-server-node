@@ -1,5 +1,5 @@
 import cls from "cls-hooked";
-import uuid from "node-uuid";
+import uuid from "uuid";
 import * as express from "express";
 import Debug from "debug";
 import { default as P }  from "bluebird";
