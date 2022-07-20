@@ -20,6 +20,7 @@
   "private": true,
   "dependencies": {
     "@analytics/google-analytics": "0.5.3",
+    "ttypescript": "1.5.13",
     "@analytics/google-tag-manager": "0.5.1",
     "@assistant/conversation": "^3.8.1",
     "@google-cloud/dialogflow": "^4.6.0",
@@ -74,7 +75,6 @@
     "ts-mocha": "^8.0.0",
     "ts-node": "10.2.1",
     "tsconfig-paths": "3.12.0",
-    "ttypescript": "1.5.13",
     "typescript": "4.4.2"
   }
 }
