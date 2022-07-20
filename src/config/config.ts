@@ -12,7 +12,7 @@ const config = {
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
   DB_VERSION: _package_.version,
-  CACHE_SERVER: (LOCAL && process.env.CACHE_SERVER == "true") ? true : false,
+  CACHE_SERVER: (process.env.CACHE_SERVER === "true") ? true : false,
   PLUGINS: {
     GOOGLE_ANALYTICS: {
       BASE_URL: process.env.PLUGINS_GOOGLE_ANALYTICS_BASE_URL,
@@ -25,7 +25,10 @@ const config = {
     MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
   },
   CORS: { origin: process.env.CORS.split("|"), credentials: true },
+  HTTPS: (process.env.HTTPS == "true") ? true : false,
 }
+
+console.log(process.env.CACHE_SERVER)
 
 console.log(config)
 export default config;

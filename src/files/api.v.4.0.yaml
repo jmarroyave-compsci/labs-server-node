@@ -1324,6 +1324,8 @@ components:
                   $ref: '#/components/schemas/Entity'
               name:
                 type: string
+        episodes:
+          type: object
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:

@@ -124,3 +124,6 @@ dist
 
 # cache
 cache
+
+# testing certificates
+certificates

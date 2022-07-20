@@ -25,8 +25,7 @@ export const entityGet = async function( params ) {
 
   var list;
   const page = 1, limit = 10;
-
-  var resp = result.toObject();
+  const resp = result.toObject();
 
   list = await ListsService.getListItems( `entity_${params.id}_related`, page, limit );
   if(list){

@@ -28,6 +28,8 @@ const Entity = new mongoose.Schema({
 		ref: String,
 		items: [{ type: String, ref: 'entity' }], 
 	}], 
+	episodes: {
+	},
 }, { 
 	collection: 'entity',
 	timestamps: false,
