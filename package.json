@@ -9,7 +9,7 @@
     "build": "npm run prestart; npm run build:live",
     "clean": "rm -Rf dist",
     "build:copy": "cpx \"src/**/*.{yaml,json,html,crt,key}\" dist/",
-    "build:live": "npm run clean && ttsc -p tsconfig.json && npm run build:copy",
+    "build:live": "npm run clean && ls node_modules/ttypescript/bin && node_modules/ttypescript/bin/tsc -p tsconfig.json && npm run build:copy",
     "build:dev": "nodemon --ignore ./test --ignore ./cache --ignore ./docs --ignore ./log --exec ts-node -r tsconfig-paths/register -- ./src/index.ts",
     "dev": "npm run build:dev",
     "lint": "tslint --project ./ > log/lint.errors.txt",
