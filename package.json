@@ -1,6 +1,6 @@
 {
   "name": "labs-server-node",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Labs: Server (node)",
   "main": "index.ts",
   "scripts": {
@@ -24,7 +24,6 @@
     "@assistant/conversation": "^3.8.1",
     "@google-cloud/dialogflow": "^4.6.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
-    "actions-on-google": "^3.0.0",
     "analytics": "0.7.16",
     "axios": "0.21.4",
     "bluebird": "3.7.2",
