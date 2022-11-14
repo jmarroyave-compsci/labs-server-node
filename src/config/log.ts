@@ -8,7 +8,7 @@ import * as perfy from "perfy";
 
 export class TDebug {
 
-  private debugger: debug.IDebugger;
+  private debugger: Debug.IDebugger;
 
   constructor(namespace: string) {
       this.debugger = Debug(namespace);
