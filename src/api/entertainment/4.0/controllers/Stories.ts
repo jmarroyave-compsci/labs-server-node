@@ -1,43 +1,33 @@
-import { Request, Response } from "express";
 import * as Service from '../services/StoriesService';
-import * as utils from 'lib/misc';
-import { default as P } from "bluebird";
 
-export async function awards(req: Request, res: Response): P<any> {
-  const data = await Service.getAwards( req.query );
-  utils.writeJSON(res, data);
+export async function awards( query, params ){
+  return await Service.getAwards( query );
 };
 
-export async function remakes(req: Request, res: Response): P<any> {
-  const data = await Service.getMovieRemakes( req.query );
-  utils.writeJSON(res, data);
+export async function remakes( query, params){
+  return await Service.getMovieRemakes( query );
 };
 
 /*
-export async function history(req: Request, res: Response): P<any> {
-  const data = await Service.getMovieHistory( req.query );
-  utils.writeJSON(res, data);
+export async function history( query, params){
+  return await Service.getMovieHistory( query );
 };
 */
 
-export async function peopleDirectors(req: Request, res: Response): P<any> {
-  const data = await Service.getPeopleDirectors( req.query );
-  utils.writeJSON(res, data);
+export async function peopleDirectors( query, params){
+  return await Service.getPeopleDirectors( query );
 };
 
-export async function peopleProducers(req: Request, res: Response): P<any> {
-  const data = await Service.getPeopleProducers( req.query );
-  utils.writeJSON(res, data);
+export async function peopleProducers( query, params){
+  return await Service.getPeopleProducers( query );
 };
 
-export async function peopleWriters(req: Request, res: Response): P<any> {
-  const data = await Service.getPeopleWriters( req.query );
-  utils.writeJSON(res, data);
+export async function peopleWriters( query, params){
+  return await Service.getPeopleWriters( query );
 };
 
-export async function peopleActors(req: Request, res: Response): P<any> {
-  const data = await Service.getPeopleActors( req.query );
-  utils.writeJSON(res, data);
+export async function peopleActors( query, params){
+  return await Service.getPeopleActors( query );
 };
 
 

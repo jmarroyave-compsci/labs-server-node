@@ -1,39 +1,29 @@
-import { Request, Response } from "express";
 import * as Service from '../services/DashboardService';
-import * as utils from 'lib/misc';
-import { default as P } from "bluebird";
 
-export async function dashboardHomeGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardHomeGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardHomeGet( query, params, session ){
+  return await Service.dashboardHomeGet( {} );
 };
 
-export async function dashboardMoviesGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardMoviesGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardMoviesGet( query, params, session ){
+  return await Service.dashboardMoviesGet( {} );
 };
 
-export async function dashboardPodcastsGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardPodcastsGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardPodcastsGet( query, params, session ){
+  return await Service.dashboardPodcastsGet( {} );
 };
 
-export async function dashboardPeopleGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardPeopleGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardPeopleGet( query, params, session ){
+  return await Service.dashboardPeopleGet( {} );
 };
 
-export async function dashboardGamesGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardGamesGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardGamesGet( query, params, session ){
+  return await Service.dashboardGamesGet( {} );
 };
 
-export async function dashboardTVGet(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardTVGet( {} );
-  utils.writeJSON(res, data);
+export async function dashboardTVGet( query, params, session ){
+  return await Service.dashboardTVGet( {} );
 };
 
-export async function dashboardMovieFestivals(req: Request, res: Response): P<any> {
-  const data = await Service.dashboardMovieFestivals( {} );
-  utils.writeJSON(res, data);
+export async function dashboardMovieFestivals( query, params, session ){
+  return await Service.dashboardMovieFestivals( {} );
 };

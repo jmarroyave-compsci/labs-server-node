@@ -1,22 +1,17 @@
-import { Request, Response } from "express";
 import * as Service from '../services/SearchService';
-import * as HistoryService from 'api/global/1.0/services/HistoryService';
-import * as utils from 'lib/misc';
-import { default as P } from "bluebird";
+import * as HistoryController from 'api/global/1.0/controllers/History';
 
-export async function searchResultsGet(req: Request, res: Response): P<any> {
+export async function searchResultsGet( query, parames, session ){
   const params = { qry: "", entities: [], page: null }
-  params.qry = decodeURIComponent(req?.query?.qry.toString())
-  params['entities'] = JSON.parse(decodeURIComponent(req?.query?.entities?.toString()))
-  params.page = (req?.query?.page) ? req?.query?.page : 1;
-  HistoryService.addSearched(req, params.qry)
+  params.qry = decodeURIComponent(query?.qry.toString())
+  params['entities'] = JSON.parse(decodeURIComponent(query?.entities?.toString()))
+  params.page = (query?.page) ? query?.page : 1;
+  await HistoryController.addSearched(query, params, session)
    
-  const data = await Service.searchResults( params );
-  utils.writeJSON(res, data);
+  return await Service.searchResults( params );
 };
 
 
-export async function searchSuggestionsGet(req: Request, res: Response): P<any> {
-  const data = await Service.searchSuggestions( { qry: req.query.qry } );
-  utils.writeJSON(res, data);
+export async function searchSuggestionsGet( query, params, session ){
+  return await Service.searchSuggestions( { qry: query.qry } );
 };

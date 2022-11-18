@@ -10,8 +10,14 @@ import { dashboardTVGet, dashboardHomeGet, dashboardGamesGet, dashboardMoviesGet
 import { addComment } from "../../controllers/Comments";
 
 const endpoints = {
-	"/" : getDocs,
-	"/specs" : getSpecs,
+	"/" : {
+		contentType: "text/plain",
+		handler: getDocs,
+	},
+	"/specs" : {
+		contentType: "text/plain",
+		handler: getSpecs,
+	},
 	"/api/video-games/:id" : videoGameGet,
 	"/api/video-games" : videoGamesGet,
 	"/api/tv-shows" : tvShowsGet,

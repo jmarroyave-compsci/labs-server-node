@@ -1,19 +1,13 @@
-import { Request, Response } from "express";
 import * as Service from '../services/PodcastsService';
-import * as utils from 'lib/misc';
-import { default as P } from "bluebird";
 
-export async function podcastGet(req: Request, res: Response): P<any> {
-  const data = await Service.podcastGet( { id: req.params.id  } );
-  utils.writeJSON(res, data);
+export async function podcastGet( query, params, session ){
+  return await Service.podcastGet( { id: params.id  } );
 };
 
-export async function podcastsGet(req: Request, res: Response): P<any> {
-  const data = await Service.podcastsGet( req.query );
-  utils.writeJSON(res, data);
+export async function podcastsGet( query, params, session ){
+  return await Service.podcastsGet( query );
 };
 
-export async function podcastMusicGet(req: Request, res: Response): P<any> {
-  const data = await Service.getPodcastsByCategory( { ...req.query, category: "music" } );
-  utils.writeJSON(res, data);
+export async function podcastMusicGet( query, params, session ){
+  return await Service.getPodcastsByCategory( { ...query, category: "music" } );
 };
