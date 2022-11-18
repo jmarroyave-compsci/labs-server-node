@@ -7,7 +7,7 @@ info:
     name: jmarroyave
   description: API for accessing a catalog of entertainment options available
 servers:
-  - url: 'http://localhost:8080/4.0/api'
+  - url: 'http://localhost:8080/entertainment/4.0/api'
 paths:
   /dashboard/home:
     get:

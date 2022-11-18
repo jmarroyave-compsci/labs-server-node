@@ -1,34 +1,33 @@
-import app from "./app";
+import appCreate from "./app";
 import log from "config/log";
-import mongoose from "mongoose"
 import config from 'config/config'
 import { Server as SocketIO } from 'socket.io';
 import chat from 'lib/io'
 import * as fs from 'fs'
 
 const PORT = config.PORT;
-const DB_SERVER = config.DB_SERVER
 
 if ( config.LOCAL){
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 }
 
-log.info("")
-log.info("")
-log.info("-".repeat(50))
-log.info("STARTING SERVER")
-log.info("-".repeat(50))
-log.info(`VERSION:\t${config.VERSION}`)
-log.info(`HTTPS:\t${config.HTTPS}`)
-if(config.HTTPS){
-  log.info(`CERTIFICATE:\t${__dirname}/../certificates/cert.crt`)
-}
-log.info(`PORT:\t${PORT}`)
-log.info(`WEB-SOCKETS:\t${PORT}`)
-log.info(`DB SERVER:\t${DB_SERVER.split("?")[0]}`)
-log.info("-".repeat(50))
+const initServer = async ( app ) => {
+    const listen = ( prot, server, port ) =>{
+      //const io = io.listen(server);
+      const io = new SocketIO(server,{
+        cors: {
+          origin: '*',
+          methods: ['GET', 'POST']
+        }
+      });
+      chat(io);
 
-const initServer = () => {
+      server.listen(port, () => {
+        log.info(`LISTENING [${prot}] ON PORT [${port}] \t OK`)
+        log.info("-".repeat(50))
+      });        
+    }
+
     let server;
     if(config.HTTPS){
       const httpsOptions = {
@@ -42,41 +41,41 @@ const initServer = () => {
       });
 
       server = https.createServer(httpsOptions, app)  
+      listen("https", server, PORT)
+      server = require('http').createServer(app)
+      listen("http", server, Number(PORT) + 1)
     } else {
       server = require('http').createServer(app)
+      listen("http", server, Number(PORT))      
     }
     
-
-    //const io = io.listen(server);
-    const io = new SocketIO(server,{
-      cors: {
-        origin: '*',
-        methods: ['GET', 'POST']
-      }
-    });
-    chat(io);
-
-    server.listen(PORT, () => {
-      log.info(`LISTENING ON PORT [${PORT}] \t OK`)
-      log.info("-".repeat(50))
-      log.info("")
-      log.info("")
-    });  
 }
 
-if (config.CACHE_SERVER == false){
-  mongoose
-    .connect(DB_SERVER, {  })
-    .then( async () => {
-      log.info("CONNECTED TO DB \t\t OK")
-      initServer()
-    })
-    .catch( ex => log.error(ex))
-}
-else{
-  log.info("CACHE SERVER, NOT CONNECTING TO DB")
+async function main(){
+  const app = await appCreate()
+
+  log.info("")
+  log.info("")
   log.info("-".repeat(50))
-  initServer()
+  log.info("STARTING SERVER")
+  log.info("-".repeat(50))
+  log.info(`VERSION:\t${config.VERSION}`)
+  log.info(`HTTPS:\t${config.HTTPS}`)
+  if(config.HTTPS){
+    log.info(`CERTIFICATE:\t${__dirname}/../certificates/cert.crt`)
+  }
+  log.info(`PORT:\t${PORT}`)
+  log.info(`WEB-SOCKETS:\t${PORT}`)
+  log.info("-".repeat(50))
+
+  if (config.CACHE_SERVER == false){
+  }
+  else{
+    log.info("CACHE SERVER, NOT CONNECTING TO DB")
+    log.info("-".repeat(50))
+  }
+
+  initServer( app )
 }
 
-
+main().catch( ex => console.error(ex))

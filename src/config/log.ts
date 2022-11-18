@@ -165,7 +165,16 @@ const logger = winston.createLogger({
     winston.format.simple(),
     myFormat,
   ),
-  transports: [new winston.transports.Console()]
+  transports: [
+    new winston.transports.Console()
+  ]
+});
+
+winston.addColors({
+    error: 'red',
+    warn: 'yellow',
+    info: 'white',
+    debug: 'green'
 });
 
 export default logger;

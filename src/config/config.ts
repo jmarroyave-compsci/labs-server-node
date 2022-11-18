@@ -4,11 +4,19 @@ import dotenv from 'dotenv'
 var CONF = dotenv.config().parsed
 var _package_ = JSON.parse(fs.readFileSync(`${__dirname}/../../package.json`).toString());
 
-const LOCAL = (!process.env.DB_SERVER && process.env.DEFAULT_DB_SERVER.includes("127.0.0.1"))
+const LOCAL = false
+const DB_SERVERS = {}
+process.env.DB_SERVERS.split("||").map( server => {
+  const [ name, uri ] = server.split("|")
+  DB_SERVERS[name] = uri
+}) 
+
 
 const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
-  DB_SERVER: `${process.env.DB_SERVER || process.env.DEFAULT_DB_SERVER}?retryWrites=true&w=majority&connectTimeoutMS=60000`,
+  DB: {
+    SERVERS : DB_SERVERS,
+  },
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
   DB_VERSION: _package_.version,

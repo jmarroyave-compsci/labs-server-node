@@ -1,6 +1,8 @@
 import * as fs from 'fs'
+import log from "config/log";
 
 const middleware = function (err, req, res, next) {
+    log.error(`${err}`)
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -10,7 +12,7 @@ const middleware = function (err, req, res, next) {
     // res.render('error', { res : res });
 
     res.type('text/plain');
-    res.status(500).send( fs.readFileSync(`${__dirname}/files/errors/500.html`).toString() )
+    res.status(500).send( fs.readFileSync(`${__dirname}/../files/errors/500.html`).toString() )
 }
 
 export default middleware
