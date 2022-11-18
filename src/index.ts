@@ -59,6 +59,7 @@ async function main(){
   log.info("-".repeat(50))
   log.info("STARTING SERVER")
   log.info("-".repeat(50))
+  log.info(`PATH:\t${__dirname}`)
   log.info(`VERSION:\t${config.VERSION}`)
   log.info(`HTTPS:\t${config.HTTPS}`)
   if(config.HTTPS){

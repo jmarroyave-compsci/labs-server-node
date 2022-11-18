@@ -11,7 +11,25 @@ const rootPath = `${__dirname}/../api`
 const services = fs.readdirSync( rootPath ).sort()
 
 export const loadREST = async function(app){
+    log.info("LOADING REST ROUTES")
     const router = express.Router();
+
+    const loadSpecs = async function ( service, version ) {
+        const routesEndpointsPath = `${rootPath}/${service}/${version}/infra/rest/`
+        
+        if( !fs.existsSync(`${routesEndpointsPath}/index.ts`) ) {
+            log.info(`     SKIPPING: SPECS FILE NOT FOUND`);
+            return
+        }
+
+        const endpoints = (await import(routesEndpointsPath)).default;
+
+        for( const endpoint of Object.keys(endpoints).sort().reverse()){
+            const routeEndpoint = `/${service}/${version}/${endpoint}`.replace("//", "/")
+            log.info(`     - ${routeEndpoint}`);
+            router.use(routeEndpoint, asyncHandler(endpoints[endpoint], endpoint));
+        }
+    }
 
     for( const service of services){
         log.info(`  SERVICE: ${service}`);
@@ -19,53 +37,18 @@ export const loadREST = async function(app){
         const versions = fs.readdirSync( servicePath ).sort()
         for( const version of versions) {
             log.info(`    v.${version}`);
-            const versionPath = `${servicePath}/${version}`
-            const routesEndpointsPath = `${versionPath}/infra/rest/`
-            
-            if( !fs.existsSync(`${routesEndpointsPath}/index.ts`) ) {
-                log.info(`     SKIPPING: SPECS FILE NOT FOUND`);
-                continue
-            }
-
-            const endpoints = (await import(routesEndpointsPath)).default;
-
-            for( const endpoint of Object.keys(endpoints).sort().reverse()){
-                const routeEndpoint = `/${service}/${version}/${endpoint}`.replace("//", "/")
-                log.info(`     - ${routeEndpoint}`);
-                router.use(routeEndpoint, asyncHandler(endpoints[endpoint], endpoint));
-            }
+            await loadSpecs( service, version )   
         }
     }
 
     app.use('/', router);
 }
 
-const loadRoutesFromDir = (app, routeRoot, routePath) => {
-    const dirs = [];
-    fs.readdirSync(routePath).sort().forEach(async (filename) => {
-
-        if(fs.lstatSync(`${routePath}/${filename}`).isDirectory()){
-            dirs.push(`${routePath}/${filename}`);
-            return;
-        }
-
-        log.info(` - ${routePath.replace(routeRoot, "")}/${filename.replace(".ts", "").replace("-", "/")}`);
-        const route = `${routePath}/${filename}`;
-        try {
-            const item = await import(route);
-            app.use('/', item.default);
-        } catch (error) {
-            log.error(error.message);
-        }
-    });
-
-    dirs.forEach( dir => loadRoutesFromDir(app, routeRoot, dir))
-}
-
 export const loadGraphQL = async function( app ){
+    log.info("LOADING GRAPHQL ROUTES")
     const router = express.Router();
 
-    const loadVersion = async function( service, version ) {
+    const loadSpec = async function( service, version ) {
         const oasFile = await getSpecs( service, version );
         if(!oasFile) {
             log.info(`     SKIPPING: SPECS FILE NOT FOUND`);
@@ -82,6 +65,7 @@ export const loadGraphQL = async function( app ){
                 },          
             }
         )
+
         const routeEndpoint = `/${service}/${version}/graphql`
         log.info(`     - ${routeEndpoint}`);
         router.use(routeEndpoint, graphqlHTTP( (req, res) => {
@@ -95,13 +79,13 @@ export const loadGraphQL = async function( app ){
     }
 
 
-    for( const service of services){
+    for( const service of services ){
         log.info(`  SERVICE: ${service}`);
         const servicePath = `${rootPath}/${service}`
         const versions = fs.readdirSync( servicePath ).sort()
         for( const version of versions) {
             log.info(`    v.${version}`);
-            await loadVersion(service, version)
+            await loadSpec(service, version)
         }
     }
 
