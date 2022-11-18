@@ -1,7 +1,7 @@
-//import { home } from '../../controllers/pages'
+import { home } from '../../controllers/Pages'
 
 const endpoints = {
-	"/pages/home" : null,
+	"/pages/home" : home,
 }
 
 export default endpoints;

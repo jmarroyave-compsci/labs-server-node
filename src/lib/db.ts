@@ -6,6 +6,7 @@ export async function initConnections(){
   const conns = [
     ["server1", "entertainment", "4.0"],
     ["server2", "entertainment", "4.0"],
+    ["server1", "stackexchange", "1.0"],
   ]
 
   log.info("INIT CONNECTIONS")
@@ -48,7 +49,13 @@ export class Connection {
 
   getConnection(){
     const key = `${this.server}/${this.database}/${this.version}`
-    return Connection.CONNECTIONS[key];     
+    const con = Connection.CONNECTIONS[key];     
+    if(!con) new Error(`CONNECTION NOT FOUND, [${key}]`)
+    return con
+  }
+
+  collection( name ){
+    return this.getConnection().collection(name);     
   }
 
   schema( jsSchema, options=null ){
