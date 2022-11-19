@@ -22,13 +22,13 @@ export async function getTrendInfo(trendId=null){
 	var result;
 	try{
 		if(!trendId){
-  			result = await mongo.find("online", "stackexchange", "tops", {default: true}, {projection : {_id:0}});
+  			result = await mongo.find("online", "stackexchange", "tops", {default: true}, {projection : {_id:0}}); 
   			trendId = result[0]._tickId;
 		}
 
 		log.info(trendId)
-		result = await mongo.find("online", "stackexchange", "trend_ticks", {id: trendId}, {projection : {_id:0, id : 1, ini : 1, end: 1, period: 1}})
-  		return result[0];
+		result = await mongo.findOne("online", "stackexchange", "trend_ticks", {id: trendId})
+  		return result;
 	} catch (ex){
 		console.error(ex)
 		return {error: ex};
@@ -38,21 +38,17 @@ export async function getTrendInfo(trendId=null){
 export async function tops(chunk, trendId = null, view = null){
 	try{
 		console.log("Getting data for views", view, trendId, chunk)
-	  	var data  = {};
+	  	var data  = {}, result;
 	  	var sortBy = {};
-	  	var info = await this.getTrendInfo(trendId);
+	  	var info = await getTrendInfo(trendId);
 
 	  	trendId = info.id;
-	  	var result = await mongo.find("online", "stackexchange", "tops", {tickId : trendId}, {projection : {_id:0}}, sortBy);
-
-	  	console.log(result);
-
+	  	result = await mongo.find("online", "stackexchange", "tops", {tickId : trendId}, {projection : {_id:0}}, sortBy);
+	  	console.log(result)
 		for(var i in result[0].data){
 			var item = result[0].data[i];
 			data[item.name] = item.data.slice(0, chunk);
 		}
-
-	  	console.log(data);
 
 		if(!view)
 			return {info: info, topics: data};
@@ -128,7 +124,7 @@ export async function trend(trendId){
 export async function trend_topics(trendId){
 	try{
 		return {
-			info: await this.getTrendInfo(trendId),
+			info: await getTrendInfo(trendId),
 			topics: await mongo.find("online", "stackexchange", "topic_timeline", {tick_id : trendId}, {projection : {_id:0}}, {total : -1}, 500), 
 		}
 	} catch (ex){
@@ -170,7 +166,7 @@ export async function info_timeline(max){
 export async function topic_neighbors(trendId, topicId){
 	try{
 		return {
-			info: await this.getTrendInfo(trendId),
+			info: await getTrendInfo(trendId),
   			topics: await mongo.find("online", "stackexchange", "topic_relations", {topic1_id: topicId}, {projection : {topic2_id: 1, weight: 1}}, {weight: -1}, 100),
 			};
 	} catch (ex){
