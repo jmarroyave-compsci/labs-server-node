@@ -12,7 +12,7 @@ const middleware = function (err, req, res, next) {
     // res.render('error', { res : res });
 
     res.type('text/plain');
-    res.status(500).send( fs.readFileSync(`${__dirname}/../files/errors/500.html`).toString() )
+    res.status(500).send( fs.readFileSync(`${__dirname}/../../files/errors/500.html`).toString() )
 }
 
 export default middleware

@@ -8,7 +8,6 @@ export const get = async function( params ) {
   const page = ( params.page ) ? parseInt(params.page) : 1;
   const pageSize = (year === 0) ? 0 : 10;
 
-  //const query = { decade : true }
   const query = {  }
 
   if( year && year != 0 && !isNaN(year) ) {

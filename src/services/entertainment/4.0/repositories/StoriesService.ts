@@ -51,10 +51,10 @@ export const getMovieRemakes = async function( params ) {
                           path:'recs',
                           options: {
                               limit: MAX_MOVIES,
-                              skip: 0
+                              skip: 0,
                           },
                           populate : {
-                            path:'directed.id',                          
+                            path:'people.directed.id',
                           }
                       })  
                      .skip(limit * ( page - 1))

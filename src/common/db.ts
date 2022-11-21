@@ -28,10 +28,10 @@ export async function initConnections(){
 async function connect( server, dbname, version ){
     const key = `${server}/${dbname}/${version}`
     try{
-        server = config.DB.SERVERS[server]
         log.info(` DB: CONNECTING TO DB SERVER [${server}] DB [${dbname}]`)
+        server = config.DB.SERVERS[server]
         const connString = `mongodb+srv://${server}/${dbname}?retryWrites=true&w=majority`
-        log.info(connString)
+        //log.info(connString)
         const mconn = await mongooseCreateConnection(connString);
         //log.info(mconn.readyState)
         Connection.CONNECTIONS[key] = mconn
