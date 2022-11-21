@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import log from 'common/log';
+import { getResourcePath } as 'common/files'
 
 const middleware = function (err, req, res, next) {
     log.error(`${err}`)
@@ -12,7 +13,7 @@ const middleware = function (err, req, res, next) {
     // res.render('error', { res : res });
 
     res.type('text/plain');
-    res.status(500).send( fs.readFileSync(`${__dirname}/../../files/errors/500.html`).toString() )
+    res.status(500).send( fs.readFileSync( getResourcePath("errors/500.html") ).toString() )
 }
 
 export default middleware
