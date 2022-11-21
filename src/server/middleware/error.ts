@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import log from 'common/log';
-import { getResourcePath } as 'common/files'
+import { getResourcePath } from 'common/files'
 
 const middleware = function (err, req, res, next) {
     log.error(`${err}`)
