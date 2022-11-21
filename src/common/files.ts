@@ -19,8 +19,8 @@ export function getServices(){
   return resp
 }
 
-export function getResourcesPath(){
-  return resRootPath; 
+export function getResourcePath( resource ){
+  return `${resRootPath}/${resource}`; 
 }
 
 export async function loadClass( path ){

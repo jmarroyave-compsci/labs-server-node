@@ -8,7 +8,7 @@ import RequestID from 'express-request-id';
 import log from 'common/log';
 import * as fs from 'fs';
 import config from 'common/config'
-import { fileSearchReplace } from 'common/files';
+import { fileSearchReplace, getResourcePath } from 'common/files';
 import serveIndex from 'serve-index';
 import { loadREST, loadGraphQL } from './loaders/routes';
 import { initConnections } from 'common/db'
@@ -63,11 +63,11 @@ async function create(){
   await loadREST(app)
 
   log.info(" - /repos")
-  app.use('/repos', express.static(__dirname + '/files/repos'), serveIndex(__dirname + '/files/repos'));
+  app.use('/repos', express.static( getResourcePath("repos") ), serveIndex(__dirname + '/files/repos'));
 
   log.info(" - /")
   app.all('/', function (req, res) {
-      const file = `${__dirname}/files/docs/index.html`;
+      const file = getResourcePath("docs/index.html");
       const index = fileSearchReplace(file, "__VERSION__", config.VERSION);
       res.send(index);
   })
