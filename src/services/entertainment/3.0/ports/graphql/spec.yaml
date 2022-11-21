@@ -1,13 +1,13 @@
 openapi: 3.0.3
 info:
   title: Entertainment
-  version: '4.0'
+  version: '3.0'
   contact:
     email: jmarroyave.compsci@gmail.com
     name: jmarroyave
   description: API for accessing a catalog of entertainment options available
 servers:
-  - url: 'http://localhost:8080/entertainment/4.0/api'
+  - url: 'http://localhost:8080/entertainment/3.0/api'
 paths:
   /dashboard/home:
     get:
@@ -268,48 +268,6 @@ paths:
           name: limit
           description: limit
     parameters: []
-  '/tv-shows/list/{list}':
-    get:
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  items:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Entity'
-                  ref:
-                    type: string
-                  name:
-                    type: string
-      description: 'return the movie festivals '
-      summary: TVShowList
-      operationId: tvShowList
-      parameters:
-        - schema:
-            type: integer
-          in: query
-          name: page
-        - schema:
-            type: boolean
-          in: query
-          name: shuffle
-        - schema:
-            type: integer
-          in: query
-          name: limit
-    parameters:
-      - schema:
-          type: string
-        name: list
-        in: path
-        required: true
-        description: 'list name: soon, popular, etc'
   '/tv-shows/{id}':
     get:
       tags: []
@@ -322,7 +280,7 @@ paths:
                 $ref: '#/components/schemas/TVShow'
       description: 'return the movie festivals '
       summary: TVShow
-      operationId: tvShowItem
+      operationId: tvShow
       parameters: []
     parameters:
       - schema:
@@ -791,7 +749,20 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/SearchResult'
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    entity:
+                      type: string
+                    entityId:
+                      type: string
+                    description:
+                      type: string
+                    desc:
+                      type: string
+                    year:
+                      type: integer
       operationId: Search
       description: return search results for query
       parameters:
@@ -1186,146 +1157,132 @@ components:
                 $ref: '#/components/schemas/Person'
               'n':
                 type: number
-        images:
-          type: object
-          properties:
-            avatar:
-              type: string
     Entity:
       type: object
-      x-internal: false
-      description: Entity
-      title: ''
       properties:
         _id:
           description: Id
           type: string
           example: The lord of the rings
-        info:
-          type: object
-          properties:
-            title:
-              description: Title
-              type: string
-              example: The lord of the rings
-            type:
-              description: Type
-              type: string
-            genres:
-              description: Genre
-              type: array
-              items:
+        title:
+          description: Title
+          type: string
+          example: The lord of the rings
+        type:
+          description: Type
+          type: string
+        genres:
+          description: Genre
+          type: array
+          items:
+            type: string
+        countries:
+          description: Country
+          type: array
+          items:
+            type: string
+        duration:
+          description: Duration
+          type: string
+        classification:
+          description: 'Classification [PG,PG13...]'
+          type: string
+        ratings:
+          description: Rating
+          type: array
+          items:
+            type: object
+            properties:
+              name:
                 type: string
-            country_origin:
-              description: Country
-              type: array
-              items:
+              averageRating:
                 type: string
-            duration:
-              description: Duration
-              type: string
-            classification:
-              description: 'Classification [PG,PG13...]'
-              type: string
-            rating:
-              type: number
-            ratings:
-              description: Rating
-              type: array
-              items:
-                type: object
-                properties:
-                  source:
-                    type: string
-                  rating:
-                    type: string
-                  votes:
-                    type: number
-            stream_by:
-              description: Rating
-              type: array
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-            on_air:
-              description: on air dates
-              type: object
-              properties:
-                start:
-                  type: string
-                start_year:
-                  type: number
-            boxOffice:
-              type: string
-            production:
-              type: string
-            website:
-              type: string
-            language:
-              type: string
-            plot:
-              type: string
-            keywords:
-              type: array
-              items:
+        streamBy:
+          description: Rating
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              yearAdded:
                 type: string
         awards:
           description: awards
           type: array
           items:
             $ref: '#/components/schemas/Award'
-        people:
-          type: object
-          properties:
-            produced:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-            directed:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-            cast:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-            crew:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-            written:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-            stars:
-              type: array
-              items:
-                $ref: '#/components/schemas/Person'
-        media:
-          type: object
-          properties:
-            images:
-              type: object
-              properties:
-                poster:
-                  type: string
-        lists:
+        description:
+          type: string
+          example: An architect and his wife move into a castle that is slated to become a luxury hotel. But something inside is determined to stop the renovation.
+        releaseYear:
+          description: Year of production
+          type: number
+        produced:
           type: array
           items:
             type: object
             properties:
-              ref:
+              id:
+                $ref: '#/components/schemas/Person'
+        directed:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+        cast:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
                 type: string
-              items:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Entity'
-              name:
+        crew:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+              as:
                 type: string
-        episodes:
+              cat:
+                type: string
+              job:
+                type: string
+        written:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                $ref: '#/components/schemas/Person'
+        created:
+          type: string
+        image:
           type: object
+          properties:
+            poster:
+              type: string
+        boxOffice:
+          type: string
+        production:
+          type: string
+        website:
+          type: string
+        language:
+          type: string
+        plot:
+          type: string
+        remakes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+      x-internal: false
     Movie:
       $ref: '#/components/schemas/Entity'
     VideoGame:
@@ -1404,34 +1361,6 @@ components:
           type: string
         category:
           type: string
-    SearchResult:
-      type: object
-      description: search result
-      title: SearchResult
-      properties:
-        ty:
-          type: string
-        dc:
-          type: object
-          properties:
-            id:
-              type: string
-            title:
-              type: string
-            desc:
-              type: string
-            thumb:
-              type: string
-            cats:
-              type: string
-            released:
-              type: string
-            profession:
-              type: string
-            year:
-              type: string
-        yr:
-          type: integer
     StoryMovieAward:
       type: object
       description: Award model
@@ -1490,7 +1419,7 @@ components:
               'n':
                 type: number
         year:
-          type: string
+          type: number
         max:
           type: number
         min:

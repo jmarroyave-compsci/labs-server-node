@@ -65,7 +65,7 @@ export const entitiesFind = async function( type, where, sort, page, limit ) {
   let results = [];
   var model = null;
 
-  console.log(where);
+  console.log("EntitiesService", "entitiesGet", where);
 
   if( !where['type'] ){
     switch(type){
