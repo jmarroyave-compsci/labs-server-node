@@ -1,5 +1,5 @@
 import { getDocs, getSpecs } from "../../entities/Docs";
-import { videoGameGet, videoGamesGet, tvShowsListGet, tvShowGet, tvShowsGet, movieGet, moviesGet } from "../../entities/Entity";
+import { videoGameGet, videoGamesGet, tvShowsListGet, tvShowsListsGet, tvShowGet, tvShowsGet, movieGet, moviesGet } from "../../entities/Entity";
 import { getTopic, get } from "../../entities/Topic";
 import { awards, remakes, peopleDirectors, peopleProducers, peopleWriters, peopleActors } from "../../entities/Stories";
 import { searchResultsGet, searchSuggestionsGet } from "../../entities/Search";
@@ -22,6 +22,7 @@ const endpoints = {
 	"/api/video-games" : videoGamesGet,
 	"/api/tv-shows" : tvShowsGet,
 	"/api/tv-shows/:id" : tvShowGet,
+	"/api/tv-shows/lists" : tvShowsListsGet,
 	"/api/tv-shows/list/:list" : tvShowsListGet,
 	"/api/topics/:topic" : getTopic,
 	"/api/topics" : get,

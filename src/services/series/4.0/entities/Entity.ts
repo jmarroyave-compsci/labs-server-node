@@ -20,8 +20,23 @@ export async function moviesGet( query, params, session ){
   return await Service.entitiesGet( query, "movie" );
 };
 
+export async function tvShowsListsGet( query, params, session ){
+  const lists = query.lists.split(",")
+
+  const data = []
+  for( const list of lists ){
+    query.list = list
+    console.log(list)
+    const l = await tvShowsListGet( query, params, session )
+    l.name = list
+    data.push(l)
+  }
+
+  return data
+};
+
 export async function tvShowsListGet( query, params, session ){
-  const list = params.list
+  const list = (params.list) ? params.list : query.list
   const limit = query['limit'] ?? 10
   const page = query['page'] ?? 1
   const shuffle = query?.['shuffle'] ?? "true"

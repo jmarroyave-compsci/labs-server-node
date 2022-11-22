@@ -268,6 +268,49 @@ paths:
           name: limit
           description: limit
     parameters: []
+  '/tv-shows/lists/':
+    get:
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  type: object
+                  properties:
+                    items:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Entity'
+                    ref:
+                      type: string
+                    name:
+                      type: string
+      description: 'return the lists '
+      summary: TVShowLists
+      operationId: tvShowLists
+      parameters:
+        - schema:
+            type: string
+          name: lists
+          in: query
+          required: true
+          description: 'list names array: soon, popular, etc'
+        - schema:
+            type: integer
+          in: query
+          name: page
+        - schema:
+            type: boolean
+          in: query
+          name: shuffle
+        - schema:
+            type: integer
+          in: query
+          name: limit
   '/tv-shows/list/{list}':
     get:
       tags: []
