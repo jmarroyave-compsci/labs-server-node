@@ -38,6 +38,7 @@ export const loadREST = async function(app){
                 case "application/json":
                     router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response ): P<any>{
                         const session = req?.['session'] ?? { id: 1 }
+                        log.info(`> ${routeEndpoint} | qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)} | session: ${JSON.stringify(session)}`);
                         const data = await handler( req.query, req.params, session )
                         utils.writeJSON(res, data);
                     }, endpoint));

@@ -10,8 +10,9 @@ import * as fs from 'fs';
 import config from 'common/config'
 import { fileSearchReplace, getResourcePath } from 'common/files';
 import serveIndex from 'serve-index';
-import { loadREST, loadGraphQL } from './loaders/routes';
-import { initConnections } from 'common/db'
+import { loadGraphQL } from './loaders/graphql';
+import { loadREST } from './loaders/rest';
+import { loadDBMongo } from './loaders/db/mongo';
 
 import session from 'express-session'
 
@@ -21,7 +22,7 @@ import guestbookMiddleware from './middleware/guestbook'
 import historyMiddleware from './middleware/history'
 
 async function create(){
-  await initConnections()
+  await loadDBMongo()
 
   const app = express();
 
