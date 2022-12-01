@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import log from 'common/log';
+import config from 'common/config';
 import express from "express";
 import { asyncHandler } from "../lib/asyncHandler";
 import { default as P }  from "bluebird";
@@ -20,7 +21,9 @@ export const loadREST = async function(app){
         }
 
         const endpoints = (await loadClass(routesEndpointsPath)).default
-
+        if(config.LOCAL){
+            updateJSONRoutes(routesEndpointsPath, endpoints)    
+        }
         for( const endpoint of Object.keys(endpoints).sort().reverse()){
             const routeEndpoint = `/${service.name}/${service.version}/${endpoint}`.replace("//", "/")
             log.info(`     - ${routeEndpoint}`);
@@ -57,4 +60,12 @@ export const loadREST = async function(app){
     }
 
     app.use('/', router);
+}
+
+function updateJSONRoutes( path, endpoints ){
+    console.log("updating JSON routes")
+    const data = Object.keys(endpoints).map( k => k )
+    path = `${path}/routes.txt`
+    if(fs.existsSync(path)) return
+    fs.writeFileSync(path, JSON.stringify(data, null, 2))
 }
