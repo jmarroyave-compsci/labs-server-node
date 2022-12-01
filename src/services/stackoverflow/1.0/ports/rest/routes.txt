@@ -1,0 +1,8 @@
+[
+  "/pages/home",
+  "/pages/view/:view",
+  "/pages/topic/:topic",
+  "/pages/info_history",
+  "/pages/info_microsoft",
+  "/pages/status"
+]
