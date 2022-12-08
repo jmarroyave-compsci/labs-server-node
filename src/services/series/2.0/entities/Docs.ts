@@ -8,5 +8,5 @@ export async function getDocs( query, params, session ){
 
 export async function getSpecs( query, params, session ){
   console.log("specs")
-  return await docs.getSpecs( "series", "4.0" );
+  return await docs.getSpecs( "series", "2.0" );
 };
