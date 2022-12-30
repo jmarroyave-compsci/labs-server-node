@@ -28,7 +28,11 @@ export const addTVShow = async function( sessionId, entity ) {
   }
   history['tv_shows'].push( entity )
 
-  await history.save()
+  try{
+    await history.save()  
+  } catch(ex){
+    console.error(ex)
+  }
 };
 
 export const addSearched = async function( sessionId, qry ) {
@@ -40,7 +44,12 @@ export const addSearched = async function( sessionId, qry ) {
     history['searched'] = history['searched'].filter( r => r != qry )  
   }
   history['searched'].push( qry )
-  await history.save()
+
+  try{
+    await history.save()  
+  } catch(ex){
+    console.error(ex)
+  }
 };
 
 export const getListItems = async function( list, page, limit, sessionId ) {

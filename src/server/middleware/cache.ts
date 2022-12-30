@@ -3,7 +3,7 @@ import config from 'common/config'
 import log from 'common/log';
 
 
-const CACHE_PATH = `${__dirname}/../../cache`
+const CACHE_PATH = `${__dirname}/../../../cache`
 
 
 const middleware = function(req, res, next) {
@@ -53,11 +53,9 @@ const middleware = function(req, res, next) {
             fs.writeFileSync(cacheFile, data);            
             //console.log(from.toLowerCase(), "->", body.operationName)
             if(!body.operationName) return;
-            //const dataTestFile = `${__dirname}/../test/v.2.0/data/${body.operationName?.toLowerCase()}.json`;
-            //if(!fs.existsSync(dataTestFile)){
-               // fs.writeFileSync(dataTestFile, data);
-            //}
-            fs.writeFileSync(`${CACHE_PATH}/operations/${body.operationName?.toLowerCase()}.json`, data);
+            const path = `${CACHE_PATH}/operations/${body.operationName?.toLowerCase()}.json`
+            //console.log(path)
+            fs.writeFileSync(path, data);
         }
     }
 

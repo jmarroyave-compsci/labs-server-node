@@ -6,15 +6,12 @@ import * as cls from "./lib/cls";
 import bodyParser from 'body-parser';
 import RequestID from 'express-request-id';
 import log from 'common/log';
-import * as fs from 'fs';
 import config from 'common/config'
 import { fileSearchReplace, getResourcePath } from 'common/files';
 import serveIndex from 'serve-index';
 import { loadGraphQL } from './loaders/graphql';
 import { loadREST } from './loaders/rest';
 import { loadDBMongo } from './loaders/db/mongo';
-
-import session from 'express-session'
 
 import errorMiddleware from './middleware/error'
 import cacheMiddleware from './middleware/cache'
@@ -27,21 +24,6 @@ async function create(){
   const app = express();
 
   log.info(" - configuring middleware")
-
-  /*
-  app.use(session({
-    name: 'session',
-    secret: config.SESSION.SECRET,
-    store: (config.LOCAL) ? null : getStore(),
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-        httpOnly: true,
-        secure: false,
-        maxAge: config.SESSION.MAX_AGE
-    },
-  })
-  */
 
   app.use((req, res, next) => {
     const test = /\?[^]*\//.test(req.url);
@@ -57,6 +39,21 @@ async function create(){
   strict: false
   }));
   app.use(RequestID())
+  // cache
+  app.use(cacheMiddleware)
+
+  // error handler
+  app.use(errorMiddleware)
+
+  // guestbook
+  app.use(guestbookMiddleware)
+
+  // history
+  app.use(historyMiddleware)
+
+  app.use(function (err, req, res, next) {
+      console.log(err.stack);
+  });
 
   log.info(" - routes")
   log.info(`loading routes:`);
@@ -72,22 +69,6 @@ async function create(){
       const index = fileSearchReplace(file, "__VERSION__", config.VERSION);
       res.send(index);
   })
-
-  // error handler
-  app.use(errorMiddleware)
-
-  // cache
-  app.use(cacheMiddleware)
-
-  // guestbook
-  app.use(guestbookMiddleware)
-
-  // history
-  app.use(historyMiddleware)
-
-  app.use(function (err, req, res, next) {
-      console.log(err.stack);
-  });
 
   return app
 }

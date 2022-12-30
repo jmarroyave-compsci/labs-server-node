@@ -44,6 +44,23 @@ export const entityGet = async function( params ) {
     resp['lists'].push( list )    
   }
 
+
+  /*
+  console.log(resp)
+  resp = {
+    ...resp,
+    people: {
+      ...resp.people,
+      produced: resp.people.produced.map( p => p),
+      crew: resp.people.crew.map( p => p),
+      stars: resp.people.stars.map( p => p),
+      cast: resp.people.cast.map( p => p),
+      directed: resp.people.directed.map( p => p),
+
+    }
+  }
+  */
+
   return resp
 };
 

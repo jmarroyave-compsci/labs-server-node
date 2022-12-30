@@ -26,7 +26,6 @@ export async function tvShowsListsGet( query, params, session ){
   const data = []
   for( const list of lists ){
     query.list = list
-    console.log(list)
     const l = await tvShowsListGet( query, params, session )
     l.name = list
     data.push(l)

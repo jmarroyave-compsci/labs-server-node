@@ -58,7 +58,7 @@ export const personGet = async function( params ) {
                 skip: 0
             },
       })  
-  console.log(results)
+
   return (results) ? results[0] : null
 };
 
@@ -76,8 +76,6 @@ export const peopleFind = async function( where, params=null ) {
 
   let results = [];
 
-  console.log(where);
-
   results = await DBPerson.find( where )
       .populate("produced.id")
       .populate("directed.id")
@@ -88,5 +86,5 @@ export const peopleFind = async function( where, params=null ) {
       .skip( paging.limit * ( paging.page - 1 ) )
       .limit( paging.limit);
 
-  return ( results ) ? results : null
+    return ( results ) ? results : null
 };

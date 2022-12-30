@@ -13,11 +13,11 @@ export const getListItems = async function( list, page, limit, shuffle=true ) {
       enabled: true,
   }
 
-  console.log(where, paging, "shuffle", shuffle)
+  //console.log(where, paging, "shuffle", shuffle)
   const result = (await DBList.findOne( where ).populate("items._id"))?.toObject()
 
   if(result?.['alias'] == true ){
-    console.log('LIST', 'resolving alias', list, ">", result?.['ref'])
+    //console.log('LIST', 'resolving alias', list, ">", result?.['ref'])
     return await getListItems( result?.['ref'], page, limit, shuffle )
   }
 
@@ -31,7 +31,7 @@ export const getListItems = async function( list, page, limit, shuffle=true ) {
 
   const ref = result?.['ref'] ?? "?";
 
-  console.log(`LIST: '${list}' ID: '${result?.["_id"] ?? "not found"}' ITEMS: ${resp.length ?? 0}`)
+  //console.log(`LIST: '${list}' ID: '${result?.["_id"] ?? "not found"}' ITEMS: ${resp.length ?? 0}`)
 
   return { name: list, ref : ref, items: resp}
 };
