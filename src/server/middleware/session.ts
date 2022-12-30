@@ -15,5 +15,3 @@ import session from 'express-session'
     },
   })
   */
-
-export default middleware

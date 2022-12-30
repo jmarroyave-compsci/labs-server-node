@@ -2,9 +2,7 @@ import * as fs from 'fs';
 import config from 'common/config'
 import log from 'common/log';
 
-
 const CACHE_PATH = `${__dirname}/../../../cache`
-
 
 const middleware = function(req, res, next) {
     const graphQL = req.originalUrl.includes("graphql");
