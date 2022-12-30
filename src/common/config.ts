@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 var CONF = dotenv.config().parsed
 var _package_ = JSON.parse(fs.readFileSync(`${__dirname}/../../package.json`).toString());
 
-const LOCAL = process.env.LOCAL ?? true
+const LOCAL = process.env.LOCAL === "false" ? false : true
 const DB_SERVERS = {}
 process.env.DB_SERVERS.split("||").map( server => {
   const [ name, uri ] = server.split("|")
