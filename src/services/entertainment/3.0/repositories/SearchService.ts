@@ -23,8 +23,9 @@ export const searchResults = async function( params ) {
   if( qry == "") return []
 
   //query['entity'] = new RegExp(`^${params.qry}`)
-  query['$text'] = { $search : qry}
+  query['$text'] = { $search : qry }
 
+  /*
   if( entities == "") return []
 
   query['ty'] = { $in : entities } 
@@ -32,6 +33,7 @@ export const searchResults = async function( params ) {
   if( year ){
     query['yr'] = { $gte : year - timeframe, $lte : year + timeframe } 
   }
+  */
 
   console.log("query to search:",  query)
 

@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 var CONF = dotenv.config().parsed
 var _package_ = JSON.parse(fs.readFileSync(`${__dirname}/../../package.json`).toString());
 
-const LOCAL = process.env.LOCAL === "false" ? false : true
 const DB_SERVERS = {}
 process.env.DB_SERVERS.split("||").map( server => {
   const [ name, uri ] = server.split("|")
@@ -27,12 +26,12 @@ const config = {
       TRACK_ID: process.env.PLUGINS_GOOGLE_ANALYTICS_TRACK_ID,
     }
   },
-  LOCAL: LOCAL,
+  LOCAL: process.env.LOCAL === "false" ? false : true,
   SESSION : {
     SECRET: process.env.SESSION_SECRET,
     MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
   },
-  CORS: { origin: process.env.CORS.split("|"), credentials: true },
+  CORS: { origin: process.env.CORS.split("|").map( c => c.endsWith("/") ? c.slice(0, -1) : c), credentials: true },
   HTTPS: (process.env.HTTPS == "true") ? true : false,
 }
 

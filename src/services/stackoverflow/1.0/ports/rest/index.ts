@@ -1,4 +1,5 @@
 import * as pages from '../../entities/Pages'
+import * as topics from '../../entities/Topics'
 
 const endpoints = {
 	"/pages/home" : pages.home,
@@ -7,6 +8,7 @@ const endpoints = {
 	"/pages/info_history" : pages.info_history,
 	"/pages/info_microsoft" : pages.info_microsoft,
 	"/pages/status" : pages.status,	
+	"/topic/suggest" : topics.suggest,	
 }
 
 export default endpoints;
