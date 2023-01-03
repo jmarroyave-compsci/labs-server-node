@@ -1,6 +1,17 @@
 import * as fs from 'fs'; 
 import dotenv from 'dotenv'
 
+const loadCORS = () => {
+  var DATA = process.env.CORS;
+  if(!DATA){
+    DATA = fs.readFileSync(`${__dirname}/../../cors.txt`).toString()
+  } 
+
+  const CORS = DATA.trim().split("\n").map( c => c.trim() ).map( c => c.endsWith("/") ? c.slice(0, -1) : c)
+  console.log("CORS", CORS)
+  return CORS
+}
+
 var CONF = dotenv.config().parsed
 var _package_ = JSON.parse(fs.readFileSync(`${__dirname}/../../package.json`).toString());
 
@@ -9,7 +20,6 @@ process.env.DB_SERVERS.split("||").map( server => {
   const [ name, uri ] = server.split("|")
   DB_SERVERS[name] = uri
 }) 
-
 
 const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
@@ -31,11 +41,10 @@ const config = {
     SECRET: process.env.SESSION_SECRET,
     MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
   },
-  CORS: { origin: process.env.CORS.split("|").map( c => c.endsWith("/") ? c.slice(0, -1) : c), credentials: true },
+  CORS: { origin: loadCORS(), credentials: true },
   HTTPS: (process.env.HTTPS == "true") ? true : false,
 }
 
-console.log(process.env.CACHE_SERVER)
-
 console.log(config)
+
 export default config;

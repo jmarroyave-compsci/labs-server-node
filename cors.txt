@@ -1,0 +1,9 @@
+http://localhost:3000
+https://jmarroyave-compsci.github.io
+https://jmarroyave.netlify.app
+https://jmarroyave-apps-stackoverflow.netlify.app
+https://jmarroyave-apps-ent-analysis-1.netlify.app
+https://jmarroyave-apps-ent-analysis-2.netlify.app
+https://jmarroyave-apps-entertainment-analysis-series.netlify.app
+https://jmarroyave-apps-entertainment-analysis-series-1-0.netlify.app
+https://jmarroyave-apps-entertainment-analysis-series-2-0.netlify.app

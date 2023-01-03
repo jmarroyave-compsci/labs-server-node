@@ -127,3 +127,5 @@ cache
 
 # testing certificates
 certificates
+
+cors.txt
