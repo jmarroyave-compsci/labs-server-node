@@ -7,11 +7,11 @@ export const init = ( app ) => {
     app.use( cors( {
         origin: (origin, callback) => {
             //console.log("CORS qry:", origin)
-            if( CONFIG.SERVER.CORS.WHITELIST.includes( origin ) ){
+            if( !origin || CONFIG.SERVER.CORS.WHITELIST.includes( origin ) ){
                 //console.log("it's good")
                 callback( null, true )
             } else {
-                callback( new Error(`CORS: [${origin}] not allowed.`) )
+                callback( new Error(`CORS: [${origin}] not allowed.`), false )
             }
         },
         credentials : true,
