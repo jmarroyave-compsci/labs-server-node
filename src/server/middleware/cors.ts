@@ -11,7 +11,7 @@ export const init = ( app ) => {
                 //console.log("it's good")
                 callback( null, true )
             } else {
-                callback( new Error("Not allowed by cors") )
+                callback( new Error(`CORS: [${origin}] not allowed.`) )
             }
         },
         credentials : true,
