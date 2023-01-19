@@ -8,7 +8,6 @@ const loadCORS = () => {
   } 
 
   const CORS = DATA.trim().split("\n").map( c => c.trim() ).map( c => c.endsWith("/") ? c.slice(0, -1) : c)
-  console.log("CORS", CORS)
   return CORS
 }
 
@@ -25,26 +24,44 @@ const config = {
   PORT: process.env.PORT || process.env.DEFAULT_PORT,
   DB: {
     SERVERS : DB_SERVERS,
+    VERSION: _package_.version,
+  },
+  SERVER : {
+    URL: process.env.SERVER_URL,
+    getServerURL: ( url ) => `${process.env.SERVER_URL}${url}`,
+    CORS: { 
+      WHITELIST: loadCORS(), 
+    },
   },
   WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
-  DB_VERSION: _package_.version,
   CACHE_SERVER: (process.env.CACHE_SERVER === "true") ? true : false,
   PLUGINS: {
     GOOGLE_ANALYTICS: {
       BASE_URL: process.env.PLUGINS_GOOGLE_ANALYTICS_BASE_URL,
       TRACK_ID: process.env.PLUGINS_GOOGLE_ANALYTICS_TRACK_ID,
-    }
+    },
+    GOOGLE_AUTH: {
+      CLIENT_ID: process.env.PLUGINS_GOOGLE_AUTH_CLIENT_ID,
+      SECRET: process.env.PLUGINS_GOOGLE_AUTH_SECRET,
+    },
+    JWT: {
+      SECRET: process.env.PLUGINS_JWT_SECRET,
+    },
   },
   LOCAL: process.env.LOCAL === "false" ? false : true,
   SESSION : {
     SECRET: process.env.SESSION_SECRET,
     MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
   },
-  CORS: { origin: loadCORS(), credentials: true },
   HTTPS: (process.env.HTTPS == "true") ? true : false,
+  SERVICES: {
+    SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? []
+  },
 }
 
+
+console.log("CONFIG")
 console.log(config)
 
 export default config;

@@ -1,17 +1,12 @@
-import session from 'express-session'
+import CONFIG from 'common/config'
+const cookieSession = require("cookie-session");
 
+export const init = ( app ) => {
+  app.use(
+    cookieSession({
+      maxAge: 24 * 60 * 60 * 1000,
+      keys: [CONFIG.SESSION.SECRET],
+    })
+  );
+}
 
-  /*
-  app.use(session({
-    name: 'session',
-    secret: config.SESSION.SECRET,
-    store: (config.LOCAL) ? null : getStore(),
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-        httpOnly: true,
-        secure: false,
-        maxAge: config.SESSION.MAX_AGE
-    },
-  })
-  */

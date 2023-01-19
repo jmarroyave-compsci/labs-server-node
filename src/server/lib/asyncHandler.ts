@@ -1,8 +1,6 @@
 import * as express from "express";
 import { default as P } from "bluebird";
 import log from 'common/log';
-import { TDebug } from 'common/log';
-const debug = new TDebug("src:lib:asyncHandler");
 
 export interface HandlerOption {
   cache?: boolean;
@@ -12,10 +10,10 @@ export interface HandlerOption {
 export function asyncHandler(
   handler: (req: express.Request, res: express.Response, next) => P<any>,
   name: string, options?: HandlerOption): express.Handler {
-  debug.log("Register handler with option: %o", options);
+  //debug.log("Register handler with option: %o", options);
   return (req: express.Request, res: express.Response, next) => {
     async function exec(): P<any> {
-      debug.start("SERVICE:" + name);
+      //debug.start("SERVICE:" + name);
       if (options && options.cache) {
         try {
           const item = await getCache(req);
@@ -39,15 +37,15 @@ export function asyncHandler(
     }
     exec()
       .then((data) => {
-        debug.end("SERVICE:" + name);
+        //debug.end("SERVICE:" + name);
         if (data) {
           res.json(data);
         } else if (!res.finished) {
-          debug.log("no more response to send, status code: %d", res.statusCode);
+          //debug.log("no more response to send, status code: %d", res.statusCode);
           res.end();
         }
       }, (error) => {
-        debug.end("SERVICE:" + name);
+        //debug.end("SERVICE:" + name);
         next(error);
       });
   };
@@ -60,7 +58,7 @@ const cachedData: { [key: string]: CachedItem } = {};
 // TODO use cache server
 async function cache(req: express.Request, item: CachedItem): P<any> {
   const fullUrl = getUrl(req);
-  debug.log("Set cache: %s data: %o", fullUrl, item);
+  //debug.log("Set cache: %s data: %o", fullUrl, item);
   cachedData[fullUrl] = item;
 }
 // async function hasCache(req: express.Request): P<boolean> {
@@ -69,14 +67,14 @@ async function cache(req: express.Request, item: CachedItem): P<any> {
 // }
 async function getCache(req: express.Request): P<CachedItem> {
   const fullUrl = getUrl(req);
-  debug.log("Get cache: %s", fullUrl);
+  //debug.log("Get cache: %s", fullUrl);
   const data = cachedData[fullUrl];
   if (data && data.expTs < Date.now()) {
-    debug.log("Cache expired: %s", fullUrl);
+    //debug.log("Cache expired: %s", fullUrl);
     delete cachedData[fullUrl];
     return;
   } else {
-    debug.log("Hit cache: %s", fullUrl);
+    //debug.log("Hit cache: %s", fullUrl);
     return data;
   }
 }

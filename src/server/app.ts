@@ -1,10 +1,7 @@
-import cors from "cors";
 import express from "express";
 import { Express, Request, Response, NextFunction, Send } from 'express';
-import { inOutLogger } from 'common/log';
-import * as cls from "./lib/cls";
+
 import bodyParser from 'body-parser';
-import RequestID from 'express-request-id';
 import log from 'common/log';
 import config from 'common/config'
 import { fileSearchReplace, getResourcePath } from 'common/files';
@@ -13,48 +10,48 @@ import { loadGraphQL } from './loaders/graphql';
 import { loadREST } from './loaders/rest';
 import { loadDBMongo } from './loaders/db/mongo';
 
-import errorMiddleware from './middleware/error'
-import cacheMiddleware from './middleware/cache'
-import guestbookMiddleware from './middleware/guestbook'
-import historyMiddleware from './middleware/history'
+import * as requestIDMiddleware from './middleware/req-id'
+import * as debugMiddleware from './middleware/debug'
+import * as errorMiddleware from './middleware/error'
+import * as cacheMiddleware from './middleware/cache'
+import * as guestbookMiddleware from './middleware/guestbook'
+import * as historyMiddleware from './middleware/history'
+import * as sessionMiddleware from './middleware/session'
+import * as authMiddleware from './middleware/auth'
+import * as notFoundMiddleware from './middleware/not-found'
+import * as corsMiddleware from './middleware/cors'
+import * as testingMiddleware from './middleware/testing'
+import * as loggerMiddleware from './middleware/logger'
 
 async function create(){
-  await loadDBMongo()
-
+  log.info("SERVER")
+  log.info(" - creating server")
   const app = express();
+
+  debugMiddleware.init( app )
+
+  log.info(" - configuring databases")
+  await loadDBMongo()
 
   log.info(" - configuring middleware")
 
-  app.use((req, res, next) => {
-    const test = /\?[^]*\//.test(req.url);
-    if (req.url.substr(-1) === '/' && req.url.length > 1 && !test)
-      res.redirect(301, req.url.slice(0, -1));
-    else
-      next();
-  });
-  app.use(cors( config.CORS ));
-  app.use(cls.setRequestId);
-  app.use(inOutLogger);
+  corsMiddleware.init( app )
+  
   app.use(bodyParser.json({
-  strict: false
+    strict: false
   }));
-  app.use(RequestID())
-  // cache
-  app.use(cacheMiddleware)
 
-  // error handler
-  app.use(errorMiddleware)
+  sessionMiddleware.init( app )
+  authMiddleware.init( app )
 
-  // guestbook
-  app.use(guestbookMiddleware)
-
-  // history
-  app.use(historyMiddleware)
-
-  app.use(function (err, req, res, next) {
-      console.log(err.stack);
-  });
-
+  requestIDMiddleware.init( app )
+  loggerMiddleware.init( app )
+  testingMiddleware.init( app )
+  cacheMiddleware.init( app )
+  guestbookMiddleware.init( app )
+  historyMiddleware.init( app )
+  
+  
   log.info(" - routes")
   log.info(`loading routes:`);
   await loadGraphQL(app)
@@ -64,12 +61,17 @@ async function create(){
   app.use('/repos', express.static( getResourcePath("repos") ), serveIndex(__dirname + '/files/repos'));
 
   log.info(" - /")
+
   app.all('/', function (req, res) {
+      console.log("ROUTE", "catching /")
       const file = getResourcePath("docs/index.html");
       const index = fileSearchReplace(file, "__VERSION__", config.VERSION);
       res.send(index);
   })
 
+  notFoundMiddleware.init( app )
+  errorMiddleware.init( app )
+  
   return app
 }
 

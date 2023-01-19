@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import CONFIG from 'common/config'
 
 const servicesRootPath = `${__dirname}/../services`
 const resRootPath = `${__dirname}/../res`
@@ -6,6 +7,7 @@ const resRootPath = `${__dirname}/../res`
 export function getServices(){
   const resp = []
   fs.readdirSync( servicesRootPath ).sort().forEach( service => {
+    if(CONFIG.SERVICES.SKIPPED.includes(service)) return
     fs.readdirSync( `${servicesRootPath}/${service}` ).sort().forEach( version => {
 
       resp.push({

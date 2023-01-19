@@ -5,7 +5,7 @@ import express from "express";
 import { asyncHandler } from "../lib/asyncHandler";
 import { default as P }  from "bluebird";
 import * as utils from '../lib/misc';
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { getServices, loadClass, classExists } from 'common/files'
 
 export const loadREST = async function(app){
@@ -32,23 +32,32 @@ export const loadREST = async function(app){
 
             const handler = ( endpoints[endpoint]['handler'] ) ? endpoints[endpoint]['handler'] : endpoints[endpoint]
             const contentType = ( endpoints[endpoint]['contentType'] ) ? endpoints[endpoint]['contentType'] : "application/json"
+            const getSession = ( req ) => ( {...(req?.['session'] ?? {}), user: req?.['user'] ?? null } )
 
             switch(contentType){
                 case "application/json":
-                    router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response ): P<any>{
-                        const session = req?.['session'] ?? { id: 1 }
-                        log.info(`> ${routeEndpoint} | qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)} | session: ${JSON.stringify(session)}`);
-                        const data = await handler( req.query, req.params, session )
+                    router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response, next: NextFunction ): P<any>{
+                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)} | user: ${JSON.stringify(req['user'])}`);
+                        const data = await handler( req.query, req.params, getSession(req) )
                         utils.writeJSON(res, data);
+                        return
                     }, endpoint));
                     break;
                 case "text/plain":
-                    router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response ): P<any>{
-                        const session = req?.['session'] ?? { id: 1 }
-                        const data = await handler( req.query, req.params, session )
+                case "text/html":
+                    router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response, next: NextFunction ): P<any>{
+                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)}`);
+                        const data = await handler( req.query, req.params, getSession(req) )
                         res.set('content-type', contentType);
-                        res.send(data)
+                        return res.send(data)
                     }, endpoint));
+                    break;                
+                case "handler":
+                    router.use(routeEndpoint, async function( req: Request, res: Response, next: NextFunction ): P<any>{
+                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query, null, 2) } | params: ${JSON.stringify(req.params, null, 2)}`);
+                        const handlerResp = await handler( req.query, req.params, getSession(req) )
+                        return await handlerResp(req, res, next)
+                    });
                     break;                
             }
         }

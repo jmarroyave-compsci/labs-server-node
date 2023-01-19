@@ -4,6 +4,10 @@ import log from 'common/log';
 
 const CACHE_PATH = `${__dirname}/../../../cache`
 
+export const init = ( app ) => {
+    app.use(middleware)
+}
+
 const middleware = function(req, res, next) {
     const graphQL = req.originalUrl.includes("graphql");
     log.info(`REQ - ${req.url} [${req['id']}]`);
@@ -77,5 +81,3 @@ const middleware = function(req, res, next) {
 
     next();
 }
-
-export default middleware

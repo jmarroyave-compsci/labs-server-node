@@ -13,7 +13,7 @@ export async function loadDBMongo(){
 
     const { DB } = await loadClass(configClass)
     conns.push(
-      [ DB.server, DB.database, service.version ]
+      [ DB.server, DB.database, service ]
     ) 
   }
 
@@ -26,10 +26,10 @@ export async function loadDBMongo(){
   log.info(`CONNECTIONS INITIALIZED ${Object.keys(Connection.CONNECTIONS)}`)
 }
 
-async function connect( server, dbname, version ){
-    const key = `${server}/${dbname}/${version}`
+async function connect( server, dbname, service ){
+    const key = `${server}/${dbname}/${service.version}`
     try{
-        log.info(` DB: CONNECTING TO DB SERVER [${server}] DB [${dbname}]`)
+        log.info(` DB: [${service.name}/${service.version}] CONNECTING TO DB SERVER: [${server}] DB: [${dbname}]`)
         server = config.DB.SERVERS[server]
         const connString = `mongodb+srv://${server}/${dbname}?retryWrites=true&w=majority`
         //log.info(connString)
