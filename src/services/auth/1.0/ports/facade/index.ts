@@ -1,4 +1,4 @@
-import { loginWithGoogle, loginWithGoogleCallback, logout } from "../../entities/auth";
+import { loginWithGoogle, loginWithGoogleCallback, logout, getUserInfo } from "../../entities/auth";
 import { findByGoogleId, findById, insert } from "../../entities/user";
 
 export default {
@@ -6,6 +6,7 @@ export default {
 		loginWithGoogle,
 		loginWithGoogleCallback,
 		logout,
+		getUserInfo,
 	},
 	user: {
 		findById,

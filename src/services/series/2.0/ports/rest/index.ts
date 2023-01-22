@@ -1,3 +1,4 @@
+import { getUserInfo, loginWithGoogle, loginWithGoogleCallback, logout } from "../../entities/auth";
 import { getDocs, getSpecs } from "../../entities/Docs";
 import { videoGameGet, videoGamesGet, tvShowsListGet, tvShowsListsGet, tvShowGet, tvShowsGet, movieGet, moviesGet } from "../../entities/Entity";
 import { getTopic, get } from "../../entities/Topic";
@@ -52,6 +53,16 @@ const endpoints = {
 	"/api/dashboard/video-games" : dashboardGamesGet, 
 	"/api/dashboard/tv-shows" : dashboardTVGet, 
 	"/api/comments" : addComment, 
+	"/auth/login/google/callback" : {
+		contentType: "handler",
+		handler: loginWithGoogleCallback,
+	},
+	"/auth/login/google" : {
+		contentType: "handler",
+		handler: loginWithGoogle,
+	},
+	"/auth/logout" : logout,
+	"/auth/me" : getUserInfo,
 }
 
 export default endpoints;

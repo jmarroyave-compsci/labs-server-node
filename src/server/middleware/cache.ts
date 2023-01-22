@@ -10,7 +10,11 @@ export const init = ( app ) => {
 
 const middleware = function(req, res, next) {
     const graphQL = req.originalUrl.includes("graphql");
-    log.info(`REQ - ${req.url} [${req['id']}]`);
+
+    if( !config.LOCAL || !config.CACHE_SERVER ){
+        next()
+        return
+    }
 
     const getKey = ( req, graphQL=false ) => {
         if(!graphQL) return req.originalUrl;

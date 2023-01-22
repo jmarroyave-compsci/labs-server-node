@@ -1,6 +1,14 @@
-import { getUserInfo, loginWithGoogle, loginWithGoogleCallback, loginWithGoogleSuccess, loginWithGoogleError, logout } from "../../entities/auth";
+import { getUserInfo, loginWithGoogle, loginWithGoogleCallback, logout, loginGoogleError, loginGoogleSuccess } from "../../entities/auth";
 
 const endpoints = {
+	"/login/google/error" : {
+		contentType: "handler",
+		handler: loginGoogleError,
+	},
+	"/login/google/success" : {
+		contentType: "handler",
+		handler: loginGoogleSuccess,
+	},
 	"/login/google/callback" : {
 		contentType: "handler",
 		handler: loginWithGoogleCallback,
@@ -9,10 +17,14 @@ const endpoints = {
 		contentType: "handler",
 		handler: loginWithGoogle,
 	},
-	"/login/google/success" : loginWithGoogleSuccess,
-	"/login/google/error" : loginWithGoogleError,
-	"/logout" : logout,
-	"/me" : getUserInfo,
+	"/auth/logout" : {
+		contentType: "handler",
+		handler: logout,
+	},
+	"/me" : {
+		contentType: "handler",
+		handler: getUserInfo,
+	},
 }
 
 export default endpoints;

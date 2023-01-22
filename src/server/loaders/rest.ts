@@ -37,7 +37,7 @@ export const loadREST = async function(app){
             switch(contentType){
                 case "application/json":
                     router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response, next: NextFunction ): P<any>{
-                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)} | user: ${JSON.stringify(req['user'])}`);
+                        //log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)} | user: ${JSON.stringify(req['user'])}`);
                         const data = await handler( req.query, req.params, getSession(req) )
                         utils.writeJSON(res, data);
                         return
@@ -46,7 +46,7 @@ export const loadREST = async function(app){
                 case "text/plain":
                 case "text/html":
                     router.use(routeEndpoint, asyncHandler( async function( req: Request, res: Response, next: NextFunction ): P<any>{
-                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)}`);
+                        //log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query) } | params: ${JSON.stringify(req.params)}`);
                         const data = await handler( req.query, req.params, getSession(req) )
                         res.set('content-type', contentType);
                         return res.send(data)
@@ -54,7 +54,7 @@ export const loadREST = async function(app){
                     break;                
                 case "handler":
                     router.use(routeEndpoint, async function( req: Request, res: Response, next: NextFunction ): P<any>{
-                        log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query, null, 2) } | params: ${JSON.stringify(req.params, null, 2)}`);
+                        //log.info(`> ${routeEndpoint} [${contentType}]| qry: ${ JSON.stringify(req.query, null, 2) } | params: ${JSON.stringify(req.params, null, 2)}`);
                         const handlerResp = await handler( req.query, req.params, getSession(req) )
                         return await handlerResp(req, res, next)
                     });

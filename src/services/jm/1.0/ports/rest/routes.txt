@@ -1,0 +1,6 @@
+[
+  "/auth/login/google/callback",
+  "/auth/login/google",
+  "/auth/logout",
+  "/auth/me"
+]

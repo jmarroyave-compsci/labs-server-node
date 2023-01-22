@@ -7,7 +7,7 @@ export const init = ( app ) => {
     app.use( cors( {
         origin: (origin, callback) => {
             //console.log("CORS qry:", origin)
-            if( !origin || CONFIG.SERVER.CORS.WHITELIST.includes( origin ) ){
+            if( !origin || origin.includes("//localhost") || CONFIG.SERVER.CORS.WHITELIST.includes( origin ) ){
                 //console.log("it's good")
                 callback( null, true )
             } else {
@@ -15,8 +15,9 @@ export const init = ( app ) => {
             }
         },
         credentials : true,
-    } ))
+        methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+} ))
 }
 
-const middleware = function (err, req, res, next) {
+const middleware = function (req, res, next) {
 }

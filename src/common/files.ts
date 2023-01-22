@@ -43,8 +43,13 @@ export function classExists( path ){
   return fs.existsSync(`${tpath}.js`) || fs.existsSync(`${tpath}.ts`)
 }
 
+export const getFile = function(file){
+  if(!fs.existsSync(file)) return ""
+  return fs.readFileSync(file).toString()
+}
+
 export const fileSearchReplace = function(file, search, replace) {
   const re = new RegExp(search, "g");
-  return fs.readFileSync(file).toString().replace(re, replace);
+  return getFile(file).replace(re, replace);
 
 }

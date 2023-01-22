@@ -41,11 +41,11 @@ async function create(){
     strict: false
   }));
 
+  loggerMiddleware.init( app )
   sessionMiddleware.init( app )
   authMiddleware.init( app )
 
   requestIDMiddleware.init( app )
-  loggerMiddleware.init( app )
   testingMiddleware.init( app )
   cacheMiddleware.init( app )
   guestbookMiddleware.init( app )

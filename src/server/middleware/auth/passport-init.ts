@@ -12,7 +12,7 @@ passport.use(
       secretOrKey: CONFIG.PLUGINS.JWT.SECRET,
     },
     async function (jwtPayload, done) {
-      console.log("PASSPORT", jwtPayload)
+      //console.log("PASSPORT", jwtPayload)
       const user = await Service.invoke({ 
         service: "auth", 
         version: "1.0", 

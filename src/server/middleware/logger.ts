@@ -1,8 +1,12 @@
 //import { inOutLogger } from 'common/log';
+import log from 'common/log';
 
 export const init = ( app ) => {
-    //app.use(inOutLogger);
+    app.use(middleware);
 }
 
-const middleware = function (err, req, res, next) {
+const middleware = function(req, res, next) {
+    console.log("-".repeat(80));
+    log.info(`REQ - ${req.url}`);
+    next();
 }

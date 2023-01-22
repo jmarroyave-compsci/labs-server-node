@@ -44,7 +44,7 @@ passport.use(
         })
       }
 
-      console.log(user, "created:", created)
+      //console.log(user, "created:", created)
 
       return done(null, user);
     }

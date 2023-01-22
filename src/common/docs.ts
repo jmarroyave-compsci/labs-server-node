@@ -1,13 +1,18 @@
 import config from 'common/config'
 import * as fs from 'fs'
-import { fileSearchReplace, getResourcePath } from 'common/files'
+import { fileSearchReplace, getResourcePath, getFile } from 'common/files'
 
 const WEB_SERVER_CURRENT = "http://localhost:8080"
 const WEB_SERVER = process.env.WEB_SERVER || config.WEB_SERVER
 
-export const getSpecs = async function( service, version ) {
+export const getRes = function( res ) {
+  const spec = getResourcePath(res);
+  return getFile(spec);
+};
+
+
+export const getSpecs = function( service, version ) {
   const spec = `${__dirname}/../services/${service}/${version}/ports/graphql/spec.yaml`;
-  if(!fs.existsSync(spec)) return 
   return fileSearchReplace(spec, WEB_SERVER_CURRENT, WEB_SERVER);
 };
 
