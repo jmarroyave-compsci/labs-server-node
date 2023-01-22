@@ -8,7 +8,7 @@ export const init = ( app ) => {
     saveUninitialized: true,
     resave: false,
     cookie: {
-      sameSite: CONFIG.LOCAL ? 'None' : 'None',
+      samesite: false,
       secure: CONFIG.LOCAL ? false : true,
       maxAge: 1000 * 60 * 60 * 24,
       httpOnly: false,
