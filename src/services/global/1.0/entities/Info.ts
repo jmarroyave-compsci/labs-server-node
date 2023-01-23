@@ -1,7 +1,7 @@
 import * as service from '../repositories/InfoService';
 
 export async function getInfo(query, params, session) {
-    return {"server": await service.getServerVersion( ), "db": await service.getDBVersion()};
+    return {"server": await service.getServerVersion( )};
 }
 
 export async function getHello(query, params, session) {

@@ -7,7 +7,7 @@ const resRootPath = `${__dirname}/../res`
 export function getServices(){
   const resp = []
   fs.readdirSync( servicesRootPath ).sort().forEach( service => {
-    if(CONFIG.SERVICES.SKIPPED.includes(service)) return
+    if(CONFIG.DEBUG.SERVICES.SKIPPED.includes(service)) return
     fs.readdirSync( `${servicesRootPath}/${service}` ).sort().forEach( version => {
 
       resp.push({

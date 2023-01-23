@@ -23,7 +23,6 @@ process.env.DB_SERVERS.split("||").map( server => {
 const config = {
   DB: {
     SERVERS : DB_SERVERS,
-    VERSION: _package_.version,
   },
   SERVER : {
     CACHE: (process.env.SERVER_CACHE === "true") ? true : false,
@@ -39,7 +38,6 @@ const config = {
       MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
     },
   },
-  VERSION: _package_.version,
   PLUGINS: {
     GOOGLE_ANALYTICS: {
       BASE_URL: process.env.PLUGINS_GOOGLE_ANALYTICS_BASE_URL,
@@ -53,9 +51,12 @@ const config = {
       SECRET: process.env.PLUGINS_JWT_SECRET,
     },
   },
+  VERSION: _package_.version,
   LOCAL: process.env.LOCAL === "false" ? false : true,
-  SERVICES: {
-    SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? []
+  DEBUG : {
+    SERVICES: {
+      SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? []
+    },
   },
 }
 
