@@ -1,6 +1,6 @@
 import * as fs from 'fs'; 
 import dotenv from 'dotenv'
-import url from 'url';
+import url from 'node:url';
 
 const loadCORS = () => {
   var DATA = process.env.SERVER_CORS;
