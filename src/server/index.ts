@@ -1,13 +1,13 @@
+import CONFIG from 'common/CONFIG'
 import appCreate from "./app";
 import log from 'common/log';
-import config from 'common/config'
 import { Server as SocketIO } from 'socket.io';
 import chat from './lib/io'
 import * as fs from 'fs'
 
-const PORT = config.PORT;
+const PORT = CONFIG.SERVER.PORT;
 
-if ( config.LOCAL){
+if ( CONFIG.LOCAL){
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 }
 
@@ -29,7 +29,7 @@ const initServer = async ( app ) => {
     }
 
     let server;
-    if(config.HTTPS){
+    if(CONFIG.SERVER.HTTPS){
       const httpsOptions = {
         key: fs.readFileSync(`${__dirname}/../../certificates/cert.key`),
         cert: fs.readFileSync(`${__dirname}/../../certificates/cert.crt`),
@@ -60,16 +60,16 @@ export async function start(){
   log.info("STARTING SERVER")
   log.info("-".repeat(50))
   log.info(`PATH:\t${__dirname}`)
-  log.info(`VERSION:\t${config.VERSION}`)
-  log.info(`HTTPS:\t${config.HTTPS}`)
-  if(config.HTTPS){
+  log.info(`VERSION:\t${CONFIG.VERSION}`)
+  log.info(`HTTPS:\t${CONFIG.SERVER.HTTPS}`)
+  if(CONFIG.SERVER.HTTPS){
     log.info(`CERTIFICATE:\t${__dirname}/../certificates/cert.crt`)
   }
   log.info(`PORT:\t${PORT}`)
   log.info(`WEB-SOCKETS:\t${PORT}`)
   log.info("-".repeat(50))
 
-  if (config.CACHE_SERVER == false){
+  if (CONFIG.SERVER.CACHE == false){
   }
   else{
     log.info("CACHE SERVER, NOT CONNECTING TO DB")

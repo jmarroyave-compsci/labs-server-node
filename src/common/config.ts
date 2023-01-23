@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import dotenv from 'dotenv'
 
 const loadCORS = () => {
-  var DATA = process.env.CORS;
+  var DATA = process.env.SERVER_CORS;
   if(!DATA){
     DATA = fs.readFileSync(`${__dirname}/../../cors.txt`).toString()
   } 
@@ -21,21 +21,25 @@ process.env.DB_SERVERS.split("||").map( server => {
 }) 
 
 const config = {
-  PORT: process.env.PORT || process.env.DEFAULT_PORT,
   DB: {
     SERVERS : DB_SERVERS,
     VERSION: _package_.version,
   },
   SERVER : {
+    CACHE: (process.env.SERVER_CACHE === "true") ? true : false,
+    PORT: parseInt(process.env.SERVER_PORT),
+    HTTPS: (process.env.SERVER_HTTPS == "true") ? true : false,
     URL: process.env.SERVER_URL,
-    getServerURL: ( url ) => `${process.env.SERVER_URL}${url}`,
+    getServerURL: ( url ) => `${config.SERVER.URL}${url}`,
     CORS: { 
       WHITELIST: loadCORS(), 
     },
+    SESSION : {
+      SECRET: process.env.SESSION_SECRET,
+      MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
+    },
   },
-  WEB_SERVER: process.env.DEFAULT_WEB_SERVER,
   VERSION: _package_.version,
-  CACHE_SERVER: (process.env.CACHE_SERVER === "true") ? true : false,
   PLUGINS: {
     GOOGLE_ANALYTICS: {
       BASE_URL: process.env.PLUGINS_GOOGLE_ANALYTICS_BASE_URL,
@@ -50,11 +54,6 @@ const config = {
     },
   },
   LOCAL: process.env.LOCAL === "false" ? false : true,
-  SESSION : {
-    SECRET: process.env.SESSION_SECRET,
-    MAX_AGE: (1000 * 60 * 60 * 24) * parseInt(process.env.SESSION_MAX_AGE_DAYS),
-  },
-  HTTPS: (process.env.HTTPS == "true") ? true : false,
   SERVICES: {
     SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? []
   },

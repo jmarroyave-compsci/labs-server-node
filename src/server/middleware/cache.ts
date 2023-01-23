@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import config from 'common/config'
+import CONFIG from 'common/CONFIG'
 import log from 'common/log';
 
 const CACHE_PATH = `${__dirname}/../../../cache`
@@ -11,7 +11,7 @@ export const init = ( app ) => {
 const middleware = function(req, res, next) {
     const graphQL = req.originalUrl.includes("graphql");
 
-    if( !config.LOCAL || !config.CACHE_SERVER ){
+    if( !CONFIG.LOCAL || !CONFIG.SERVER.CACHE ){
         next()
         return
     }
@@ -32,7 +32,7 @@ const middleware = function(req, res, next) {
     }
 
     var [ cacheFile, key, body ]  = getFilePath( req, graphQL );
-    if( config.LOCAL && config.CACHE_SERVER && fs.existsSync( cacheFile )){
+    if( CONFIG.LOCAL && CONFIG.SERVER.CACHE && fs.existsSync( cacheFile )){
         if( graphQL ){
             log.info(`serving from cache [${req['id']}] [${key.substring(0,6)}] `)
             res.send(JSON.stringify(JSON.parse(fs.readFileSync(cacheFile).toString()).data))
@@ -55,7 +55,7 @@ const middleware = function(req, res, next) {
         if(results['errors']) return;
 
         const data = JSON.stringify({ data : results, body: body}, null, 2);
-        if(config.LOCAL){
+        if(CONFIG.LOCAL){
             fs.writeFileSync(cacheFile, data);            
             //console.log(from.toLowerCase(), "->", body.operationName)
             if(!body.operationName) return;

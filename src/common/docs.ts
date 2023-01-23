@@ -1,9 +1,9 @@
-import config from 'common/config'
+import CONFIG from 'common/CONFIG'
 import * as fs from 'fs'
 import { fileSearchReplace, getResourcePath, getFile } from 'common/files'
 
 const WEB_SERVER_CURRENT = "http://localhost:8080"
-const WEB_SERVER = process.env.WEB_SERVER || config.WEB_SERVER
+const WEB_SERVER = CONFIG.SERVER.URL
 
 export const getRes = function( res ) {
   const spec = getResourcePath(res);

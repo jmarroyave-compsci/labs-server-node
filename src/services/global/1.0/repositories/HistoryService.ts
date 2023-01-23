@@ -1,5 +1,5 @@
 import HistoryModel from './models/history'
-import config from 'common/config'
+import CONFIG from 'common/config'
 
 const getHistory = async function( sessionId ) {
   const user = sessionId;
@@ -7,7 +7,7 @@ const getHistory = async function( sessionId ) {
   resp['_id'] = user;
   resp['created'] = new Date()
 
-  if(config.CACHE_SERVER) return resp
+  if(CONFIG.SERVER.CACHE) return resp
 
   const history = await HistoryModel.findOne( { _id : user } );
 
@@ -19,7 +19,7 @@ const getHistory = async function( sessionId ) {
 }
 
 export const addTVShow = async function( sessionId, entity ) {
-  if(config.CACHE_SERVER) return null
+  if(CONFIG.SERVER.CACHE) return null
 
   const history = await getHistory( sessionId )
 
@@ -36,7 +36,7 @@ export const addTVShow = async function( sessionId, entity ) {
 };
 
 export const addSearched = async function( sessionId, qry ) {
-  if(config.CACHE_SERVER) return null
+  if(CONFIG.SERVER.CACHE) return null
 
   const history = await getHistory(sessionId)
 
@@ -54,7 +54,7 @@ export const addSearched = async function( sessionId, qry ) {
 
 export const getListItems = async function( list, page, limit, sessionId ) {
   const resp = { name: list, ref: "recently viewed", items: []}
-  if(config.CACHE_SERVER) return resp
+  if(CONFIG.SERVER.CACHE) return resp
 
   const user = sessionId;
   const history = await HistoryModel.findOne( { _id : user }, { "tv_shows" : { $slice : -10 }} )
