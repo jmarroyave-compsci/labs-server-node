@@ -2,14 +2,16 @@ import CONFIG from 'common/config'
 import session from "express-session"
 
 export const init = ( app ) => {
-  const params = {
+  app.set("trust proxy", 1)
+
+  const localParams = {
     name: "sessid",
     secret: CONFIG.SERVER.SESSION.SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {
-      sameSite: CONFIG.LOCAL ? false : 'None',
-      secure: CONFIG.LOCAL ? false : true,
+      sameSite: false,
+      secure: false,
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
       path: '/',
@@ -17,8 +19,23 @@ export const init = ( app ) => {
     },
   }
 
+  const serverParams = {
+    name: "sessid",
+    secret: CONFIG.SERVER.SESSION.SECRET,
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+      sameSite: 'None',
+      secure: true,
+      maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
+      httpOnly: false,
+      path: '/',
+      domain: `${CONFIG.SERVER.URL.hostname}`,
+    },
+  }
 
+  const params = (CONFIG.LOCAL) ? localParams : serverParams
   console.log(params)
-  app.use(session( params ))
+  app.use( session( params ) )
 }
 

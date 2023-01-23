@@ -28,7 +28,7 @@ const config = {
     CACHE: (process.env.SERVER_CACHE === "true") ? true : false,
     PORT: parseInt(process.env.SERVER_PORT),
     HTTPS: (process.env.SERVER_HTTPS == "true") ? true : false,
-    URL: url.parse(process.env.RENDER_EXTERNAL_HOSTNAME ?? process.env.SERVER_URL),
+    URL: url.parse(process.env.SERVER_URL),
     getServerURL: ( url ) => `${config.SERVER.URL.href.slice(0, -1)}${url}`,
     CORS: { 
       WHITELIST: loadCORS(), 
