@@ -1,4 +1,4 @@
-import CONFIG from 'common/CONFIG'
+import CONFIG from 'common/config'
 import * as fs from 'fs'
 import { fileSearchReplace, getResourcePath, getFile } from 'common/files'
 

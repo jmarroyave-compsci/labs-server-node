@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import CONFIG from 'common/CONFIG'
+import CONFIG from 'common/config'
 import log from 'common/log';
 
 const CACHE_PATH = `${__dirname}/../../../cache`

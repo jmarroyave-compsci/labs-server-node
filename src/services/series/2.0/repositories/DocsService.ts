@@ -1,4 +1,4 @@
-import CONFIG from 'common/CONFIG'
+import CONFIG from 'common/config'
 import {fileSearchReplace} from 'common/files';
 
 const WEB_SERVER_CURRENT = "http://localhost:8080"

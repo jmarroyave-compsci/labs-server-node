@@ -3,14 +3,14 @@ import session from "express-session"
 
 export const init = ( app ) => {
   app.use(session({
-    name: "SESS_NAME",
-    secret: CONFIG.SESSION.SECRET,
+    name: "sessid",
+    secret: CONFIG.SERVER.SESSION.SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {
       sameSite: CONFIG.LOCAL ? false : 'none',
       secure: CONFIG.LOCAL ? false : true,
-      maxAge: 1000 * 60 * 60 * 24,
+      maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
     },
   })

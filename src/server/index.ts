@@ -1,4 +1,4 @@
-import CONFIG from 'common/CONFIG'
+import CONFIG from 'common/config'
 import appCreate from "./app";
 import log from 'common/log';
 import { Server as SocketIO } from 'socket.io';

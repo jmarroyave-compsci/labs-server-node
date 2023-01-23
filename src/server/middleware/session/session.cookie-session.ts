@@ -4,8 +4,8 @@ const cookieSession = require("cookie-session");
 export const init = ( app ) => {
   app.use(
     cookieSession({
-      maxAge: 24 * 60 * 60 * 1000,
-      keys: [CONFIG.SESSION.SECRET],
+      maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
+      keys: [CONFIG.SERVER.SESSION.SECRET],
     })
   );
 }

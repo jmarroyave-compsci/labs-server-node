@@ -6,7 +6,6 @@ const loadCORS = () => {
   if(!DATA){
     DATA = fs.readFileSync(`${__dirname}/../../cors.txt`).toString()
   } 
-
   const CORS = DATA.trim().split("\n").map( c => c.trim() ).map( c => c.endsWith("/") ? c.slice(0, -1) : c)
   return CORS
 }
