@@ -10,6 +10,7 @@ import { loadGraphQL } from './loaders/graphql';
 import { loadREST } from './loaders/rest';
 import { loadDBMongo } from './loaders/db/mongo';
 
+import * as hostingProviderMiddleware from './middleware/hosting-provider'
 import * as requestIDMiddleware from './middleware/req-id'
 import * as debugMiddleware from './middleware/debug'
 import * as errorMiddleware from './middleware/error'
@@ -41,6 +42,7 @@ async function create(){
     strict: false
   }));
 
+  hostingProviderMiddleware.init( app )
   loggerMiddleware.init( app )
   sessionMiddleware.init( app )
   authMiddleware.init( app )

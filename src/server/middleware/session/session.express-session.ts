@@ -2,8 +2,6 @@ import CONFIG from 'common/config'
 import session from "express-session"
 
 export const init = ( app ) => {
-  app.set("trust proxy", 1)
-
   const localParams = {
     name: "sessid",
     secret: CONFIG.SERVER.SESSION.SECRET,
