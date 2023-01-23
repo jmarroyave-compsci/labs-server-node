@@ -13,10 +13,10 @@ export const init = ( app ) => {
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
       path: '/',
+      domain: `${CONFIG.SERVER.URL.hostname}`,
     },
   }
 
-//      domain: `${CONFIG.SERVER.URL.protocol}://${CONFIG.SERVER.URL.host}`,
 
   console.log(params)
   app.use(session( params ))

@@ -1,6 +1,6 @@
 import * as fs from 'fs'; 
 import dotenv from 'dotenv'
-import url from 'node:url';
+import url from 'url';
 
 const loadCORS = () => {
   var DATA = process.env.SERVER_CORS;
@@ -29,7 +29,7 @@ const config = {
     PORT: parseInt(process.env.SERVER_PORT),
     HTTPS: (process.env.SERVER_HTTPS == "true") ? true : false,
     URL: url.parse(process.env.SERVER_URL),
-    getServerURL: ( url ) => `${config.SERVER.URL.href}${url}`,
+    getServerURL: ( url ) => `${config.SERVER.URL.href.slice(0, -1)}${url}`,
     CORS: { 
       WHITELIST: loadCORS(), 
     },
