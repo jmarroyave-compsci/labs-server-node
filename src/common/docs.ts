@@ -3,7 +3,7 @@ import * as fs from 'fs'
 import { fileSearchReplace, getResourcePath, getFile } from 'common/files'
 
 const WEB_SERVER_CURRENT = "http://localhost:8080"
-const WEB_SERVER = CONFIG.SERVER.URL
+const WEB_SERVER = CONFIG.SERVER.URL.href
 
 export const getRes = function( res ) {
   const spec = getResourcePath(res);

@@ -2,7 +2,7 @@ import CONFIG from 'common/config'
 import { fileSearchReplace } from 'common/files';
 
 const WEB_SERVER_CURRENT = "http://localhost:8080"
-const WEB_SERVER = CONFIG.SERVER.URL
+const WEB_SERVER = CONFIG.SERVER.URL.href
 
 export const getSpecs = async function( params ) {
   const spec = `${__dirname}/../files/api.v.${params.version}.yaml`;
