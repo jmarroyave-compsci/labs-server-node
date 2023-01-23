@@ -2,17 +2,20 @@ import CONFIG from 'common/config'
 import session from "express-session"
 
 export const init = ( app ) => {
+
+  //domain: `${CONFIG.SERVER.URL.host}`,
+
+
   const params = {
     name: "sessid",
     secret: CONFIG.SERVER.SESSION.SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {
-      sameSite: false, //CONFIG.LOCAL ? false : 'none',
+      sameSite: CONFIG.LOCAL ? false : 'None',
       secure: CONFIG.LOCAL ? false : true,
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
-      domain: `${CONFIG.SERVER.URL.host}`,
       path: '/',
     },
   }
