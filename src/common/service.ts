@@ -1,8 +1,9 @@
 import config from 'common/config'
 import { loadClass } from 'common/files'
+import { getSession } from 'common/session'
 
 export const invoke = async function( params ) {
-  const { service, version, entity, operation, args, req, session={} } = params
+  const { service, version, entity, operation, req, session={} } = params
   //console.log("service.invoke", service, version, operation)
 
   const facadeClass = `${__dirname}/../services/${service}/${version}/ports/facade/`
@@ -15,6 +16,6 @@ export const invoke = async function( params ) {
     throw new Error(`SERVICE: ${service}[${version}].${entity}.${operation} IS NOT DEFINED`)
   }
 
-  return await ns[entity][operation]({}, args, { ...(req?.session ?? {}), ...session} )
+  return await ns[entity][operation]({}, params.params ?? params.args , getSession(req, session) )
 };
 

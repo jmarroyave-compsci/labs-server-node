@@ -4,6 +4,25 @@ import CONFIG from 'common/config'
 const servicesRootPath = `${__dirname}/../services`
 const resRootPath = `${__dirname}/../res`
 
+export function getMiddlewares(){
+  const resp = []
+
+  const middlewareRootPath = `${__dirname}/../server/middleware`
+
+  fs.readdirSync( middlewareRootPath ).sort().forEach( middleware => {
+
+    const f = middleware.split(".ts")[0].replace(/_*/, "")
+
+    resp.push( {
+      name: f,
+      path: `${middlewareRootPath}/${middleware}`.replace(".ts", ""),
+    })
+  })
+
+  return resp
+}
+
+
 export function getServices(){
   const resp = []
   fs.readdirSync( servicesRootPath ).sort().forEach( service => {
@@ -40,7 +59,7 @@ export function classExists( path ){
     tpath += "index" 
   }
 
-  return fs.existsSync(`${tpath}.js`) || fs.existsSync(`${tpath}.ts`)
+  return fs.existsSync(`${tpath}`) || fs.existsSync(`${tpath}.js`) || fs.existsSync(`${tpath}.ts`)
 }
 
 export const getFile = function(file){

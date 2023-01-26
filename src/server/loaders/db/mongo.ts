@@ -17,27 +17,27 @@ export async function loadDBMongo(){
     ) 
   }
 
-  log.info("INIT CONNECTIONS")
+  log.info("INIT DB CONNECTIONS", "MONGO")
 
   for(const conn of conns){
     await connect(conn[0], conn[1], conn[2])
   }
 
-  log.info(`CONNECTIONS INITIALIZED ${Object.keys(Connection.CONNECTIONS)}`)
+  //log.info(`CONNECTIONS INITIALIZED ${Object.keys(Connection.CONNECTIONS)}`)
 }
 
 async function connect( server, dbname, service ){
     const key = `${server}/${dbname}/${service.version}`
     try{
-        log.info(` DB: [${service.name}/${service.version}] CONNECTING TO DB SERVER: [${server}] DB: [${dbname}]`)
+        log.info(` - [${service.name}/${service.version}] CONNECTING TO DB SERVER: [${server}] DB: [${dbname}]`)
         server = config.DB.SERVERS[server]
         const connString = `mongodb+srv://${server}/${dbname}?retryWrites=true&w=majority`
         //log.info(connString)
         const mconn = await mongooseCreateConnection(connString);
         //log.info(mconn.readyState)
         Connection.CONNECTIONS[key] = mconn
-        log.info(" DB: CONNECTION SUCCESFULL")
-        log.info("-".repeat(50))
+        //log.info(" DB: CONNECTION SUCCESFULL")
+        //log.info("-".repeat(50))
       } catch( ex ){
         log.error(ex.toString())
       }

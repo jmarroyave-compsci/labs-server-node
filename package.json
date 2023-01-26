@@ -1,6 +1,6 @@
 {
   "name": "labs-server-node",
-  "version": "6.0.4",
+  "version": "6.1.0",
   "description": "Labs: Server (node)",
   "main": "index.ts",
   "scripts": {
@@ -42,6 +42,7 @@
     "express-request-id": "1.4.1",
     "express-requests-logger": "3.0.3",
     "express-session": "^1.17.2",
+    "express-useragent": "^1.0.15",
     "express-winston": "4.2.0",
     "g": "2.0.1",
     "graphql": "15.5.3",
@@ -54,11 +55,11 @@
     "npm": "^8.5.3",
     "oas-tools": "^2.2.2",
     "openapi-to-graphql": "^2.6.3",
-    "perfy": "1.1.5",
-    "serve-index": "1.9.1",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
+    "perfy": "1.1.5",
+    "serve-index": "1.9.1",
     "serverless-http": "^3.1.0",
     "socket.io": "4.1.3",
     "ttypescript": "1.5.13"

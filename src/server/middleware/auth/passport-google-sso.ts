@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: CONFIG.PLUGINS.GOOGLE_AUTH.CLIENT_ID,
       clientSecret: CONFIG.PLUGINS.GOOGLE_AUTH.SECRET,
-      callbackURL: CONFIG.SERVER.getServerURL('/auth/1.0/login/google/callback'),
+      callbackURL: CONFIG.SERVER.getServerURL('/admin/1.0/auth/login/google/callback'),
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, done) => {
@@ -24,22 +24,22 @@ passport.use(
       };
 
       var user = await Service.invoke({ 
-        service: "auth", 
+        service: "admin", 
         version: "1.0", 
         entity: "user",
         operation: "findByGoogleId",
-        args: { id : profile.id }, 
+        params: { id : profile.id }, 
         req: req,
       })
 
       if(!user) {
         created = true
         user = await Service.invoke({ 
-          service: "auth", 
+          service: "admin", 
           version: "1.0", 
           entity: "user",
           operation: "insert",
-          args: defaultUser, 
+          params: defaultUser, 
           req: req,
         })
       }
@@ -52,21 +52,23 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {  
+  //console.log("PASSPORT", "serializeUser", user)
   process.nextTick(function() {
-    const suser = user._id.toString()
+    const suser = user.id.toString()
     //console.log("SerializeUser", suser)
     return done(null, suser);
   });
 });
 
 passport.deserializeUser(async (id, done) => {
+  //console.log("PASSPORT", "deserializeUser", id)
   process.nextTick(async function() {
     const user = await Service.invoke({ 
-      service: "auth", 
+      service: "admin", 
       version: "1.0", 
       entity: "user",
       operation: "findById",
-      args: { id: id } 
+      params: { id: id } 
     })
 
     //console.log("DeserializeUser", id, user)

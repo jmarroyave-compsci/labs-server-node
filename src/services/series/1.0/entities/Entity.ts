@@ -1,4 +1,4 @@
-import * as HistoryService from 'services/global/1.0/repositories/HistoryService';
+import { invoke } from 'common/service'
 import * as Service from '../repositories/EntitiesService';
 import * as ListsService from '../repositories/ListsService';
 
@@ -8,7 +8,22 @@ export async function movieGet( query, params, session ){
 
 export async function tvShowGet( query, params, session ){
   const data = Service.entityGet( { id: params.id  } );
-  if(data != null) HistoryService.addTVShow(session.id, params.id)
+
+  if(data != null){
+    invoke({
+      service: 'user-content',
+      version: '1.0',
+      entity: 'history',
+      operation: 'insert',
+      params: {
+        inst: params.id,
+        type: "tv-show",
+      },
+      session: session,
+    })
+
+  }
+
   return data
 };
 
