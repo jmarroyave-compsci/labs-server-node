@@ -56,7 +56,7 @@ export async function tvShowsListGet( query, params, session ){
   var data;
   switch (list){
     case "user_recent":
-      data = await HistoryService.getListItems( list, page, limit, session.id );
+      data = []
       break;
     default:
       data = await ListsService.getListItems( list, page, limit, shuffle == "true" );
