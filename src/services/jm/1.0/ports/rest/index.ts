@@ -1,10 +1,12 @@
 import { getUserInfo, loginWithGoogle, logout } from "../../entities/auth";
 import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment } from "../../entities/comments";
-import { upVote, downVote } from "../../entities/votes";
+import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
 const endpoints = {
-	"/votes/up/:owner" : upVote,
-	"/votes/down/:owner" : downVote,
+	"/votes/:owner" : getVotes,
+	"/votes/:owner/up" : upVote,
+	"/votes/:owner/down" : downVote,
+	"/votes/:owner/neutral" : neutralVote,
 	"/comments/:id" : {
 		method: 'delete',
 		contentType: "application/json",

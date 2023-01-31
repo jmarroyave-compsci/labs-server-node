@@ -1,5 +1,26 @@
 import DBVotes from './models/votes'
 
+export const neutralVote = async function( props ) {
+  const { owner, user } = props
+
+  const resp = await _get( props )
+  var current;
+
+  current = isDownVoting( resp, user )
+  if(current) {
+    resp.downVotes.pull(current)
+  }
+
+  current = isUpVoting( resp, user )
+  if(current) {
+    resp.upVotes.pull(current)
+  }
+
+  await resp.save();
+
+  return getResponse(resp, user) 
+}
+
 export const upVote = async function( props ) {
   const { owner, user } = props
 
@@ -10,14 +31,14 @@ export const upVote = async function( props ) {
   var current = isDownVoting( resp, user )
   if(current) {
     resp.downVotes.pull(current)
-  } else {
-    current = { user: user.id, created: new Date()}
-    resp.upVotes.push( current )
-  }
+  } 
+
+  current = { user: user.id, created: new Date()}
+  resp.upVotes.push( current )
 
   await resp.save();
 
-  return { total : getTotal( resp ), me: getMe( resp, user ) }
+  return getResponse(resp, user) 
 }
 
 export const downVote = async function( props ) {
@@ -30,14 +51,14 @@ export const downVote = async function( props ) {
   var current = isUpVoting( resp, user )
   if(current) {
     resp.upVotes.pull(current)
-  } else {
-    current = { user: user.id, created: new Date()}
-    resp.downVotes.push( current )    
-  }
+  } 
+
+  current = { user: user.id, created: new Date()}
+  resp.downVotes.push( current )    
 
   await resp.save();
 
-  return { total : getTotal( resp ), me: getMe( resp, user ) }
+  return getResponse(resp, user) 
 }
 
 
@@ -87,11 +108,7 @@ export const get = async function( props ) {
 
   //console.log("VOTES", resp)
 
-  return {
-    owner: resp.owner,
-    total: getTotal( resp ),
-    me: getMe( resp, user ),
-  }
+  return getResponse(resp, user)
 }
 
 const isUpVoting = ( votes, user ) => votes.upVotes.filter( u => u.user == user.id )?.[0] ?? null
@@ -103,4 +120,13 @@ const getMe = ( votes, user ) => user == null ? null : (
     isDownVoting(votes, user) != null ? -1 : 0 
     )
 )
+const getResponse = ( votes, user ) => {
+  return { 
+    owner : votes.owner,
+    total : getTotal( votes ), 
+    me: getMe( votes, user ),
+    positive: votes.upVotes.length,
+    negative: votes.downVotes.length,
+  }
+}
     

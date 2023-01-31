@@ -1,6 +1,6 @@
 import { insert as insertHistory } from "../../entities/history";
 import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment } from "../../entities/comments";
-import { get as getVotes, upVote, downVote } from "../../entities/votes";
+import { get as getVotes, upVote, neutralVote, downVote } from "../../entities/votes";
 
 export default {
 	history: {
@@ -14,6 +14,7 @@ export default {
 	votes: {
 		upVote,
 		downVote,
+		neutralVote,
 		get : getVotes,
 	},
 };

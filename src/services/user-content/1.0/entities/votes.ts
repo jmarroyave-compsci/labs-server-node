@@ -1,5 +1,17 @@
 import * as Repo from "../repositories/votes";
 
+export const neutralVote = async function( query, params, session ) {
+  if(!session.user) return { error : "not authenticated"}
+
+  if(!params.owner) return { error : "parameter missing"}
+
+  return await Repo.neutralVote( { 
+    owner: params.owner,
+    user: session.user, 
+  } )
+
+};
+
 export const upVote = async function( query, params, session ) {
   if(!session.user) return { error : "not authenticated"}
 
