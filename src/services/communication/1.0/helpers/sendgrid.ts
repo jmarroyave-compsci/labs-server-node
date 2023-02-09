@@ -3,7 +3,8 @@ import sendgrid from '@sendgrid/mail'
 
 export async function sendMail( params ){
   const { to, from, subject, bodyText, bodyHTML } = params 
-  sgMail.setApiKey(CONFIG.PLUGGINS.SENDGRID.KEY)
+
+  sendgrid.setApiKey(CONFIG.PLUGINS.SENDGRID.KEY)
 
   const msg = {
     to: to,
@@ -13,10 +14,12 @@ export async function sendMail( params ){
     html: bodyHTML ?? bodyText,
   }
 
+  //console.log("SENDGRID", "sending mail", msg)
+
   try{
-    await sgMail.send(msg)  
+    await sendgrid.send(msg)  
   } catch(ex){
-    console.log("ERROR", "SENDGRID", ex)
+    console.log("ERROR", "SENDGRID", JSON.stringify(ex, null, 2))
   }  
 }
 

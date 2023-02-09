@@ -1,7 +1,8 @@
 import { invoke } from 'common/service'
+import { send as notifyMe } from './notify-me'
 
 export async function insert( query, params, session ) {
-  return await invoke({
+  const resp = await invoke({
     service: 'user-content',
     version: '1.0',
     entity: 'comments',
@@ -10,20 +11,13 @@ export async function insert( query, params, session ) {
     session: session,
   })
 
-  return await invoke({
-    service: 'communication',
-    version: '1.0',
-    entity: 'mail',
-    operation: 'send',
-    params: {
-      to: "jmarroyave.compsci@gmail.com",
-      from: "jmarroyave.compsci",
-      subject: "comment inserted",
-      bodyText: params.text,
-    },
-    session: session,
-  })
+  await notifyMe(query, {
+    subject: "comment inserted",
+    body: params.text,    
+  }, session)
 
+
+  return resp
 }
 
 export async function deleteOne( query, params, session ) {

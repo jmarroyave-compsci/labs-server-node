@@ -52,6 +52,12 @@ const config = {
     },
     SENDGRID: {
       KEY: process.env.PLUGINS_SENDGRID_KEY,
+      SENDER: process.env.PLUGINS_SENDGRID_SENDER,
+    },
+  },
+  SERVICES: {
+    JM: {
+      NOTIFY_MAIL: process.env.SERVICES_JM_NOTIFY_MAIL,
     },
   },
   VERSION: _package_.version,
