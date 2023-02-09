@@ -24,3 +24,28 @@ passport.use(
     }
   )
 );
+
+passport.serializeUser((user, done) => {  
+  //console.log("PASSPORT", "serializeUser", user)
+  process.nextTick(function() {
+    const suser = user.id.toString()
+    //console.log("SerializeUser", suser)
+    return done(null, suser);
+  });
+});
+
+passport.deserializeUser(async (id, done) => {
+  //console.log("PASSPORT", "deserializeUser", id)
+  process.nextTick(async function() {
+    const user = await Service.invoke({ 
+      service: "admin", 
+      version: "1.0", 
+      entity: "user",
+      operation: "findById",
+      params: { id: id } 
+    })
+
+    //console.log("DeserializeUser", id, user)
+    return done(null, user);
+  })
+});

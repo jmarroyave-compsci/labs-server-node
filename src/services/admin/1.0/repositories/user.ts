@@ -5,7 +5,15 @@ export const findById = async function( id ) {
 };
 
 export const findByGoogleId = async function( id ) {
-  return await find( { "provider.google" : id  } )
+  return await findByProviderId( "google", id )
+};
+
+export const findByGithubId = async function( id ) {
+  return await findByProviderId( "github", id )
+};
+
+export const findByProviderId = async function( provider, id ) {
+  return await find( { `provider.${provider}` : id  } )
 };
 
 const find = async function( filter ) {

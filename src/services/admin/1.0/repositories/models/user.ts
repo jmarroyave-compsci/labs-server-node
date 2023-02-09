@@ -7,6 +7,7 @@ export default db.model( "user", {
 	locale: String,
 	provider: {
 		google: { type: String, unique: true },
+		github: { type: String, unique: true },
 	},
 	created: Date,
 }, { 
