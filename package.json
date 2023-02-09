@@ -60,6 +60,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "perfy": "1.1.5",
+    "rate-limiter-flexible": "^2.4.1",
     "serve-index": "1.9.1",
     "serverless-http": "^3.1.0",
     "socket.io": "4.1.3",
