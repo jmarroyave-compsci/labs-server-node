@@ -1,4 +1,4 @@
-import { getUserInfo, loginWithGoogle, loginWithGithub, logout } from "../../entities/auth";
+import { getUserInfo, isAdmin, loginWithGoogle, loginWithGithub, logout } from "../../entities/auth";
 import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment } from "../../entities/comments";
 import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
@@ -40,6 +40,7 @@ const endpoints = {
 		contentType: "handler",
 		handler: getUserInfo,
 	},
+	"/auth/is-admin" : isAdmin,
 }
 
 export default endpoints;

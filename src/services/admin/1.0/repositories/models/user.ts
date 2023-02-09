@@ -9,6 +9,9 @@ export default db.model( "user", {
 		google: { type: String, unique: true },
 		github: { type: String, unique: true },
 	},
+	roles: [
+		String
+	],
 	created: Date,
 }, { 
 	collection: 'user',

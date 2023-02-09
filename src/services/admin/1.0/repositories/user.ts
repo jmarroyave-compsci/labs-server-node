@@ -26,7 +26,6 @@ const find = async function( filter ) {
   return getUser( resp )
 };
 
-
 export const insert = async function( props ) {
   const { name, email, picture, locale, provider={} } = props
   const user = new DBUser()
@@ -54,4 +53,5 @@ const getUser = ( userM ) => ({
     email: userM.email,
     name: userM.name,
     avatar: userM.picture,
+    roles: userM.roles,
   })
