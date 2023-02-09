@@ -52,7 +52,6 @@
     "js-yaml": "3.14.1",
     "mongoose": "6.0.5",
     "morgan": "1.10.0",
-    "npm": "^85..3",
     "oas-tools": "^2.2.2",
     "openapi-to-graphql": "^2.6.3",
     "passport": "^0.4.1",
