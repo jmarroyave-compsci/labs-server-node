@@ -75,7 +75,7 @@
     "@types/winston": "2.4.4",
     "chai": "4.3.4",
     "chai-openapi-response-validator": "0.13.0",
-    "nodemon": "^2.0.15",
+    "nodemon": "^1.19.4",
     "ts-mocha": "^8.0.0",
     "ts-node": "10.2.1",
     "tsconfig-paths": "3.12.0",
