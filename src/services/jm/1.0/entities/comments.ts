@@ -9,6 +9,21 @@ export async function insert( query, params, session ) {
     params: params,
     session: session,
   })
+
+  return await invoke({
+    service: 'communication',
+    version: '1.0',
+    entity: 'mail',
+    operation: 'send',
+    params: {
+      to: "jmarroyave.compsci@gmail.com",
+      from: "jmarroyave.compsci",
+      subject: "comment inserted",
+      bodyText: params.text,
+    },
+    session: session,
+  })
+
 }
 
 export async function deleteOne( query, params, session ) {

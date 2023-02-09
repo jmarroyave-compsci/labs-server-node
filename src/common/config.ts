@@ -50,6 +50,9 @@ const config = {
     JWT: {
       SECRET: process.env.PLUGINS_JWT_SECRET,
     },
+    SENDGRID: {
+      KEY: process.env.PLUGINS_SENDGRID_KEY,
+    },
   },
   VERSION: _package_.version,
   LOCAL: process.env.LOCAL === "false" ? false : true,
