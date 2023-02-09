@@ -12,8 +12,6 @@ export async function loginWithGithubCallback( query, params, session ) {
   const successLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/github/success");
   const failureLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/github/error");
 
-  console.log(successLoginUrl)
-
   params.onFailure = failureLoginUrl
   params.onSuccess = successLoginUrl
 

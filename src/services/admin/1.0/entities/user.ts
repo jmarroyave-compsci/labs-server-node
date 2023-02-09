@@ -4,6 +4,10 @@ export const findByGoogleId = async function( query, params, session ) {
   return await Repo.findByGoogleId( params.id )
 };
 
+export const findByGithubId = async function( query, params, session ) {
+  return await Repo.findByGithubId( params.id )
+};
+
 export const findById = async function( query, params, session ) {
   return await Repo.findById( params.id )
 };

@@ -28,7 +28,8 @@ passport.use(
 passport.serializeUser((user, done) => {  
   //console.log("PASSPORT", "serializeUser", user)
   process.nextTick(function() {
-    const suser = user.id.toString()
+    console.log(user)
+    const suser = user?.id?.toString()
     //console.log("SerializeUser", suser)
     return done(null, suser);
   });

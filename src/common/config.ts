@@ -47,6 +47,10 @@ const config = {
       CLIENT_ID: process.env.PLUGINS_GOOGLE_AUTH_CLIENT_ID,
       SECRET: process.env.PLUGINS_GOOGLE_AUTH_SECRET,
     },
+    GITHUB_AUTH: {
+      CLIENT_ID: process.env.PLUGINS_GITHUB_AUTH_CLIENT_ID,
+      SECRET: process.env.PLUGINS_GITHUB_AUTH_SECRET,
+    },
     JWT: {
       SECRET: process.env.PLUGINS_JWT_SECRET,
     },

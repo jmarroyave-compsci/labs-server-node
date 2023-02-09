@@ -1,4 +1,4 @@
-import { getUserInfo, loginWithGoogle, logout } from "../../entities/auth";
+import { getUserInfo, loginWithGoogle, loginWithGithub, logout } from "../../entities/auth";
 import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment } from "../../entities/comments";
 import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
@@ -27,6 +27,10 @@ const endpoints = {
 	"/auth/login/google" : {
 		contentType: "handler",
 		handler: loginWithGoogle,
+	},
+	"/auth/login/github" : {
+		contentType: "handler",
+		handler: loginWithGithub,
 	},
 	"/auth/logout" : {
 		contentType: "handler",

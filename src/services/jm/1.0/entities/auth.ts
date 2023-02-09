@@ -22,6 +22,18 @@ export async function loginWithGoogle( query, params, session ) {
   })
 }
 
+export async function loginWithGithub( query, params, session ) {
+  return await invoke({
+    service: 'admin',
+    version: '1.0',
+    entity: 'auth',
+    operation: 'loginWithGithub',
+    params: {},
+    session: session,
+  })
+}
+
+
 export async function logout( query, params, session ) {
   return await invoke({
     service: 'admin',

@@ -13,17 +13,17 @@ export const findByGithubId = async function( id ) {
 };
 
 export const findByProviderId = async function( provider, id ) {
-  return await find( { `provider.${provider}` : id  } )
+  const filter = {}
+  filter[`provider.${provider}`] = id
+  return await find( filter )
 };
 
 const find = async function( filter ) {
   const resp = await DBUser.findOne( filter )
-  return {
-    id: resp._id, 
-    email: resp.email,
-    name: resp.name,
-    avatar: resp.picture,
-  }
+
+  if(!resp) return null  
+
+  return getUser( resp )
 };
 
 
@@ -35,7 +35,7 @@ export const insert = async function( props ) {
   user.email = email
   user.picture = picture
   user.locale = locale
-  user.provider.google = provider.google
+  user.provider = provider
   user.created = new Date()
 
   try{
@@ -46,9 +46,12 @@ export const insert = async function( props ) {
     return null
   }
 
-  return user.toObject()
+  return getUser(user)
 };
 
-
-
-
+const getUser = ( userM ) => ({
+    id: userM._id, 
+    email: userM.email,
+    name: userM.name,
+    avatar: userM.picture,
+  })

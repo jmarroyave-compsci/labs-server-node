@@ -1,7 +1,7 @@
 import CONFIG from "common/config";
 import * as Service from 'common/service'
 import passport from "passport";
-import { Strategy as GitHubStrategy } = require('passport-github');
+import { Strategy as GitHubStrategy } from 'passport-github'
 
 passport.use(new GitHubStrategy({
     clientID: CONFIG.PLUGINS.GITHUB_AUTH.CLIENT_ID,
@@ -17,7 +17,7 @@ passport.use(new GitHubStrategy({
       name: profile.displayName,
       email: profile.emails[0].value,
       picture: profile.photos[0].value,
-      locale: profile.locale,
+      locale: profile.locale ?? "en",
       provider: { github: profile.id, },
     };
 
@@ -42,7 +42,7 @@ passport.use(new GitHubStrategy({
       })
     }
 
-    //console.log(user, "created:", created)
+    console.log(user, "created:", created)
     return done(null, user);
   }
 ));
