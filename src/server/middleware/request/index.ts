@@ -7,5 +7,4 @@ export const init = ( app ) => {
     strict: false
   }));
   app.use(userAgent.express());
-  //app.use(requestID())
 }

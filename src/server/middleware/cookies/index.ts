@@ -8,7 +8,7 @@ export const init = ( app ) => {
 
 const middleware = function(req, res, next) {
   log.info("COOKIES")
-  log.info("COOKIES: ", JSON.stringify(req.cookies, null, 2))
+  log.info(`COOKIES: ${JSON.stringify(req.cookies, null, 2)}`)
   return next()
 };
 

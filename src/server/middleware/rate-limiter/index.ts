@@ -12,7 +12,7 @@ const middleware = function(req, res, next) {
   const key = ip
   const pointsToConsume = 1;
 
-  console.log("RATE:", key, pointsToConsume)
+  log.info(`RATE: ${key}, ${pointsToConsume}`)
 
   const rateLimiter = new RateLimiterMemory({
     points: 20,

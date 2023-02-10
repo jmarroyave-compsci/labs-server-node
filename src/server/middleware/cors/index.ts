@@ -16,7 +16,7 @@ export const init = ( app ) => {
         },
         credentials : true,
         methods: ["POST", "PUT", "GET", "OPTIONS", "DELETE", "HEAD"],
-} ))
+    } ))
 }
 
 const middleware = function (req, res, next) {
