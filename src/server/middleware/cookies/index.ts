@@ -6,7 +6,8 @@ export const init = ( app ) => {
 
 const middleware = function(req, res, next) {
   const cookies = {} 
-  req.headers.cookies?.split('; ').forEach( c => {
+  const d = req.headers.cookies ?? req.headers.cookie
+  d?.split('; ').forEach( c => {
     const d = c.split("=").map( c1 => decodeURIComponent(c1) )
     cookies[d[0]] = d[1]
   })

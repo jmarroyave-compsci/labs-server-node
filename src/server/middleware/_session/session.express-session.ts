@@ -23,8 +23,8 @@ export const init = ( app ) => {
     saveUninitialized: true,
     resave: false,
     cookie: {
-      sameSite: 'None',
-      secure: true,
+      sameSite: false,
+      secure: false,
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
       path: '/',
