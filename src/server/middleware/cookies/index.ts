@@ -1,14 +1,18 @@
 import log from 'common/log';
-import cookieParser from "cookie-parser"
 
 export const init = ( app ) => {
-    app.use(cookieParser)
     app.use(middleware)
 }
 
 const middleware = function(req, res, next) {
-  log.info("COOKIES")
-  log.info(`COOKIES: ${JSON.stringify(req.cookies, null, 2)}`)
+  const cookies = {} 
+  req.headers.cookies?.split('; ').forEach( c => {
+    const d = c.split("=").map( c1 => decodeURIComponent(c1) )
+    cookies[d[0]] = d[1]
+  })
+
+  log.info(`COOKIES: ${JSON.stringify(cookies, null, 2)}`)
+
   return next()
 };
 

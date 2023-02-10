@@ -13,6 +13,8 @@ export function getMiddlewares(){
 
     const f = middleware.split(".ts")[0].replace(/_*/, "")
 
+    if(f.startsWith("-")) return
+
     resp.push( {
       name: f,
       path: `${middlewareRootPath}/${middleware}`.replace(".ts", ""),
