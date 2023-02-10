@@ -1,3 +1,4 @@
+import log from 'common/log';
 import CONFIG from 'common/config'
 import cors from "cors";
 
@@ -19,4 +20,6 @@ export const init = ( app ) => {
 }
 
 const middleware = function (req, res, next) {
+    log.info("CORS")
+    return next()
 }

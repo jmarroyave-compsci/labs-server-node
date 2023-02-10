@@ -1,9 +1,11 @@
+import log from 'common/log';
 
 export const init = ( app ) => {
     //app.use(middleware)
 }
 
 const middleware = function(req, res, next) {
+  log.info("DEBUG")
   // .header and .set is an alias pair
   const _header = res.header.bind(res); 
   const _send = res.send.bind(res);
@@ -20,5 +22,5 @@ const middleware = function(req, res, next) {
     return _send(body);
   }
 
-  next();
+  return next();
 }

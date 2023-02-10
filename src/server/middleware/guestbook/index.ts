@@ -1,3 +1,4 @@
+import log from 'common/log';
 import { invoke } from 'common/service'
 import { getSession } from 'common/session'
 
@@ -6,6 +7,8 @@ export const init = ( app ) => {
 }
 
 const middleware = function (req, res, next) {
+    log.info("GUESTBOOK")
+
     invoke({
         service: 'admin',
         version: '1.0',
@@ -15,5 +18,5 @@ const middleware = function (req, res, next) {
         session: getSession(req),
     })
 
-    next();
+    return next();
 }

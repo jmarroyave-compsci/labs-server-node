@@ -8,7 +8,8 @@ export const init = ( app ) => {
 }
 
 const middleware = function (err, req, res, next) {
-    console.log("-----##$!@#%@^%#&#$------", err.message)
+    log.info("ERROR")
+    log.info("-----##$!@#%@^%#&#$------", err.message)
     //log.error(`${err}`)
     // set locals, only providing error in development
     res.locals.message = err.message;
