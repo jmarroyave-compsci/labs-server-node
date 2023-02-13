@@ -9,8 +9,8 @@ export async function loginWithGithub( query, params, session ) {
 }
 
 export async function loginWithGithubCallback( query, params, session ) {
-  const successLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/github/success");
-  const failureLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/github/error");
+  const successLoginUrl = CONFIG.SERVER.getURL("/admin/1.0/auth/login/github/success");
+  const failureLoginUrl = CONFIG.SERVER.getURL("/admin/1.0/auth/login/github/error");
 
   params.onFailure = failureLoginUrl
   params.onSuccess = successLoginUrl

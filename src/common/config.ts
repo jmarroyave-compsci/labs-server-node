@@ -20,16 +20,25 @@ process.env.DB_SERVERS.split("||").map( server => {
   DB_SERVERS[name] = uri
 }) 
 
-const config = {
+
+const getURL = ( path ) => {
+  const serverURL = `${ CONFIG.SERVER.HTTPS ? "https" : "http" }://${ CONFIG.SERVER.HOST }${ CONFIG.SERVER.PORT.EXT == 440 ? "" : `:${CONFIG.SERVER.PORT.EXT}`}`
+  return `${serverURL}/${path}`
+}
+
+const CONFIG = {
   DB: {
     SERVERS : DB_SERVERS,
   },
   SERVER : {
     CACHE: (process.env.SERVER_CACHE === "true") ? true : false,
-    PORT: parseInt(process.env.SERVER_PORT),
     HTTPS: (process.env.SERVER_HTTPS == "true") ? true : false,
-    URL: url.parse(process.env.SERVER_URL),
-    getServerURL: ( url ) => `${config.SERVER.URL.href.slice(0, -1)}${url}`,
+    HOST: process.env.SERVER_URL,
+    PORT: {
+      INT : process.env.PORT ? parseInt(process.env.PORT) : parseInt(process.env.SERVER_PORT_INT),
+      EXT : parseInt(process.env.SERVER_PORT_EXT),
+    },
+    getURL: getURL,
     CORS: { 
       WHITELIST: loadCORS(), 
     },
@@ -73,8 +82,7 @@ const config = {
   },
 }
 
-
 console.log("CONFIG")
-console.log(config)
+console.log(CONFIG)
 
-export default config;
+export default CONFIG;

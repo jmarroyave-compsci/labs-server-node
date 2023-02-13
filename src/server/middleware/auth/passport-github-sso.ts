@@ -6,7 +6,7 @@ import { Strategy as GitHubStrategy } from 'passport-github'
 passport.use(new GitHubStrategy({
     clientID: CONFIG.PLUGINS.GITHUB_AUTH.CLIENT_ID,
     clientSecret: CONFIG.PLUGINS.GITHUB_AUTH.SECRET,
-    callbackURL: CONFIG.SERVER.getServerURL('/admin/1.0/auth/login/github/callback'),
+    callbackURL: CONFIG.SERVER.getURL('/admin/1.0/auth/login/github/callback'),
   },
   async (req, accessToken, refreshToken, profile, done) => {
     var created = false

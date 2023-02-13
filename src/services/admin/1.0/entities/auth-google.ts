@@ -10,8 +10,8 @@ export async function loginWithGoogle( query, params, session ) {
 }
 
 export async function loginWithGoogleCallback( query, params, session ) {
-  const successLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/google/success");
-  const failureLoginUrl = CONFIG.SERVER.getServerURL("/admin/1.0/auth/login/google/error");
+  const successLoginUrl = CONFIG.SERVER.getURL("/admin/1.0/auth/login/google/success");
+  const failureLoginUrl = CONFIG.SERVER.getURL("/admin/1.0/auth/login/google/error");
 
   console.log(successLoginUrl)
 

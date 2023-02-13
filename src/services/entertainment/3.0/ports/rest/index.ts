@@ -1,4 +1,4 @@
-import { getDocs, getSpecs } from "../../entities/Docs";
+import { getDocs, getSpecs } from "common/docs";
 import { videoGameGet, videoGamesGet, tvShowsListGet, tvShowGet, tvShowsGet, movieGet, moviesGet } from "../../entities/Entity";
 import { getTopic, get } from "../../entities/Topic";
 import { awards, remakes, peopleDirectors, peopleProducers, peopleWriters, peopleActors } from "../../entities/Stories";
@@ -10,8 +10,14 @@ import { dashboardTVGet, dashboardHomeGet, dashboardGamesGet, dashboardMoviesGet
 import { addComment } from "../../entities/Comments";
 
 const endpoints = {
-	"/" : getDocs,
-	"/specs" : getSpecs,
+	"/" : {
+		contentType: "text/plain",
+		handler: getDocs( { version: "2.0"} ),
+	},
+	"/specs" : {
+		contentType: "text/plain",
+		handler: getSpecs( "entertainment", "3.0" ),
+	},
 	"/api/video-games/:id" : videoGameGet,
 	"/api/video-games" : videoGamesGet,
 	"/api/tv-shows" : tvShowsGet,

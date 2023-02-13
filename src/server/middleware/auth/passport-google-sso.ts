@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: CONFIG.PLUGINS.GOOGLE_AUTH.CLIENT_ID,
       clientSecret: CONFIG.PLUGINS.GOOGLE_AUTH.SECRET,
-      callbackURL: CONFIG.SERVER.getServerURL('/admin/1.0/auth/login/google/callback'),
+      callbackURL: CONFIG.SERVER.getURL('/admin/1.0/auth/login/google/callback'),
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, done) => {

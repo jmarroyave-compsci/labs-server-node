@@ -13,7 +13,6 @@ export const init = ( app ) => {
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
       path: '/',
-      domain: `${CONFIG.SERVER.URL.hostname}`,
     },
   }
 
@@ -28,7 +27,6 @@ export const init = ( app ) => {
       maxAge: CONFIG.SERVER.SESSION.MAX_AGE,
       httpOnly: false,
       path: '/',
-      domain: `${CONFIG.SERVER.URL.hostname}`,
     },
   }
 

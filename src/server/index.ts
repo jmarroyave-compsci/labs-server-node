@@ -5,7 +5,7 @@ import { Server as SocketIO } from 'socket.io';
 import chat from './lib/io'
 import * as fs from 'fs'
 
-const PORT = CONFIG.SERVER.PORT;
+const PORT = CONFIG.SERVER.PORT.INT;
 
 if ( CONFIG.LOCAL){
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
@@ -46,7 +46,7 @@ const initServer = async ( app ) => {
       listen("http", server, Number(PORT) + 1)
     } else {
       server = require('http').createServer(app)
-      listen("http", server, Number(PORT))      
+      listen("http", server, PORT)      
     }
     
 }
