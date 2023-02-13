@@ -23,7 +23,8 @@ process.env.DB_SERVERS.split("||").map( server => {
 
 const getURL = ( path ) => {
   const serverURL = `${ CONFIG.SERVER.HTTPS ? "https" : "http" }://${ CONFIG.SERVER.HOST }${ CONFIG.SERVER.PORT.EXT == 440 ? "" : `:${CONFIG.SERVER.PORT.EXT}`}`
-  return `${serverURL}/${path}`
+  const resp = `${serverURL}/${path}`
+  return resp;
 }
 
 const CONFIG = {
@@ -33,7 +34,7 @@ const CONFIG = {
   SERVER : {
     CACHE: (process.env.SERVER_CACHE === "true") ? true : false,
     HTTPS: (process.env.SERVER_HTTPS == "true") ? true : false,
-    HOST: process.env.SERVER_URL,
+    HOST: process.env.SERVER_HOST,
     PORT: {
       INT : process.env.PORT ? parseInt(process.env.PORT) : parseInt(process.env.SERVER_PORT_INT),
       EXT : parseInt(process.env.SERVER_PORT_EXT),
