@@ -1,3 +1,4 @@
+import { invoke } from 'common/service'
 
 export const isAuthenticated = async function( session ) {
     if(!session) return false
