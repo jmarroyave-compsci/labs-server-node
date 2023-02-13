@@ -1,17 +1,8 @@
 import { invoke } from 'common/service'
+import { isAdmin } from 'common/security'
 
 export async function isAdmin( query, params, session ) {
-  const authorized = await invoke({
-    service: 'admin',
-    version: '1.0',
-    entity: 'user',
-    operation: 'authorized',
-    params: {
-      role: "admin",
-    },
-    session: session,
-  })
-
+  const authorized = await isAdmin(session)
   if(authorized){
     return { auth: true, msg: "done" }
   } else{

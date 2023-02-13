@@ -1,7 +1,8 @@
 import * as Repo from "../repositories/votes";
+import { isAuthenticated } from 'common/security'
 
 export const neutralVote = async function( query, params, session ) {
-  if(!session.user) return { error : "not authenticated"}
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   if(!params.owner) return { error : "parameter missing"}
 
@@ -13,7 +14,7 @@ export const neutralVote = async function( query, params, session ) {
 };
 
 export const upVote = async function( query, params, session ) {
-  if(!session.user) return { error : "not authenticated"}
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   if(!params.owner) return { error : "parameter missing"}
 
@@ -25,7 +26,7 @@ export const upVote = async function( query, params, session ) {
 };
 
 export const downVote = async function( query, params, session ) {
-  if(!session.user) return { error : "not authenticated"}
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   if(!params.owner) return { error : "parameter missing"}
 

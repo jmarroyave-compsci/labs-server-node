@@ -1,8 +1,9 @@
 import * as Repo from "../repositories/comments";
 import * as Votes from "./votes";
+import { isAuthenticated } from 'common/security'
 
 export const insert = async function( query, params, session ) {
-  if(!session.user) return { error : "not authenticated"}
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   if(!params.owner) return { error : "parameter missing"}
   if(!params.text) return { error : "parameter missing"}
@@ -15,7 +16,7 @@ export const insert = async function( query, params, session ) {
 };
 
 export const deleteOne = async function( query, params, session ) {
-  if(!session.user) return { error : "not authenticated"}
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   if(!params.id) return { error : "parameter missing"}
 

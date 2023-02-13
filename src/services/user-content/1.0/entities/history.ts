@@ -1,7 +1,8 @@
 import * as Repo from "../repositories/history";
+import { isAuthenticated } from 'common/security'
 
 export const insert = async function( query, params, session ) {
-  if(!session.user) return
+  if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
   return Repo.insert( { 
     type: params.type, 
