@@ -7,6 +7,9 @@ import * as fs from 'fs'
 
 const PORT = CONFIG.SERVER.PORT.INT;
 
+console.log("CONFIG")
+console.log(CONFIG)
+
 if ( CONFIG.LOCAL){
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 }

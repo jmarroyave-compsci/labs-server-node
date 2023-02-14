@@ -1,22 +1,22 @@
-const config = require('./config')
+const CONFIG = require('../src/common/config')
 const axios = require('axios')
 
-var VERBOSE=config.VERBOSE
+var VERBOSE=CONFIG.VERBOSE
 
 function log(){
   if (!VERBOSE) return;
   console.log.apply(this, arguments)
 }
 
-module.exports.get = async function(endpoint, verbose=config.VERBOSE){
+module.exports.get = async function(endpoint, verbose=CONFIG.VERBOSE){
   VERBOSE = verbose
   
-  const uri = `${config.SERVER}/${endpoint}`;
+  const uri = `${CONFIG.SERVER}/${endpoint}`;
   log("fetch", uri);
   const res = await axios.get(uri);
   log("response", res);
 
-  VERBOSE = config.VERBOSE
+  VERBOSE = CONFIG.VERBOSE
 
   return res;
 }
@@ -24,10 +24,10 @@ module.exports.get = async function(endpoint, verbose=config.VERBOSE){
 
 const openGraphQLURL = "2.0/graphql?"
 
-module.exports.graphQL = async function(query, verbose=config.VERBOSE){
+module.exports.graphQL = async function(query, verbose=CONFIG.VERBOSE){
   VERBOSE = verbose
   
-  const uri = `${config.SERVER}/${openGraphQLURL}`;
+  const uri = `${CONFIG.SERVER}/${openGraphQLURL}`;
   log("fetching", uri);
   try{
     const res = await axios.request({
@@ -43,6 +43,6 @@ module.exports.graphQL = async function(query, verbose=config.VERBOSE){
   } catch(ex){
     console.error(ex.toJSON());
   } finally{
-    VERBOSE = config.VERBOSE  
+    VERBOSE = CONFIG.VERBOSE  
   }
 }

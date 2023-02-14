@@ -23,7 +23,7 @@ process.env.DB_SERVERS.split("||").map( server => {
 
 const getURL = ( path ) => {
   const serverURL = `${ CONFIG.SERVER.HTTPS ? "https" : "http" }://${ CONFIG.SERVER.HOST }${ CONFIG.SERVER.PORT.EXT == 440 ? "" : `:${CONFIG.SERVER.PORT.EXT}`}`
-  const resp = `${serverURL}/${path}`
+  const resp = `${serverURL}/${ path.startsWith("/") ? path.slice(1) : path }`
   return resp;
 }
 
@@ -82,8 +82,5 @@ const CONFIG = {
     },
   },
 }
-
-console.log("CONFIG")
-console.log(CONFIG)
 
 export default CONFIG;
