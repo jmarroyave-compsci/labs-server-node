@@ -36,11 +36,11 @@ const CONFIG = {
     HOST: process.env.SERVER_HOST,
     PORT: {
       INT : {
-        NUMBER: process.env.PORT ? parseInt(process.env.PORT) : parseInt(process.env.SERVER_PORT_INT),
+        NUMBER: process.env.PORT ? parseInt(process.env.PORT) : parseInt(process.env.SERVER_PORT_INT_NUMBER),
         HTTPS: process.env.SERVER_PORT_INT_HTTPS == "true",
       },
       EXT : {
-        NUMBER: parseInt(process.env.SERVER_PORT_EXT),
+        NUMBER: parseInt(process.env.SERVER_PORT_EXT_NUMBER),
         HTTPS: process.env.SERVER_PORT_EXT_HTTPS == "true",
       },
     },
