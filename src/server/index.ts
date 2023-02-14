@@ -5,7 +5,7 @@ import { Server as SocketIO } from 'socket.io';
 import chat from './lib/io'
 import * as fs from 'fs'
 
-const PORT = CONFIG.SERVER.PORT.INT;
+const PORT = CONFIG.SERVER.PORT.INT.NUMBER;
 
 console.log("CONFIG")
 console.log(CONFIG)
@@ -32,7 +32,7 @@ const initServer = async ( app ) => {
     }
 
     let server;
-    if(CONFIG.SERVER.HTTPS){
+    if(CONFIG.SERVER.PORT.INT.HTTPS){
       const httpsOptions = {
         key: fs.readFileSync(`${__dirname}/../../certificates/cert.key`),
         cert: fs.readFileSync(`${__dirname}/../../certificates/cert.crt`),
@@ -64,11 +64,16 @@ export async function start(){
   log.info("-".repeat(50))
   log.info(`PATH:\t${__dirname}`)
   log.info(`VERSION:\t${CONFIG.VERSION}`)
-  log.info(`HTTPS:\t${CONFIG.SERVER.HTTPS}`)
-  if(CONFIG.SERVER.HTTPS){
-    log.info(`CERTIFICATE:\t${__dirname}/../certificates/cert.crt`)
+  log.info(`PORT:`)
+  log.info(` INTERNAL:`)
+  log.info(`  NUMBER:\t${CONFIG.SERVER.PORT.INT.NUMBER}`)
+  log.info(`  HTTPS:\t${CONFIG.SERVER.PORT.INT.HTTPS}`)
+  if(CONFIG.SERVER.PORT.INT.HTTPS){
+    log.info(`  CERTIFICATE:\t${__dirname}/../certificates/cert.crt`)
   }
-  log.info(`PORT:\t${PORT}`)
+  log.info(` EXTERNAL:`)
+  log.info(`  NUMBER:\t${CONFIG.SERVER.PORT.EXT.NUMBER}`)
+  log.info(`  HTTPS:\t${CONFIG.SERVER.PORT.EXT.HTTPS}`)
   log.info(`WEB-SOCKETS:\t${PORT}`)
   log.info("-".repeat(50))
 
