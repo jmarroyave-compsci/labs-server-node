@@ -1,5 +1,6 @@
 const CONFIG = require('../src/common/config')
 const axios = require('axios')
+const DATA = require('../src/common/data')
 
 var VERBOSE=CONFIG.VERBOSE
 
@@ -46,3 +47,5 @@ module.exports.graphQL = async function(query, verbose=CONFIG.VERBOSE){
     VERBOSE = CONFIG.VERBOSE  
   }
 }
+
+module.exports.hash = ( txt ) => DATA.hash(txt)

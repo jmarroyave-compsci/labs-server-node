@@ -1,4 +1,4 @@
-const CONFIG = require('../../src/common/config').default;
+const CONFIG = require('../../../src/common/config').default;
 
 const chai = require('chai');
 const expect = chai.expect;
