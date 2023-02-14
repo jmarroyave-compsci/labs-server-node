@@ -8,6 +8,6 @@ export const init = ( app ) => {
 const middleware = function(req, res, next) {
     console.log("-".repeat(80));
     log.info(`REQ - ${req.url}`);
-    log.info(`REQ HEADERS - ${JSON.stringify(req.headers, null, 2)}`);
+    //log.info(`REQ HEADERS - ${JSON.stringify(req.headers, null, 2)}`);
     return next();
 }

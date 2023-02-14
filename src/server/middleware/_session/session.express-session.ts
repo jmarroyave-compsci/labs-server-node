@@ -5,7 +5,7 @@ import { localParams, serverParams } from './session.config'
 export const init = ( app ) => {
 
   const params = (CONFIG.LOCAL) ? localParams : serverParams
-  //console.log(params)
+  console.log("SESSION", params)
   app.use( session( params ) )
 }
 

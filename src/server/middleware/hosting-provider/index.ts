@@ -6,6 +6,6 @@ export const init = ( app ) => {
 }
 
 const middleware = function (req, res, next) {
-    log.info("HOSTING-PROVIDER")
+    //log.info("HOSTING-PROVIDER")
     return next();
 }

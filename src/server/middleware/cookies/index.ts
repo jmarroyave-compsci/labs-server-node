@@ -12,7 +12,7 @@ const middleware = function(req, res, next) {
     cookies[d[0]] = d[1]
   })
 
-  log.info(`COOKIES: ${JSON.stringify(cookies, null, 2)}`)
+  //log.info(`COOKIES: ${JSON.stringify(cookies, null, 2)}`)
 
   return next()
 };

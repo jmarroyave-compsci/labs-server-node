@@ -20,6 +20,6 @@ export const init = ( app ) => {
 }
 
 const middleware = function (req, res, next) {
-    log.info("CORS")
+    //log.info("CORS")
     return next()
 }

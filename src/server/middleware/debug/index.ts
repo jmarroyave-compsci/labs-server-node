@@ -5,7 +5,7 @@ export const init = ( app ) => {
 }
 
 const middleware = function(req, res, next) {
-  log.info("DEBUG")
+  //log.info("DEBUG")
   // .header and .set is an alias pair
   const _header = res.header.bind(res); 
   const _send = res.send.bind(res);

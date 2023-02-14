@@ -7,7 +7,7 @@ export const init = ( app ) => {
 }
 
 const middleware = function (req, res, next) {
-    log.info("GUESTBOOK")
+    //log.info("GUESTBOOK")
 
     invoke({
         service: 'admin',
