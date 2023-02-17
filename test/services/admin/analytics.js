@@ -1,4 +1,4 @@
-const CONFIG = require('../../../src/common/config').default;
+const CONFIG = require('common/config').default;
 
 const Analytics = require('analytics')
 const googleAnalytics = require('@analytics/google-analytics')
@@ -12,10 +12,10 @@ describe('services: admin/analytics', () => {
 
     const analytics = Analytics.default({
       app: 'labs',
-      version: config.VERSION,
+      version: CONFIG.VERSION,
       plugins: [
         googleAnalytics.default({
-          trackingId: config.PLUGINS_GOOGLE_ANALYTICS_TRACK_ID,
+          trackingId: CONFIG.PLUGINS.GOOGLE_ANALYTICS.TRACK_ID,
         }),
         googleTagManager({
           containerId: 'GTM-123xyz'
@@ -25,21 +25,21 @@ describe('services: admin/analytics', () => {
 
     const page = {
       title: `server: test`,
-      href: `${config.PLUGINS_GOOGLE_ANALYTICS_BASE_URL}`,
+      href: `${CONFIG.PLUGINS.GOOGLE_ANALYTICS.BASE_URL}`,
       path: "/"
     }
 
 
     var data = await analytics.page( page )
 
-    console.log(data)
+    //console.log(data)
 
     data = await analytics.track('userPurchase', {
       price: 20,
       item: 'pink socks',
     })
 
-    console.log(data)
+    //console.log(data)
 
     data = await analytics.identify('user-id-xyz', {
       firstName: 'bill',
@@ -47,7 +47,7 @@ describe('services: admin/analytics', () => {
       email: 'da-coolest@aol.com'
     })
 
-    console.log(data)
+    //console.log(data)
 
   });
 });

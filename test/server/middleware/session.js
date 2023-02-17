@@ -1,14 +1,16 @@
-const CONFIG = require('../../../src/common/config').default;
-const PARAMS = require('../../../src/server/middleware/_session/session.config')
+const { getConfig } = require('common/config');
+const { getParameters } = require('server/middleware/_session/session.config')
+const { hash } = require('../../utils')
 
 const chai = require('chai');
 const expect = chai.expect;
 
 describe('server: middleware/session', () => {
-  it('verify PARAMS', async () => {
-
-    console.log( PARAMS.localParams )
-
+  const CONFIG = getConfig("prod")
+  it('verify production PARAMS', async () => {
+    const PARAMS = getParameters(CONFIG, false)
+    //console.log(PARAMS)
+    expect(hash(JSON.stringify(PARAMS))).to.equal("a3e041a74d171e2e780506d34a160e95");
   });
 
 });
