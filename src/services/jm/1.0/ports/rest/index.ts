@@ -1,5 +1,6 @@
 import { getUserInfo, isAdmin, loginWithGoogle, loginWithGithub, logout } from "../../entities/auth";
 import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment } from "../../entities/comments";
+import { insert as insertMessages, deleteOne as deleteMessages } from "../../entities/messages";
 import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
 const endpoints = {
@@ -41,6 +42,17 @@ const endpoints = {
 		handler: getUserInfo,
 	},
 	"/auth/is-admin" : isAdmin,
+	"/messages/:id" : {
+		method: 'delete',
+		contentType: "application/json",
+		handler: deleteMessages,
+	},
+	"/messages-post" : {
+		endpoint: "/messages",
+		method: 'post',
+		contentType: "application/json",
+		handler: insertMessages,
+	},
 }
 
 export default endpoints;
