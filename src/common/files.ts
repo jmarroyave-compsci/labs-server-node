@@ -25,21 +25,40 @@ export function getMiddlewares(){
 }
 
 
-export function getServices(){
+export async function getServices(){
   const resp = []
-  fs.readdirSync( servicesRootPath ).sort().forEach( service => {
-    if(CONFIG.DEBUG.SERVICES.SKIPPED.includes(service)) return
-    fs.readdirSync( `${servicesRootPath}/${service}` ).sort().forEach( version => {
-
-      resp.push({
-        servicePath : `${servicesRootPath}/${service}`,
-        name: service,
-        version: version,
-        versionPath: `${servicesRootPath}/${service}/${version}`,
-      })
-    })
-  })
+  for( const service of fs.readdirSync( servicesRootPath ).sort()){
+    if(CONFIG.DEBUG.SERVICES.SKIPPED.includes(service)) continue
+    for(const version of fs.readdirSync( `${servicesRootPath}/${service}` ).sort() ){
+      resp.push( await getService(service, version) )
+    }
+  }
   return resp
+}
+
+export async function getService( service, version ){
+  const servicePath = `${servicesRootPath}/${service}`
+  const versionPath = `${servicesRootPath}/${service}/${version}`
+
+  const configPath = `${versionPath}/config/`
+  const config = {
+    DB : null
+  }
+
+  if( classExists( configPath ) ){
+    const { DB } = await loadClass(configPath)
+    config.DB = DB
+  }else{
+    console.log( "config doesn't exists", configPath)
+  }
+
+  return {
+    servicePath : servicePath,
+    name: service,
+    version: version,
+    versionPath: versionPath,
+    config : config,
+  }
 }
 
 export function getResourcePath( resource ){

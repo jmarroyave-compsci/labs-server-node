@@ -22,12 +22,10 @@ module.exports.get = async function(endpoint, verbose=CONFIG.VERBOSE){
   return res;
 }
 
-
-const openGraphQLURL = "2.0/graphql?"
-
 module.exports.graphQL = async function(query, verbose=CONFIG.VERBOSE){
   VERBOSE = verbose
   
+  const openGraphQLURL = "2.0/graphql?"
   const uri = `${CONFIG.SERVER}/${openGraphQLURL}`;
   log("fetching", uri);
   try{
@@ -48,4 +46,21 @@ module.exports.graphQL = async function(query, verbose=CONFIG.VERBOSE){
   }
 }
 
+module.exports.getMockSession = (  ) => ( {
+  user : {
+    id: "testid",
+    name: "Test user",
+    avatar: "https://localhost/user-test.jpg",
+  }
+} )
+
 module.exports.hash = ( txt ) => getHash(txt)
+
+module.exports.loadService = async function( serviceName, version  ){
+  const { connect } = require('server/loaders/db/mongo')
+  const { getService } = require('common/files')
+
+  const service = await getService(serviceName, version)
+  await connect(service)
+}
+

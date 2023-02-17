@@ -7,13 +7,14 @@ export const insert = async function( props ) {
 
   //console.log("inserting comment", props )
 
-  model.owner = getHash(owner)
+  model.owner = owner
   model.text = text
   model.user = { id: user.id, name: user.name, avatar: user.avatar }
   model.created = new Date()
 
   try{
       const resp = await model.save()
+      return resp
   } catch(ex){
     console.log("ERROR", "COMMENTS", "INSERT", ex)
     return null
@@ -28,6 +29,7 @@ export const deleteOne = async function( props ) {
 
   try{
       const resp = await DBComments.deleteOne({ _id: id, "user.id" : user.id })
+      return resp
   } catch(ex){
     console.log("ERROR", "COMMENTS", "DELETE", ex)
     return null

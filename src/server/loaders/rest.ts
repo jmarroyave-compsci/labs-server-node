@@ -97,7 +97,7 @@ export const loadREST = async function(app){
         }
     }
 
-    for( const service of getServices()){
+    for( const service of await getServices()){
         log.info(`  SERVICE: ${service.name} v.${service.version}`);
         await loadSpecs( service )   
     }

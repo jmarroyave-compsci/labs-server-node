@@ -17,6 +17,7 @@ export class Connection {
     const key = `${this.server}/${this.database}/${this.version}`
     const con = Connection.CONNECTIONS[key];     
     if(!con) new Error(`CONNECTION NOT FOUND, [${key}]`)
+    //console.log(Connection.CONNECTIONS)
     return con
   }
 

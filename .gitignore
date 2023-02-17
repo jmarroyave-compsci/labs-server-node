@@ -133,3 +133,4 @@ cors.production.txt
 
 # tmp files
 _/
+src/services/_

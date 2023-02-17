@@ -5,42 +5,34 @@ import log from 'common/log';
 import { Connection } from 'common/db'
 
 export async function loadDBMongo(){
-  const conns = []
-
-  for(const service of getServices()){
-    const configClass = `${service.versionPath}/config/`
-    if( !classExists( configClass ) ) continue
-
-    const { DB } = await loadClass(configClass)
-    conns.push(
-      [ DB.server, DB.database, service ]
-    ) 
-  }
-
   log.info("INIT DB CONNECTIONS", "MONGO")
-
-  for(const conn of conns){
-    await connect(conn[0], conn[1], conn[2])
+  const services = await getServices()
+  for(const service of services){
+    log.info(` - [${service.name}/${service.version}] CONNECTING TO DB SERVER: [${service.config.DB.server}] DB: [${service.config.DB.database}]`)
+    await connect(service)
   }
-
   //log.info(`CONNECTIONS INITIALIZED ${Object.keys(Connection.CONNECTIONS)}`)
 }
 
-async function connect( server, dbname, service ){
-    const key = `${server}/${dbname}/${service.version}`
-    try{
-        log.info(` - [${service.name}/${service.version}] CONNECTING TO DB SERVER: [${server}] DB: [${dbname}]`)
-        server = config.DB.SERVERS[server]
-        const connString = `mongodb+srv://${server}/${dbname}?retryWrites=true&w=majority`
-        //log.info(connString)
-        const mconn = await mongooseCreateConnection(connString);
-        //log.info(mconn.readyState)
-        Connection.CONNECTIONS[key] = mconn
-        //log.info(" DB: CONNECTION SUCCESFULL")
-        //log.info("-".repeat(50))
-      } catch( ex ){
-        log.error(ex.toString())
-      }
+export async function connect( service ){
+  //console.log("DB: connect", service)
+  if( service.config.DB == null ) return
+
+  const server = service.config.DB.server
+  const dbname = service.config.DB.database
+
+  const key = `${server}/${dbname}/${service.version}`
+  try{
+      const connString = `mongodb+srv://${config.DB.SERVERS[server]}/${dbname}?retryWrites=true&w=majority`
+      //log.info(connString)
+      const mconn = await mongooseCreateConnection(connString);
+      //log.info(mconn.readyState)
+      Connection.CONNECTIONS[key] = mconn
+      //log.info(" DB: CONNECTION SUCCESFULL")
+      //log.info("-".repeat(50))
+    } catch( ex ){
+      log.error(ex.toString())
+    }
 }
 
 async function mongooseCreateConnection( connString ){
