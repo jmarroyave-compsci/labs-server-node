@@ -2,12 +2,11 @@ import DBMessage from './models/messages'
 import { getHash } from 'common/data'
 
 export const insert = async function( props ) {
-  const { owner, user, text, params } = props
+  const { owner, text, params } = props
   const model = new DBMessage()
 
   model.owner = owner
   model.text = text
-  model.user = { id: user.id, name: user.name, avatar: user.avatar }
   model.params = params
   model.created = new Date()
 

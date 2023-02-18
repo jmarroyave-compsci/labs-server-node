@@ -5,11 +5,6 @@ export default db.model( "message", {
 		page: String,
 		instance: String,
 	},
-	user: {
-		id: String,
-		name: String,
-		avatar: String,
-	},	
 	text: String,
 	params: String,
 	created: Date,

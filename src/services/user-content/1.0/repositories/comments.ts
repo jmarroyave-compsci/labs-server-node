@@ -43,7 +43,7 @@ export const getAll = async function( props ) {
 
   var resp
   try{
-      resp = await DBComments.find({ owner : getHash(owner) })
+      resp = await DBComments.find({ owner : owner })
   } catch(ex){
     console.log("ERROR", "COMMENTS", "GET_ALL", ex)
     return null

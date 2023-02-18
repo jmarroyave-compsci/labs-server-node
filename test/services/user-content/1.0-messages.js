@@ -15,7 +15,6 @@ describe('services: user-content/messages', () => {
 
     await utils.loadService( SERVICE, VERSION )
 
-    const session = utils.getMockSession()
     params = {
       owner: {
         page: "test",
@@ -34,7 +33,7 @@ describe('services: user-content/messages', () => {
       entity: 'messages',
       operation: 'insert',
       params: params,
-      session: session,
+      session: {},
     })
 
     expect(resp).to.not.be.null;
@@ -50,7 +49,7 @@ describe('services: user-content/messages', () => {
       entity: 'messages',
       operation: 'deleteOne',
       params: params,
-      session: session,
+      session: {},
     })
 
     expect(resp).to.not.be.null;
