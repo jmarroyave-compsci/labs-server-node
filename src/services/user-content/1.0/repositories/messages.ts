@@ -20,10 +20,10 @@ export const insert = async function( props ) {
 }
 
 export const deleteOne = async function( props ) {
-  const { id, user } = props
+  const { id } = props
 
   try{
-      const resp = await DBMessage.deleteOne({ _id: id, "user.id" : user.id })
+      const resp = await DBMessage.deleteOne({ _id: id })
       return resp
   } catch(ex){
     console.log("ERROR", "MESSAGES", "DELETE", ex)

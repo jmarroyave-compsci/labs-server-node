@@ -1,6 +1,6 @@
 const CONFIG = require('common/config').default;
-const utils = require('../../utils')
 const service = require('common/service')
+const utils = require('../../utils')
 
 const chai = require('chai');
 const expect = chai.expect;
@@ -8,21 +8,20 @@ const expect = chai.expect;
 const SERVICE = "user-content"
 const VERSION = "1.0"
 
-describe('services: user-content/comments', () => {
+describe('services: user-content-1.0/messages', () => {
 
-  it('should insert and delete a comment', async () => {
+  it('should insert and delete a message', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
 
-    const session = utils.getMockSession()
     params = {
       owner: {
         page: "test",
         instance: "1",
       },
-      text: "comment test",
-      user: session.user,
+      text: "message test",
+      params : JSON.stringify({}, null , 2),
     }
 
     //console.log("invoking service")
@@ -30,13 +29,14 @@ describe('services: user-content/comments', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
+      entity: 'messages',
       operation: 'insert',
       params: params,
-      session: session,
+      session: {},
     })
 
     expect(resp).to.not.be.null;
+    expect(resp.error).to.be.undefined;
 
     params = {
       id: resp._id
@@ -45,10 +45,10 @@ describe('services: user-content/comments', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
+      entity: 'messages',
       operation: 'deleteOne',
       params: params,
-      session: session,
+      session: {},
     })
 
     expect(resp).to.not.be.null;

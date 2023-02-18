@@ -18,7 +18,6 @@ export const deleteOne = async function( query, params, session ) {
 
   return Repo.deleteOne( { 
     id: params.id,
-    user: session.user,
   } )
 };
 
