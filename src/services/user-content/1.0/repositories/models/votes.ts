@@ -1,7 +1,10 @@
 import db from './db'
 
 export default db.model( "votes", {
-	owner: String,
+	owner: {
+		page: String,
+		instance: String,
+	},
 	upVotes: [{
 		user: String,	
 		created: Date,

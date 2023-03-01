@@ -7,26 +7,25 @@ const expect = chai.expect;
 
 const SERVICE = "user-content"
 const VERSION = "1.0"
+const COMMENT_ID = "63ff9ae9d484dfeb888bf347"
 
-describe('services: user-content-1.0/comments', () => {
+describe('services: user-content-1.0/comments-replies', () => {
 
-  it('should fetch all comments from a page', async () => {
+  it('should fetch all replies from a comment', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
-      owner: {
-        page: "test",
-      },
+      id: COMMENT_ID,
     }
 
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
       entity: 'comments',
-      operation: 'getAll',
+      operation: 'getAllReplies',
       params: params,
       session: session,
     })
@@ -37,73 +36,15 @@ describe('services: user-content-1.0/comments', () => {
     //console.log(resp)
   });
 
-  it('should fetch all comments from a page and a specific instance', async () => {
+  it('should insert and delete a reply', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
-      owner: {
-        page: "test",
-        instance: "3"
-      },
-    }
-
-    resp = await service.invoke({
-      service: SERVICE,
-      version: VERSION,
-      entity: 'comments',
-      operation: 'getAll',
-      params: params,
-      session: session,
-    })
-
-    expect(resp).to.not.be.null;
-    expect(resp).to.be.an('array');
-    expect(resp).to.have.length(1);
-    //console.log(resp)
-  });
-
-  it('should fetch NO comments from a page and a specific instance', async () => {
-    var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
-
-    const session = utils.getMockSession()
-    params = {
-      owner: {
-        page: "test",
-        instance: "test-instance"
-      },
-    }
-
-    resp = await service.invoke({
-      service: SERVICE,
-      version: VERSION,
-      entity: 'comments',
-      operation: 'getAll',
-      params: params,
-      session: session,
-    })
-
-    expect(resp).to.not.be.null;
-    expect(resp).to.be.an('array');
-    expect(resp).to.have.length(0);
-  });
-
-  it('should insert and delete a comment', async () => {
-    var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
-
-    const session = utils.getMockSession()
-    params = {
-      owner: {
-        page: "test",
-        instance: "test-comment",
-      },
-      text: "test comment that will be deleted",
+      id: COMMENT_ID,
+      text: "reply text to a comment",
       user: session.user,
     }
 
@@ -113,7 +54,7 @@ describe('services: user-content-1.0/comments', () => {
       service: SERVICE,
       version: VERSION,
       entity: 'comments',
-      operation: 'insert',
+      operation: 'reply',
       params: params,
       session: session,
     })
@@ -143,14 +84,11 @@ describe('services: user-content-1.0/comments', () => {
 
     const session = utils.getMockSession()
     await utils.loadService( SERVICE, VERSION )
-
+  
     for( var i = 0; i < 10; i++){
       params = {
-        owner: {
-          page: "test",
-          instance: i.toString(),
-        },
-        text: `test comment ${i}`,
+        id: COMMENT_ID,
+        text: `reply text to a comment ${i}`,
         user: session.user,
       }
 
@@ -158,13 +96,10 @@ describe('services: user-content-1.0/comments', () => {
         service: SERVICE,
         version: VERSION,
         entity: 'comments',
-        operation: 'insert',
+        operation: 'reply',
         params: params,
         session: session,
       })
-
-      expect(resp).to.not.be.null;
-
     }
   });
 

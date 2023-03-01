@@ -11,9 +11,8 @@ export default db.model( "comment", {
 		avatar: String,
 	},	
 	text: String,
-	replies : [{		
-		id: { type: String, ref: 'comment' }, 		
-	}],
+	replies : [ String ],
+	parent: String,
 	created: Date,
 }, { 
 	collection: 'comment',

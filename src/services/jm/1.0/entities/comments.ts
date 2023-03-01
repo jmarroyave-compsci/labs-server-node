@@ -42,3 +42,24 @@ export async function getAll( query, params, session ) {
   })
 }
 
+export async function reply( query, params, session ) {
+  return await invoke({
+    service: 'user-content',
+    version: '1.0',
+    entity: 'comments',
+    operation: 'reply',
+    params: params,
+    session: session,
+  })
+}
+
+export async function getAllReplies( query, params, session ) {
+  return await invoke({
+    service: 'user-content',
+    version: '1.0',
+    entity: 'comments',
+    operation: 'getAllReplies',
+    params: params,
+    session: session,
+  })
+}
