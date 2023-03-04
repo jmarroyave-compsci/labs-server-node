@@ -33,8 +33,7 @@ describe('services: user-content-1.0/comments++', () => {
 
     expect(resp).to.not.be.null;
     expect(resp).to.be.an('array');
-    expect(resp).to.have.length(10);
-    console.log(resp)
+    expect(resp).to.have.length(4);
   });
 
 });

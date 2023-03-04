@@ -90,7 +90,8 @@ export function getConfig( stage="dev" ){
     LOCAL: process.env.LOCAL === "false" ? false : true,
     DEBUG : {
       SERVICES: {
-        SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? []
+        PRINT_INVOKES : false,
+        SKIPPED: process.env.SERVICES_SKIPPED?.split(",") ?? [],
       },
     },
   }
