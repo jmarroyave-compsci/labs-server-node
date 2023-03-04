@@ -1,7 +1,7 @@
 import log from 'common/log';
 const { RateLimiterMemory } = require('rate-limiter-flexible');
 
-const MAX_POINTS = 50
+const MAX_POINTS = 10
 // requests per second per ip
 const rateLimiter = new RateLimiterMemory({
   points:   MAX_POINTS,

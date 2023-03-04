@@ -94,7 +94,7 @@ export const getAll = async function( props ) {
     filter['owner.page'] = owner.page
   }
 
-  if( owner.instance ){
+  if( owner.instance && owner.instance != null ){
     filter['owner.instance'] = owner.instance
   }
 
@@ -113,6 +113,8 @@ export const getAll = async function( props ) {
     text: c.text,
     created: c.created,
     user: c.user,
+    owner: c.owner, 
+    replies: c.replies.length,
   }))
 }
 

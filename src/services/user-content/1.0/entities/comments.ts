@@ -28,8 +28,6 @@ export const reply = async function( query, params, session ) {
   } )
 };
 
-
-
 export const deleteOne = async function( query, params, session ) {
   if(await isAuthenticated(session) == false ) return { error : "not authenticated"}
 
@@ -57,7 +55,6 @@ export const getAll = async function( query, params, session ) {
 
   return resp
 };
-
 
 export const getAllReplies = async function( query, params, session ) {
   if(!params.id) return { error : "parameter missing"}
