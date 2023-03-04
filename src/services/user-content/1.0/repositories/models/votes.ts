@@ -5,6 +5,10 @@ export default db.model( "votes", {
 		page: String,
 		instance: String,
 	},
+	neutralVotes: [{
+		user: String,	
+		created: Date,
+	}],
 	upVotes: [{
 		user: String,	
 		created: Date,

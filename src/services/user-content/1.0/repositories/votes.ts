@@ -1,5 +1,7 @@
 import DBVotes from './models/votes'
 
+const _get = async( props ) => (await get( { ...props, reformat: false } ))[0]
+
 export const neutralVote = async function( props ) {
   const { owner, user } = props
 
@@ -61,12 +63,9 @@ export const downVote = async function( props ) {
   return getResponse(resp, user) 
 }
 
-
 export const insert = async function( props ) {
   const { owner } = props
   const model = new DBVotes()
-
-  //console.log("inserting votes", props )
 
   model.owner = owner
   model.created = new Date()
@@ -80,46 +79,52 @@ export const insert = async function( props ) {
   }
 }
 
-const _get = async function( props ) {
-  const { owner, user=null } = props
+export const get = async function( props ) {
+  const { owner, user=null, reformat=true } = props
 
-  //console.log("VOTES", "_GET", owner)
+  const filter = {  }
+
+  if( owner.page ){
+    filter['owner.page'] = owner.page
+  }
+
+  if( owner.instance && owner.instance != null ){
+    filter['owner.instance'] = owner.instance
+  }
 
   var resp
   try{
-      resp = await DBVotes.findOne({ owner : owner })
+      resp = await DBVotes.find( filter )
   } catch(ex){
     console.log("ERROR", "VOTES", "GET", ex)
     return null
   }
 
-  return resp
+  return reformat ? resp.map( r => getResponse(r, user) ) : resp
 }
 
-export const get = async function( props ) {
-  const { owner, user=null } = props
+export const deleteOne = async function( props ) {
+  const { owner } = props
 
-  var resp = await _get(props)
-
-  if(resp == null){
-    resp = await insert( props )
-    //console.log("inserted", resp)
+  try{
+      const filter = { owner: owner }
+      return await DBVotes.deleteOne( filter )
+  } catch(ex){
+    console.log("ERROR", "VOTES", "DELETE", ex)
+    return null
   }
-
-  //console.log("VOTES", resp)
-
-  return getResponse(resp, user)
 }
+
 
 const isUpVoting = ( votes, user ) => votes.upVotes.filter( u => u.user == user.id )?.[0] ?? null
 const isDownVoting = ( votes, user ) => votes.downVotes.filter( u => u.user == user.id )?.[0] ?? null
 const getTotal = ( votes ) => votes.upVotes.length - votes.downVotes.length
 const getMe = ( votes, user ) => user == null ? null : (
-  isUpVoting( votes, user ) != null ? 1 
-  : ( 
-    isDownVoting(votes, user) != null ? -1 : 0 
-    )
+  isUpVoting( votes, user ) != null 
+  ? 1 
+  : isDownVoting(votes, user) != null ? -1 : 0 
 )
+
 const getResponse = ( votes, user ) => {
   return { 
     owner : votes.owner,

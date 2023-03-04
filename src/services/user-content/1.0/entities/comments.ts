@@ -33,6 +33,14 @@ export const deleteOne = async function( query, params, session ) {
 
   if(!params.id) return { error : "parameter missing"}
 
+  const item = await Repo.getById( { 
+    id: params.id,
+  } )
+
+  Votes.deleteOne( query, {
+    owner : item.owner,
+  }, session)
+
   return Repo.deleteOne( { 
     id: params.id,
     user: session.user,
@@ -43,32 +51,32 @@ export const get = async function( query, params, session ) {
   if(!params.owner) return { error : "parameter missing"}
   if(!params.owner.page) return { error : "parameter missing"}
 
-  const resp = await Repo.get( { 
+  var resp = await Repo.get( { 
     owner: params.owner, 
   } )
 
-  for( const c in resp ){
-    resp[c].votes = await Votes.get({}, { 
-      owner: resp[c].id,
-    }, session)
-  }
-
+  resp = getVotes( resp, session )
   return resp
 };
 
 export const getReplies = async function( query, params, session ) {
   if(!params.id) return { error : "parameter missing"}
 
-  const resp = await Repo.getReplies( { 
+  var resp = await Repo.getReplies( { 
     id: params.id, 
   } )
 
-  for( const c in resp ){
-    resp[c].votes = await Votes.get({}, { 
-      owner: resp[c].id,
+  resp = getVotes( resp, session )
+  return resp
+};
+
+const getVotes = async function( comments, session ){
+  for( const c in comments ){
+    comments[c].votes = await Votes.getOneMust({}, { 
+      owner: comments[c].owner,
     }, session)
   }
 
-  return resp
-};
+  return comments
+}
 

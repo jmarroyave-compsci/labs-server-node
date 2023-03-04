@@ -8,9 +8,9 @@ const expect = chai.expect;
 const SERVICE = "user-content"
 const VERSION = "1.0"
 
-describe('services: user-content-1.0/comments', () => {
+describe('services: user-content-1.0/votes', () => {
 
-  it('should fetch all comments from a page', async () => {
+  it('should fetch all votes from a page', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
@@ -25,7 +25,7 @@ describe('services: user-content-1.0/comments', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
+      entity: 'votes',
       operation: 'get',
       params: params,
       session: session,
@@ -34,10 +34,9 @@ describe('services: user-content-1.0/comments', () => {
     expect(resp).to.not.be.null;
     expect(resp).to.be.an('array');
     expect(resp).to.have.length(10);
-    //console.log(resp)
   });
 
-  it('should fetch all comments from a page and a specific instance', async () => {
+  it('should fetch all votes from a page and a specific instance', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
@@ -46,14 +45,14 @@ describe('services: user-content-1.0/comments', () => {
     params = {
       owner: {
         page: "test",
-        instance: "3"
+        instance: "2"
       },
     }
 
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
+      entity: 'votes',
       operation: 'get',
       params: params,
       session: session,
@@ -62,10 +61,9 @@ describe('services: user-content-1.0/comments', () => {
     expect(resp).to.not.be.null;
     expect(resp).to.be.an('array');
     expect(resp).to.have.length(1);
-    //console.log(resp)
   });
 
-  it('should fetch NO comments from a page and a specific instance', async () => {
+  it('should fetch NO votes from a page and a specific instance', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
@@ -81,7 +79,7 @@ describe('services: user-content-1.0/comments', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
+      entity: 'votes',
       operation: 'get',
       params: params,
       session: session,
@@ -92,7 +90,7 @@ describe('services: user-content-1.0/comments', () => {
     expect(resp).to.have.length(0);
   });
 
-  it('should insert a comment', async () => {
+  it('should upvote', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
@@ -101,25 +99,25 @@ describe('services: user-content-1.0/comments', () => {
     params = {
       owner: {
         page: "test",
-        instance: "test-comment",
+        instance: "2",
       },
-      text: "test comment that will be deleted",
       user: session.user,
     }
 
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
-      operation: 'insert',
+      entity: 'votes',
+      operation: 'upVote',
       params: params,
       session: session,
     })
 
     expect(resp).to.not.be.null;
+    expect(resp.positive).to.equal(1)
   });
 
-  it('should delete a comment', async () => {
+  it('should down vote', async () => {
     var params, resp;
 
     await utils.loadService( SERVICE, VERSION )
@@ -128,7 +126,7 @@ describe('services: user-content-1.0/comments', () => {
     params = {
       owner: {
         page: "test",
-        instance: "test-comment",
+        instance: "2",
       },
       user: session.user,
     }
@@ -136,60 +134,42 @@ describe('services: user-content-1.0/comments', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
-      operation: 'get',
+      entity: 'votes',
+      operation: 'downVote',
       params: params,
       session: session,
     })
 
     expect(resp).to.not.be.null;
+    expect(resp.negative).to.equal(1)
+  });
 
+
+  it('should neutral vote', async () => {
+    var params, resp;
+
+    await utils.loadService( SERVICE, VERSION )
+
+    const session = utils.getMockSession()
     params = {
-      id: resp[0].id
+      owner: {
+        page: "test",
+        instance: "2",
+      },
+      user: session.user,
     }
 
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
-      operation: 'deleteOne',
+      entity: 'votes',
+      operation: 'neutralVote',
       params: params,
       session: session,
     })
 
     expect(resp).to.not.be.null;
-  });
-
-  it('should insert test data', async () => {
-    return
-
-    var params, resp;
-
-    const session = utils.getMockSession()
-    await utils.loadService( SERVICE, VERSION )
-
-    for( var i = 0; i < 10; i++){
-      params = {
-        owner: {
-          page: "test",
-          instance: i.toString(),
-        },
-        text: `test comment ${i}`,
-        user: session.user,
-      }
-
-      resp = await service.invoke({
-        service: SERVICE,
-        version: VERSION,
-        entity: 'comments',
-        operation: 'insert',
-        params: params,
-        session: session,
-      })
-
-      expect(resp).to.not.be.null;
-
-    }
+    expect(resp.negative).to.equal(0)
   });
 
 });
