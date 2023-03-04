@@ -25,7 +25,7 @@ describe('services: user-content-1.0/comments-replies', () => {
       service: SERVICE,
       version: VERSION,
       entity: 'comments',
-      operation: 'getAllReplies',
+      operation: 'getReplies',
       params: params,
       session: session,
     })

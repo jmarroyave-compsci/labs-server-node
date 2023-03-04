@@ -78,14 +78,14 @@ export const deleteOne = async function( props ) {
   }
 }
 
-export const getAllReplies = async function( props ) {
+export const getReplies = async function( props ) {
   const { id } = props 
   const comment = await getById( { id: id })
-  return await getAll( { owner: comment.owner, parent: id })
+  return await get( { owner: comment.owner, parent: id })
 }
 
 
-export const getAll = async function( props ) {
+export const get = async function( props ) {
   //console.log("get all comments", props )
   const { owner, parent=null } = props
   const filter = {  }

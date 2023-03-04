@@ -39,11 +39,11 @@ export const deleteOne = async function( query, params, session ) {
   } )
 };
 
-export const getAll = async function( query, params, session ) {
+export const get = async function( query, params, session ) {
   if(!params.owner) return { error : "parameter missing"}
   if(!params.owner.page) return { error : "parameter missing"}
 
-  const resp = await Repo.getAll( { 
+  const resp = await Repo.get( { 
     owner: params.owner, 
   } )
 
@@ -56,10 +56,10 @@ export const getAll = async function( query, params, session ) {
   return resp
 };
 
-export const getAllReplies = async function( query, params, session ) {
+export const getReplies = async function( query, params, session ) {
   if(!params.id) return { error : "parameter missing"}
 
-  const resp = await Repo.getAllReplies( { 
+  const resp = await Repo.getReplies( { 
     id: params.id, 
   } )
 

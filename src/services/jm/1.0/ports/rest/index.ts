@@ -1,5 +1,5 @@
 import { getUserInfo, isAdmin, loginWithGoogle, loginWithGithub, logout } from "../../entities/auth";
-import { insert as insertComment, getAll as getAllComments, deleteOne as deleteComment, getAllReplies as getAllCommentReplies, reply as replyComment } from "../../entities/comments";
+import { insert as insertComment, get as getComments, deleteOne as deleteComment, getReplies as getCommentReplies, reply as replyComment } from "../../entities/comments";
 import { insert as insertMessages, deleteOne as deleteMessages } from "../../entities/messages";
 import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
@@ -23,10 +23,10 @@ const endpoints = {
 		endpoint: "/comments",
 		method: 'get',
 		contentType: "application/json",
-		handler: getAllComments,
+		handler: getComments,
 	},
 	"/comments/:id/reply" : replyComment,
-	"/comments/:id/replies" : getAllCommentReplies,
+	"/comments/:id/replies" : getCommentReplies,
 	"/auth/login/google" : {
 		contentType: "handler",
 		handler: loginWithGoogle,

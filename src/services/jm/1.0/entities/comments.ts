@@ -31,12 +31,12 @@ export async function deleteOne( query, params, session ) {
   })
 }
 
-export async function getAll( query, params, session ) {
+export async function get( query, params, session ) {
   return await invoke({
     service: 'user-content',
     version: '1.0',
     entity: 'comments',
-    operation: 'getAll',
+    operation: 'get',
     params: query,
     session: session,
   })
@@ -53,12 +53,12 @@ export async function reply( query, params, session ) {
   })
 }
 
-export async function getAllReplies( query, params, session ) {
+export async function getReplies( query, params, session ) {
   return await invoke({
     service: 'user-content',
     version: '1.0',
     entity: 'comments',
-    operation: 'getAllReplies',
+    operation: 'getReplies',
     params: params,
     session: session,
   })

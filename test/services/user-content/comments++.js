@@ -26,7 +26,7 @@ describe('services: user-content-1.0/comments++', () => {
       service: SERVICE,
       version: VERSION,
       entity: 'comments',
-      operation: 'getAll',
+      operation: 'get',
       params: params,
       session: session,
     })
