@@ -7,7 +7,7 @@ export async function get( query, params, session ) {
     version: '1.0',
     entity: 'votes',
     operation: 'get',
-    params: params,
+    params: query,
     session: session,
   })
 }
@@ -18,13 +18,13 @@ export async function upVote( query, params, session ) {
     version: '1.0',
     entity: 'votes',
     operation: 'upVote',
-    params: params,
+    params: query,
     session: session,
   })
 
   await notifyMe(query, {
     subject: "up vote",
-    body: params.owner,    
+    body: query.owner,    
   }, session)
 
   return resp
@@ -36,13 +36,13 @@ export async function downVote( query, params, session ) {
     version: '1.0',
     entity: 'votes',
     operation: 'downVote',
-    params: params,
+    params: query,
     session: session,
   })
 
   await notifyMe(query, {
     subject: "down vote",
-    body: params.owner,    
+    body: query.owner,    
   }, session)
 
   return resp
@@ -54,13 +54,13 @@ export async function neutralVote( query, params, session ) {
     version: '1.0',
     entity: 'votes',
     operation: 'neutralVote',
-    params: params,
+    params: query,
     session: session,
   })
 
   await notifyMe(query, {
     subject: "neutral vote",
-    body: params.owner,    
+    body: query.owner,    
   }, session)
 
   return resp

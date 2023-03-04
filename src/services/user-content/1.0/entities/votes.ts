@@ -35,27 +35,35 @@ export const downVote = async function( query, params, session ) {
 };
 
 export const get = async function( query, params, session ) {
+  var resp;
+
   if(!params.owner) return { error : "parameter missing"}
 
-  return await Repo.get( { 
+  resp = await Repo.get( { 
     owner: params.owner, 
     user: session.user, 
   } )
-};
 
-export const getOneMust = async function( query, params, session ) {
-  if(!params.owner) return { error : "parameter missing"}
-
-  const resp = await get( query, params, session )
-
-  if( resp.length == 1 ){
-    return resp[0]
+  if( resp.length > 0 ){
+    return resp
   }
 
-  return await Repo.insert( { 
-    owner: params.owner, 
-    user: session.user, 
-  } )
+  if( params.forceInsert ){    
+    await Repo.insert( { 
+      owner: params.owner, 
+      user: session.user, 
+    } )
+    resp = await Repo.get( { 
+      owner: params.owner, 
+      user: session.user, 
+    } )
+
+    //console.log("forcing insert", resp)
+
+    return resp
+  }
+
+  return []
 };
 
 export const deleteOne = async function( query, params, session ) {

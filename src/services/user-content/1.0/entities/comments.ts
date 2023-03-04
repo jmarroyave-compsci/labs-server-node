@@ -72,9 +72,12 @@ export const getReplies = async function( query, params, session ) {
 
 const getVotes = async function( comments, session ){
   for( const c in comments ){
-    comments[c].votes = await Votes.getOneMust({}, { 
+    const resp = await Votes.get({}, { 
       owner: comments[c].owner,
+      forceInsert: true,
     }, session)
+
+    comments[c].votes = resp[0]
   }
 
   return comments

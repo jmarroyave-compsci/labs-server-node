@@ -4,10 +4,15 @@ import { insert as insertMessages, deleteOne as deleteMessages } from "../../ent
 import { upVote, downVote, neutralVote, get as getVotes } from "../../entities/votes";
 
 const endpoints = {
-	"/votes/:owner" : getVotes,
-	"/votes/:owner/up" : upVote,
-	"/votes/:owner/down" : downVote,
-	"/votes/:owner/neutral" : neutralVote,
+	"/votes-get" : {
+		endpoint: "/votes",
+		method: 'get',
+		contentType: "application/json",
+		handler: getVotes,
+	},
+	"/votes/up" : upVote,
+	"/votes/down" : downVote,
+	"/votes/neutral" : neutralVote,
 	"/comments/:id" : {
 		method: 'delete',
 		contentType: "application/json",

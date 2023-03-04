@@ -90,6 +90,57 @@ describe('services: user-content-1.0/votes', () => {
     expect(resp).to.have.length(0);
   });
 
+  it('should force fetch to create if not exists', async () => {
+    var params, resp;
+
+    await utils.loadService( SERVICE, VERSION )
+
+    const session = utils.getMockSession()
+    params = {
+      owner: {
+        page: "test",
+        instance: "test-instance"
+      },
+      forceInsert : true,
+    }
+
+    resp = await service.invoke({
+      service: SERVICE,
+      version: VERSION,
+      entity: 'votes',
+      operation: 'get',
+      params: params,
+      session: session,
+    })
+
+    expect(resp).to.not.be.null;
+  });
+
+  it('should delete an item', async () => {
+    var params, resp;
+
+    await utils.loadService( SERVICE, VERSION )
+
+    const session = utils.getMockSession()
+    params = {
+      owner: {
+        page: "test",
+        instance: "test-instance"
+      },
+    }
+
+    resp = await service.invoke({
+      service: SERVICE,
+      version: VERSION,
+      entity: 'votes',
+      operation: 'deleteOne',
+      params: params,
+      session: session,
+    })
+
+    expect(resp).to.not.be.null;
+  });
+
   it('should upvote', async () => {
     var params, resp;
 
