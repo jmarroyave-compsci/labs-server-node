@@ -11,6 +11,7 @@ export async function send( query, params, session ) {
 
   //console.log("NOTIFY ME", parameters)
 
+  /*
   await invoke({
     service: 'communication',
     version: '1.0',
@@ -19,5 +20,6 @@ export async function send( query, params, session ) {
     params: parameters,
     session: session,
   })
+  */
 }
 
