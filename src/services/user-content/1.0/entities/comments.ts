@@ -74,6 +74,7 @@ const getVotes = async function( comments, session ){
   for( const c in comments ){
     const resp = await Votes.get({}, { 
       owner: comments[c].owner,
+      user: session.user,
       forceInsert: true,
     }, session)
 

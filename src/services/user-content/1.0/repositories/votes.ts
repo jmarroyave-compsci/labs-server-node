@@ -1,6 +1,6 @@
 import DBVotes from './models/votes'
 
-const _get = async( props ) => (await get( { ...props, reformat: false } ))[0]
+const _get = async( props ) => ( await get( { ...props, forceInsert: true } ) )[0]
 
 export const neutralVote = async function( props ) {
   const { owner, user } = props
@@ -20,7 +20,7 @@ export const neutralVote = async function( props ) {
 
   await resp.save();
 
-  return getResponse(resp, user) 
+  return resp
 }
 
 export const upVote = async function( props ) {
@@ -28,7 +28,7 @@ export const upVote = async function( props ) {
 
   const resp = await _get( props )
 
-  if( isUpVoting( resp, user ) != null ) return
+  if( isUpVoting( resp, user ) != null ) return resp
 
   var current = isDownVoting( resp, user )
   if(current) {
@@ -38,9 +38,8 @@ export const upVote = async function( props ) {
   current = { user: user.id, created: new Date()}
   resp.upVotes.push( current )
 
-  await resp.save();
-
-  return getResponse(resp, user) 
+  const r = await resp.save();
+  return resp
 }
 
 export const downVote = async function( props ) {
@@ -48,7 +47,7 @@ export const downVote = async function( props ) {
 
   const resp = await _get( props )
 
-  if( isDownVoting( resp, user ) != null ) return
+  if( isDownVoting( resp, user ) != null ) return resp
 
   var current = isUpVoting( resp, user )
   if(current) {
@@ -60,7 +59,7 @@ export const downVote = async function( props ) {
 
   await resp.save();
 
-  return getResponse(resp, user) 
+  return resp
 }
 
 export const insert = async function( props ) {
@@ -70,7 +69,7 @@ export const insert = async function( props ) {
   model.owner = owner
   model.created = new Date()
 
-  try{
+  try {
       await model.save()
       return model
   } catch(ex){
@@ -80,7 +79,7 @@ export const insert = async function( props ) {
 }
 
 export const get = async function( props ) {
-  const { owner, user=null, reformat=true } = props
+  const { owner, user=null, forceInsert=false } = props
 
   const filter = {  }
 
@@ -92,22 +91,25 @@ export const get = async function( props ) {
     filter['owner.instance'] = owner.instance
   }
 
-  var resp
+  var resp = null
   try{
       resp = await DBVotes.find( filter )
   } catch(ex){
     console.log("ERROR", "VOTES", "GET", ex)
-    return null
   }
 
-  return reformat ? resp.map( r => getResponse(r, user) ) : resp
+  if( forceInsert && ( resp == null || resp.length == 0 ) ){
+    return [ await insert( props ) ]
+  }
+
+  return resp
 }
 
 export const deleteOne = async function( props ) {
   const { owner } = props
 
   try{
-      const filter = { owner: owner }
+      const filter = { owner: owner,  }
       return await DBVotes.deleteOne( filter )
   } catch(ex){
     console.log("ERROR", "VOTES", "DELETE", ex)
@@ -115,23 +117,18 @@ export const deleteOne = async function( props ) {
   }
 }
 
-
-const isUpVoting = ( votes, user ) => votes.upVotes.filter( u => u.user == user.id )?.[0] ?? null
-const isDownVoting = ( votes, user ) => votes.downVotes.filter( u => u.user == user.id )?.[0] ?? null
-const getTotal = ( votes ) => votes.upVotes.length - votes.downVotes.length
-const getMe = ( votes, user ) => user == null ? null : (
+const isUpVoting = ( votes, user ) => votes.upVotes.filter( u => u.user.toString() == user.id.toString() )?.[0] ?? null
+const isDownVoting = ( votes, user ) => votes.downVotes.filter( u => u.user.toString() == user.id.toString() )?.[0] ?? null
+export const getTotal = ( votes ) => votes.upVotes.length - votes.downVotes.length
+export const getMe = ( votes, user ) => {
+  const resp = user?.id == null  ? null : (
   isUpVoting( votes, user ) != null 
   ? 1 
   : isDownVoting(votes, user) != null ? -1 : 0 
-)
-
-const getResponse = ( votes, user ) => {
-  return { 
-    owner : votes.owner,
-    total : getTotal( votes ), 
-    me: getMe( votes, user ),
-    positive: votes.upVotes.length,
-    negative: votes.downVotes.length,
-  }
+  )
+  return resp
 }
+
+
+
     

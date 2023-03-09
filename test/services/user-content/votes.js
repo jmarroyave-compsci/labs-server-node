@@ -58,9 +58,68 @@ describe('services: user-content-1.0/votes', () => {
       session: session,
     })
 
+    //console.log(resp)
     expect(resp).to.not.be.null;
     expect(resp).to.be.an('array');
     expect(resp).to.have.length(1);
+    expect(resp[0].me).to.equal(0);
+  });
+
+  it('should fetch all votes from a page and a specific instance WITH NO USER', async () => {
+    var params, resp;
+
+    await utils.loadService( SERVICE, VERSION )
+
+    params = {
+      owner: {
+        page: "test",
+        instance: "2"
+      },
+    }
+
+    resp = await service.invoke({
+      service: SERVICE,
+      version: VERSION,
+      entity: 'votes',
+      operation: 'get',
+      params: params,
+      session: {},
+    })
+
+    //console.log(resp)
+    expect(resp).to.not.be.null;
+    expect(resp).to.be.an('array');
+    expect(resp).to.have.length(1);
+    expect(resp[0].me).to.be.null;
+  });
+
+  it('should fetch all votes from a page and a specific instance WITH PARAM USER', async () => {
+    var params, resp;
+
+    await utils.loadService( SERVICE, VERSION )
+
+    params = {
+      owner: {
+        page: "test",
+        instance: "2",
+      },
+      user: "testid",
+    }
+
+    resp = await service.invoke({
+      service: SERVICE,
+      version: VERSION,
+      entity: 'votes',
+      operation: 'get',
+      params: params,
+      session: {},
+    })
+
+    //console.log(resp)
+    expect(resp).to.not.be.null;
+    expect(resp).to.be.an('array');
+    expect(resp).to.have.length(1);
+    expect(resp[0].me).to.equal(0);
   });
 
   it('should fetch NO votes from a page and a specific instance', async () => {
@@ -222,5 +281,4 @@ describe('services: user-content-1.0/votes', () => {
     expect(resp).to.not.be.null;
     expect(resp.negative).to.equal(0)
   });
-
 });
