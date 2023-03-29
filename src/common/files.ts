@@ -70,8 +70,12 @@ export async function loadClass( path ){
     throw new Error("path not foud")
   }
 
-  const cl = await import(path)
-  return cl
+  try{
+    const cl = await import(path)
+    return cl
+  } catch( ex ){
+    throw Error( `Class ${path} does not exists` )    
+  }
 }
 
 export function classExists( path ){

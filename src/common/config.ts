@@ -80,6 +80,9 @@ export function getConfig( stage="dev" ){
         KEY: process.env.PLUGINS_SENDGRID_KEY,
         SENDER: process.env.PLUGINS_SENDGRID_SENDER,
       },
+      OPENAI: {
+        KEY : process.env.PLUGINS_OPENAI_API_KEY,
+      },
     },
     SERVICES: {
       JM: {

@@ -9,8 +9,14 @@ export const invoke = async function( params ) {
   const facadeClass = `${__dirname}/../services/${service}/${version}/ports/facade/`
   //console.log("service.invoke", facadeClass)
 
-  const ns = (await loadClass(facadeClass)).default
-  //console.log("-> service.invoke", service, version, entity, operation, ns[entity][operation], "args", args)
+  var ns;
+  try{
+    ns = (await loadClass(facadeClass)).default
+  } catch( ex) {
+    throw Error(`Facade for service [${service}] is not defined`)
+  }
+
+  console.log("-> service.invoke", service, version, entity, operation, ns[entity][operation], "args", params.args)
 
   if( ! ns?.[entity]?.[operation] ){
     throw new Error(`SERVICE: ${service}[${version}].${entity}.${operation} IS NOT DEFINED`)

@@ -51,6 +51,7 @@
     "mongoose": "6.0.5",
     "morgan": "1.10.0",
     "oas-tools": "^2.2.2",
+    "openai": "^3.2.1",
     "openapi-to-graphql": "^2.6.3",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
