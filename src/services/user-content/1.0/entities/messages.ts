@@ -1,5 +1,6 @@
 import * as Repo from "../repositories/messages";
 import { isAuthenticated } from 'common/security'
+import { isAdmin } from 'common/security'
 
 export const insert = async function( query, params, session ) {
   if(!params.owner) return { error : "parameter missing"}
@@ -16,8 +17,15 @@ export const insert = async function( query, params, session ) {
 export const deleteOne = async function( query, params, session ) {
   if(!params.id) return { error : "parameter missing"}
 
-  return Repo.deleteOne( { 
+  return await Repo.deleteOne( { 
     id: params.id,
   } )
+};
+
+export const get = async function( query, params, session ) {
+  const authorized = await isAdmin( session ) 
+  if( authorized === false ) return { error: "unauthorized" }
+
+  return await Repo.get( params )
 };
 

@@ -13,8 +13,6 @@ describe('services: user-content-1.0/messages', () => {
   it('should insert and delete a message', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     params = {
       owner: {
         page: "test",
@@ -53,5 +51,34 @@ describe('services: user-content-1.0/messages', () => {
 
     expect(resp).to.not.be.null;
   });
+
+
+  it('should get all messages', async () => {
+    var params, resp;
+
+    params = {
+      owner: {
+        page: "test",
+        instance: "1",
+      },
+      text: "message test",
+      params : JSON.stringify({}, null , 2),
+    }
+
+    //console.log("invoking service")
+
+    resp = await service.invoke({
+      service: SERVICE,
+      version: VERSION,
+      entity: 'messages',
+      operation: 'get',
+      params: params,
+      session: {},
+    })
+
+    expect(resp).to.not.be.null;
+    expect(resp.error).to.be.undefined;
+  });
+
 
 });

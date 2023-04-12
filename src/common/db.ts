@@ -14,9 +14,12 @@ export class Connection {
   }
 
   getConnection(){
-    const key = `${this.server}/${this.database}/${this.version}`
+    //const key = `${this.server}/${this.database}/${this.version}`
+    const key = `${this.server}/${this.database}`
     const con = Connection.CONNECTIONS[key];     
-    if(!con) new Error(`CONNECTION NOT FOUND, [${key}]`)
+    if(!con) {
+      throw new Error(`FATAL ERROR: CONNECTION TO DB NOT FOUND, [${key}], SERVICE UNINITIALIZED`)
+    }
     //console.log(Connection.CONNECTIONS)
     return con
   }

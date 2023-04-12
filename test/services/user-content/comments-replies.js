@@ -14,8 +14,6 @@ describe('services: user-content-1.0/comments-replies', () => {
   it('should fetch all replies from a comment', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       id: COMMENT_ID,
@@ -38,8 +36,6 @@ describe('services: user-content-1.0/comments-replies', () => {
 
   it('should insert and delete a reply', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
@@ -83,7 +79,6 @@ describe('services: user-content-1.0/comments-replies', () => {
     var params, resp;
 
     const session = utils.getMockSession()
-    await utils.loadService( SERVICE, VERSION )
   
     for( var i = 0; i < 10; i++){
       params = {

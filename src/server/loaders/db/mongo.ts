@@ -20,8 +20,12 @@ export async function connect( service ){
 
   const server = service.config.DB.server
   const dbname = service.config.DB.database
+  const key = `${server}/${dbname}`
 
-  const key = `${server}/${dbname}/${service.version}`
+  if(Connection.CONNECTIONS[key] != null ) {
+    return
+  }
+
   try{
       const connString = `mongodb+srv://${config.DB.SERVERS[server]}/${dbname}?retryWrites=true&w=majority`
       //log.info(connString)

@@ -1,10 +1,14 @@
 import CONFIG from 'common/config'
-import { loadClass } from 'common/files'
+import { loadClass, getService } from 'common/files'
 import { getSession } from 'common/session'
+import { connect as connectToDB } from 'server/loaders/db/mongo'
 
 export const invoke = async function( params ) {
   const { service, version, entity, operation, req, session={} } = params
   //console.log("service.invoke", service, version, operation)
+
+  // loading service
+  await loadService( service, version)
 
   const facadeClass = `${__dirname}/../services/${service}/${version}/ports/facade/`
   //console.log("service.invoke", facadeClass)
@@ -13,10 +17,10 @@ export const invoke = async function( params ) {
   try{
     ns = (await loadClass(facadeClass)).default
   } catch( ex) {
-    throw Error(`Facade for service [${service}] is not defined`)
+    throw Error(`There was a problem loading facade for service [${service}]`)
   }
 
-  console.log("-> service.invoke", service, version, entity, operation, ns[entity][operation], "args", params.args)
+  console.log(`-> Invoking SERVICE: [${service}:${version}] OP: [${entity}.${operation}] ARGS: [${params.args}]`, ns[entity][operation])
 
   if( ! ns?.[entity]?.[operation] ){
     throw new Error(`SERVICE: ${service}[${version}].${entity}.${operation} IS NOT DEFINED`)
@@ -41,3 +45,7 @@ function printTrace( params ){
   console.log("*".repeat(80))
 }
 
+async function loadService( serviceName, version  ){
+  const service = await getService(serviceName, version)
+  await connectToDB(service)
+}

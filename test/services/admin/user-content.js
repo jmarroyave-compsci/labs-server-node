@@ -5,33 +5,32 @@ const utils = require('../../utils')
 const chai = require('chai');
 const expect = chai.expect;
 
-const SERVICE = "user-content"
+const SERVICE = "admin"
 const VERSION = "1.0"
 
-describe('services: user-content-1.0/comments++', () => {
+describe('services: admin-1.0/user-content', () => {
 
-  it('should fetch all comments from a page', async () => {
+  it('should fetch all messages', async () => {
     var params, resp;
 
     const session = utils.getMockSession()
     params = {
       owner: {
-        page: "http%3A%2F%2Flocalhost%3A3000%2Fblog%2F23-02-14-frontend-hosting",
+        page: "test",
       },
     }
 
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'comments',
-      operation: 'get',
+      entity: 'user-content',
+      operation: 'messages',
       params: params,
       session: session,
     })
 
     expect(resp).to.not.be.null;
     expect(resp).to.be.an('array');
-    expect(resp).to.have.length(4);
   });
 
 });

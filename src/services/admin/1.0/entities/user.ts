@@ -22,10 +22,11 @@ export const authorized = async function( query, params, session ) {
   //console.log(session.user, params)
 
   const roleId = await Role.getRoleByName( query, { name : params.role }, session )
-
-  //console.log(roleId, session.user.roles.includes( roleId))
-
   if(!roleId) return false
 
-  return session.user.roles.includes( roleId )
+  const resp = session.user.roles.filter( a => a.toString() == roleId.toString() ).length > 0
+
+  //console.log(roleId, session.user, session.user?.roles, resp)
+
+  return resp
 };

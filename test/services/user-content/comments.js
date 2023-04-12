@@ -13,8 +13,6 @@ describe('services: user-content-1.0/comments', () => {
   it('should fetch all comments from a page', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -39,8 +37,6 @@ describe('services: user-content-1.0/comments', () => {
 
   it('should fetch all comments from a page and a specific instance', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
@@ -68,8 +64,6 @@ describe('services: user-content-1.0/comments', () => {
   it('should fetch NO comments from a page and a specific instance', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -95,8 +89,6 @@ describe('services: user-content-1.0/comments', () => {
   it('should insert a comment', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -121,8 +113,6 @@ describe('services: user-content-1.0/comments', () => {
 
   it('should delete a comment', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
@@ -166,7 +156,6 @@ describe('services: user-content-1.0/comments', () => {
     var params, resp;
 
     const session = utils.getMockSession()
-    await utils.loadService( SERVICE, VERSION )
 
     for( var i = 0; i < 10; i++){
       params = {

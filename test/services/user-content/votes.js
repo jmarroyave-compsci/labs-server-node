@@ -13,8 +13,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should fetch all votes from a page', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -38,8 +36,6 @@ describe('services: user-content-1.0/votes', () => {
 
   it('should fetch all votes from a page and a specific instance', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
@@ -68,8 +64,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should fetch all votes from a page and a specific instance WITH NO USER', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     params = {
       owner: {
         page: "test",
@@ -95,8 +89,6 @@ describe('services: user-content-1.0/votes', () => {
 
   it('should fetch all votes from a page and a specific instance WITH PARAM USER', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     params = {
       owner: {
@@ -125,8 +117,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should fetch NO votes from a page and a specific instance', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -152,8 +142,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should force fetch to create if not exists', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -178,8 +166,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should delete an item', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -202,8 +188,6 @@ describe('services: user-content-1.0/votes', () => {
 
   it('should upvote', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {
@@ -230,8 +214,6 @@ describe('services: user-content-1.0/votes', () => {
   it('should down vote', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       owner: {
@@ -257,8 +239,6 @@ describe('services: user-content-1.0/votes', () => {
 
   it('should neutral vote', async () => {
     var params, resp;
-
-    await utils.loadService( SERVICE, VERSION )
 
     const session = utils.getMockSession()
     params = {

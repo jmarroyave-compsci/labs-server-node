@@ -20,5 +20,5 @@ export default {
 	},
 	log: {
 		insert: insertLog,		
-	}
+	},
 };

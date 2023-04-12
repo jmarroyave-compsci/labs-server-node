@@ -30,3 +30,14 @@ export const deleteOne = async function( props ) {
     return null
   }
 }
+
+export const get = async function( props ) {
+  const { id } = props
+  try{
+      const resp = await DBMessage.find({})
+      return resp
+  } catch(ex){
+    console.log("ERROR", "MESSAGES", "GET", ex)
+    return null
+  }
+}

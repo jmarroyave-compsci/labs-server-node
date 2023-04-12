@@ -7,4 +7,6 @@ class DBConnection extends Connection {
 	}
 }
 
-export default new DBConnection();
+const inst = new DBConnection();
+console.log(inst)
+export default inst

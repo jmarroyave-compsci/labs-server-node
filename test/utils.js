@@ -51,16 +51,11 @@ module.exports.getMockSession = (  ) => ( {
     id: "testid",
     name: "Test user",
     avatar: "https://localhost/user-test.jpg",
-  }
+    roles : [
+      "63e549641d3e092bdb926e7a"
+    ],
+  }, 
 } )
 
 module.exports.hash = ( txt ) => getHash(txt)
-
-module.exports.loadService = async function( serviceName, version  ){
-  const { connect } = require('server/loaders/db/mongo')
-  const { getService } = require('common/files')
-
-  const service = await getService(serviceName, version)
-  await connect(service)
-}
 

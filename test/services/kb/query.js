@@ -13,8 +13,6 @@ describe('services: kb-1.0/query', () => {
   it('should prompt openai', async () => {
     var params, resp;
 
-    await utils.loadService( SERVICE, VERSION )
-
     const session = utils.getMockSession()
     params = {
       prompt: "hello, who am i talking to?",

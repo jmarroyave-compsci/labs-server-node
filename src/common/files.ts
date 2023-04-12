@@ -74,6 +74,7 @@ export async function loadClass( path ){
     const cl = await import(path)
     return cl
   } catch( ex ){
+    console.log(ex)
     throw Error( `Class ${path} does not exists` )    
   }
 }
