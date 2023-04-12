@@ -1,7 +1,7 @@
 import CONFIG from 'common/config'
 import { loadClass, getService } from 'common/files'
 import { getSession } from 'common/session'
-import { connect as connectToDB } from 'server/loaders/db/mongo'
+import { Connection } from 'common/db'
 
 export const invoke = async function( params ) {
   const { service, version, entity, operation, req, session={} } = params
@@ -47,5 +47,5 @@ function printTrace( params ){
 
 async function loadService( serviceName, version  ){
   const service = await getService(serviceName, version)
-  await connectToDB(service)
+  await Connection.connect(service)
 }

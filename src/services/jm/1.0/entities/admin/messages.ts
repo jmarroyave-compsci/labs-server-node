@@ -1,6 +1,6 @@
 import { invoke } from 'common/service'
 
-export const getMessages = async function( query, params, session ) {
+export const get = async function( query, params, session ) {
   const resp = await invoke({
     service: 'user-content',
     version: '1.0',

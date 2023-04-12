@@ -8,3 +8,11 @@ export const insert = async function( query, params, session ) {
   } )
 };
 
+export const get = async function( query, params, session ) {
+  return Repo.get( params )
+};
+
+export const count = async function( query, params, session ) {
+  return Repo.count( params )
+};
+

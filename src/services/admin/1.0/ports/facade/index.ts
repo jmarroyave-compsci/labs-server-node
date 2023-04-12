@@ -2,7 +2,7 @@ import { logout, getUserInfo } from "../../entities/auth";
 import { loginWithGoogle } from "../../entities/auth-google";
 import { loginWithGithub } from "../../entities/auth-github";
 import { findByGoogleId, findByGithubId, findById, insert as insertUser, authorized } from "../../entities/user";
-import { insert as insertLog } from "../../entities/log";
+import { get as getLog, count as countLog, insert as insertLog } from "../../entities/log";
 
 export default {
 	auth: {
@@ -20,5 +20,7 @@ export default {
 	},
 	log: {
 		insert: insertLog,		
+		get: getLog,		
+		count: countLog,		
 	},
 };

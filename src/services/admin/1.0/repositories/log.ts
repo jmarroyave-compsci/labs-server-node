@@ -47,3 +47,37 @@ function insertGoogleAnalytics( props ){
 
   analytics.page( page )
 }
+
+export async function get( props ){
+  const { endpoint, userId, agent } = props
+  try{
+    const resp = DBLog.find({})
+    return resp
+  } catch(ex){
+    console.log("ERROR", "LOG", "GET", ex)
+    return null
+  }  
+}
+
+
+export async function count( params ){
+  const { d=null } = params
+
+  const filter = {}
+  if( d != null ){
+    const d1 = new Date(d)
+    const d0 = new Date(d1.getTime())
+    d1.setDate( d1.getDate() + 1)
+    filter['created'] = { $gte: d0.toISOString(), $lt: d1.toISOString() }
+  }
+
+  //console.log(filter)
+
+  try{
+    const resp = DBLog.count(filter)
+    return resp
+  } catch(ex){
+    console.log("ERROR", "LOG", "GET", ex)
+    return { error : ex.toString() }
+  }  
+}

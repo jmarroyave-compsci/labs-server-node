@@ -5,12 +5,12 @@ const utils = require('../../utils')
 const chai = require('chai');
 const expect = chai.expect;
 
-const SERVICE = "admin"
+const SERVICE = "jm"
 const VERSION = "1.0"
 
-describe('services: admin-1.0/user-content', () => {
+describe('services: jm-1.0/admin-log', () => {
 
-  it('should fetch all messages', async () => {
+  it('should count all logs', async () => {
     var params, resp;
 
     const session = utils.getMockSession()
@@ -23,14 +23,18 @@ describe('services: admin-1.0/user-content', () => {
     resp = await service.invoke({
       service: SERVICE,
       version: VERSION,
-      entity: 'user-content',
-      operation: 'messages',
-      params: params,
+      entity: 'admin.log',
+      operation: 'count',
+      params: {
+        d: '2023-04-11'
+      },
       session: session,
     })
 
+    //console.log(resp)
+
     expect(resp).to.not.be.null;
-    expect(resp).to.be.an('array');
+    expect(resp.count).to.be.equal(1122);
   });
 
 });
