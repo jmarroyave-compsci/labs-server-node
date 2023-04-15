@@ -34,7 +34,9 @@ export async function moviesGet( query, params, session ){
 };
 
 export async function tvShowsListsGet( query, params, session ){
-  const lists = query.lists.split(",")
+  const lists = (query.lists ?? params.lists ).split(",")
+
+  //console.log("params:", lists)
 
   const data = []
   for( const list of lists ){
@@ -48,7 +50,7 @@ export async function tvShowsListsGet( query, params, session ){
 };
 
 export async function tvShowsListGet( query, params, session ){
-  const list = (params.list) ? params.list : query.list
+  const list = (query.list ?? params.list )
   const limit = query['limit'] ?? 10
   const page = query['page'] ?? 1
   const shuffle = query?.['shuffle'] ?? "true"

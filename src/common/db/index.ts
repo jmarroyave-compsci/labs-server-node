@@ -4,8 +4,8 @@ import * as mongo from 'common/db/mongo'
 export class Connection {
   static CONNECTIONS = {}
   static getKey = ( params ) => {
-    const { server, dbname, version } = params
-    const key = `${server}/${dbname}/${version}`
+    const { server, database, version } = params
+    const key = `${server}/${database}/${version}`
     return key
   }
   static connect = async( service ) => {

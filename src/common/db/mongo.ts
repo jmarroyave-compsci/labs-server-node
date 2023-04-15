@@ -4,8 +4,9 @@ import CONFIG from 'common/config';
 
 export async function connect( params ){
   try{
-      const { server, dbname } = params
-      const connString = `mongodb+srv://${CONFIG.DB.SERVERS[server]}/${dbname}?retryWrites=true&w=majority`
+      const { server, database } = params
+      //console.log("DB", "MONGO", params)
+      const connString = `mongodb+srv://${CONFIG.DB.SERVERS[server]}/${database}?retryWrites=true&w=majority`
       const mconn = await mongooseCreateConnection(connString);
       return mconn
     } catch( ex ){
